@@ -18,71 +18,71 @@
 
 \section{Banach space theory}
 
-\subsection{Quotient spaces, Baire category and 
-uniform boundedness}
+\subsection{Quotient spaces, Baire category and
+  uniform boundedness}
 
 \begin{thm}
-Let $\norm{\cdot}$ be a \textbf{seminorm} on a vector 
-space $V$. If we define $E = \left\{ v \in V: \norm{v} 
-= 0 \right\}$, then $E$ is a subspace of $V$, 
-and the function on $V / E$ defined by 
-\[
-\norm{v + E} = \norm{v}
-\]
-for any $v + E \in V / E$ defines a \textbf{norm}.
+  Let $\norm{\cdot}$ be a \textbf{seminorm} on a vector
+  space $V$. If we define $E = \left\{ v \in V: \norm{v}
+    = 0 \right\}$, then $E$ is a subspace of $V$,
+  and the function on $V / E$ defined by
+  \[
+    \norm{v + E} = \norm{v}
+  \]
+  for any $v + E \in V / E$ defines a \textbf{norm}.
 \end{thm}
 
 \begin{thm}[Baire Category Theorem]
-Let $M$ be a complete metric space, and let $\seqinfn{C_n}$
-be a collection of closed subsets of $M$ such that 
-$M = \cupinfn C_n$. Then at least one of the $C_n$ contains
-an open ball $B(x, r) = \left\{ y \in M : d(x, y) < r \right\}$.
+  Let $M$ be a complete metric space, and let $\seqinfn{C_n}$
+  be a collection of closed subsets of $M$ such that
+  $M = \cupinfn C_n$. Then at least one of the $C_n$ contains
+  an open ball $B(x, r) = \left\{ y \in M : d(x, y) < r \right\}$.
 \end{thm}
 
 \begin{thm}[Uniform Boundedness Theorem]
-Let $B$ be Banach space and $V$ a normed vector space. 
-Let $\seqinfn{T_n}$ be a sequence in $\B(B, V)$.
-Then if for all $b \in B$ we have $\sup_n \norm{T_n b} < \infty$
-(that is, this sequence is pointwise boudned),
-then $\sup_n \norm{T_n} < \infty$ (the operator norms are 
-bounded).
+  Let $B$ be Banach space and $V$ a normed vector space.
+  Let $\seqinfn{T_n}$ be a sequence in $\B(B, V)$.
+  Then if for all $b \in B$ we have $\sup_n \norm{T_n b} < \infty$
+  (that is, this sequence is pointwise boudned),
+  then $\sup_n \norm{T_n} < \infty$ (the operator norms are
+  bounded).
 \end{thm}
 
 \begin{proof}
-For each $k \in \N$, define 
-\[
-C_k = \left\{ b \in B: \norm{b} \leq 1, \sup_{n \in \N} 
-\norm{T_n b} \leq k \right\}.
-\]
-This set is closed for each $k \in \N$, but by assumption, 
-we have 
-\[
-\left\{ b \in B: \norm{b} \leq 1 \right\} = \cupinfk C_k.
-\]
-The left hand side is a closed subset of $B$, and is thus 
-a complete metric space. By Baire Category Theorem, 
-there exists $k \in \N$ such that $C_k$ contains an open 
-ball $B(b_0, \delta_0)$. Then, if $b \in B(0, \delta_0)$, 
-we have $b_0 + b \in B(b_0, \delta_0)$ and thus 
-\[
-\sup_{n \in \N} \norm{T_n (b_0 + b)} \leq k.
-\]
-It follows that 
-\[
-\sup_{n \in \N} \norm{T_n b} \leq \sup_{n \in \N}
-\norm{T_n (b_0 + b)} + \sup_{n \in \N} \norm{T_n b_0}
-\leq 2k.
-\]
-Suppose $\norm{b} = 1$, then $\frac{\delta_0}{2} b \in 
-B(0, \delta_0)$ and thus for all $n \in \N$, 
-we have 
-\[
-\norm{T_n \left( \frac{\delta_0}{2} b \right)} \leq 2k.
-\]
-Therefore, 
-\[
-\sup_{n \in \N} \norm{T_n} \leq \frac{4k}{\delta_0}.
-\]
+  For each $k \in \N$, define
+  \[
+    C_k = \left\{ b \in B: \norm{b} \leq 1, \sup_{n \in \N}
+    \norm{T_n b} \leq k \right\}.
+  \]
+  This set is closed for each $k \in \N$, but by assumption,
+  we have
+  \[
+    \left\{ b \in B: \norm{b} \leq 1 \right\} = \cupinfk C_k.
+  \]
+  The left hand side is a closed subset of $B$, and is thus
+  a complete metric space. By Baire Category Theorem,
+  there exists $k \in \N$ such that $C_k$ contains an open
+  ball $B(b_0, \delta_0)$. Then, if $b \in B(0, \delta_0)$,
+  we have $b_0 + b \in B(b_0, \delta_0)$ and thus
+  \[
+    \sup_{n \in \N} \norm{T_n (b_0 + b)} \leq k.
+  \]
+  It follows that
+  \[
+    \sup_{n \in \N} \norm{T_n b} \leq \sup_{n \in \N}
+    \norm{T_n (b_0 + b)} + \sup_{n \in \N} \norm{T_n b_0}
+    \leq 2k.
+  \]
+  Suppose $\norm{b} = 1$, then $\frac{\delta_0}{2} b \in
+    B(0, \delta_0)$ and thus for all $n \in \N$,
+  we have
+  \[
+    \norm{T_n \left( \frac{\delta_0}{2} b \right)} \leq 2k.
+  \]
+  Therefore,
+  \[
+    \sup_{n \in \N} \norm{T_n} \leq \frac{4k}{\delta_0}.
+  \]
 \end{proof}
 
 \section{Hilbert space theory}
@@ -90,1660 +90,1660 @@ Therefore,
 \subsection{Basic Hilbert space theory}
 
 \begin{defi}[Pre-Hilbert space]
-  A \textbf{pre-Hilbert} space $H$ is a vector space over 
-  $\C$ with a \textbf{Hermitian inner product}, which is a 
+  A \textbf{pre-Hilbert} space $H$ is a vector space over
+  $\C$ with a \textbf{Hermitian inner product}, which is a
   map $\braket{\cdot}{\cdot} : H \times H \to \C$ satisfying
   the following properties.
 
   \begin{enumerate}
-    \item For all $\lambda_1, \lambda_2 \in C$ and 
-    $v_1, v_2, w \in H$, we have 
-    \[
-    \braket{\lambda_1 v_1 + \lambda_2 v_2}{w} 
-    = \lambda_1 \braket{v_1}{2} + \lambda_2 \braket{v_2}{w}.
-    \]
+    \item For all $\lambda_1, \lambda_2 \in C$ and
+          $v_1, v_2, w \in H$, we have
+          \[
+            \braket{\lambda_1 v_1 + \lambda_2 v_2}{w}
+            = \lambda_1 \braket{v_1}{2} + \lambda_2 \braket{v_2}{w}.
+          \]
 
-    \item For all $v, w \in H$, we have $\braket{v}{w} 
-    = \bar{\braket{w}{v}}$.
+    \item For all $v, w \in H$, we have $\braket{v}{w}
+            = \bar{\braket{w}{v}}$.
 
-    \item For all $v \in H$, we have $\braket{v}{v} \geq 0$, 
-    with equality if and only if $v = 0$.
+    \item For all $v \in H$, we have $\braket{v}{v} \geq 0$,
+          with equality if and only if $v = 0$.
   \end{enumerate}
 \end{defi}
 
 \begin{defi}
-Let $H$ be a pre-Hilbert space. For all $v \in H$, we 
-define 
-\[
-\norm{v} = \braket{v}{v}^{\frac{1}{2}}.
-\]
+  Let $H$ be a pre-Hilbert space. For all $v \in H$, we
+  define
+  \[
+    \norm{v} = \braket{v}{v}^{\frac{1}{2}}.
+  \]
 \end{defi}
 
 \begin{thm}[Cauchy-Schwarz inequality]
-Let $H$ be a pre-Hilbert space. For all $u, v \in H$, we
-have 
-\[
-\abs{\braket{u}{v}} \leq \norm{u} \norm{v}.
-\]
+  Let $H$ be a pre-Hilbert space. For all $u, v \in H$, we
+  have
+  \[
+    \abs{\braket{u}{v}} \leq \norm{u} \norm{v}.
+  \]
 \end{thm}
 
 \begin{proof}
-Define $f(t) = \norm{u + tv}^2$. Notice that 
-\[
-\begin{aligned}
-  f(t) 
-  &= \braket{u + tv}{u + tv}  \\
-  &= \braket{u}{u} 
-  + t^2 \braket{v}{v} + t \braket{u}{v} + t \braket{v}{u} \\
-  &= \norm{u}^2 + t^2 \norm{v}^2 + 2t \Re(\braket{u}{v}).
-\end{aligned}
-\]  
-This implies that 
-\[
-0 \leq f(t_{\text{min}}) = \norm{u}^2 - 
-\frac{\Re(\braket{u}{v})^2}{\norm{v}^2}.
-\]
-It follows that 
-\[
-\abs{\Re( \braket{u}{v} )} \leq \norm{u} \norm{v}.
-\]
-This is almost what we want. 
-To finish up, first note that if 
-$\braket{u}{v} = 0$ then there is nothing to prove,
-so suppose $\braket{u}{v} \neq 0$,
-and define 
-\[
-\lambda = \frac{\bar{\braket{u}{v}}}{\abs{\braket{u}{v}}}.
-\]
-Note that we have $\abs{\lambda} = 1$ and we have 
-the chain of equalities of real numbers:
-\[
-\abs{\braket{u}{v}} = \lambda \braket{u}{v} 
-= \braket{\lambda u}{v} = \Re \braket{\lambda u}{v} 
-\leq \norm{\lambda u} \norm{v}.
-\]
-However, $\norm{\lambda u} = \norm{u}$, so the proof is 
-complete.
+  Define $f(t) = \norm{u + tv}^2$. Notice that
+  \[
+    \begin{aligned}
+      f(t)
+       & = \braket{u + tv}{u + tv}                              \\
+       & = \braket{u}{u}
+      + t^2 \braket{v}{v} + t \braket{u}{v} + t \braket{v}{u}   \\
+       & = \norm{u}^2 + t^2 \norm{v}^2 + 2t \Re(\braket{u}{v}).
+    \end{aligned}
+  \]
+  This implies that
+  \[
+    0 \leq f(t_{\text{min}}) = \norm{u}^2 -
+    \frac{\Re(\braket{u}{v})^2}{\norm{v}^2}.
+  \]
+  It follows that
+  \[
+    \abs{\Re( \braket{u}{v} )} \leq \norm{u} \norm{v}.
+  \]
+  This is almost what we want.
+  To finish up, first note that if
+  $\braket{u}{v} = 0$ then there is nothing to prove,
+  so suppose $\braket{u}{v} \neq 0$,
+  and define
+  \[
+    \lambda = \frac{\bar{\braket{u}{v}}}{\abs{\braket{u}{v}}}.
+  \]
+  Note that we have $\abs{\lambda} = 1$ and we have
+  the chain of equalities of real numbers:
+  \[
+    \abs{\braket{u}{v}} = \lambda \braket{u}{v}
+    = \braket{\lambda u}{v} = \Re \braket{\lambda u}{v}
+    \leq \norm{\lambda u} \norm{v}.
+  \]
+  However, $\norm{\lambda u} = \norm{u}$, so the proof is
+  complete.
 
 \end{proof}
 
 \begin{thm}
-If $H$ is a pre-Hilbert space, then $\norm{\cdot}$ 
-is a norm on $H$.
+  If $H$ is a pre-Hilbert space, then $\norm{\cdot}$
+  is a norm on $H$.
 \end{thm}
 
 \begin{proof}
-  Note that 
+  Note that
   \[
-  \norm{v} = 0 \iff \braket{v}{v} = 0 \iff v = 0.
+    \norm{v} = 0 \iff \braket{v}{v} = 0 \iff v = 0.
   \]
-  Now if $\lambda \in \C$ and $v \in H$, then 
+  Now if $\lambda \in \C$ and $v \in H$, then
   \[
-  \braket{\lambda v}{\lambda v} = \lambda \bar{\lambda}
-  \braket{v}{v} = \abs{\lambda}^2 \norm{v}^2.
+    \braket{\lambda v}{\lambda v} = \lambda \bar{\lambda}
+    \braket{v}{v} = \abs{\lambda}^2 \norm{v}^2.
   \]
-  Therefore, $\norm{\lambda v} = \abs{\lambda} \norm{v}$. 
-  
-  Finally, let $u, v \in H$, then 
+  Therefore, $\norm{\lambda v} = \abs{\lambda} \norm{v}$.
+
+  Finally, let $u, v \in H$, then
   \[
-  \begin{aligned}
-    \norm{u + v}^2 
-    &= \braket{u + v}{u + v} \\
-    &= \norm{u}^2 + \norm{v}^2 + 2 \Re \braket{u}{v} \\
-    &\leq \norm{u}^2 + \norm{v}^2 + 2 \abs{\braket{u}{v}} \\
-    &\leq \norm{u}^2 + \norm{v}^2 + 2 \norm{u} \norm{v} \\
-    &= (\norm{u} + \norm{v})^2.
-  \end{aligned}
+    \begin{aligned}
+      \norm{u + v}^2
+       & = \braket{u + v}{u + v}                              \\
+       & = \norm{u}^2 + \norm{v}^2 + 2 \Re \braket{u}{v}      \\
+       & \leq \norm{u}^2 + \norm{v}^2 + 2 \abs{\braket{u}{v}} \\
+       & \leq \norm{u}^2 + \norm{v}^2 + 2 \norm{u} \norm{v}   \\
+       & = (\norm{u} + \norm{v})^2.
+    \end{aligned}
   \]
   This completes the proof.
 \end{proof}
 
 \begin{thm}
-If $u_n \to u$ and $v_n \to v$ in a pre-Hilbert space $H$, 
-then $\braket{u_n}{v_n} \to \braket{u}{v}$.
+  If $u_n \to u$ and $v_n \to v$ in a pre-Hilbert space $H$,
+  then $\braket{u_n}{v_n} \to \braket{u}{v}$.
 \end{thm}
 
 \begin{proof}
-  If $u_n \to u$ and $v_n \to v$, then 
-  $\norm{u_n - u} \to 0$ and $\norm{v_n - v} \to 0$. 
-  It follows that 
+  If $u_n \to u$ and $v_n \to v$, then
+  $\norm{u_n - u} \to 0$ and $\norm{v_n - v} \to 0$.
+  It follows that
   \[
-  \begin{aligned}
-    \abs{\braket{u_n}{v_n} - \braket{u}{v}} 
-    &= \abs{\braket{u_n - u}{v_n} - \braket{u}{v - v_n}} \\
-    &\leq \abs{\braket{u_n - u}{v_n}} 
-    + \abs{\braket{u}{v - v_n}} \\
-    &\leq \norm{u_n - u} \norm{v_n} + \norm{u} \norm{v - v_n} \\
-    &\leq \norm{u_n - u} \sup_{k \in \N} \norm{v_k} + \norm{u} 
-    \norm{v - v_n} \\
-    &\to 0 
-  \end{aligned}
+    \begin{aligned}
+      \abs{\braket{u_n}{v_n} - \braket{u}{v}}
+       & = \abs{\braket{u_n - u}{v_n} - \braket{u}{v - v_n}}       \\
+       & \leq \abs{\braket{u_n - u}{v_n}}
+      + \abs{\braket{u}{v - v_n}}                                  \\
+       & \leq \norm{u_n - u} \norm{v_n} + \norm{u} \norm{v - v_n}  \\
+       & \leq \norm{u_n - u} \sup_{k \in \N} \norm{v_k} + \norm{u}
+      \norm{v - v_n}                                               \\
+       & \to 0
+    \end{aligned}
   \]
   as $n \to \infty$. This completes the proof.
 \end{proof}
 
 \begin{defi}[Hilbert space]
-A \textbf{Hilbert space} is a pre-Hilbert space that is 
-complete with repsect to the norm 
-$\norm{\cdot} = \braket{\cdot}{\cdot}^{\frac{1}{2}}$.
+  A \textbf{Hilbert space} is a pre-Hilbert space that is
+  complete with repsect to the norm
+  $\norm{\cdot} = \braket{\cdot}{\cdot}^{\frac{1}{2}}$.
 \end{defi}
 
 \begin{eg}
-Some examples of Hilbert spaces: 
-\begin{itemize}
-  \item $\C^n = \left\{ z = (z_1, \dots, z_n) : z_j \in \C \right\}$
-  with
-  $\braket{z}{w} = \sum_j z_j \bar{w_j}$ is a Hilbert 
-  space.
+  Some examples of Hilbert spaces:
+  \begin{itemize}
+    \item $\C^n = \left\{ z = (z_1, \dots, z_n) : z_j \in \C \right\}$
+          with
+          $\braket{z}{w} = \sum_j z_j \bar{w_j}$ is a Hilbert
+          space.
 
-  \item $\ell^2 = \left\{ a = \seqinfk{a_k} : 
-  \text{$a_k \in \C$, $\suminfk \abs{a_k}^2 < \infty$} \right\}$ 
-  with
-  $\braket{a}{b} = \suminfk a_k \bar{b_k}$ 
-  is a Hilbert space.
+    \item $\ell^2 = \left\{ a = \seqinfk{a_k} :
+            \text{$a_k \in \C$, $\suminfk \abs{a_k}^2 < \infty$} \right\}$
+          with
+          $\braket{a}{b} = \suminfk a_k \bar{b_k}$
+          is a Hilbert space.
 
-  \item If $E \subset \R$ is measurable, then 
-  $L^2(E) = \left\{ f: \text{$E \to \C$, 
-  $\int_E \abs{f}^2 < \infty$} \right\}$ with 
-  $\braket{f}{g} = \int_E f \bar{g}$ is a Hilbert 
-  space.
-\end{itemize}
-We will show that each separable Hilbert spaces is 
-isometrically isomorphic to either $\C^n$ or $\ell^2$.
+    \item If $E \subset \R$ is measurable, then
+          $L^2(E) = \left\{ f: \text{$E \to \C$,
+          $\int_E \abs{f}^2 < \infty$} \right\}$ with
+          $\braket{f}{g} = \int_E f \bar{g}$ is a Hilbert
+          space.
+  \end{itemize}
+  We will show that each separable Hilbert spaces is
+  isometrically isomorphic to either $\C^n$ or $\ell^2$.
 \end{eg}
 
-Now we have seen that $\ell^2$ and $L^2$ spaces are 
-Hilbert spaces. This is expected since the definition 
-of the inner product in these spaces uses the fact 
-that they are $\ell^2$ or $L^2$. 
+Now we have seen that $\ell^2$ and $L^2$ spaces are
+Hilbert spaces. This is expected since the definition
+of the inner product in these spaces uses the fact
+that they are $\ell^2$ or $L^2$.
 A natural question then is whether
 other $\ell^p$ or $L^p$ spaces are also Hilbert spaces
 with respect to some inner product?
-It turns out there is a simple way to decide whether a 
-norm come from a inner-product, and thus whether a 
-Banach space is a Hilbert space. 
+It turns out there is a simple way to decide whether a
+norm come from a inner-product, and thus whether a
+Banach space is a Hilbert space.
 
 \begin{thm}[Parallelogram Law]
-If $H$ is a pre-Hilbert space, then for all $u, v \in H$, 
-we have 
-\[
-  \norm{u + v}^2 + \norm{u - v}^2 = 2 \left( \norm{u}^2 
-  + \norm{v}^2 \right).
-\]
-In addition, if $H$ is a normed vector space satisfying this 
-equality, then $H$ is a pre-Hilbert space.
+  If $H$ is a pre-Hilbert space, then for all $u, v \in H$,
+  we have
+  \[
+    \norm{u + v}^2 + \norm{u - v}^2 = 2 \left( \norm{u}^2
+    + \norm{v}^2 \right).
+  \]
+  In addition, if $H$ is a normed vector space satisfying this
+  equality, then $H$ is a pre-Hilbert space.
 \end{thm}
 
-Using the previous theorem, we can verify that 
-$\ell^p$ and $L^p$ with $p \neq 2$ are \textbf{not} 
+Using the previous theorem, we can verify that
+$\ell^p$ and $L^p$ with $p \neq 2$ are \textbf{not}
 Hilbert spaces.
 
 \begin{defi}[Orthogonal]
-  If $H$ is a pre-Hilbert space, $u, v \in H$ are 
-  \textbf{orthogonal} if $\braket{u}{v} = 0$. 
+  If $H$ is a pre-Hilbert space, $u, v \in H$ are
+  \textbf{orthogonal} if $\braket{u}{v} = 0$.
   We denote this as $u \perp v$.
 \end{defi}
 
 \begin{defi}[Orthonormal sets]
-  If $H$ is a pre-Hilbert space, a subset $\left\{ e_\lambda 
-  \right\}_{\lambda \in \Lambda} \subset H$ is 
+  If $H$ is a pre-Hilbert space, a subset $\left\{ e_\lambda
+    \right\}_{\lambda \in \Lambda} \subset H$ is
   \textbf{orthonormal} if for all $\lambda \in \Lambda$,
   we have $\norm{e_\lambda} = 1$ and $\lambda_1 \neq \lambda_2$
   implies $e_{\lambda_1} \perp e_{\lambda_2}$.
 \end{defi}
 
 \begin{remark}
-  we will mainly be interested in the case where we have a 
+  we will mainly be interested in the case where we have a
   countable orthonormal set.
 \end{remark}
 
 \begin{eg}
   The set $\left\{ \frac{e^{i n x}}{\sqrt{2\pi}} \right\}_{n \in \Z}$
-  as elements in $L^2([-\pi, \pi])$ 
-  is an orthonormal subset of $L^2([-\pi, \pi])$. 
-  Indeed, for any $m, n \in \Z$, we have 
+  as elements in $L^2([-\pi, \pi])$
+  is an orthonormal subset of $L^2([-\pi, \pi])$.
+  Indeed, for any $m, n \in \Z$, we have
   \[
-  \int_{-\pi}^\pi e^{imx} \bar{e^{inx}} 
-  = \int_{-\pi}^\pi e^{i(m - n)x}
-  = \begin{cases}
-    2 \pi & (m = n), \\
-    0 & (m \neq n).
-  \end{cases}
+    \int_{-\pi}^\pi e^{imx} \bar{e^{inx}}
+    = \int_{-\pi}^\pi e^{i(m - n)x}
+    = \begin{cases}
+      2 \pi & (m = n),    \\
+      0     & (m \neq n).
+    \end{cases}
   \]
   Therefore, $\braket{\frac{e^{inx}}{\sqrt{2\pi}}}{\frac{e^{imx}}
-  {\sqrt{2\pi}}} = \delta_{mn}$, and $\left\{ \frac{e^{i n x}}{\sqrt{2\pi}}
-  \right\}_{n \in \Z}$ is an orthonormal subset 
+      {\sqrt{2\pi}}} = \delta_{mn}$, and $\left\{ \frac{e^{i n x}}{\sqrt{2\pi}}
+    \right\}_{n \in \Z}$ is an orthonormal subset
   of $L^2([-\pi, \pi])$.
 \end{eg}
 
 \begin{thm}[Bessel]
-If $\seqinfn{e_n}$ is countable orthonormal subset 
-of a pre-Hilbert space $H$, then for all 
-$u \in H$, we have 
-\[
-\suminfn \abs{\braket{u}{e_n}}^2 \leq \norm{u}^2.
-\]
+  If $\seqinfn{e_n}$ is countable orthonormal subset
+  of a pre-Hilbert space $H$, then for all
+  $u \in H$, we have
+  \[
+    \suminfn \abs{\braket{u}{e_n}}^2 \leq \norm{u}^2.
+  \]
 \end{thm}
 
 \begin{proof}
   We first do the finite case. Suppose $\left\{ e_n \right\}
-  _{n=1}^N$ is an orthonormal subset of $H$. Then, 
+    _{n=1}^N$ is an orthonormal subset of $H$. Then,
   \[
-  \begin{aligned}
-  \norm{\sum_{n=0}^N \braket{u}{e_n} e_n}^2 
-  &= \braket{\sum_{n=0}^N \braket{u}{e_n} e_n }{\sum_{n=0}^N \braket{u}{e_n} e_n} \\
-  &= \sum_{n=0}^N 
-  \sum_{m=1}^N \braket{u}{e_n} \bar{\braket{u}{e_m}} \braket{e_n}{e_m} \\
-  &= \sum_{n=0}^N \abs{\braket{u}{e_n}}^2.
-  \end{aligned}
+    \begin{aligned}
+      \norm{\sum_{n=0}^N \braket{u}{e_n} e_n}^2
+       & = \braket{\sum_{n=0}^N \braket{u}{e_n} e_n }{\sum_{n=0}^N \braket{u}{e_n} e_n} \\
+       & = \sum_{n=0}^N
+      \sum_{m=1}^N \braket{u}{e_n} \bar{\braket{u}{e_m}} \braket{e_n}{e_m}              \\
+       & = \sum_{n=0}^N \abs{\braket{u}{e_n}}^2.
+    \end{aligned}
   \]
-  Also, 
+  Also,
   \[
-  \begin{aligned}
-  \braket{u}{\sum_{n=0}^N \braket{u}{e_n}e_n} 
-  &= \sum_{n=0}^N \bar{\braket{u}{e_n}} \braket{u}{e_n} \\
-  &= \sum_{n=0}^N \abs{\braket{u}{e_n}}^2.
-  \end{aligned}
+    \begin{aligned}
+      \braket{u}{\sum_{n=0}^N \braket{u}{e_n}e_n}
+       & = \sum_{n=0}^N \bar{\braket{u}{e_n}} \braket{u}{e_n} \\
+       & = \sum_{n=0}^N \abs{\braket{u}{e_n}}^2.
+    \end{aligned}
   \]
-  Therefore, 
+  Therefore,
   \[
-  \begin{aligned}
-  0 
-  &\leq \norm{u - \sum_{n=0}^N \braket{u}{e_n}e_n}^2 \\
-  &= \norm{u}^2 + \norm{\sum_{n=0}^N \braket{u}{e_n}e_n}^2 
-  - 2 \Re \braket{u}{\sum_{n=0}^N \braket{u}{e_n}e_n} \\
-  &= \norm{u}^2 - \sum_{n=0}^N \abs{\braket{u}{e_n}}^2,
-  \end{aligned}
+    \begin{aligned}
+      0
+       & \leq \norm{u - \sum_{n=0}^N \braket{u}{e_n}e_n}^2       \\
+       & = \norm{u}^2 + \norm{\sum_{n=0}^N \braket{u}{e_n}e_n}^2
+      - 2 \Re \braket{u}{\sum_{n=0}^N \braket{u}{e_n}e_n}        \\
+       & = \norm{u}^2 - \sum_{n=0}^N \abs{\braket{u}{e_n}}^2,
+    \end{aligned}
   \]
   as desired.
 
-  For the infinite case, just take the limit as  
+  For the infinite case, just take the limit as
   $N \to \infty$.
 \end{proof}
 
 \begin{defi}[Maximal orthonormal subset]
   An orthonormal subset $\left\{ e_\lambda \right\}_\lambda$
-  of a pre-Hilbert space is \textbf{maximal} if $u \in H$ 
+  of a pre-Hilbert space is \textbf{maximal} if $u \in H$
   and $\braket{u}{e_\lambda} = 0$ for all $\lambda \in \Lambda$
   implies that $u = 0$.
 \end{defi}
 
 \begin{thm}
-  Every non-trivial pre-Hilbert space has a maximal 
+  Every non-trivial pre-Hilbert space has a maximal
   orthonormal subset.
 \end{thm}
 
-This can be proved using Zorn's Lemma. We will prove 
-something less strong but often equally useful by hand, 
+This can be proved using Zorn's Lemma. We will prove
+something less strong but often equally useful by hand,
 without applying Zorn's Lemma.
 
 \begin{thm}
-  Every non-trivial separable pre-Hilbert space 
+  Every non-trivial separable pre-Hilbert space
   has a countable maximal orthonormal subset.
 \end{thm}
 
 \begin{proof}
-Use the Gram-Schimdt process.
-Let $\seqinfj{v_j}$ be a countable dense subset of $H$
-where $v_0 \neq 0$. Claim that for any $n \in \N$, 
-there exists $m(n) \leq n$ and an orthonormal subset 
-$\left\{ e_1, \dots, e_{m(n)} \right\}$ such that 
-\begin{enumerate}
-  \item $\spn \left\{ e_1, \dots, e_{m(n)} \right\} 
-   = \spn \left\{ v_1, \dots, v_n \right\}$.
-  
-  \item 
-  If $v_n \in \spn \left\{ v_1, \dots, v_{n-1} 
-  \right\}$, we have 
-  \[
-    \left\{ e_1, \dots, e_{m(n)} \right\}  
-    = \left\{ e_1, \dots, e_{m(n-1)} \right\} \cup 
-    \emptyset.
-  \]
-  Otherwise, we have
-  \[
-    \left\{ e_1, \dots, e_{m(n)} \right\}  
-    = \left\{ e_1, \dots, e_{m(n-1)} \right\} \cup 
-    e_{m(n)}
-  \]
-  for some $e_{m(n)} \in H$.
-\end{enumerate}
-Prove this by induction. For the base case, 
-let $e_1 = \frac{v_1}{\norm{v_1}}$. 
-For the inductive step, suppose the claim holds for 
-$n = k$. If $v_{k+1} \in \spn \left\{ v_1, \dots, v_k \right\}$,
-then 
-\[
-\spn \left\{ e_1, \dots, e_{n(k)} \right\}
-= \spn \left\{ v_1, \dots, v_k \right\} 
-= \spn \left\{ v_1, \dots, v_{k+1} \right\}.
-\]
-Now suppose $v_{k+1} \notin \spn \left\{ v_1, \dots, v_k \right\}$.
-Define 
-\[
-w_{k+1} = v_{k+1} - \sum_{j=1}^{m(k)} \braket{v_{k+1}}{e_j} e_j.
-\]
-Note that $w_{k+1} \neq 0$ and define $e_{m(k+1)} = 
-\frac{w_{k+1}}{\norm{w_{k+1}}}$. Then, $\norm{e_{m(k+1)}} = 1$
-and for all $1 \leq l \leq m(k)$, 
-\[
-\begin{aligned}
-  \braket{e_{m(k+1)}}{e_l} 
-  &= \frac{1}{\norm{w_{k+1}}}
-  \braket{v_{k+1} - \sum_{j=1}^{m(k)} \braket{v_{k+1}}{e_j}}{e_l} \\
-  &= \frac{1}{\norm{w_{k+1}}} 
-  \left( \braket{v_{k+1}}{e_l} - \braket{v_{k+1}}{e_l} \right) \\
-  &= 0.
-\end{aligned}
-\]
-Therefore, $e_{m(k+1)}$ is the desired vector we want and 
-we have completed the proof for the claim.
+  Use the Gram-Schimdt process.
+  Let $\seqinfj{v_j}$ be a countable dense subset of $H$
+  where $v_0 \neq 0$. Claim that for any $n \in \N$,
+  there exists $m(n) \leq n$ and an orthonormal subset
+  $\left\{ e_1, \dots, e_{m(n)} \right\}$ such that
+  \begin{enumerate}
+    \item $\spn \left\{ e_1, \dots, e_{m(n)} \right\}
+            = \spn \left\{ v_1, \dots, v_n \right\}$.
 
-Now let 
-\[
-S = \cupinfn \left\{ e_1, \dots, e_{m(n)} \right\}.
-\]
-Then $S$ is a countable orthonormal subset of $H$.
-Now we show $S$ is maximal. Suppose $u \in H$ and 
-$\braket{u}{e_l} = 0$. Since $\seqinfj{v_j}$ is dense in 
-$H$, there exists $\seqinfk{v_{j(k)}}$ such that 
-$v_{j(k)} \to u$ as $k \to \infty$. 
-By our claim, we know 
-$v_{j(k)} \in \spn \left\{ e_1, \dots, e_{m(j(k))} \right\}$.
-By Bessel's inequality, 
-\[
-\begin{aligned}
-\norm{v_{j(k)}}^2 
-= \sum_{l=1}^{m(j(k))} \abs{\braket{v_{j(k)}}{e_l}}^2 
-= \sum_{l=1}^{m(j(k))} \abs{\braket{v_{j(k)} - u}{e_l}}^2 
-\leq \norm{v_{j(k)} - u}^2,
-\end{aligned}
-\]
-where for the first equality we used the fact that 
-$v_{j(k)} \in \spn \left\{ e_1, \dots, e_{m(j(k))} \right\}$.
-Since $v_{j(k)} \to u$ as $k \to \infty$, 
-the inequality implies that
-$\norm{v_{j(k)}} \to 0$ as $k \to \infty$ 
-and thus $\norm{u} = 0$, showing that 
-$S$ is indeed a maximal orthonormal subset 
-of $H$.
+    \item
+          If $v_n \in \spn \left\{ v_1, \dots, v_{n-1}
+            \right\}$, we have
+          \[
+            \left\{ e_1, \dots, e_{m(n)} \right\}
+            = \left\{ e_1, \dots, e_{m(n-1)} \right\} \cup
+            \emptyset.
+          \]
+          Otherwise, we have
+          \[
+            \left\{ e_1, \dots, e_{m(n)} \right\}
+            = \left\{ e_1, \dots, e_{m(n-1)} \right\} \cup
+            e_{m(n)}
+          \]
+          for some $e_{m(n)} \in H$.
+  \end{enumerate}
+  Prove this by induction. For the base case,
+  let $e_1 = \frac{v_1}{\norm{v_1}}$.
+  For the inductive step, suppose the claim holds for
+  $n = k$. If $v_{k+1} \in \spn \left\{ v_1, \dots, v_k \right\}$,
+  then
+  \[
+    \spn \left\{ e_1, \dots, e_{n(k)} \right\}
+    = \spn \left\{ v_1, \dots, v_k \right\}
+    = \spn \left\{ v_1, \dots, v_{k+1} \right\}.
+  \]
+  Now suppose $v_{k+1} \notin \spn \left\{ v_1, \dots, v_k \right\}$.
+  Define
+  \[
+    w_{k+1} = v_{k+1} - \sum_{j=1}^{m(k)} \braket{v_{k+1}}{e_j} e_j.
+  \]
+  Note that $w_{k+1} \neq 0$ and define $e_{m(k+1)} =
+    \frac{w_{k+1}}{\norm{w_{k+1}}}$. Then, $\norm{e_{m(k+1)}} = 1$
+  and for all $1 \leq l \leq m(k)$,
+  \[
+    \begin{aligned}
+      \braket{e_{m(k+1)}}{e_l}
+       & = \frac{1}{\norm{w_{k+1}}}
+      \braket{v_{k+1} - \sum_{j=1}^{m(k)} \braket{v_{k+1}}{e_j}}{e_l} \\
+       & = \frac{1}{\norm{w_{k+1}}}
+      \left( \braket{v_{k+1}}{e_l} - \braket{v_{k+1}}{e_l} \right)    \\
+       & = 0.
+    \end{aligned}
+  \]
+  Therefore, $e_{m(k+1)}$ is the desired vector we want and
+  we have completed the proof for the claim.
+
+  Now let
+  \[
+    S = \cupinfn \left\{ e_1, \dots, e_{m(n)} \right\}.
+  \]
+  Then $S$ is a countable orthonormal subset of $H$.
+  Now we show $S$ is maximal. Suppose $u \in H$ and
+  $\braket{u}{e_l} = 0$. Since $\seqinfj{v_j}$ is dense in
+  $H$, there exists $\seqinfk{v_{j(k)}}$ such that
+  $v_{j(k)} \to u$ as $k \to \infty$.
+  By our claim, we know
+  $v_{j(k)} \in \spn \left\{ e_1, \dots, e_{m(j(k))} \right\}$.
+  By Bessel's inequality,
+  \[
+    \begin{aligned}
+      \norm{v_{j(k)}}^2
+      = \sum_{l=1}^{m(j(k))} \abs{\braket{v_{j(k)}}{e_l}}^2
+      = \sum_{l=1}^{m(j(k))} \abs{\braket{v_{j(k)} - u}{e_l}}^2
+      \leq \norm{v_{j(k)} - u}^2,
+    \end{aligned}
+  \]
+  where for the first equality we used the fact that
+  $v_{j(k)} \in \spn \left\{ e_1, \dots, e_{m(j(k))} \right\}$.
+  Since $v_{j(k)} \to u$ as $k \to \infty$,
+  the inequality implies that
+  $\norm{v_{j(k)}} \to 0$ as $k \to \infty$
+  and thus $\norm{u} = 0$, showing that
+  $S$ is indeed a maximal orthonormal subset
+  of $H$.
 \end{proof}
 
 \begin{cor}
-$\ell^2$ and $L^2$ have countable maximal orthonormal
-subset since they are both separable.
+  $\ell^2$ and $L^2$ have countable maximal orthonormal
+  subset since they are both separable.
 \end{cor}
 
 \subsection{Orthonormal bases and Fourier Series}
 
 \begin{defi}[Orthonormal basis]
-Let $H$ be a Hilbert space. An \textbf{orthonormal basis}
-of $H$ is a countable maximal orthonormal subset 
-$\left\{ e_n \right\}_n$ of $H$.
+  Let $H$ be a Hilbert space. An \textbf{orthonormal basis}
+  of $H$ is a countable maximal orthonormal subset
+  $\left\{ e_n \right\}_n$ of $H$.
 \end{defi}
 
 \begin{thm}
-If $\seqinfn{e_n}$ is an orthonormal basis in 
-Hilbert space $H$, then for all $u \in H$, we have 
-\[
-\suminfn \braket{u}{e_n} e_n = u.
-\]
-This is the Fourier-Bessel series.
+  If $\seqinfn{e_n}$ is an orthonormal basis in
+  Hilbert space $H$, then for all $u \in H$, we have
+  \[
+    \suminfn \braket{u}{e_n} e_n = u.
+  \]
+  This is the Fourier-Bessel series.
 
-This tells us we can write each element in $H$ as a 
-infinite linear combination of the orthonormal basis.
+  This tells us we can write each element in $H$ as a
+  infinite linear combination of the orthonormal basis.
 \end{thm}
 
 \begin{proof}
-We first prove the sequence of partial sums 
-$\left\{ \sum_{n=0}^m \braket{u}{e_n} e_n \right\}_m$
-is Cauchy. Let $\epsilon > 0$. By Bessel's inequality, 
-we have 
-\[
-\suminfn \abs{\braket{u}{e_n}}^2 \leq \norm{u}^2 < \infty.
-\]
-Therefore, there exsits $M \in \N$ such that 
-$N \geq M$ implies $\sum_{n=N+1}^\infty \abs{\braket{u}{e_n}}^2 
-< \epsilon^2$. Then for all $m > l \geq M$, we have 
-\[
-\norm{\sum_{n=0}^m \braket{u}{e_n}e_n - 
-\sum_{n=0}^l \braket{u}{e_n}e_n}^2 
-\leq \sum_{n=l+1}^m \abs{\braket{u}{e_n}}^2 
-\leq \sum_{n=l+1}^\infty \abs{\braket{u}{e_n}}^2 
-< \epsilon^2.
-\]
-Therefore, the sequence of partial sum is Cauchy.
-Since $H$ is complete, there exists $\bar{u} \in H$
-such that $\bar{u} = \suminfn \braket{u}{e_n}e_n$. 
-It remains to show that $\bar{u} = u$. 
-By continuity of inner-product, for all $l \in \N$, we 
-have 
-\[
-\begin{aligned}
-  \braket{u - \bar{u}}{e_l} 
-  &= \lim_{m \to \infty} \braket{u - \sum_{n=0}^m 
-  \braket{u}{e_n} e_n}{e_l}  \\
-  &= \lim_{m \to \infty} \left[ \braket{u}{e_l} 
-  - \sum_{n=0}^m \braket{u}{e_n} \braket{e_n}{e_l} \right] \\
-  &= 0.
-\end{aligned}
-\]
-Since $\seqinfn{e_n}$ is maximal, this implies that 
-$u - \bar{u} = 0$ and the proof is complete.
+  We first prove the sequence of partial sums
+  $\left\{ \sum_{n=0}^m \braket{u}{e_n} e_n \right\}_m$
+  is Cauchy. Let $\epsilon > 0$. By Bessel's inequality,
+  we have
+  \[
+    \suminfn \abs{\braket{u}{e_n}}^2 \leq \norm{u}^2 < \infty.
+  \]
+  Therefore, there exsits $M \in \N$ such that
+  $N \geq M$ implies $\sum_{n=N+1}^\infty \abs{\braket{u}{e_n}}^2
+    < \epsilon^2$. Then for all $m > l \geq M$, we have
+  \[
+    \norm{\sum_{n=0}^m \braket{u}{e_n}e_n -
+      \sum_{n=0}^l \braket{u}{e_n}e_n}^2
+    \leq \sum_{n=l+1}^m \abs{\braket{u}{e_n}}^2
+    \leq \sum_{n=l+1}^\infty \abs{\braket{u}{e_n}}^2
+    < \epsilon^2.
+  \]
+  Therefore, the sequence of partial sum is Cauchy.
+  Since $H$ is complete, there exists $\bar{u} \in H$
+  such that $\bar{u} = \suminfn \braket{u}{e_n}e_n$.
+  It remains to show that $\bar{u} = u$.
+  By continuity of inner-product, for all $l \in \N$, we
+  have
+  \[
+    \begin{aligned}
+      \braket{u - \bar{u}}{e_l}
+       & = \lim_{m \to \infty} \braket{u - \sum_{n=0}^m
+                                 \braket{u}{e_n} e_n}{e_l}                                \\
+       & = \lim_{m \to \infty} \left[ \braket{u}{e_l}
+                                 - \sum_{n=0}^m \braket{u}{e_n} \braket{e_n}{e_l} \right] \\
+       & = 0.
+    \end{aligned}
+  \]
+  Since $\seqinfn{e_n}$ is maximal, this implies that
+  $u - \bar{u} = 0$ and the proof is complete.
 \end{proof}
 
 \begin{thm}
-Let $H$ be a Hilbert space.
-If $H$ has an orthonormal basis, then 
-$H$ is separable.
+  Let $H$ be a Hilbert space.
+  If $H$ has an orthonormal basis, then
+  $H$ is separable.
 \end{thm}
 
 \begin{proof}
-Suppose $\seqinfn{e_n}$ is an orthonormal basis for $H$. 
-Then 
-\[
-S = \bigcup_{m \in \N} \left\{ \sum_{n=0}^m q_n e_n : 
-q_n \in \Q + i \Q \right\}
-\]
-is a countable set. 
-Also, by the previous theorem, $S$ is dense in $H$.
+  Suppose $\seqinfn{e_n}$ is an orthonormal basis for $H$.
+  Then
+  \[
+    S = \bigcup_{m \in \N} \left\{ \sum_{n=0}^m q_n e_n :
+    q_n \in \Q + i \Q \right\}
+  \]
+  is a countable set.
+  Also, by the previous theorem, $S$ is dense in $H$.
 \end{proof}
 
 \begin{remark}
-Let $H$ be a Hilbert space. $H$ is separable if and only if 
-$H$ has an orthonormal basis.
+  Let $H$ be a Hilbert space. $H$ is separable if and only if
+  $H$ has an orthonormal basis.
 \end{remark}
 
 \begin{thm}[Parseval's identity]
-If $H$ is a Hilbert space and $\seqinfn{e_n}$ is a
-countable orthonormal basis, then for all $u \in H$, 
-we have 
-\[
-\sum_n \abs{\braket{u}{e_n}}^2 = \norm{u}^2
-\]
+  If $H$ is a Hilbert space and $\seqinfn{e_n}$ is a
+  countable orthonormal basis, then for all $u \in H$,
+  we have
+  \[
+    \sum_n \abs{\braket{u}{e_n}}^2 = \norm{u}^2
+  \]
 \end{thm}
 
 \begin{proof}
-We have $u = \sum_n \braket{u}{e_n} e_n$. This implies that 
-\[
-\begin{aligned}
-\norm{u}^2 
-&= \lim_{m \to \infty} \braket{\sum_{n=0}^m \braket{u}{e_n}
-e_n}{\sum_{l=0}^m \braket{u}{e_l} e_l} \\
-&= \lim_{m \to \infty} \sum_{n=0}^m \sum_{l=0}^m 
-\braket{u}{e_n} \bar{\braket{u}{e_l}} \braket{e_n}{e_l} \\
-&= \lim_{m \to \infty} \sum_{n=0}^m \abs{\braket{u}{e_n}}^2 \\
-&= \suminfn \abs{\braket{u}{e_n}}^2.
-\end{aligned}
-\]
+  We have $u = \sum_n \braket{u}{e_n} e_n$. This implies that
+  \[
+    \begin{aligned}
+      \norm{u}^2
+       & = \lim_{m \to \infty} \braket{\sum_{n=0}^m \braket{u}{e_n}
+                                 e_n}{\sum_{l=0}^m \braket{u}{e_l} e_l} \\
+       & = \lim_{m \to \infty} \sum_{n=0}^m \sum_{l=0}^m
+      \braket{u}{e_n} \bar{\braket{u}{e_l}} \braket{e_n}{e_l}           \\
+       & = \lim_{m \to \infty} \sum_{n=0}^m \abs{\braket{u}{e_n}}^2     \\
+       & = \suminfn \abs{\braket{u}{e_n}}^2.
+    \end{aligned}
+  \]
 \end{proof}
 
 \begin{thm}
-If $H$ is an infinte dimensional separable Hilbert space, 
-then $H$ is isometrically isomorphic to $\ell^2$. 
-That is, there exists bijective boudned linear map 
-$T : H \to \ell^2$ such that 
-for all $u, v \in H$, we have 
-\[
-\norm{T u}_{\ell^2} = \norm{u}_H
-\text{ and }
-\braket{T u}{T v}_{\ell^2} = \braket{u}{v}_H.
-\]
+  If $H$ is an infinte dimensional separable Hilbert space,
+  then $H$ is isometrically isomorphic to $\ell^2$.
+  That is, there exists bijective boudned linear map
+  $T : H \to \ell^2$ such that
+  for all $u, v \in H$, we have
+  \[
+    \norm{T u}_{\ell^2} = \norm{u}_H
+    \text{ and }
+    \braket{T u}{T v}_{\ell^2} = \braket{u}{v}_H.
+  \]
 \end{thm}
 
 \begin{proof}
-Since $H$ is separable, there exists an orthonormal basis
-$\seqinfn{e_n}$.
-For all $u \in H$, the previous theorem gives
-\[
-\norm{u} = \left( \suminfn \abs{\braket{u}{e_n}}^2 \right)^{\frac{1}{2}}.
-\]
-Define $T : H \to \ell^2$ by 
-\[
-T u = \seqinfn{\braket{u}{e_n}} \in \ell^2.
-\]
-It is easy to check that $T$ is the desired isometric 
-isomorphism.
+  Since $H$ is separable, there exists an orthonormal basis
+  $\seqinfn{e_n}$.
+  For all $u \in H$, the previous theorem gives
+  \[
+    \norm{u} = \left( \suminfn \abs{\braket{u}{e_n}}^2 \right)^{\frac{1}{2}}.
+  \]
+  Define $T : H \to \ell^2$ by
+  \[
+    T u = \seqinfn{\braket{u}{e_n}} \in \ell^2.
+  \]
+  It is easy to check that $T$ is the desired isometric
+  isomorphism.
 \end{proof}
 
-Next we use the theories we learned in a more concrete 
+Next we use the theories we learned in a more concrete
 setting --- the Fourier series.
 
 \begin{thm}
-The subset $\left\{ \frac{e^{i n x}}{\sqrt{2 \pi}} \right\}_{n \in \Z}$
-is an orthonormal subset of $L^2([-\pi, \pi])$.
+  The subset $\left\{ \frac{e^{i n x}}{\sqrt{2 \pi}} \right\}_{n \in \Z}$
+  is an orthonormal subset of $L^2([-\pi, \pi])$.
 \end{thm}
 
 \begin{defi}
-Let $f \in L^2([- \pi, \pi])$. Then the \textbf{$n$-th 
-Fourier coefficient} of $f$ is 
-\[
-\hat{f}(n) = \frac{1}{2\pi} \int_{-\pi}^\pi f(t) 
-e^{- i n t} \d t.
-\]
-The \textbf{$N$-th Fourier sum} of $f$ is 
-\[
-S_n f(x) = \sum_{\abs{n} \leq N} \hat{f}(n) e^{inx} 
-= \sum_{\abs{n} \leq N} \braket{f}{\frac{e^{int}}{\sqrt{2\pi}}}
-\frac{e^{inx}}{\sqrt{2\pi}}.
-\]
+  Let $f \in L^2([- \pi, \pi])$. Then the \textbf{$n$-th
+    Fourier coefficient} of $f$ is
+  \[
+    \hat{f}(n) = \frac{1}{2\pi} \int_{-\pi}^\pi f(t)
+    e^{- i n t} \d t.
+  \]
+  The \textbf{$N$-th Fourier sum} of $f$ is
+  \[
+    S_n f(x) = \sum_{\abs{n} \leq N} \hat{f}(n) e^{inx}
+    = \sum_{\abs{n} \leq N} \braket{f}{\frac{e^{int}}{\sqrt{2\pi}}}
+    \frac{e^{inx}}{\sqrt{2\pi}}.
+  \]
 
-The \textbf{Fourier series} of $f$ is the formal 
-series $\sum_{n \in \Z} \hat{f} (n) e^{-inx}$.
+  The \textbf{Fourier series} of $f$ is the formal
+  series $\sum_{n \in \Z} \hat{f} (n) e^{-inx}$.
 \end{defi}
 
-The natural question now is whether we have for 
-all $f \in L^2 ([-\pi, \pi])$, 
+The natural question now is whether we have for
+all $f \in L^2 ([-\pi, \pi])$,
 \[
-f(x) = \sum_{n \in \Z} \hat{f}(n) e^{i n x}.
+  f(x) = \sum_{n \in \Z} \hat{f}(n) e^{i n x}.
 \]
 That is, whether we have the following convergence in $L^2$.
 \[
-\lim_{N \to \infty} \norm{f - S_N f}_2 = 0.
+  \lim_{N \to \infty} \norm{f - S_N f}_2 = 0.
 \]
-This question is then equivalent to whether 
+This question is then equivalent to whether
 $\left\{ \frac{e^{inx}}{\sqrt{2 \pi}} \right\}_{n \in \Z}$
-is maximal in $L^2 ([-\pi, \pi])$. That is, 
+is maximal in $L^2 ([-\pi, \pi])$. That is,
 whether $\hat{f}(n) = 0$ for all $n \in \N$ implies $f = 0$.
 
-The answer to the question is yes, but it is going to take 
+The answer to the question is yes, but it is going to take
 some work. We first do some simple calculation.
 
 \begin{thm}
-For all $f \in L^2([-\pi, \pi])$ and for all $N \in \N$, 
-we have 
-\[
-S_N f(x) = \int_{- \pi}^\pi D_N(x - t) f(t) \d t,
-\]
-where
-\[
-D_N(x) = \begin{cases}
-  \frac{2N + 1}{2 \pi} & (x = 0) \\
-  \frac{\sin \left( N + \frac{1}{2} \right) x}{2 \pi 
-  \sin \frac{x}{2}} & (x \neq 0)
-\end{cases}
-\]
-it the \textbf{Dirichlet kernel}. Figure \ref{dirichlet-kernel}
-shows a plot of $D_N(x)$ on $[-\pi, \pi]$ for $N = 1,2,3$.
-Note that $D_N$ is a smooth function. 
+  For all $f \in L^2([-\pi, \pi])$ and for all $N \in \N$,
+  we have
+  \[
+    S_N f(x) = \int_{- \pi}^\pi D_N(x - t) f(t) \d t,
+  \]
+  where
+  \[
+    D_N(x) = \begin{cases}
+      \frac{2N + 1}{2 \pi}                                & (x = 0) \\
+      \frac{\sin \left( N + \frac{1}{2} \right) x}{2 \pi
+        \sin \frac{x}{2}} & (x \neq 0)
+    \end{cases}
+  \]
+  it the \textbf{Dirichlet kernel}. Figure \ref{dirichlet-kernel}
+  shows a plot of $D_N(x)$ on $[-\pi, \pi]$ for $N = 1,2,3$.
+  Note that $D_N$ is a smooth function.
 \end{thm}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.6\linewidth]{fig/dirichlet-kernel.png}
   \caption{Plot of Dirichlet kernel $D_N(x)$ on $[-\pi, \pi]$
-  for $N = 1,2,3$.}
+    for $N = 1,2,3$.}
   \label{dirichlet-kernel}
 \end{figure}
 
 \begin{proof}
-If $f \in L^2([- \pi, \pi])$, we have 
-\[
-\begin{aligned}
-S_N f(x) 
-&= \sum_{\abs{n} \leq N} \left( \frac{1}{2\pi} 
-\int_{- \pi}^\pi f(t) e^{- i n t} \d t \right) e^{i n x} \\
-&= \int_{-\pi}^\pi f(t) \left( \frac{1}{2\pi} 
-\sum_{\abs{n} \leq N} e^{i n (x - t)} \right) \d t.
-\end{aligned}
-\]
-Let $D_N(x) = \frac{1}{2\pi} 
-\sum_{\abs{n} \leq N} e^{i n (x - t)}$. 
-Then for $x \neq 0$, we have 
-\[
-\begin{aligned}
-  D_N(x) 
-  &= \frac{1}{2\pi} \sum_{n=-N}^{N} 
-  e^{- i n x} \\ 
-  &= \frac{1}{2\pi} e^{- i N x} \sum_{n=0}^{2N}
-  \left( e^{i x} \right)^n \\
-  &= \frac{1}{2\pi} e^{- i N x} 
-  \frac{1 - e^{i (2N+1) x}}{1 - e^{i x}} \\
-  &= \frac{1}{2\pi} \frac{e^{i (N + \frac{1}{2}) x} 
-  - e^{- i (N + \frac{1}{2}) x}}{e^{\frac{ix}{2}} - 
-  e^{-\frac{ix}{2}}} \\
-  &= \frac{1}{2\pi} \frac{2 i \sin (N + \frac{1}{2})x}
-  {2i \sin \frac{x}{2}} \\
-  &= \frac{1}{2\pi} \frac{\sin (N + \frac{1}{2})x}
-  {\sin \frac{x}{2}},
-\end{aligned}
-\]
-as desired. For $x = 0$, we also clearly have 
-$D_N(0) = \frac{(2N+1)}{2\pi}$. The proof is thus 
-complete.
+  If $f \in L^2([- \pi, \pi])$, we have
+  \[
+    \begin{aligned}
+      S_N f(x)
+       & = \sum_{\abs{n} \leq N} \left( \frac{1}{2\pi}
+      \int_{- \pi}^\pi f(t) e^{- i n t} \d t \right) e^{i n x} \\
+       & = \int_{-\pi}^\pi f(t) \left( \frac{1}{2\pi}
+      \sum_{\abs{n} \leq N} e^{i n (x - t)} \right) \d t.
+    \end{aligned}
+  \]
+  Let $D_N(x) = \frac{1}{2\pi}
+    \sum_{\abs{n} \leq N} e^{i n (x - t)}$.
+  Then for $x \neq 0$, we have
+  \[
+    \begin{aligned}
+      D_N(x)
+       & = \frac{1}{2\pi} \sum_{n=-N}^{N}
+      e^{- i n x}                                                             \\
+       & = \frac{1}{2\pi} e^{- i N x} \sum_{n=0}^{2N}
+      \left( e^{i x} \right)^n                                                \\
+       & = \frac{1}{2\pi} e^{- i N x}
+      \frac{1 - e^{i (2N+1) x}}{1 - e^{i x}}                                  \\
+       & = \frac{1}{2\pi} \frac{e^{i (N + \frac{1}{2}) x}
+                            - e^{- i (N + \frac{1}{2}) x}}{e^{\frac{ix}{2}} -
+                            e^{-\frac{ix}{2}}} \\
+       & = \frac{1}{2\pi} \frac{2 i \sin (N + \frac{1}{2})x}
+                          {2i \sin \frac{x}{2}}                   \\
+       & = \frac{1}{2\pi} \frac{\sin (N + \frac{1}{2})x}
+                          {\sin \frac{x}{2}},
+    \end{aligned}
+  \]
+  as desired. For $x = 0$, we also clearly have
+  $D_N(0) = \frac{(2N+1)}{2\pi}$. The proof is thus
+  complete.
 \end{proof}
 
 \begin{defi}
-If $f \in L^2([-\pi, \pi])$, we define the 
-\textbf{$N$-th Cesaro-Fourier mean} of $f$ by 
-\[
-\sigma_N f(x) = \frac{1}{N+1} \sum_{k=0}^N 
-S_k f(x).
-\]
+  If $f \in L^2([-\pi, \pi])$, we define the
+  \textbf{$N$-th Cesaro-Fourier mean} of $f$ by
+  \[
+    \sigma_N f(x) = \frac{1}{N+1} \sum_{k=0}^N
+    S_k f(x).
+  \]
 \end{defi}
 
-The idea behind defining the Cesaro mean is that 
-if the original sequence converges, the Cesaro mean 
-also converge to the same limit. However, Cesaro 
-have even better property --- the Cesaro mean 
-can converge even if the original sequence does not 
+The idea behind defining the Cesaro mean is that
+if the original sequence converges, the Cesaro mean
+also converge to the same limit. However, Cesaro
+have even better property --- the Cesaro mean
+can converge even if the original sequence does not
 converge. Therefore, it has better convergence properties
-and hopefully we can show it converge to $f$ in $L^2$ more 
-easily. The goal now is then to show 
+and hopefully we can show it converge to $f$ in $L^2$ more
+easily. The goal now is then to show
 \[
-\norm{\sigma_N f - f}_2 \to 0 \text{ as $N \to \infty$}.
+  \norm{\sigma_N f - f}_2 \to 0 \text{ as $N \to \infty$}.
 \]
-This would tell us if all Fourier coefficients are zero, 
-then the Cesaro means are zero, and the limit above 
+This would tell us if all Fourier coefficients are zero,
+then the Cesaro means are zero, and the limit above
 would tell us $f$ is zero.
 
-\subsection{Fejer's theorem and convergence 
-of Fourier series}
+\subsection{Fejer's theorem and convergence
+  of Fourier series}
 
 In this section, we will show that if $f \in L^2 ([-\pi, \pi])$,
 then $\norm{\sigma_N f - f}_2 \to 0$ as $N \to \infty$.
 
-First we will rewrite the Cesaro Fourier mean, just like 
-what we did for the partial Fourier sum using the 
+First we will rewrite the Cesaro Fourier mean, just like
+what we did for the partial Fourier sum using the
 Dirichlet kernel.
 \begin{thm}
-For any $f \in L^2([-\pi, \pi])$, we have 
-\[
-\sigma_N f(x) = \int_{-\pi}^\pi K_N(x - t) f(t) \d t,
-\]
-where 
-\[
-K_N(x) = \begin{cases}
-  \frac{N+1}{2\pi} & (x = 0) \\
-  \frac{1}{2\pi (N + 1)} \frac{\sin^2 \frac{N+1}{2}x}
-  {\sin^2 \frac{x}{2}} & (x \neq 0)
-\end{cases}
-\]
-is the Fejer kernel.
-
-Moreover, we have 
-\begin{enumerate}
-  \item $K_N(x) \geq 0$, $K_N(x) = K_N(-x)$, and $K_N(x)$ 
-  is $2\pi$ periodic.
-
-  \item $\int_{-\pi}^\pi K_N(t) \d t = 1$.
-  
-  \item If $\delta \in (0, \pi]$, then for all 
-  $\delta \leq \abs{x} \leq \pi$, we have 
+  For any $f \in L^2([-\pi, \pi])$, we have
   \[
-  \abs{K_N(x)} \leq \frac{1}{2\pi (N+1) \sin^2 \frac{\delta}{2}}.
+    \sigma_N f(x) = \int_{-\pi}^\pi K_N(x - t) f(t) \d t,
   \]
-\end{enumerate}
+  where
+  \[
+    K_N(x) = \begin{cases}
+      \frac{N+1}{2\pi}                                    & (x = 0) \\
+      \frac{1}{2\pi (N + 1)} \frac{\sin^2 \frac{N+1}{2}x}
+                             {\sin^2 \frac{x}{2}} & (x \neq 0)
+    \end{cases}
+  \]
+  is the Fejer kernel.
+
+  Moreover, we have
+  \begin{enumerate}
+    \item $K_N(x) \geq 0$, $K_N(x) = K_N(-x)$, and $K_N(x)$
+          is $2\pi$ periodic.
+
+    \item $\int_{-\pi}^\pi K_N(t) \d t = 1$.
+
+    \item If $\delta \in (0, \pi]$, then for all
+          $\delta \leq \abs{x} \leq \pi$, we have
+          \[
+            \abs{K_N(x)} \leq \frac{1}{2\pi (N+1) \sin^2 \frac{\delta}{2}}.
+          \]
+  \end{enumerate}
 \end{thm}
 
-A plot for $K_N(x)$ is shown in Figure \ref{fejer-kernel}. 
+A plot for $K_N(x)$ is shown in Figure \ref{fejer-kernel}.
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.6\linewidth]{fig/fejer-kernel.png}
   \caption{Plot of Dirichlet kernel $D_N(x)$ on $[-\pi, \pi]$
-  for $N = 1,6,11$.}
+    for $N = 1,6,11$.}
   \label{fejer-kernel}
 \end{figure}
 
-Note that $K_N(x)$ is concentrated at $0$ 
-when $N$ is very large. In this case, we have 
+Note that $K_N(x)$ is concentrated at $0$
+when $N$ is very large. In this case, we have
 \[
-\begin{aligned}
-  \sigma_N f(x) 
-  &= \int_{-\pi}^\pi K_N(x - t) f(t) \d t \\
-  &\approx f(x) \int_{-\pi}^\pi K_N(t) \d t \\
-  &= f(x).
-\end{aligned}
+  \begin{aligned}
+    \sigma_N f(x)
+     & = \int_{-\pi}^\pi K_N(x - t) f(t) \d t   \\
+     & \approx f(x) \int_{-\pi}^\pi K_N(t) \d t \\
+     & = f(x).
+  \end{aligned}
 \]
-This provides a rough intuition behind the Fejer kernel. 
-The fact that $K_N$ is non-negative makes a huge difference 
-compared to the Dirichlet kernel, since it gives much better 
+This provides a rough intuition behind the Fejer kernel.
+The fact that $K_N$ is non-negative makes a huge difference
+compared to the Dirichlet kernel, since it gives much better
 properties.
 
 \begin{proof}
-Recall that 
-\[
-S_k f(x) = \int_{-\pi}^\pi D_k(x - t) f(t) \d t,
-\]
-where 
-\[
-D_k(t) = \begin{cases}
-  \frac{2 N + 1}{2 \pi} & (t = 0), \\
-  \frac{1}{2\pi} \frac{\sin (N + \frac{1}{2})t}{\sin \frac{t}{2}}
-  & (t \neq 0).
-\end{cases}
-\]
-It follows that 
-\[
-\begin{aligned}
-  \sigma_N f(x) 
-  &= \frac{1}{N+1} \sum_{k=0}^N S_k f(x) \\ 
-  &= \int_{-\pi}^\pi \frac{1}{N+1} \sum_{k=0}^N D_k(x - t) f(t) \d t. 
-\end{aligned}
-\]
-Then for $x \neq 0$, we have 
-\[
-\begin{aligned}
-  K_N(x)
-  &= \frac{1}{N+1} \sum_{k=0}^N D_k(x) \\
-  &= \frac{1}{2\pi (N+1)} \frac{1}{2 \sin^2 \frac{x}{2}} 
-  \sum_{k=0}^N 2 \sin \frac{x}{2} \sin \left( k + \frac{1}{2} \right) x \\
-  &= \frac{1}{2\pi (N+1)} \frac{1}{2 \sin^2 \frac{x}{2}} 
-  \sum_{k=0}^N \left[ \cos k x - \cos(k + 1) x \right] \\ 
-  &= \frac{1}{2\pi (N + 1)} \frac{1}{\sin^2 \frac{x}{2}} 
-  \frac{1 - \cos(N + 1)}{2} \\
-  &= \frac{1}{2\pi (N+1)} \frac{\sin^2 \frac{N+1}{2} x}{\sin^2 
-  \frac{x}{2}}.
-\end{aligned}
-\]
+  Recall that
+  \[
+    S_k f(x) = \int_{-\pi}^\pi D_k(x - t) f(t) \d t,
+  \]
+  where
+  \[
+    D_k(t) = \begin{cases}
+      \frac{2 N + 1}{2 \pi} & (t = 0),    \\
+      \frac{1}{2\pi} \frac{\sin (N + \frac{1}{2})t}{\sin \frac{t}{2}}
+                            & (t \neq 0).
+    \end{cases}
+  \]
+  It follows that
+  \[
+    \begin{aligned}
+      \sigma_N f(x)
+       & = \frac{1}{N+1} \sum_{k=0}^N S_k f(x)                              \\
+       & = \int_{-\pi}^\pi \frac{1}{N+1} \sum_{k=0}^N D_k(x - t) f(t) \d t.
+    \end{aligned}
+  \]
+  Then for $x \neq 0$, we have
+  \[
+    \begin{aligned}
+      K_N(x)
+       & = \frac{1}{N+1} \sum_{k=0}^N D_k(x)                                \\
+       & = \frac{1}{2\pi (N+1)} \frac{1}{2 \sin^2 \frac{x}{2}}
+      \sum_{k=0}^N 2 \sin \frac{x}{2} \sin \left( k + \frac{1}{2} \right) x \\
+       & = \frac{1}{2\pi (N+1)} \frac{1}{2 \sin^2 \frac{x}{2}}
+      \sum_{k=0}^N \left[ \cos k x - \cos(k + 1) x \right]                  \\
+       & = \frac{1}{2\pi (N + 1)} \frac{1}{\sin^2 \frac{x}{2}}
+      \frac{1 - \cos(N + 1)}{2}                                             \\
+       & = \frac{1}{2\pi (N+1)} \frac{\sin^2 \frac{N+1}{2} x}{\sin^2
+                                  \frac{x}{2}}.
+    \end{aligned}
+  \]
 
-It follows immediately that $K_N(x) \geq 0$, $K_N(x)$ 
-is even and $2\pi$ periodic. 
+  It follows immediately that $K_N(x) \geq 0$, $K_N(x)$
+  is even and $2\pi$ periodic.
 
-For property 2, 
-note that for all $k$,
-\[
-\int_{-\pi}^\pi D_k(t) \d t 
-= \int_{-\pi}^\pi \sum_{n=-k}^k e^{i n t} \d t
-= 1.
-\]
-Then, 
-\[
-\int_{-\pi}^\pi K_N(t) \d t 
-= \frac{1}{N+1} \sum_{k=0}^N \int_{-\pi}^\pi D_k(t) \d t 
-= 1,
-\]
-as desired.
+  For property 2,
+  note that for all $k$,
+  \[
+    \int_{-\pi}^\pi D_k(t) \d t
+    = \int_{-\pi}^\pi \sum_{n=-k}^k e^{i n t} \d t
+    = 1.
+  \]
+  Then,
+  \[
+    \int_{-\pi}^\pi K_N(t) \d t
+    = \frac{1}{N+1} \sum_{k=0}^N \int_{-\pi}^\pi D_k(t) \d t
+    = 1,
+  \]
+  as desired.
 
-For property 3, let $\delta \in (0, \pi]$. Note that 
-$\sin^2 \frac{x}{2}$ is even and increasing on 
-$[0, \pi]$. It follows that $\delta \leq \abs{x} \leq \pi$
-implies $\sin^2 \frac{x}{2} \geq \sin^2 \frac{\delta}{2}$. 
-Therefore,
-\[
-K_N(x) \leq \frac{1}{2\pi (N+1)} \frac{\sin^2 \frac{N+1}{2}x}
-{\sin^2 \frac{\delta}{2}} 
-\leq \frac{1}{2 \pi (N+1) \sin^2 \frac{\delta}{2}}.
-\]
+  For property 3, let $\delta \in (0, \pi]$. Note that
+  $\sin^2 \frac{x}{2}$ is even and increasing on
+  $[0, \pi]$. It follows that $\delta \leq \abs{x} \leq \pi$
+  implies $\sin^2 \frac{x}{2} \geq \sin^2 \frac{\delta}{2}$.
+  Therefore,
+  \[
+    K_N(x) \leq \frac{1}{2\pi (N+1)} \frac{\sin^2 \frac{N+1}{2}x}
+    {\sin^2 \frac{\delta}{2}}
+    \leq \frac{1}{2 \pi (N+1) \sin^2 \frac{\delta}{2}}.
+  \]
 \end{proof}
 
-Since the continuous functions that vanishes at both end 
-points is dense in $L^2([-\pi, \pi])$, it make sense 
+Since the continuous functions that vanishes at both end
+points is dense in $L^2([-\pi, \pi])$, it make sense
 to first prove the theorem for continuous functions.
 We have the following theorem by Fejer.
 
 \begin{thm}[Fejer]
   If $f \in C([-\pi, \pi])$ is $2\pi$-periodic,
-  $f(\pi) = f(-\pi)$, then 
+  $f(\pi) = f(-\pi)$, then
   $\sigma_N f \to f$ uniformly on $[-\pi, \pi]$.
 \end{thm}
 
 \begin{proof}
-First we extennd $f$ by periodicity to all of $\R$.
-Then $f \in C(\R)$, $2\pi$-periodic. This implies that 
-$f$ is uniformly continuous and bounded. 
+  First we extennd $f$ by periodicity to all of $\R$.
+  Then $f \in C(\R)$, $2\pi$-periodic. This implies that
+  $f$ is uniformly continuous and bounded.
 
-Let $\epsilon > 0$. Since $f$ is uniformly continuous, 
-there exists $\delta > 0$ such that $\abs{y - z} < \delta$ 
-implies that $\abs{f(y) - f(z)} < \frac{\epsilon}{2}$. 
-Choose $M \in \N$ such that
-\[
-\frac{2 \norm{f}_\infty}{(N+1) \sin^2 \frac{\delta}{2}} 
-< \frac{\epsilon}{2}.
-\]
-for all $N \geq M$. 
-Also, since $f$ and $K_N$ are both $2\pi$-periodic,
-we have 
-\[
-\begin{aligned}
-  \sigma_N f(x) 
-  = \int_{-\pi}^\pi K_N(x - t) f(t) \d t 
-  = \int_{x - \pi}^{x + \pi} K_N(\tau) f(x - \tau) \d \tau 
-  = \int_{-\pi}^{\pi} K_N(\tau) f(x - \tau) \d \tau.
-\end{aligned}
-\]
-Then for all $N \geq M$ and for all $x \in [-\pi, \pi]$,
-we have 
-\[
-\begin{aligned}
-\abs{\sigma_N f(x) - f(x)} 
-&= \abs{\int_{-\pi}^\pi K_N(t) f(x-t) \d t - 
-\int_\pi^\pi K_N(t) f(x) \d t} \\
-&\leq \int_{-\pi}^\pi K_N(t) \abs{f(x - t) - f(x)} \d t \\
-&\leq \int_{\abs{t} < \delta} K_N(t) \abs{f(x - t) - f(x)} \d t
-+ \int_{\delta \leq \abs{t} \leq \pi} K_N(t) \abs{f(x - t) - f(x)} \d t \\ 
-&\leq \frac{\epsilon}{2} \int_{\abs{t} < \delta} 
-K_N(t) \d t + 2 \norm{f}_\infty \int_{\delta \leq \abs{t} \leq \pi}
-\frac{1}{2\pi (N+1) \sin^2 \frac{\delta}{2}} \d t \\
-&\leq \frac{\epsilon}{2} + \frac{2 \norm{f}_\infty}{(N+1) 
-\sin^2 \frac{\delta}{2}} \\
-&\leq \epsilon.
-\end{aligned}
-\]
+  Let $\epsilon > 0$. Since $f$ is uniformly continuous,
+  there exists $\delta > 0$ such that $\abs{y - z} < \delta$
+  implies that $\abs{f(y) - f(z)} < \frac{\epsilon}{2}$.
+  Choose $M \in \N$ such that
+  \[
+    \frac{2 \norm{f}_\infty}{(N+1) \sin^2 \frac{\delta}{2}}
+    < \frac{\epsilon}{2}.
+  \]
+  for all $N \geq M$.
+  Also, since $f$ and $K_N$ are both $2\pi$-periodic,
+  we have
+  \[
+    \begin{aligned}
+      \sigma_N f(x)
+      = \int_{-\pi}^\pi K_N(x - t) f(t) \d t
+      = \int_{x - \pi}^{x + \pi} K_N(\tau) f(x - \tau) \d \tau
+      = \int_{-\pi}^{\pi} K_N(\tau) f(x - \tau) \d \tau.
+    \end{aligned}
+  \]
+  Then for all $N \geq M$ and for all $x \in [-\pi, \pi]$,
+  we have
+  \[
+    \begin{aligned}
+      \abs{\sigma_N f(x) - f(x)}
+       & = \abs{\int_{-\pi}^\pi K_N(t) f(x-t) \d t -
+             \int_\pi^\pi K_N(t) f(x) \d t}                          \\
+       & \leq \int_{-\pi}^\pi K_N(t) \abs{f(x - t) - f(x)} \d t               \\
+       & \leq \int_{\abs{t} < \delta} K_N(t) \abs{f(x - t) - f(x)} \d t
+      + \int_{\delta \leq \abs{t} \leq \pi} K_N(t) \abs{f(x - t) - f(x)} \d t \\
+       & \leq \frac{\epsilon}{2} \int_{\abs{t} < \delta}
+      K_N(t) \d t + 2 \norm{f}_\infty \int_{\delta \leq \abs{t} \leq \pi}
+      \frac{1}{2\pi (N+1) \sin^2 \frac{\delta}{2}} \d t                       \\
+       & \leq \frac{\epsilon}{2} + \frac{2 \norm{f}_\infty}{(N+1)
+                                     \sin^2 \frac{\delta}{2}}             \\
+       & \leq \epsilon.
+    \end{aligned}
+  \]
 \end{proof}
 
 \begin{remark}
-The same proof can be modified if instead of $K_N(x) \geq 0$,
-we have
-\[
-\sup_{N \in \N} \int_{-\pi}^\pi \abs{K_N(x)} \d x < \infty.
-\]
-Note that 
-\[
-\int_{-\pi}^\pi \abs{D_N(x)} \d x \sim \log N,
-\]
-so we cannot reproduct the proof using Dirichlet kernel.
+  The same proof can be modified if instead of $K_N(x) \geq 0$,
+  we have
+  \[
+    \sup_{N \in \N} \int_{-\pi}^\pi \abs{K_N(x)} \d x < \infty.
+  \]
+  Note that
+  \[
+    \int_{-\pi}^\pi \abs{D_N(x)} \d x \sim \log N,
+  \]
+  so we cannot reproduct the proof using Dirichlet kernel.
 \end{remark}
 
-We only need some last bit of information to conclude 
+We only need some last bit of information to conclude
 the answer of our main question.
 
 \begin{thm}
-For all $f \in L^2([-\pi, \pi])$, we have 
-$\norm{\sigma_N f}_2 \leq \norm{f}_2$.
+  For all $f \in L^2([-\pi, \pi])$, we have
+  $\norm{\sigma_N f}_2 \leq \norm{f}_2$.
 \end{thm}
 
 \begin{proof}
-Suppose first the $f \in C([-\pi, \pi])$ and $2\pi$-periodic.
-Then $\sigma_N f(x) = \int_{-\pi}^{\pi} K_N(t) f(x - t) \d t$.
-It follows that 
-\[
-\begin{aligned}
-  \int_{-\pi}^\pi \abs{\sigma_N f(x)}^2 \d x
-  &= \int_{-\pi}^\pi \int_{-\pi}^{\pi}
-  \int_{-\pi}^{\pi} f(x - s) \bar{f(x - t)} K_N(s) K_N(t) 
-  \d s \d t \d x \\
-  &= \int_{-\pi}^{\pi} \int_{-\pi}^{\pi} K_N(s) 
-  K_N(t) \left[ \int_{-\pi}^{\pi} f(x - s) 
-  \bar{f(x - t)} \d x \right] \d s \d t \\
-  &\leq \int_{-\pi}^{\pi} \int_{-\pi}^{\pi} 
-  K_N(s) K_N(t) \norm{f(\cdot - s)}_2 \norm{f(\cdot - t)}_2 
-  \d s \d t \\
-  &\leq \norm{f}_2^2 \int_{-\pi}^{\pi} \int_{-\pi}^{\pi} 
-  K_N(s) K_N(t) \d s \d t \\
-  &= \norm{f}_2,
-\end{aligned}
-\]
-where we used Cauchy-Schwarz inequality. 
-This implies that $\norm{\sigma_N f}_2 \leq \norm{f}_2$.
+  Suppose first the $f \in C([-\pi, \pi])$ and $2\pi$-periodic.
+  Then $\sigma_N f(x) = \int_{-\pi}^{\pi} K_N(t) f(x - t) \d t$.
+  It follows that
+  \[
+    \begin{aligned}
+      \int_{-\pi}^\pi \abs{\sigma_N f(x)}^2 \d x
+       & = \int_{-\pi}^\pi \int_{-\pi}^{\pi}
+      \int_{-\pi}^{\pi} f(x - s) \bar{f(x - t)} K_N(s) K_N(t)
+      \d s \d t \d x                                           \\
+       & = \int_{-\pi}^{\pi} \int_{-\pi}^{\pi} K_N(s)
+      K_N(t) \left[ \int_{-\pi}^{\pi} f(x - s)
+               \bar{f(x - t)} \d x \right] \d s \d t           \\
+       & \leq \int_{-\pi}^{\pi} \int_{-\pi}^{\pi}
+      K_N(s) K_N(t) \norm{f(\cdot - s)}_2 \norm{f(\cdot - t)}_2
+      \d s \d t                                                \\
+       & \leq \norm{f}_2^2 \int_{-\pi}^{\pi} \int_{-\pi}^{\pi}
+      K_N(s) K_N(t) \d s \d t                                  \\
+       & = \norm{f}_2,
+    \end{aligned}
+  \]
+  where we used Cauchy-Schwarz inequality.
+  This implies that $\norm{\sigma_N f}_2 \leq \norm{f}_2$.
 
-Now for the general case, by density there exists 
-sequence $\seqinfn{f_n}$ of $2\pi$-periodic continuous 
-function that $\norm{f_n - f}_2 \to 0$. Then, 
-$\norm{\sigma_N f_n - \sigma_N f} \to 0$
-as $n \to \infty$. Therefore, 
-\[
-\norm{\sigma_N f}_2 = \lim_{n \to \infty} \norm{\sigma_N f_n}_2 
-\leq \lim_{n \to \infty} \norm{f_n}_2 = \norm{f}_2.
-\]
+  Now for the general case, by density there exists
+  sequence $\seqinfn{f_n}$ of $2\pi$-periodic continuous
+  function that $\norm{f_n - f}_2 \to 0$. Then,
+  $\norm{\sigma_N f_n - \sigma_N f} \to 0$
+  as $n \to \infty$. Therefore,
+  \[
+    \norm{\sigma_N f}_2 = \lim_{n \to \infty} \norm{\sigma_N f_n}_2
+    \leq \lim_{n \to \infty} \norm{f_n}_2 = \norm{f}_2.
+  \]
 \end{proof}
 
 \begin{thm}
-For all $f \in L^2([-\pi, \pi])$, we have 
-$\norm{\sigma_N f - f}_2 \to 0$ as $N \to \infty$. 
-In particular, as a immediate corollary, 
-if $\hat{f}(n) = 0$ for all $n \in \Z$, 
-then $f = 0$.
+  For all $f \in L^2([-\pi, \pi])$, we have
+  $\norm{\sigma_N f - f}_2 \to 0$ as $N \to \infty$.
+  In particular, as a immediate corollary,
+  if $\hat{f}(n) = 0$ for all $n \in \Z$,
+  then $f = 0$.
 \end{thm}
 
 \begin{proof}
-Let $f \in L^2([-\pi, \pi])$ and $\epsilon > 0$. 
-Again by density there exists $g \in C([-\pi, \pi])$
-$2\pi$-periodic such that $\norm{f - g}_2 \leq
-\frac{\epsilon}{3}$. Since $\sigma_N g \to g$ uniformly
-on $[-\pi, \pi]$, there exists $M \in \N$ such that 
-for all $N \geq M$ and all $x \in [-\pi, \pi]$, we have 
-\[
-\abs{\sigma_N g(x) - g(x)} < \frac{\epsilon}{3 \sqrt{2 \pi}}.
-\]
-Then for all $N \geq M$, 
-\[
-\begin{aligned}
-\norm{\sigma_N f - f}_2 
-&\leq \norm{\sigma_N (f - g)}_2 + \norm{\sigma_N g - g} 
-+ \norm{g - f}_2 \\
-&\leq 2 \norm{f - g}_2 + \left( \int_{-\pi}^{\pi} \abs{\sigma_N g(x)
-- g(x)}^2 \d x \right)^{\frac{1}{2}} \\
-&\leq \epsilon.
-\end{aligned}
-\]
+  Let $f \in L^2([-\pi, \pi])$ and $\epsilon > 0$.
+  Again by density there exists $g \in C([-\pi, \pi])$
+  $2\pi$-periodic such that $\norm{f - g}_2 \leq
+    \frac{\epsilon}{3}$. Since $\sigma_N g \to g$ uniformly
+  on $[-\pi, \pi]$, there exists $M \in \N$ such that
+  for all $N \geq M$ and all $x \in [-\pi, \pi]$, we have
+  \[
+    \abs{\sigma_N g(x) - g(x)} < \frac{\epsilon}{3 \sqrt{2 \pi}}.
+  \]
+  Then for all $N \geq M$,
+  \[
+    \begin{aligned}
+      \norm{\sigma_N f - f}_2
+       & \leq \norm{\sigma_N (f - g)}_2 + \norm{\sigma_N g - g}
+      + \norm{g - f}_2                                                                           \\
+       & \leq 2 \norm{f - g}_2 + \left( \int_{-\pi}^{\pi} \abs{\sigma_N g(x)
+                                                            - g(x)}^2 \d x \right)^{\frac{1}{2}} \\
+       & \leq \epsilon.
+    \end{aligned}
+  \]
 \end{proof}
 
 \begin{remark}
-We have shown that for all $f \in L^2([-\pi, \pi])$,
-$\norm{S_N f - f}_2 \to 0$. This does not say $S_N f$ 
-converge to $f$ almost everywhere. However, by a theorem 
-by Carleson, for all $f \in L^2([-\pi, \pi])$, 
-we actually do have $S_N f \to f$ almost everywhere.
-Also, for all $1 < p < \infty$, $\norm{S_N f - f}_p \to 0$.
-This is not true for $p = 1$ or $p = \infty$.
+  We have shown that for all $f \in L^2([-\pi, \pi])$,
+  $\norm{S_N f - f}_2 \to 0$. This does not say $S_N f$
+  converge to $f$ almost everywhere. However, by a theorem
+  by Carleson, for all $f \in L^2([-\pi, \pi])$,
+  we actually do have $S_N f \to f$ almost everywhere.
+  Also, for all $1 < p < \infty$, $\norm{S_N f - f}_p \to 0$.
+  This is not true for $p = 1$ or $p = \infty$.
 \end{remark}
 
-\subsection{Minimizers, orthogonal complements, and 
-Riesz representation theorem}
+\subsection{Minimizers, orthogonal complements, and
+  Riesz representation theorem}
 
 \subsubsection*{Length minimizers}
 
 \begin{thm}
-Suppose $H$ a Hilbert space and $C \subset H$ is a subset 
-such that 
-\begin{enumerate}
-  \item $C \neq \emptyset$. 
-  \item $C$ is closed. 
-  \item $C$ is convex. That is, if $v_1, v_2 \in C$ 
-  and $t \in [0, 1]$, then $tv_1 + (1 - t)v_2 \in C$.
-\end{enumerate}
-Then, there exists a unique $v \in C$ such that 
-$\norm{v} = \inf_{u \in C} \norm{u}$.
+  Suppose $H$ a Hilbert space and $C \subset H$ is a subset
+  such that
+  \begin{enumerate}
+    \item $C \neq \emptyset$.
+    \item $C$ is closed.
+    \item $C$ is convex. That is, if $v_1, v_2 \in C$
+          and $t \in [0, 1]$, then $tv_1 + (1 - t)v_2 \in C$.
+  \end{enumerate}
+  Then, there exists a unique $v \in C$ such that
+  $\norm{v} = \inf_{u \in C} \norm{u}$.
 \end{thm}
 
 \begin{proof}
-Let $d = \inf_{u \in C} \norm{u}$, which we know exists.
-Then there exists sequence $\seqinfn{u_n} \subset C$ such 
-that $\norm{u_n} \to d$. 
+  Let $d = \inf_{u \in C} \norm{u}$, which we know exists.
+  Then there exists sequence $\seqinfn{u_n} \subset C$ such
+  that $\norm{u_n} \to d$.
 
-Claim that $\seqinfn{u_n}$ is 
-Cauchy. Let $\epsilon > 0$ be given. There exists 
-$N \in \N$ such that $n \geq N$ implies 
-\[
-2 \norm{u_n}^2 
-< 2 d^2 + \frac{\epsilon^2}{2}.
-\]
-It follows that for 
-all $n, m \geq N$, we have 
-\[
-\norm{u_n - u_m}^2 = 2 \norm{u_n}^2 + 2 \norm{u_m}^2 
-- 4 \norm{\frac{u_n + u_m}{2}}^2,
-\]
-by the Parallelogram law. Note that $\frac{u_n + u_m}{2} \in C$.
-Therefore, 
-\[
-\norm{u_n - u_m}^2 \leq 2 d^2 + \frac{\epsilon^2}{2} 
-+ 2 d^2 + \frac{\epsilon^2}{2} - 4d^2 = \epsilon^2.
-\]
-This shows that $\seqinfn{u_n}$ is Cauchy. 
+  Claim that $\seqinfn{u_n}$ is
+  Cauchy. Let $\epsilon > 0$ be given. There exists
+  $N \in \N$ such that $n \geq N$ implies
+  \[
+    2 \norm{u_n}^2
+    < 2 d^2 + \frac{\epsilon^2}{2}.
+  \]
+  It follows that for
+  all $n, m \geq N$, we have
+  \[
+    \norm{u_n - u_m}^2 = 2 \norm{u_n}^2 + 2 \norm{u_m}^2
+    - 4 \norm{\frac{u_n + u_m}{2}}^2,
+  \]
+  by the Parallelogram law. Note that $\frac{u_n + u_m}{2} \in C$.
+  Therefore,
+  \[
+    \norm{u_n - u_m}^2 \leq 2 d^2 + \frac{\epsilon^2}{2}
+    + 2 d^2 + \frac{\epsilon^2}{2} - 4d^2 = \epsilon^2.
+  \]
+  This shows that $\seqinfn{u_n}$ is Cauchy.
 
-Since $H$ is Hilbert space, there exists $v \in H$
-such that $u_n \to v$. Since $C$ is closed, $v \in C$. 
-It is also clear that $\norm{v} = d$. To show this 
-element is unique, suppose $v, \bar{v} \in C$ 
-and $\norm{v} = \norm{\bar{v}} = d$. Then, 
-\[
-\begin{aligned}
-  \norm{v - \bar{v}}^2 
-  = 2 \norm{v}^2 + 2 \norm{\bar{v}}^2 
-  - 4 \norm{\frac{v + \bar{v}}{2}} 
-  \leq 4d^2 - 4d^2 
-  = 0.
-\end{aligned}
-\]
-This implies that $v = \bar{v}$ and the proof 
-is complete.
+  Since $H$ is Hilbert space, there exists $v \in H$
+  such that $u_n \to v$. Since $C$ is closed, $v \in C$.
+  It is also clear that $\norm{v} = d$. To show this
+  element is unique, suppose $v, \bar{v} \in C$
+  and $\norm{v} = \norm{\bar{v}} = d$. Then,
+  \[
+    \begin{aligned}
+      \norm{v - \bar{v}}^2
+      = 2 \norm{v}^2 + 2 \norm{\bar{v}}^2
+      - 4 \norm{\frac{v + \bar{v}}{2}}
+      \leq 4d^2 - 4d^2
+      = 0.
+    \end{aligned}
+  \]
+  This implies that $v = \bar{v}$ and the proof
+  is complete.
 \end{proof}
 
 \subsubsection*{Orthocomplements}
 \begin{thm}
-If $H$ is a Hilbert space, $W \subset H$ is a subspace,
-then 
-\[
-W^\perp = \left\{ u \in H : \braket{u}{w} = 0 
-\text{ for all } w \in V \right\}
-\]
-is a closed linear subspace of $H$. 
+  If $H$ is a Hilbert space, $W \subset H$ is a subspace,
+  then
+  \[
+    W^\perp = \left\{ u \in H : \braket{u}{w} = 0
+    \text{ for all } w \in V \right\}
+  \]
+  is a closed linear subspace of $H$.
 
-Moreover, if $W$ is closed, then 
-\[
-H = W \oplus W^\perp.
-\]
-That is, for all $u \in H$, there exists
-unique $w \in W$ and $w^\perp \in W^\perp$ such that 
-$u = w + w^\perp$.
+  Moreover, if $W$ is closed, then
+  \[
+    H = W \oplus W^\perp.
+  \]
+  That is, for all $u \in H$, there exists
+  unique $w \in W$ and $w^\perp \in W^\perp$ such that
+  $u = w + w^\perp$.
 \end{thm}
 
 \begin{proof}
-It is easy to show that $W^\perp$ is a subspace of $H$,
-and $W \cap W^\perp = \left\{ 0 \right\}$. 
-To show $W^\perp$ is closed, let $\seqinfn{u_n}$
-be a sequence in $W^\perp$ and $u \in H$ such that 
-$u_n \to u$. We need to show that $u \in W^\perp$. 
-Let $w \in W$, then 
-\[
-\braket{u}{w} = \lim_{n \to \infty} \braket{u_n}{w} 
-= 0.
-\]
-Therefore, $u \in W^\perp$ and $W^\perp$ is a closed 
-linear subspace of $H$.
+  It is easy to show that $W^\perp$ is a subspace of $H$,
+  and $W \cap W^\perp = \left\{ 0 \right\}$.
+  To show $W^\perp$ is closed, let $\seqinfn{u_n}$
+  be a sequence in $W^\perp$ and $u \in H$ such that
+  $u_n \to u$. We need to show that $u \in W^\perp$.
+  Let $w \in W$, then
+  \[
+    \braket{u}{w} = \lim_{n \to \infty} \braket{u_n}{w}
+    = 0.
+  \]
+  Therefore, $u \in W^\perp$ and $W^\perp$ is a closed
+  linear subspace of $H$.
 
-Now suppose $W$ is closed. If $W = H$, then 
-$W^\perp = \left\{ 0 \right\}$ and $H = W \oplus W^\perp$. 
-Now assume that $W \neq H$. Let $u \in H \setminus W$
-and define
-\[
-C = u + W = \left\{ u + w : w \in W \right\}.
-\]
-Note that $u \in C$ so $C \neq \emptyset$. Also, 
-$C$ is convex, since if $u + w_1 \in C$,
-$u + w_2 \in C$, and $t \in [0, 1]$, then 
-\[
-t(u + w_1) + (1 - t)(u + w_2) = 
-u + (t w_1 + (1-t) w_2) \in u + W.
-\]
-Claim that $C$ is also closed. Suppose $\seqinfn{u + w_n}
-\subset C$ is such that $u + w_n \to v$ for some 
-$v \in H$. We want to show that $v \in C$. This implies that 
-$w_n \to v - u$ and since $W$ is closed, $v - u \in W$. 
-It follows that $v = u + (v - u)$ so $v \in C$. 
+  Now suppose $W$ is closed. If $W = H$, then
+  $W^\perp = \left\{ 0 \right\}$ and $H = W \oplus W^\perp$.
+  Now assume that $W \neq H$. Let $u \in H \setminus W$
+  and define
+  \[
+    C = u + W = \left\{ u + w : w \in W \right\}.
+  \]
+  Note that $u \in C$ so $C \neq \emptyset$. Also,
+  $C$ is convex, since if $u + w_1 \in C$,
+  $u + w_2 \in C$, and $t \in [0, 1]$, then
+  \[
+    t(u + w_1) + (1 - t)(u + w_2) =
+    u + (t w_1 + (1-t) w_2) \in u + W.
+  \]
+  Claim that $C$ is also closed. Suppose $\seqinfn{u + w_n}
+    \subset C$ is such that $u + w_n \to v$ for some
+  $v \in H$. We want to show that $v \in C$. This implies that
+  $w_n \to v - u$ and since $W$ is closed, $v - u \in W$.
+  It follows that $v = u + (v - u)$ so $v \in C$.
 
-Since $C$ is nonempty, closed, and convex, there exists 
-unique element $v \in C$ such that 
-\[
-  \norm{v} = \inf_{w \in W} \norm{u + w}.
-\]
-Note that $v \in C$ so $u - v \in W$. Also, 
-$u = (u - v) + v$. Claim that $v \in W^\perp$.
-Let $w \in W$ and 
-\[
-  f(t) = \norm{v + t w}^2 = 
-  \norm{v}^2 + t^2 \norm{w}^2 + 2 t \Re \braket{v}{w}.
-\]
-Then $f(t)$ has a minimum at $t = 0$, which implies 
-$f'(0) = \braket{v}{w} = 0$. Repeat the previous 
-argument with $iw$ in place of $w$ to obtain 
-$\Re \braket{v}{iw} = \Im \braket{v}{w} = 0$. 
-This shows that $w \in W^\perp$ and thus
-$H = W + W^\perp$.
+  Since $C$ is nonempty, closed, and convex, there exists
+  unique element $v \in C$ such that
+  \[
+    \norm{v} = \inf_{w \in W} \norm{u + w}.
+  \]
+  Note that $v \in C$ so $u - v \in W$. Also,
+  $u = (u - v) + v$. Claim that $v \in W^\perp$.
+  Let $w \in W$ and
+  \[
+    f(t) = \norm{v + t w}^2 =
+    \norm{v}^2 + t^2 \norm{w}^2 + 2 t \Re \braket{v}{w}.
+  \]
+  Then $f(t)$ has a minimum at $t = 0$, which implies
+  $f'(0) = \braket{v}{w} = 0$. Repeat the previous
+  argument with $iw$ in place of $w$ to obtain
+  $\Re \braket{v}{iw} = \Im \braket{v}{w} = 0$.
+  This shows that $w \in W^\perp$ and thus
+  $H = W + W^\perp$.
 
-To show the decomposition is unique, suppose 
-$u = w_1 + w_1^\perp = w_2 + w_2^\perp$. This implies 
-that 
-\[
-  w_2 - w_1 = w_1^\perp - w_2^\perp \in W \cap W^\perp.
-\]
-However, $W \cap W^\perp = \left\{ 0 \right\}$, so 
-$w_1 = w_2$ and $w_1^\perp = w_2^\perp$.
+  To show the decomposition is unique, suppose
+  $u = w_1 + w_1^\perp = w_2 + w_2^\perp$. This implies
+  that
+  \[
+    w_2 - w_1 = w_1^\perp - w_2^\perp \in W \cap W^\perp.
+  \]
+  However, $W \cap W^\perp = \left\{ 0 \right\}$, so
+  $w_1 = w_2$ and $w_1^\perp = w_2^\perp$.
 \end{proof}
 
 \begin{thm}
-If $W \subset H$ is a subspace, then 
-\[
-\bar{W} = \left( W^\perp \right)^\perp,
-\]
-where $\bar{W}$ is the closure of $W$.
+  If $W \subset H$ is a subspace, then
+  \[
+    \bar{W} = \left( W^\perp \right)^\perp,
+  \]
+  where $\bar{W}$ is the closure of $W$.
 \end{thm}
 
 \begin{proof}
-Homework.
+  Homework.
 \end{proof}
 
 \begin{defi}[Projection]
-A bounded linear operator $P : H \to H$ is a \textbf{projection} 
-if $P^2 = P$.
+  A bounded linear operator $P : H \to H$ is a \textbf{projection}
+  if $P^2 = P$.
 \end{defi}
 
 \begin{thm}
-Let $H$ be a Hilbert space, $W \subset H$ be a closed 
-subspace. Then by the previous theorem we have $H = W 
-\oplus W^\perp$. Define $\Pi_W : H \to H$ in the following 
-way: for $v = w + w^\perp$, define 
-\[
-\Pi_W (v) = w.
-\]
-Then $\Pi_W$ is a projection.
+  Let $H$ be a Hilbert space, $W \subset H$ be a closed
+  subspace. Then by the previous theorem we have $H = W
+    \oplus W^\perp$. Define $\Pi_W : H \to H$ in the following
+  way: for $v = w + w^\perp$, define
+  \[
+    \Pi_W (v) = w.
+  \]
+  Then $\Pi_W$ is a projection.
 \end{thm}
 
 \begin{proof}
-It is easy to veirfy that $\Pi_W$ is linear
-and $\Pi_W^2 = \Pi_W$.
-Claim $\Pi_W$ is bounded. Suppose $v = w + w^\perp$. 
-It follows that
-\[
-\norm{v}^2 = \norm{w + w^\perp}^2 
-= \norm{w}^2 + \norm{w^\perp}^2 \geq \norm{w}^2.
-\] 
-This shows that $\norm{\Pi_W(v)} \leq \norm{v}$ 
-so $\Pi_W$ is a bounded linear operator.  
+  It is easy to veirfy that $\Pi_W$ is linear
+  and $\Pi_W^2 = \Pi_W$.
+  Claim $\Pi_W$ is bounded. Suppose $v = w + w^\perp$.
+  It follows that
+  \[
+    \norm{v}^2 = \norm{w + w^\perp}^2
+    = \norm{w}^2 + \norm{w^\perp}^2 \geq \norm{w}^2.
+  \]
+  This shows that $\norm{\Pi_W(v)} \leq \norm{v}$
+  so $\Pi_W$ is a bounded linear operator.
 \end{proof}
 
 \subsubsection*{Riesz representation theorem}
 
 \begin{thm}[Riesz representation theorem]
-If $H$ is a Hilbert space, then for all $f \in H'$, 
-there exists a unique $v \in H$ such that 
-\[
-f(u) = \braket{u}{v} \text{ for all $u \in H$}.
-\]
+  If $H$ is a Hilbert space, then for all $f \in H'$,
+  there exists a unique $v \in H$ such that
+  \[
+    f(u) = \braket{u}{v} \text{ for all $u \in H$}.
+  \]
 \end{thm}
 
 \begin{proof}
-For uniqueness, suppose $f(u) = \braket{u}{v} 
-= \braket{u}{\tilde{v}}$. This implies that 
-$\braket{u}{v - \tilde{v}} = 0$ for all $u \in H$.
-Setting $u = v - \tilde{v}$ gives $v = \tilde{v}$. 
+  For uniqueness, suppose $f(u) = \braket{u}{v}
+    = \braket{u}{\tilde{v}}$. This implies that
+  $\braket{u}{v - \tilde{v}} = 0$ for all $u \in H$.
+  Setting $u = v - \tilde{v}$ gives $v = \tilde{v}$.
 
-Now we show existence. If $f = 0$, let $v = 0$.
-Suppose now $f \neq 0$. Then there exists 
-$u_1 \in H$ such that $f(u_1) \neq 0$. 
-Now let $u_0 = \frac{u_1}{f(u_1)}$, then $f(u_0) = 1$. 
-Let 
-\[
-C = \left\{ u \in H: f(u) = 1 \right\} = f^{-1}
-(\left\{ 1 \right\}).
-\]
-Then $C$ is a nonempty and closed subset of $H$. 
-Claim that $C$ is also convex. If $u_1, u_2 \in C$ 
-and $t \in [0, 1]$, then 
-\[
-f(t u_1 + (1-t) u_2) = t f(u_1) + (1 - t) f(u_2) = 1.
-\]
-Therefore, $C$ is also convex. This implies that 
-there exists $v_0 \in C$ such that 
-\[
-v_0 = \inf_{u \in C} \norm{u}.
-\]
-Note that $v_0 \neq 0$ and let $v = \frac{v_0}{\norm{v_0}^2}$.
-Claim this is the desired vector. Let $N = f^{-1} 
-(\left\{ 0 \right\})$. Then, 
-$C = v_0 + N$ and $\norm{v_0} = \inf_{w \in N} \norm{v_0 + w}$.
-By a similar argument as a previous theorem, 
-we have $v_0 \in N^\perp$. Let $u \in H$, then 
-\[
-f(u - f(u) v_0) = f(u) - f(u) f(v_0) = 0.
-\]
-Therefore, $u - f(u)v_0 \in N$. Since $v_0 \in N^\perp$,
-we have $\braket{u - f(u) v_0}{v_0} = 0$. This implies that
-\[
-\begin{aligned}
-  \braket{u}{v} 
-  &= \frac{1}{\norm{v_0}^2} \braket{u}{v_0} \\
-  &= \frac{1}{\norm{v_0}^2} \left( \braket{u - f(u)v_0}{v_0} 
-  + f(u) \braket{v_0}{v_0} \right) \\
-  &= f(u),
-\end{aligned}
-\]
-completing the proof.
+  Now we show existence. If $f = 0$, let $v = 0$.
+  Suppose now $f \neq 0$. Then there exists
+  $u_1 \in H$ such that $f(u_1) \neq 0$.
+  Now let $u_0 = \frac{u_1}{f(u_1)}$, then $f(u_0) = 1$.
+  Let
+  \[
+    C = \left\{ u \in H: f(u) = 1 \right\} = f^{-1}
+    (\left\{ 1 \right\}).
+  \]
+  Then $C$ is a nonempty and closed subset of $H$.
+  Claim that $C$ is also convex. If $u_1, u_2 \in C$
+  and $t \in [0, 1]$, then
+  \[
+    f(t u_1 + (1-t) u_2) = t f(u_1) + (1 - t) f(u_2) = 1.
+  \]
+  Therefore, $C$ is also convex. This implies that
+  there exists $v_0 \in C$ such that
+  \[
+    v_0 = \inf_{u \in C} \norm{u}.
+  \]
+  Note that $v_0 \neq 0$ and let $v = \frac{v_0}{\norm{v_0}^2}$.
+  Claim this is the desired vector. Let $N = f^{-1}
+    (\left\{ 0 \right\})$. Then,
+  $C = v_0 + N$ and $\norm{v_0} = \inf_{w \in N} \norm{v_0 + w}$.
+  By a similar argument as a previous theorem,
+  we have $v_0 \in N^\perp$. Let $u \in H$, then
+  \[
+    f(u - f(u) v_0) = f(u) - f(u) f(v_0) = 0.
+  \]
+  Therefore, $u - f(u)v_0 \in N$. Since $v_0 \in N^\perp$,
+  we have $\braket{u - f(u) v_0}{v_0} = 0$. This implies that
+  \[
+    \begin{aligned}
+      \braket{u}{v}
+       & = \frac{1}{\norm{v_0}^2} \braket{u}{v_0}                  \\
+       & = \frac{1}{\norm{v_0}^2} \left( \braket{u - f(u)v_0}{v_0}
+      + f(u) \braket{v_0}{v_0} \right)                             \\
+       & = f(u),
+    \end{aligned}
+  \]
+  completing the proof.
 \end{proof}
 
-\subsection{Adjoint of a bounded linear operator 
-on a Hilbert space}
+\subsection{Adjoint of a bounded linear operator
+  on a Hilbert space}
 
 \begin{thm}
-Let $H$ be a Hilbert space and $A : H \to H$ be a bounded 
-linear operator. Then there exists a unique bounded linear 
-operator $A^* : H \to H$ (the \textbf{adjoint} of $A$) such 
-that for all $u, v \in H$, 
-\[
-\braket{A u}{v} = \braket{u}{A^* v}.
-\]
-Moreover, $\norm{A^*} = \norm{A}$.
+  Let $H$ be a Hilbert space and $A : H \to H$ be a bounded
+  linear operator. Then there exists a unique bounded linear
+  operator $A^* : H \to H$ (the \textbf{adjoint} of $A$) such
+  that for all $u, v \in H$,
+  \[
+    \braket{A u}{v} = \braket{u}{A^* v}.
+  \]
+  Moreover, $\norm{A^*} = \norm{A}$.
 \end{thm}
 
 \begin{proof}
-The uniqueness of $A^*$ follows from a similar argument 
-of uniqueness for Riesz representation theorem. 
+  The uniqueness of $A^*$ follows from a similar argument
+  of uniqueness for Riesz representation theorem.
 
-Let $v \in H$. Define $f_v : H \to \C$ by 
-\[
-f_v(u) = \braket{A u}{v}.
-\]
-Then for any $u_1, u_2 \in H$ and $\lambda_1, \lambda_2 \in \C$,
-we have 
-\[
-\begin{aligned}
-  f_v(\lambda_1 u_1 + \lambda_2 u_2) 
-  &= \braket{A (\lambda_1 u_1 + \lambda_2 u_2)}{v} \\
-  &= \lambda_1 \braket{A u_1}{v} + \lambda_2 \braket{A u_2}{v} \\
-  &= \lambda_1 f_v(u_1) + \lambda_2 f_v(u_2).
-\end{aligned}
-\]
-Therefore, $f_v$ is a linear map. Next, 
-suppose $\norm{u} = 1$, then 
-\[
-\abs{f_v(u)} = \abs{\braket{Au}{v}} 
-\leq \norm{Au}\norm{v} \leq \norm{A} \norm{v}.
-\]
-This shows that $f_v \in H'$. Then, by Riesz
-representation theorem, there is a unique $A^* v \in H$
-such that for all $u \in H$, 
-\[
-f_v(u) = \braket{Au}{v} = \braket{u}{A^* v}.
-\]
+  Let $v \in H$. Define $f_v : H \to \C$ by
+  \[
+    f_v(u) = \braket{A u}{v}.
+  \]
+  Then for any $u_1, u_2 \in H$ and $\lambda_1, \lambda_2 \in \C$,
+  we have
+  \[
+    \begin{aligned}
+      f_v(\lambda_1 u_1 + \lambda_2 u_2)
+       & = \braket{A (\lambda_1 u_1 + \lambda_2 u_2)}{v}             \\
+       & = \lambda_1 \braket{A u_1}{v} + \lambda_2 \braket{A u_2}{v} \\
+       & = \lambda_1 f_v(u_1) + \lambda_2 f_v(u_2).
+    \end{aligned}
+  \]
+  Therefore, $f_v$ is a linear map. Next,
+  suppose $\norm{u} = 1$, then
+  \[
+    \abs{f_v(u)} = \abs{\braket{Au}{v}}
+    \leq \norm{Au}\norm{v} \leq \norm{A} \norm{v}.
+  \]
+  This shows that $f_v \in H'$. Then, by Riesz
+  representation theorem, there is a unique $A^* v \in H$
+  such that for all $u \in H$,
+  \[
+    f_v(u) = \braket{Au}{v} = \braket{u}{A^* v}.
+  \]
 
-Claim that $v \mapsto A^* v$ is linear. Let $v_1, v_2 \in H$
-and $\lambda_1, \lambda_2 \in \C$, then for all $u \in H$, 
-we have 
-\[
-\begin{aligned}
-  \braket{u}{A^*(\lambda_1 v_2 + \lambda_2 v_2)}
-  &= \braket{Au}{\lambda_1 v_2 + \lambda_2 v_2} \\
-  &= \bar{\lambda_1} \braket{Au}{v_1} + \bar{\lambda_2} 
-  \braket{Au}{v_2} \\
-  &= \bar{\lambda_1} \braket{u}{A^* v_1} + \bar{\lambda_2} 
-  \braket{u}{A^* v_2} \\
-  &= \braket{u}{\lambda_1 A^* v_1 + \lambda_2 A^* v_2}.
-\end{aligned}
-\]
-This implies that 
-\[
-  A^* (\lambda_1 v_2 + \lambda_2 v_2)
-  = \lambda_1 A^* v_1 + \lambda_2 A^* v_2.
-\]
-Therefore, $A^*$ is a linear map. Next we show 
-$A^*$ is bounded and $\norm{A^*} = \norm{A}$. Suppose 
-$\norm{v} = 1$. If $A^* v = 0$, then clearly $\norm{A^* v}
-\leq \norm{A}$. Suppose now $A^* v \neq 0$, then 
-\[
-\norm{A^* v}^2 = \braket{A^* v}{A^* v} 
-= \braket{A A^* v}{v} \leq \norm{A A^* v} \norm{v} 
-\leq \norm{A} \norm{A^* v}.
-\]
-Therefore, $\norm{A^*} \leq \norm{A}$ and $A^*$ is a bounded 
-linear operator. 
+  Claim that $v \mapsto A^* v$ is linear. Let $v_1, v_2 \in H$
+  and $\lambda_1, \lambda_2 \in \C$, then for all $u \in H$,
+  we have
+  \[
+    \begin{aligned}
+      \braket{u}{A^*(\lambda_1 v_2 + \lambda_2 v_2)}
+       & = \braket{Au}{\lambda_1 v_2 + \lambda_2 v_2}            \\
+       & = \bar{\lambda_1} \braket{Au}{v_1} + \bar{\lambda_2}
+      \braket{Au}{v_2}                                           \\
+       & = \bar{\lambda_1} \braket{u}{A^* v_1} + \bar{\lambda_2}
+      \braket{u}{A^* v_2}                                        \\
+       & = \braket{u}{\lambda_1 A^* v_1 + \lambda_2 A^* v_2}.
+    \end{aligned}
+  \]
+  This implies that
+  \[
+    A^* (\lambda_1 v_2 + \lambda_2 v_2)
+    = \lambda_1 A^* v_1 + \lambda_2 A^* v_2.
+  \]
+  Therefore, $A^*$ is a linear map. Next we show
+  $A^*$ is bounded and $\norm{A^*} = \norm{A}$. Suppose
+  $\norm{v} = 1$. If $A^* v = 0$, then clearly $\norm{A^* v}
+    \leq \norm{A}$. Suppose now $A^* v \neq 0$, then
+  \[
+    \norm{A^* v}^2 = \braket{A^* v}{A^* v}
+    = \braket{A A^* v}{v} \leq \norm{A A^* v} \norm{v}
+    \leq \norm{A} \norm{A^* v}.
+  \]
+  Therefore, $\norm{A^*} \leq \norm{A}$ and $A^*$ is a bounded
+  linear operator.
 
-Note that for all $u, v \in H$, 
-\[
-\braket{A^* u}{v} = \bar{\braket{v}{A^* u}} 
-= \bar{\braket{A v}{u}} = \braket{u}{A v}.
-\]
-This implies that $A = \left( A^* \right)^*$. 
-Therefore, $\norm{A} = \norm{(A^*)^*} \leq \norm{A^*}$
-and thus $\norm{A^*} = \norm{A}$.
+  Note that for all $u, v \in H$,
+  \[
+    \braket{A^* u}{v} = \bar{\braket{v}{A^* u}}
+    = \bar{\braket{A v}{u}} = \braket{u}{A v}.
+  \]
+  This implies that $A = \left( A^* \right)^*$.
+  Therefore, $\norm{A} = \norm{(A^*)^*} \leq \norm{A^*}$
+  and thus $\norm{A^*} = \norm{A}$.
 \end{proof}
 
 \begin{eg}
-Suppose $u = (u_1, \dots, u_n) \in \C^n$ 
-and $(A u)_i = \sum_j A_{ij} u_j$.
-Then, 
-\[
-\braket{A u}{v} = \sum_i (A u)_i \bar{v_i} 
-= \sum_{i, j} A_{ij} u_j \bar{v_i} 
-= \sum_j u_j \bar{\sum_i \bar{A_{ij}} v_i} 
-= \sum_j u_j \bar{A^* v}_j.
-\]
-This implies that $(A^*)_{ij} = \bar{A_{ji}}$.
+  Suppose $u = (u_1, \dots, u_n) \in \C^n$
+  and $(A u)_i = \sum_j A_{ij} u_j$.
+  Then,
+  \[
+    \braket{A u}{v} = \sum_i (A u)_i \bar{v_i}
+    = \sum_{i, j} A_{ij} u_j \bar{v_i}
+    = \sum_j u_j \bar{\sum_i \bar{A_{ij}} v_i}
+    = \sum_j u_j \bar{A^* v}_j.
+  \]
+  This implies that $(A^*)_{ij} = \bar{A_{ji}}$.
 \end{eg}
 
 \begin{eg}
-Suppose $\left\{ A_{ij} \right\}_{i, j = 0}^\infty$ 
-is a double sequence in $\C^n$ such that 
-\[
-\sum_{i, j} \abs{A_{ij}}^2 = \lim_{N \to \infty}
-\sumi^N \sumj^N \abs{A_{ij}}^2 < \infty.
-\]
-Define $A : \ell^2 \to \ell^2$ by 
-\[
-A a = \suminfj A_{ij} a_j,
-\]
-where $a = \seqinfj{a_j} \in \ell^2$. Then, 
-$A \in \B(\ell^2, \ell^2)$ and 
-$(A^*)_{ij} = \bar{A_{ji}}$.
+  Suppose $\left\{ A_{ij} \right\}_{i, j = 0}^\infty$
+  is a double sequence in $\C^n$ such that
+  \[
+    \sum_{i, j} \abs{A_{ij}}^2 = \lim_{N \to \infty}
+    \sumi^N \sumj^N \abs{A_{ij}}^2 < \infty.
+  \]
+  Define $A : \ell^2 \to \ell^2$ by
+  \[
+    A a = \suminfj A_{ij} a_j,
+  \]
+  where $a = \seqinfj{a_j} \in \ell^2$. Then,
+  $A \in \B(\ell^2, \ell^2)$ and
+  $(A^*)_{ij} = \bar{A_{ji}}$.
 \end{eg}
 
 \begin{eg}
-Suppose $K \in C([0, 1] \times [0, 1])$ and define 
-$A : L^2 ([0, 1]) \to L^2 ([0, 1])$ by 
-\[
-A f(x) = \int_0^1 K(x, y) f(y) \d y.
-\]
-Then we can verify that 
-\[
-A^* g(x) = \int_0^1 \bar{K(y, x)} g(y) \d y.
-\]
+  Suppose $K \in C([0, 1] \times [0, 1])$ and define
+  $A : L^2 ([0, 1]) \to L^2 ([0, 1])$ by
+  \[
+    A f(x) = \int_0^1 K(x, y) f(y) \d y.
+  \]
+  Then we can verify that
+  \[
+    A^* g(x) = \int_0^1 \bar{K(y, x)} g(y) \d y.
+  \]
 \end{eg}
 
 \begin{thm}
-Suppose $H$ is a Hilbert space and $A : H \to H$
-is a bounded linear operator. Then, 
-\[
-(\ran A)^\perp = \ker (A^\perp).
-\]
+  Suppose $H$ is a Hilbert space and $A : H \to H$
+  is a bounded linear operator. Then,
+  \[
+    (\ran A)^\perp = \ker (A^\perp).
+  \]
 \end{thm}
 
 \begin{proof}
-$v \in \ker (A^*)$ if and only if $\braket{u}{A^* v} = 0$
-for all $u \in H$. This is equivalent to 
-$\braket{A u}{v} = 0$ for all $u \in H$, and 
-this is equivalent to $v \in (\ran A)^\perp$.
+  $v \in \ker (A^*)$ if and only if $\braket{u}{A^* v} = 0$
+  for all $u \in H$. This is equivalent to
+  $\braket{A u}{v} = 0$ for all $u \in H$, and
+  this is equivalent to $v \in (\ran A)^\perp$.
 \end{proof}
 
 \begin{cor}
-  Suppose $\ran A$ is closed, then 
-  $A$ is surjective if and only if 
+  Suppose $\ran A$ is closed, then
+  $A$ is surjective if and only if
   $A^*$ is injective.
 \end{cor}
 
 With these useful tools we developed,
-we are soon going to discuss the solvability of linear 
+we are soon going to discuss the solvability of linear
 equations, that is, equations in the form of $Au = v$.
-We take for granted that a bounded linear operator takes 
-bounded sets to bounded sets in finite-dimensional spaces, 
-and so we can find a convergent subsequence using Heine-Borel. 
-So the point is that there is some compactness hidden in 
-here in $\R^n$ and $\C^n$, so we need to study some facts 
-about how compactness and Hilbert spaces before we can talk 
+We take for granted that a bounded linear operator takes
+bounded sets to bounded sets in finite-dimensional spaces,
+and so we can find a convergent subsequence using Heine-Borel.
+So the point is that there is some compactness hidden in
+here in $\R^n$ and $\C^n$, so we need to study some facts
+about how compactness and Hilbert spaces before we can talk
 about solvability of equations.
 
 \begin{defi}[Compact]
-If $X$ is a metric space, we say $K \subset X$ 
-is \textbf{compact} if every sequence in $K$ 
-has a subsequence converging to an element in $K$.
+  If $X$ is a metric space, we say $K \subset X$
+  is \textbf{compact} if every sequence in $K$
+  has a subsequence converging to an element in $K$.
 \end{defi}
 
 \begin{eg}
-Suppose $H$ is an infinite dimensional separable 
-Hilbert space, then $B[0, 1]$ is not compact.
+  Suppose $H$ is an infinite dimensional separable
+  Hilbert space, then $B[0, 1]$ is not compact.
 \end{eg}
 
 \begin{proof}
-  Let $\seqinfn{e_n}$ be an orthonormal subset of $H$. 
-  Then for all $n \neq k$, we have 
+  Let $\seqinfn{e_n}$ be an orthonormal subset of $H$.
+  Then for all $n \neq k$, we have
   \[
-  \norm{e_n - e_k}^2 = \norm{e_n}^2 + \norm{e_k}^2 
-  + 2 \Re \braket{e_n}{e_k} = 2.
+    \norm{e_n - e_k}^2 = \norm{e_n}^2 + \norm{e_k}^2
+    + 2 \Re \braket{e_n}{e_k} = 2.
   \]
-  Therefore, $\seqinfn{e_n}$ cannot have a convergent 
+  Therefore, $\seqinfn{e_n}$ cannot have a convergent
   subsequence.
 \end{proof}
 
-Recall from Arzela-Ascoli, the extra condition for a 
+Recall from Arzela-Ascoli, the extra condition for a
 set to be compact, other than closed and bounded,
-is \textbf{equicontinuity}. 
-This motivates the following definition. 
+is \textbf{equicontinuity}.
+This motivates the following definition.
 
 \begin{defi}[Equi-small tails]
-Let $H$ be a Hilbert space. A subset $K \subset H$ has 
-\textbf{equi-small tails} with respect to a countable 
-orthonormal subset $\seqinfk{e_k}$ if for all 
-$\epsilon > 0$, there exists $N \in \N$ such that 
-for all $v \in K$, 
-\[
-\sum_{k > N} \abs{\braket{v}{e_k}}^2 < \epsilon^2.
-\]
+  Let $H$ be a Hilbert space. A subset $K \subset H$ has
+  \textbf{equi-small tails} with respect to a countable
+  orthonormal subset $\seqinfk{e_k}$ if for all
+  $\epsilon > 0$, there exists $N \in \N$ such that
+  for all $v \in K$,
+  \[
+    \sum_{k > N} \abs{\braket{v}{e_k}}^2 < \epsilon^2.
+  \]
 \end{defi}
 
 \begin{eg}
-A finite set has equi-small tails with respect to 
-any countable orthonormal subset $\seqinfn{e_n}$.
+  A finite set has equi-small tails with respect to
+  any countable orthonormal subset $\seqinfn{e_n}$.
 \end{eg}
 
 \begin{thm}
-Let $H$ be a Hilbert space and $\seqinfn{v_n}$
-a sequence with $v_n \to v$. Let $\seqinfk{e_k}$
-be a countable orthonormal subset. Then, 
-\begin{enumerate}
-  \item $K = \left\{ v_n : n \in \N \right\}
-  \cup \left\{ v \right\}$ is compact. 
-  
-  \item $K$ has equi-small tails with respect to 
-  $\seqinfk{e_k}$.
-\end{enumerate}
+  Let $H$ be a Hilbert space and $\seqinfn{v_n}$
+  a sequence with $v_n \to v$. Let $\seqinfk{e_k}$
+  be a countable orthonormal subset. Then,
+  \begin{enumerate}
+    \item $K = \left\{ v_n : n \in \N \right\}
+            \cup \left\{ v \right\}$ is compact.
+
+    \item $K$ has equi-small tails with respect to
+          $\seqinfk{e_k}$.
+  \end{enumerate}
 \end{thm}
 
 \begin{proof}
-\begin{enumerate}
-  \item Exercise.
-  
-  \item Since $v_n \to v$, there exists 
-  $M \in \N$ such that for all $n \geq M$, 
-  $\norm{v_n - v} < \frac{\epsilon}{2}$. Also, choose 
-  $N \in \N$ so large that 
-  \[
-  \sum_{k > N} \abs{\braket{v}{e_n}}^2 
-  + \max_{1 \leq n \leq M - 1} \sum_{k > N} 
-  \abs{\braket{v_n}{e_k}}^2 < \frac{\epsilon^2}{4}.
-  \]
-  Then, 
-  \[
-  \sum_{k > N} \abs{\braket{v}{e_n}} < \frac{\epsilon^2}{4}
-  < \epsilon^2.
-  \]
-  and for all $1 \leq n \leq M - 1$, 
-  \[
-  \sum_{k > N} \abs{\braket{v_n}{e_k}}^2 < \frac{\epsilon^2}{4} 
-  < \epsilon^2.
-  \]
-  If $n \geq M$, by Bessel's inequality we have 
-  \[
-  \begin{aligned}
-    \left[ \sum_{k > N} \abs{\braket{v_n}{e_k}}^2 \right]^{\frac{1}{2}}
-    & = \left[ \sum_{k > N} \abs{\braket{v_n - v}{e_k} + \braket{v}{e_k}}^2 
-    \right]^{\frac{1}{2}} \\
-    & \leq 
-    \left[ \sum_{k > N} \abs{\braket{v_n - v}{e_k}}^2 \right]^{\frac{1}{2}} 
-    + \left[ \sum_{k > N} \abs{\braket{v}{e_k}}^2  \right]^{\frac{1}{2}} \\ 
-    & \leq \norm{v_n - v} + \frac{\epsilon}{2} \\
-    &< \epsilon.
-  \end{aligned}
-  \]
-  This shows that $K$ has equi-small tails with respect 
-  to $\seqinfk{e_k}$.
-\end{enumerate}
+  \begin{enumerate}
+    \item Exercise.
+
+    \item Since $v_n \to v$, there exists
+          $M \in \N$ such that for all $n \geq M$,
+          $\norm{v_n - v} < \frac{\epsilon}{2}$. Also, choose
+          $N \in \N$ so large that
+          \[
+            \sum_{k > N} \abs{\braket{v}{e_n}}^2
+            + \max_{1 \leq n \leq M - 1} \sum_{k > N}
+            \abs{\braket{v_n}{e_k}}^2 < \frac{\epsilon^2}{4}.
+          \]
+          Then,
+          \[
+            \sum_{k > N} \abs{\braket{v}{e_n}} < \frac{\epsilon^2}{4}
+            < \epsilon^2.
+          \]
+          and for all $1 \leq n \leq M - 1$,
+          \[
+            \sum_{k > N} \abs{\braket{v_n}{e_k}}^2 < \frac{\epsilon^2}{4}
+            < \epsilon^2.
+          \]
+          If $n \geq M$, by Bessel's inequality we have
+          \[
+            \begin{aligned}
+              \left[ \sum_{k > N} \abs{\braket{v_n}{e_k}}^2 \right]^{\frac{1}{2}}
+               & = \left[ \sum_{k > N} \abs{\braket{v_n - v}{e_k} + \braket{v}{e_k}}^2
+                     \right]^{\frac{1}{2}} \\
+               & \leq
+              \left[ \sum_{k > N} \abs{\braket{v_n - v}{e_k}}^2 \right]^{\frac{1}{2}}
+              + \left[ \sum_{k > N} \abs{\braket{v}{e_k}}^2  \right]^{\frac{1}{2}}     \\
+               & \leq \norm{v_n - v} + \frac{\epsilon}{2}                              \\
+               & < \epsilon.
+            \end{aligned}
+          \]
+          This shows that $K$ has equi-small tails with respect
+          to $\seqinfk{e_k}$.
+  \end{enumerate}
 \end{proof}
 
-\subsection{Compact subsets of a Hilbert space and 
-finite-rank operators} 
+\subsection{Compact subsets of a Hilbert space and
+  finite-rank operators}
 
 \begin{thm}
-Let $H$ be a separable Hilbert space, and 
-$\seqinfk{e_k}$ be an orthonormal basis of $H$. 
-Then $K \subset H$ is compact if and only if 
-$K$ is closed, bounded, and has equi-small tails 
-with respect to $\seqinfk{e_k}$.
+  Let $H$ be a separable Hilbert space, and
+  $\seqinfk{e_k}$ be an orthonormal basis of $H$.
+  Then $K \subset H$ is compact if and only if
+  $K$ is closed, bounded, and has equi-small tails
+  with respect to $\seqinfk{e_k}$.
 \end{thm}
 
 \begin{proof}
-($\implies$) Suppose $K$ is compact, then $K$ is closed and 
-bounded. Suppose for contradiction that $K$ does not have 
-equi-small tails with respect to $\seqinfk{e_k}$. Then 
-there exists $\epsilon_0 > 0$ such that for all 
-$N \in \N$, there exists $u_N \in K$ such that 
-\[
-\sum_{k > N} \abs{\braket{u_N}{e_k}}^2 \geq \epsilon_0^2.
-\]
+  ($\implies$) Suppose $K$ is compact, then $K$ is closed and
+  bounded. Suppose for contradiction that $K$ does not have
+  equi-small tails with respect to $\seqinfk{e_k}$. Then
+  there exists $\epsilon_0 > 0$ such that for all
+  $N \in \N$, there exists $u_N \in K$ such that
+  \[
+    \sum_{k > N} \abs{\braket{u_N}{e_k}}^2 \geq \epsilon_0^2.
+  \]
 
-Since $K$ is compact, there exists subsequence $\seqinfn{v_n}$
-of $\left\{ u_N \right\}_N$ such that $v_n \to v$ for some 
-$v \in K$. Then for all $n \in \N$, we have 
-\[
-\sum_{k > n} \abs{\braket{v_n}{e_k}}^2 \geq \epsilon_0^2.
-\]
-Then $\left\{ v_n : n \in \N \right\} \cup \left\{ v \right\}$ 
-does not have equi-small tails. This is a contradiction to the previous 
-theorem. Therefore, $K$ has equi-small tails with respect 
-to $\seqinfk{e_k}$.
+  Since $K$ is compact, there exists subsequence $\seqinfn{v_n}$
+  of $\left\{ u_N \right\}_N$ such that $v_n \to v$ for some
+  $v \in K$. Then for all $n \in \N$, we have
+  \[
+    \sum_{k > n} \abs{\braket{v_n}{e_k}}^2 \geq \epsilon_0^2.
+  \]
+  Then $\left\{ v_n : n \in \N \right\} \cup \left\{ v \right\}$
+  does not have equi-small tails. This is a contradiction to the previous
+  theorem. Therefore, $K$ has equi-small tails with respect
+  to $\seqinfk{e_k}$.
 
-($\impliedby$). Suppose $K$ is closed, bounded, and has equi-small
-tails. Let $\seqinfn{u_n}$ be a sequence in $K$. Since $K$ 
-is closed, it suffices to show that $\seqinfn{u_n}$ has a 
-convergent subsequence. Since $K$ is bounded, 
-there exists $C \geq 0$ such that $\norm{u_n} \leq C$. 
-Then, for all $k, n \in \N$, 
-\[
-  \abs{\braket{v_n}{e_k}} \leq \norm{u_n} \norm{e_k} \leq C.
-\]
-That is, for any $k \in \N$, $\seqinfn{\braket{u_n}{e_k}}$ 
-is a bounded sequence in $\C$. This implies that 
-there exists a subsequence $\seqinfj{\braket{u_{n_1(j)}}{e_1}}$ 
-of $\seqinfn{\braket{u_n}{e_1}}$ that converges in $\C$. 
-Now $\seqinfj{\braket{u_{n_1(j)}}{e_2}}$ is a bounded sequence, 
-there exists a subsequence $\seqinfj{\braket{u_{n_2(j)}}{e_2}}$
-that converges. Note that 
-$\lim_{j \to \infty} \braket{u_{n_2(j)}}{e_1}$ 
-and $\lim_{j \to \infty} \braket{u_{n_2(j)}}{e_2}$ 
-both exist. Inductively, for any $l \in \N$, there 
-exists subsequence $\seqinfj{n_l(j)}$ of $\seqinfj{n_{l-1}(j)}$
-such that for all $1 \leq k \leq l$, the limit
-$\lim_{j \to \infty} \braket{u_{n_l(j)}}{e_k}$ exists.
+  ($\impliedby$). Suppose $K$ is closed, bounded, and has equi-small
+  tails. Let $\seqinfn{u_n}$ be a sequence in $K$. Since $K$
+  is closed, it suffices to show that $\seqinfn{u_n}$ has a
+  convergent subsequence. Since $K$ is bounded,
+  there exists $C \geq 0$ such that $\norm{u_n} \leq C$.
+  Then, for all $k, n \in \N$,
+  \[
+    \abs{\braket{v_n}{e_k}} \leq \norm{u_n} \norm{e_k} \leq C.
+  \]
+  That is, for any $k \in \N$, $\seqinfn{\braket{u_n}{e_k}}$
+  is a bounded sequence in $\C$. This implies that
+  there exists a subsequence $\seqinfj{\braket{u_{n_1(j)}}{e_1}}$
+  of $\seqinfn{\braket{u_n}{e_1}}$ that converges in $\C$.
+  Now $\seqinfj{\braket{u_{n_1(j)}}{e_2}}$ is a bounded sequence,
+  there exists a subsequence $\seqinfj{\braket{u_{n_2(j)}}{e_2}}$
+  that converges. Note that
+  $\lim_{j \to \infty} \braket{u_{n_2(j)}}{e_1}$
+  and $\lim_{j \to \infty} \braket{u_{n_2(j)}}{e_2}$
+  both exist. Inductively, for any $l \in \N$, there
+  exists subsequence $\seqinfj{n_l(j)}$ of $\seqinfj{n_{l-1}(j)}$
+  such that for all $1 \leq k \leq l$, the limit
+  $\lim_{j \to \infty} \braket{u_{n_l(j)}}{e_k}$ exists.
 
-For all $l \in \N$, let $v_l = u_{n_l(l)}$, then 
-$\seqinfl{v_l}$ is a subsequence of $\seqinfn{u_n}$
-such that for any $k \in \N$, 
-$\seqinfl{\braket{v_l}{e_k}}$ converges. Claim that 
-$\seqinfl{v_l}$ is Cauchy. This will complete the proof 
-since the closed subset $K$ of Hilbert space $H$ is complete.
-Since $K$ has equi-small tails, there exists $N \in \N$
-such that for all $l \in \N$, 
-\[
-\sum_{k > N} \abs{\braket{v_l}{e_k}} < \frac{\epsilon^2}{16}.
-\]
-Since the $N$ sequences $\seqinfl{\braket{v_l}{e_1}}$, 
-\dots, $\seqinfl{\braket{v_l}{e_N}}$ all converges, 
-there exists $M \in \N$ such that for all $l, m \geq M$, 
-we have 
-\[
-\sum_{k=0}^N \abs{\braket{v_l}{e_k} - \braket{v_m}{e_k}}^2 
-< \frac{\epsilon^2}{4}.
-\]
-Then for all $l, m \geq M$, we have 
-\[
-\begin{aligned}
-  \norm{v_l - v_m} 
-  &= 
-  \left[ \sum_{k=0}^N \abs{\braket{v_l - v_m}{e_k}}^2 
-  + \sum_{k > N} \abs{\braket{v_l - v_m}{e_k}}^2 \right]^{\frac{1}{2}} \\
-  &\leq
-  \left[ \sum_{k=0}^N \abs{\braket{v_l - v_m}{e_k}}^2  \right]
-  ^{\frac{1}{2}}
-  + \left[ \sum_{k > N} \abs{\braket{v_l - v_m}{e_k}}^2 \right]
-  ^{\frac{1}{2}} \\ 
-  &< \frac{\epsilon}{2} + \left[ \sum_{k > N} \abs{\braket{v_l}{e_m}}^2 \right]
-  ^{\frac{1}{2}} + \left[ \sum_{k > N} \abs{\braket{v_m}{e_k}}^2 \right]
-  ^{\frac{1}{2}} \\
-  &< \epsilon. 
-\end{aligned}
-\]
+  For all $l \in \N$, let $v_l = u_{n_l(l)}$, then
+  $\seqinfl{v_l}$ is a subsequence of $\seqinfn{u_n}$
+  such that for any $k \in \N$,
+  $\seqinfl{\braket{v_l}{e_k}}$ converges. Claim that
+  $\seqinfl{v_l}$ is Cauchy. This will complete the proof
+  since the closed subset $K$ of Hilbert space $H$ is complete.
+  Since $K$ has equi-small tails, there exists $N \in \N$
+  such that for all $l \in \N$,
+  \[
+    \sum_{k > N} \abs{\braket{v_l}{e_k}} < \frac{\epsilon^2}{16}.
+  \]
+  Since the $N$ sequences $\seqinfl{\braket{v_l}{e_1}}$,
+  \dots, $\seqinfl{\braket{v_l}{e_N}}$ all converges,
+  there exists $M \in \N$ such that for all $l, m \geq M$,
+  we have
+  \[
+    \sum_{k=0}^N \abs{\braket{v_l}{e_k} - \braket{v_m}{e_k}}^2
+    < \frac{\epsilon^2}{4}.
+  \]
+  Then for all $l, m \geq M$, we have
+  \[
+    \begin{aligned}
+      \norm{v_l - v_m}
+       & =
+      \left[ \sum_{k=0}^N \abs{\braket{v_l - v_m}{e_k}}^2
+        + \sum_{k > N} \abs{\braket{v_l - v_m}{e_k}}^2 \right]^{\frac{1}{2}}                          \\
+       & \leq
+      \left[ \sum_{k=0}^N \abs{\braket{v_l - v_m}{e_k}}^2  \right]
+      ^{\frac{1}{2}}
+      + \left[ \sum_{k > N} \abs{\braket{v_l - v_m}{e_k}}^2 \right]
+        ^{\frac{1}{2}}                                    \\
+       & < \frac{\epsilon}{2} + \left[ \sum_{k > N} \abs{\braket{v_l}{e_m}}^2 \right]
+                                ^{\frac{1}{2}} + \left[ \sum_{k > N} \abs{\braket{v_m}{e_k}}^2 \right]
+                                                 ^{\frac{1}{2}} \\
+       & < \epsilon.
+    \end{aligned}
+  \]
 \end{proof}
 
 \begin{eg}
-The Hilbert cube 
-\[
-K = \left\{ \seqinfk{a_k} \in \ell^2 : \abs{a_k} \leq 2^{-k} \right\}
-\]
-is compact.
+  The Hilbert cube
+  \[
+    K = \left\{ \seqinfk{a_k} \in \ell^2 : \abs{a_k} \leq 2^{-k} \right\}
+  \]
+  is compact.
 \end{eg}
 
 \begin{thm}
-A subset $K$ of a Hilbert space $H$ is compact 
-if and only if $K$ is closed, bounded, and for 
-all $\epsilon > 0$, there exists a finite dimensional subspace 
-$W \subset H$ such that for all $u \in K$, 
-\[
-\inf_{w \in W} \norm{u - w} < \epsilon.
-\] 
+  A subset $K$ of a Hilbert space $H$ is compact
+  if and only if $K$ is closed, bounded, and for
+  all $\epsilon > 0$, there exists a finite dimensional subspace
+  $W \subset H$ such that for all $u \in K$,
+  \[
+    \inf_{w \in W} \norm{u - w} < \epsilon.
+  \]
 \end{thm}
 
 \subsubsection*{Finite rank operators}
 
 \begin{defi}[Finite rank operator]
-A bounded linear operator $T \in \B(H)$ is a \textbf{finite 
-rank operator} if $\ran(T)$, which is a subspace of $H$,
-is finite dimensional. Denote the set of all finite range 
-operator on $H$ with $\rcal (H)$.
+  A bounded linear operator $T \in \B(H)$ is a \textbf{finite
+    rank operator} if $\ran(T)$, which is a subspace of $H$,
+  is finite dimensional. Denote the set of all finite range
+  operator on $H$ with $\rcal (H)$.
 \end{defi}
 
 \begin{thm}
-$\rcal (H)$ is a subspace of $\B (H)$.
+  $\rcal (H)$ is a subspace of $\B (H)$.
 \end{thm}
 
 \begin{thm}
-$T \in \rcal (H)$ if and only if there exists an 
-orthonormal set $\{e_k\}_{k=0}^L$ and constants
-$\{c_{ij}\}_{i,j=0}^L \subset \C$ such that 
-\[
-T u = \sum_{i, j = 0}^L c_{ij} \braket{u}{e_j} e_i.
-\]
+  $T \in \rcal (H)$ if and only if there exists an
+  orthonormal set $\{e_k\}_{k=0}^L$ and constants
+  $\{c_{ij}\}_{i,j=0}^L \subset \C$ such that
+  \[
+    T u = \sum_{i, j = 0}^L c_{ij} \braket{u}{e_j} e_i.
+  \]
 \end{thm}
 
 \begin{proof}
-($\impliedby$). Clear. 
+  ($\impliedby$). Clear.
 
-($\implies$). Since $\ran(T)$ is finite dimensional, there 
-exists orthonormal basis $\{\bar{e_k}\}_{k=0}^N$ such that 
-\[
-\begin{aligned}
-  T u 
-  &= \sum_{k=0}^N \braket{T u}{\bar{e_k}} \bar{e_k} \\
-  &= \sum_{k=0}^N \braket{u}{T^* \bar{e_k}} \bar{e_k} \\
-  &= \sum_{k=0}^N \braket{u}{v_k} \bar{e_k}.
-\end{aligned}
-\]
-Let $\{e_0, \dots, e_L\}$ be the orthonormal subset 
-of $H$ obtained by applying the Gram-Schimdt process 
-on $\{\bar{e_0}, \dots, \bar{e_N}, v_0, \dots, v_N\}$. 
-Then, there exists $a_{ki}, b_{kj}$ such that 
-\[
-\bar{e_k} = \sum_{i=0}^L a_{ki} e_i, \quad 
-v_k = \sum_{j=0}^L b_{kj} e_j.
-\]
-Then, 
-\[
-T u = \sum_{k=0}^N \braket{u}{v_k} \bar{e_k}
-= \sum_{i, j = 0}^L \left( \sum_{k=0}^N a_{ki} 
-\bar{b_{kj}} \right) \braket{u}{e_j} e_i.
-\]
-Setting $e_{ij} = \sum_{k=0}^N a_{ki} \bar{b_{kj}}$
-completes the proof.
+  ($\implies$). Since $\ran(T)$ is finite dimensional, there
+  exists orthonormal basis $\{\bar{e_k}\}_{k=0}^N$ such that
+  \[
+    \begin{aligned}
+      T u
+       & = \sum_{k=0}^N \braket{T u}{\bar{e_k}} \bar{e_k}   \\
+       & = \sum_{k=0}^N \braket{u}{T^* \bar{e_k}} \bar{e_k} \\
+       & = \sum_{k=0}^N \braket{u}{v_k} \bar{e_k}.
+    \end{aligned}
+  \]
+  Let $\{e_0, \dots, e_L\}$ be the orthonormal subset
+  of $H$ obtained by applying the Gram-Schimdt process
+  on $\{\bar{e_0}, \dots, \bar{e_N}, v_0, \dots, v_N\}$.
+  Then, there exists $a_{ki}, b_{kj}$ such that
+  \[
+    \bar{e_k} = \sum_{i=0}^L a_{ki} e_i, \quad
+    v_k = \sum_{j=0}^L b_{kj} e_j.
+  \]
+  Then,
+  \[
+    T u = \sum_{k=0}^N \braket{u}{v_k} \bar{e_k}
+    = \sum_{i, j = 0}^L \left( \sum_{k=0}^N a_{ki}
+    \bar{b_{kj}} \right) \braket{u}{e_j} e_i.
+  \]
+  Setting $e_{ij} = \sum_{k=0}^N a_{ki} \bar{b_{kj}}$
+  completes the proof.
 \end{proof}
 
 \begin{thm}
-The following holds:
-\begin{enumerate}
-  \item $T \in \rcal(H)$ implies $T^* \in \rcal (H)$. 
-  \item $T \in \rcal(H)$ and $A, B \in \B(H)$ implies 
-  $A T B \in \rcal(H)$.
-\end{enumerate}
+  The following holds:
+  \begin{enumerate}
+    \item $T \in \rcal(H)$ implies $T^* \in \rcal (H)$.
+    \item $T \in \rcal(H)$ and $A, B \in \B(H)$ implies
+          $A T B \in \rcal(H)$.
+  \end{enumerate}
 \end{thm}
 
 \begin{proof}
-\begin{enumerate}
-  \item Write 
-  \[
-  T u = \sum_{i, j = 0}^L c_{ij} \braket{w}{e_j} e_i.
-  \]
-  Then, for any $u, v \in H$, we have 
-  \[
-  \begin{aligned}
-    \braket{u}{T^* v} &= \braket{T u}{v}  \\
-    &= \braket{\sum_{i, j} c_{ij} \braket{u}{e_j} e_i}{v} \\
-    &= \sum_{i, j} c_{ij} \braket{u}{e_j} \braket{e_i}{v} \\ 
-    &= \braket{u}{\sum_{i, j} \bar{c_{ij}} \bar{\braket{e_i}{v}} e_j} \\
-    &= \braket{u}{\sum_{i, j} \bar{c_{ij}} \braket{v}{e_i} e_j}.
-  \end{aligned}
-  \]
-  This implies that 
-  \[
-  T^* v = \sum_{i, j = 0}^L \bar{c_{ij}} \braket{v}{e_i} e_j,
-  \]
-  so $T^* \in \rcal(H)$.
-  \item Exercise.
-\end{enumerate}
+  \begin{enumerate}
+    \item Write
+          \[
+            T u = \sum_{i, j = 0}^L c_{ij} \braket{w}{e_j} e_i.
+          \]
+          Then, for any $u, v \in H$, we have
+          \[
+            \begin{aligned}
+              \braket{u}{T^* v} & = \braket{T u}{v}                                                \\
+                                & = \braket{\sum_{i, j} c_{ij} \braket{u}{e_j} e_i}{v}             \\
+                                & = \sum_{i, j} c_{ij} \braket{u}{e_j} \braket{e_i}{v}             \\
+                                & = \braket{u}{\sum_{i, j} \bar{c_{ij}} \bar{\braket{e_i}{v}} e_j} \\
+                                & = \braket{u}{\sum_{i, j} \bar{c_{ij}} \braket{v}{e_i} e_j}.
+            \end{aligned}
+          \]
+          This implies that
+          \[
+            T^* v = \sum_{i, j = 0}^L \bar{c_{ij}} \braket{v}{e_i} e_j,
+          \]
+          so $T^* \in \rcal(H)$.
+    \item Exercise.
+  \end{enumerate}
 \end{proof}
 
-Now a good question to investigate is whether 
+Now a good question to investigate is whether
 $\rcal(H)$ is a closed subspace in $\B(H)$?
-That is, if $T_n \in \rcal(H)$ and $\norm{T_n - T} \to 0$, 
-then is $T \in \rcal(H)$? The answer turns out to be no. 
+That is, if $T_n \in \rcal(H)$ and $\norm{T_n - T} \to 0$,
+then is $T \in \rcal(H)$? The answer turns out to be no.
 
 \begin{eg}
-Take $T_n : \ell^2 \to \ell^2$ defined by 
-\[
-T_n a = \left\{ \frac{a_1}{1}, \dots, \frac{a_n}{n}, 0, 
-0, \dots \right\}
-\]
-for all $a = \seqinfk{a_k} \in \ell^2$. Then $T_n 
-\in \rcal(H)$. Let $T : \ell^2 \to \ell^2$ defined 
-by 
-\[
-T a = \left\{ \frac{a_1}{1}, \frac{a_2}{2}, 
-\frac{a_3}{3}, \frac{a_4}{4}, \dots \right\}.
-\]
-We can verify that $\norm{T - T_n} \leq \frac{1}{n + 1}$
-but $T$ is not finite rank.
+  Take $T_n : \ell^2 \to \ell^2$ defined by
+  \[
+    T_n a = \left\{ \frac{a_1}{1}, \dots, \frac{a_n}{n}, 0,
+    0, \dots \right\}
+  \]
+  for all $a = \seqinfk{a_k} \in \ell^2$. Then $T_n
+    \in \rcal(H)$. Let $T : \ell^2 \to \ell^2$ defined
+  by
+  \[
+    T a = \left\{ \frac{a_1}{1}, \frac{a_2}{2},
+    \frac{a_3}{3}, \frac{a_4}{4}, \dots \right\}.
+  \]
+  We can verify that $\norm{T - T_n} \leq \frac{1}{n + 1}$
+  but $T$ is not finite rank.
 \end{eg}
 
-As $\rcal(H)$ is not closed, a question is what is 
-the closure $\bar{\rcal(H)}$ in $\B(H)$. The answer to 
-this is the set of \textbf{compact operators}. 
+As $\rcal(H)$ is not closed, a question is what is
+the closure $\bar{\rcal(H)}$ in $\B(H)$. The answer to
+this is the set of \textbf{compact operators}.
 
 \begin{defi}[Compact operator]
   $K \in \B(H)$ is a \textbf{compact operator}
@@ -1751,8 +1751,8 @@ this is the set of \textbf{compact operators}.
 \end{defi}
 
 \begin{thm}
-$K \in \B(H)$ is a compact operator if and only if 
-$K \in \bar{\rcal(H)}$.
+  $K \in \B(H)$ is a compact operator if and only if
+  $K \in \bar{\rcal(H)}$.
 \end{thm}
 
 \end{document}

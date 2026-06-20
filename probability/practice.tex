@@ -33,41 +33,41 @@ Carnegie Mellon University}
   Let $X_1, X_2, \dots$ be uncorrelated random variables with
   finite expectations and
   \[
-  i^{-1} \var X_i \to 0 \text{ as $i \to \infty$}.
+    i^{-1} \var X_i \to 0 \text{ as $i \to \infty$}.
   \]
-  Let $S_n = X_1 + \dots + X_n$ and $\mu_n = E S_n / n$. Show that 
+  Let $S_n = X_1 + \dots + X_n$ and $\mu_n = E S_n / n$. Show that
   $S_n / n - \mu_n \to 0$ in probability as $n \to \infty$.
 \end{ex}
 
 
 \begin{proof}
-  WLOG assume $E X_n = 0$ for all $n$. Now we just 
-  need to show that $S_n / n \to 0$ in probability. 
-  Fix $\delta > 0$, we next show 
+  WLOG assume $E X_n = 0$ for all $n$. Now we just
+  need to show that $S_n / n \to 0$ in probability.
+  Fix $\delta > 0$, we next show
   \[
-  P \left( \abs{\frac{S_n}{n}} > 2 \delta \right)
-  \to 0
-  \]
-  
-  Let $\epsilon > 0$ be arbitrary. 
-  Since $i^{-1} \var X_i \to 0$ as $i \to \infty$,
-  there exists $N$ such that $i \geq N$ implies 
-  $i^{-1} \var X_i < \epsilon$. 
-  Let $n \geq N$, we have 
-  \begin{align*} 
     P \left( \abs{\frac{S_n}{n}} > 2 \delta \right)
-    &= P \left( \frac{1}{n} \abs{\sumi^n X_i} > 2 \delta \right) \\
-    &\leq P \left( \frac{1}{n} \sumi^N \abs{X_i} + 
-    \frac{1}{n} \abs{\sum_{i=N+1}^{n} X_i} > 2 \delta \right) \\
-    &\leq P \left( \frac{1}{n} \sumi^N \abs{X_i} > 
+    \to 0
+  \]
+
+  Let $\epsilon > 0$ be arbitrary.
+  Since $i^{-1} \var X_i \to 0$ as $i \to \infty$,
+  there exists $N$ such that $i \geq N$ implies
+  $i^{-1} \var X_i < \epsilon$.
+  Let $n \geq N$, we have
+  \begin{align*}
+    P \left( \abs{\frac{S_n}{n}} > 2 \delta \right)
+     & = P \left( \frac{1}{n} \abs{\sumi^n X_i} > 2 \delta \right) \\
+     & \leq P \left( \frac{1}{n} \sumi^N \abs{X_i} +
+    \frac{1}{n} \abs{\sum_{i=N+1}^{n} X_i} > 2 \delta \right)      \\
+     & \leq P \left( \frac{1}{n} \sumi^N \abs{X_i} >
     \delta \right)
-    + P \left( \frac{1}{n} \abs{\sum_{i=N + 1}^n X_i} > 
+    + P \left( \frac{1}{n} \abs{\sum_{i=N + 1}^n X_i} >
     \delta \right)
   \end{align*}
   For the first term, Chebyshev's inequality gives
   \begin{align*}
     P \left( \frac{1}{n} \sumi^N \abs{X_i} > \delta \right)
-    &\leq \frac{1}{n \delta} \sumi^N E \abs{X_i} \to 0
+     & \leq \frac{1}{n \delta} \sumi^N E \abs{X_i} \to 0
   \end{align*}
   as $n \to \infty$.
   For the second term, Chebyshev's inequality gives
@@ -76,10 +76,10 @@ Carnegie Mellon University}
     \leq \frac{1}{\delta^2} \var \left( \frac{1}{n} \sum_{i=N + 1}^n X_i \right)
     = \frac{1}{n^2 \delta^2} \var \left( \sum_{i=N+1}^n X_i \right).
   \end{align*}
-  Since $X_i$'s are uncorrelated, it follows that 
+  Since $X_i$'s are uncorrelated, it follows that
   \begin{align*}
     P \left( \frac{1}{n} \abs{\sum_{i=N+1}^n X_i} > \delta \right)
-    &\leq \frac{1}{n^2 \delta^2} \sum_{i=N + 1}^n \var (X_i) 
+     & \leq \frac{1}{n^2 \delta^2} \sum_{i=N + 1}^n \var (X_i)
     \leq \frac{1}{n \delta^2} \sum_{i=N + 1}^n \frac{\var X_i}{i}
     \leq \frac{(n - N) \epsilon}{n \delta^2} \leq \frac{\epsilon}{\delta^2}.
   \end{align*}
@@ -95,53 +95,53 @@ Carnegie Mellon University}
 \end{ex}
 
 \begin{proof}
-  Consider 
+  Consider
   \begin{align*}
-    E \left( n^{-1} \left( X_1 + \dots + X_n \right) \right)^2 
-    &= n^{-2} E \left( X_1 + \dots + X_n \right)^2 \\
-    &= n^{-2} \left( \sumi^n E X_i^2 + 2 \sum_{i < j} E X_i E_j \right) \\
-    &\leq n^{-2} \left( n r(0) + 2 \sumi^{n - 1} (n - i) r(i) \right).
+    E \left( n^{-1} \left( X_1 + \dots + X_n \right) \right)^2
+     & = n^{-2} E \left( X_1 + \dots + X_n \right)^2                      \\
+     & = n^{-2} \left( \sumi^n E X_i^2 + 2 \sum_{i < j} E X_i E_j \right) \\
+     & \leq n^{-2} \left( n r(0) + 2 \sumi^{n - 1} (n - i) r(i) \right).
   \end{align*}
-  Let $\epsilon$ be arbitrary. 
-  Since $r(k) \to 0$ as $k \to \infty$, there is $N$ such that 
-  $r(k) \leq \epsilon$ for all $k \geq N$. Hence for $n \geq N$, we have 
+  Let $\epsilon$ be arbitrary.
+  Since $r(k) \to 0$ as $k \to \infty$, there is $N$ such that
+  $r(k) \leq \epsilon$ for all $k \geq N$. Hence for $n \geq N$, we have
   \begin{align*}
-    E \left( n^{-1} (X_1 + \dots + X_n) \right)^2 
-    &\leq \frac{r(0)}{n} + \frac{2}{n^2} \sumi^N (n - i) r(i) 
-    + \frac{2}{n^2} \sum_{i = N + 1}^n (n - i) \epsilon \\
-    &\leq \frac{r(0)}{n} + \frac{2 N}{n} \sumi^N r(i) 
+    E \left( n^{-1} (X_1 + \dots + X_n) \right)^2
+     & \leq \frac{r(0)}{n} + \frac{2}{n^2} \sumi^N (n - i) r(i)
+    + \frac{2}{n^2} \sum_{i = N + 1}^n (n - i) \epsilon         \\
+     & \leq \frac{r(0)}{n} + \frac{2 N}{n} \sumi^N r(i)
     + 2 \epsilon.
   \end{align*}
-  This shows that $(X_1 + \dots + X_n) / n \to 0$ in $L^2$ and thus 
+  This shows that $(X_1 + \dots + X_n) / n \to 0$ in $L^2$ and thus
   in probability.
 
 \end{proof}
 
 \begin{ex}[Durrett 2.2.5]
-  Let $X_1, X_2, \dots$ be i.i.d.\ with 
+  Let $X_1, X_2, \dots$ be i.i.d.\ with
   \[
-  P(X_i > x) = \frac{e}{x \log x}.
+    P(X_i > x) = \frac{e}{x \log x}.
   \]
   for $x \geq e$.
-  Show that $E \abs{X_i} = \infty$, but there is a sequence of constants 
+  Show that $E \abs{X_i} = \infty$, but there is a sequence of constants
   $\mu_n \to \infty$ so that $S_n / n - \mu_n \to 0$ in probability.
 \end{ex}
 
 \begin{proof}
-  Note that $P(X_i < e) = 0$. It follows that 
+  Note that $P(X_i < e) = 0$. It follows that
   \[
-    E \abs{X_i} 
-    = \int_e^\infty P(X_i > x) \d x 
-    = [\log \log x]_e^\infty 
+    E \abs{X_i}
+    = \int_e^\infty P(X_i > x) \d x
+      = [\log \log x]_e^\infty
     = \infty.
   \]
-  However, 
+  However,
   \[
-  x P(X_i > x) = \frac{e}{\log x} \to 0.
+    x P(X_i > x) = \frac{e}{\log x} \to 0.
   \]
-  Hence, by a previous theorem, if $\mu_n = E X_1 \ind_{(\abs{X_1} \leq n)}$ 
-  then $S_n / n - \mu_n \to 0$. Note that $\mu_n < \infty$ but 
-  $\mu_n \to E X_i = \infty$ as $n \to \infty$ 
+  Hence, by a previous theorem, if $\mu_n = E X_1 \ind_{(\abs{X_1} \leq n)}$
+  then $S_n / n - \mu_n \to 0$. Note that $\mu_n < \infty$ but
+  $\mu_n \to E X_i = \infty$ as $n \to \infty$
   by monotone convergence theorem.
 
 \end{proof}
@@ -149,29 +149,29 @@ Carnegie Mellon University}
 \subsection{Borel-Cantelli lemmas}
 
 \begin{ex}[Durrett 2.3.8]
-Let $\seqinfn{A_n}$ be a sequence of independent events with $P(A_n) < 1$
-for all $n$. Show that $P (\cupinfn A_n) = 1$ 
-implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
+  Let $\seqinfn{A_n}$ be a sequence of independent events with $P(A_n) < 1$
+  for all $n$. Show that $P (\cupinfn A_n) = 1$
+  implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
 \end{ex}
 
 \begin{proof}
-  Suppose for contradiction that $\suminfn P(A_n) = M < \infty$. 
-  From independence, we have 
+  Suppose for contradiction that $\suminfn P(A_n) = M < \infty$.
+  From independence, we have
   \begin{align*}
-    P \left( \capn^N A_n^c \right) 
+    P \left( \capn^N A_n^c \right)
     = \prod_{n=1}^N (1 - P(A_n)).
   \end{align*}
-  As $\suminfn P(A_n)$ converges, $P(A_n) \to 0$ as $n \to 0$. 
-  It follows that there exists $\alpha < 1$ 
-  such that $P(A_n) \leq \alpha < 1$ for all $n$. 
+  As $\suminfn P(A_n)$ converges, $P(A_n) \to 0$ as $n \to 0$.
+  It follows that there exists $\alpha < 1$
+  such that $P(A_n) \leq \alpha < 1$ for all $n$.
   Once we select $\beta > 0$ such that $1 - \alpha \geq \exp (\beta \alpha)$,
-  we obtain 
+  we obtain
   \begin{align*}
-    P \left( \capn^N A_n^c \right) 
+    P \left( \capn^N A_n^c \right)
     = \prod_{n=1}^N (1 - P(A_n))
     \geq \exp \left( - \beta \sumn^N P(A_n) \right)
   \end{align*}
-  This implies 
+  This implies
   \begin{align*}
     P \left( \cupinfn A_n \right)
     = 1 - P \left( \capn^\infty A_n^c \right)
@@ -183,32 +183,32 @@ implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
 
 \begin{ex}[Durrett 2.3.9]
   Show that if $P (A_n) \to 0$ and $\suminfn P (A_n^c \cap A_{n + 1}) < \infty$,
-  then $P (A_n \text{ i.o.}) = 0$. Find an example of a sequence 
+  then $P (A_n \text{ i.o.}) = 0$. Find an example of a sequence
   $\seqinfn{A_n}$ to which the result above can
   be applied but the Borel-Cantelli lemma cannot.
 \end{ex}
 
 \begin{proof}
-  For any $N, M$, we have 
+  For any $N, M$, we have
   \[
-  \bigcup_{n = N}^M A_n 
-  = A_N \cup \bigcup_{n = N}^{M - 1} (A_n^c \cap A_{n + 1})
+    \bigcup_{n = N}^M A_n
+    = A_N \cup \bigcup_{n = N}^{M - 1} (A_n^c \cap A_{n + 1})
   \]
-  This implies 
+  This implies
   \begin{align*}
-    P \left( \bigcup_{n = N}^M A_n \right) 
+    P \left( \bigcup_{n = N}^M A_n \right)
     \leq P (A_N) + \sum_{n = N}^{M - 1} P (A_n^c \cap A_{n + 1}).
   \end{align*}
   Letting $M \to \infty$ shows
-  $P (\bigcup_{n = N}^\infty A_n) \leq P(A_n) + \sum_{n = N}^\infty 
-  P (A_n^c \cap A_{n + 1})$. 
+  $P (\bigcup_{n = N}^\infty A_n) \leq P(A_n) + \sum_{n = N}^\infty
+    P (A_n^c \cap A_{n + 1})$.
   Now letting $N \to \infty$ shows $P (\limsup A_n) = 0$, as desired.
-  
+
   For an example, define $(\Omega, \fcal, P)$ by letting $\Omega = [0, 1]$,
-  $\fcal$ be the Borel sets, and $P$ be the Lebesgue measure. 
-  For $n \geq 1$, define $A_n$ via 
+  $\fcal$ be the Borel sets, and $P$ be the Lebesgue measure.
+  For $n \geq 1$, define $A_n$ via
   \[
-  A_n = \left[ 1 - 2^{-n} - n^{-1} , 1 - 2^{-n} \right].
+    A_n = \left[ 1 - 2^{-n} - n^{-1} , 1 - 2^{-n} \right].
   \]
   Then $P(A_n) = n^{-1}$ but $P(A_n^c \cap A_{n + 1}) = 2^{-n - 1}$.
 
@@ -216,60 +216,60 @@ implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
 \end{proof}
 
 \begin{ex}[Durrett 2.3.12]
-  Let $X_1, X_2, \dots$ be a sequence of r.v.'s on $(\Omega, \fcal, P)$ 
-  where $\Omega$ is a countable set and $\fcal$ consists of all subsets 
-  of $\Omega$. Show that $X_n \to X$ in probability implies 
+  Let $X_1, X_2, \dots$ be a sequence of r.v.'s on $(\Omega, \fcal, P)$
+  where $\Omega$ is a countable set and $\fcal$ consists of all subsets
+  of $\Omega$. Show that $X_n \to X$ in probability implies
   $X_n \to X$ a.s.
 \end{ex}
 
 \begin{proof}
-  Suppose for contradiction that $X_n$ does not converge to $X$ a.s. 
-  Then there is a set $A \subset \Omega$ such that $P(A) > 0$ and 
+  Suppose for contradiction that $X_n$ does not converge to $X$ a.s.
+  Then there is a set $A \subset \Omega$ such that $P(A) > 0$ and
   $X_n (\omega)$ does not converge to $X(\omega)$ for all $\omega \in A$.
   Let
   \[
-  B_r = \left\{ \omega : \abs{X_n (\omega) - X (\omega)}
-  > 2^{-r} \text{ i.o.} \right\},
+    B_r = \left\{ \omega : \abs{X_n (\omega) - X (\omega)}
+    > 2^{-r} \text{ i.o.} \right\},
   \]
-  then $A = \bigcup_{r=1}^\infty B_r$. By continuity of measure, 
+  then $A = \bigcup_{r=1}^\infty B_r$. By continuity of measure,
   there exists $r$ such that $P (B_r) = \alpha > 0$
-  Since $B_r$ is countable, enumerate the elements in $B_r$ by 
+  Since $B_r$ is countable, enumerate the elements in $B_r$ by
   $\seqinfi{\omega_i}$. Write $\epsilon = 2^{-r}$.
 
-  Now, there is a subsequence $n^1 (j)$ such that 
+  Now, there is a subsequence $n^1 (j)$ such that
   $\abs{X_{n^1 (j)} (\omega_1) - X(\omega_1)} > \epsilon$ for all $j$.
-  Once we construct $n^{k - 1} (j)$, there is a subsequence $n^{k} (j)$ 
+  Once we construct $n^{k - 1} (j)$, there is a subsequence $n^{k} (j)$
   such that $\abs{X_{n^k(j)} (\omega_k) - X (\omega_k)} > \epsilon$
-  for all $j$. Let $m(k) = n^k (k)$, then 
-  $\abs{X_{m(k)} (\omega) - X(\omega)} > \epsilon$ for all $k$ and 
-  all $\omega \in A$. This implies 
+  for all $j$. Let $m(k) = n^k (k)$, then
+  $\abs{X_{m(k)} (\omega) - X(\omega)} > \epsilon$ for all $k$ and
+  all $\omega \in A$. This implies
   \[
-  P \left( \abs{X_{m(k)} - X(\omega)} > \epsilon \right) 
-  = \alpha > 0.
+    P \left( \abs{X_{m(k)} - X(\omega)} > \epsilon \right)
+    = \alpha > 0.
   \]
-  Hence, $P (\abs{X_n - X} > \epsilon) = \alpha$ i.o.\ and $X_n$ does not 
+  Hence, $P (\abs{X_n - X} > \epsilon) = \alpha$ i.o.\ and $X_n$ does not
   converge to $X$ in probability, contradiction.
 
 \end{proof}
 
 \begin{ex}[Durrett 2.3.14]
-  Let $X_1, X_2, \dots$ be independent. Show that $\sup X_n < \infty$ a.s.\ 
+  Let $X_1, X_2, \dots$ be independent. Show that $\sup X_n < \infty$ a.s.\
   if and only if $\suminfn P(X_n > A) < \infty$ for some $A$.
 \end{ex}
 
 \begin{proof}
-  ($\implies$) Suppose for contradiction that 
-  $\suminfn P(X_n > A) = \infty$ for any $A < \infty$. 
-  By independence and the second Borel-Cantelli lemma, 
-  we know $P(X_n > A \text{ i.o.}) = 1$ for any $A$. 
-  Since $A$ is arbitrary, this then implies $\sup X_n = \infty$ a.s., 
+  ($\implies$) Suppose for contradiction that
+  $\suminfn P(X_n > A) = \infty$ for any $A < \infty$.
+  By independence and the second Borel-Cantelli lemma,
+  we know $P(X_n > A \text{ i.o.}) = 1$ for any $A$.
+  Since $A$ is arbitrary, this then implies $\sup X_n = \infty$ a.s.,
   contradiction.
 
   ($\impliedby$) Suppose $\suminfn P(X_n > A) < \infty$ for some $A$.
   Then, Borel-Cantelli lemma implies $P (X_n > A \text{ i.o.}) = 0$.
-  That is, for almost sure $\omega \in \Omega$, there exists 
+  That is, for almost sure $\omega \in \Omega$, there exists
   $N(\omega)$ such that $X_n(\omega) \leq A$ for all $n \geq N$.
-  For these $\omega$, $\sup X_n (\omega) < \infty$. Therefore, 
+  For these $\omega$, $\sup X_n (\omega) < \infty$. Therefore,
   $\sup X_n < \infty$ a.s.
 
 \end{proof}
@@ -281,37 +281,37 @@ implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
 \subsection{Characteristic functions}
 
 \begin{ex}[Durrett 3.3.10]
-  Using the identity $\sin t = 2 \sin \frac{t}{2} \cos \frac{t}{2}$ 
+  Using the identity $\sin t = 2 \sin \frac{t}{2} \cos \frac{t}{2}$
   repeatedly leads to
   \[
-  \frac{\sin t}{t} = \prod_{m=1}^\infty \cos \left( \frac{t}{2^m} \right).
+    \frac{\sin t}{t} = \prod_{m=1}^\infty \cos \left( \frac{t}{2^m} \right).
   \]
-  Prove the last identity by interpreting each 
+  Prove the last identity by interpreting each
   side as a characteristic function.
 \end{ex}
 
 \begin{proof}
-  Note that 
+  Note that
   \[
-  \frac{1}{2} \int_{-1}^1 e^{i t x} \d x = \frac{\sin t}{t}.
+    \frac{1}{2} \int_{-1}^1 e^{i t x} \d x = \frac{\sin t}{t}.
   \]
-  Therefore, LHS can be interpreted as the ch.f. of a 
-  $\unif [-1, 1]$ random variable. Meanwhile, 
+  Therefore, LHS can be interpreted as the ch.f. of a
+  $\unif [-1, 1]$ random variable. Meanwhile,
   \[
-  \cos \left( 2^{-m} t \right) = \frac{1}{2} \exp (i t 2^{-m}) 
-  + \frac{1}{2} \exp (- i t 2^{-m}).
+    \cos \left( 2^{-m} t \right) = \frac{1}{2} \exp (i t 2^{-m})
+    + \frac{1}{2} \exp (- i t 2^{-m}).
   \]
-  Hence, $\cos (2^{-m} t)$ can be interpreted as ch.f. of a random variable 
-  $X_m$ that maps to $\pm 2^{-m}$ with probability $1/2$ each, 
+  Hence, $\cos (2^{-m} t)$ can be interpreted as ch.f. of a random variable
+  $X_m$ that maps to $\pm 2^{-m}$ with probability $1/2$ each,
   and RHS can be interpreted as the sum of independent $X_m$'s.
-  Now we just need to show that $X_1 + \dots + X_n \convd \unif[-1, 1]$. 
-  To verify this, note that $X_m = 2^{-m} (2 b_m - 1)$ where 
-  $\seqinfm{b_m}$ are i.i.d.\ $\Bernoulli (1 / 2)$ random 
-  variables. Meanwhile, $\suminfm 2^{-m} b_m$ converges to 
-  $\unif[0, 1]$ by interpreting the sum as choosing binary digits. 
+  Now we just need to show that $X_1 + \dots + X_n \convd \unif[-1, 1]$.
+  To verify this, note that $X_m = 2^{-m} (2 b_m - 1)$ where
+  $\seqinfm{b_m}$ are i.i.d.\ $\Bernoulli (1 / 2)$ random
+  variables. Meanwhile, $\suminfm 2^{-m} b_m$ converges to
+  $\unif[0, 1]$ by interpreting the sum as choosing binary digits.
   It then immediately follows that $X_1 + \dots + X_n \convd \unif [-1, 1]$.
-  More concretely, we can compute the probability of each dyadic intervals 
-  and approximate all intervals through them. This then uniquely determines 
+  More concretely, we can compute the probability of each dyadic intervals
+  and approximate all intervals through them. This then uniquely determines
   the distribution.
   By Levy's theorem, the proof for the desired inequality is complete.
 
@@ -319,18 +319,18 @@ implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
 
 \begin{ex}[Durrett 3.3.20]
   If $X_1, X_2, \dots$ are independent and have characteristic
-  function $\exp (- \abs{t}^\alpha)$ then 
+  function $\exp (- \abs{t}^\alpha)$ then
   $(X_1 + \dots + X_n) / n^{1 / \alpha}$ has the same distribution
   as $X_1$.
 \end{ex}
 
 \begin{proof}
-  By independence, the ch.f. of $X_1 + \dots + X_n$ is 
-  $\exp ( - n \abs{t}^\alpha )$. Hence the ch.f. of 
-  $(X_1 + \dots + X_n) / n^{1 / \alpha}$ is 
+  By independence, the ch.f. of $X_1 + \dots + X_n$ is
+  $\exp ( - n \abs{t}^\alpha )$. Hence the ch.f. of
+  $(X_1 + \dots + X_n) / n^{1 / \alpha}$ is
   \[
-  \exp \left( - n \abs{\frac{t}{n^{1 / \alpha}}}^\alpha \right) 
-  = \exp (- \abs{t}^\alpha ).
+    \exp \left( - n \abs{\frac{t}{n^{1 / \alpha}}}^\alpha \right)
+    = \exp (- \abs{t}^\alpha ).
   \]
   This is the same ch.f. as $X_1$, so
   $(X_1 + \dots + X_n) / n^{1 / \alpha}$ has the same distribution
@@ -345,22 +345,22 @@ implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
 
 \begin{proof}
   Since $X$ and $Y$ are independent, $\phi_{X + Y} = \phi_X \phi_Y$.
-  We are given that $\phi_X \phi_Y = \phi_X$, so 
+  We are given that $\phi_X \phi_Y = \phi_X$, so
   \[
-  \phi_X (t) (\phi_Y (t) - 1) = 0
+    \phi_X (t) (\phi_Y (t) - 1) = 0
   \]
   for all $t \in \R$. Note that $\phi_X(0) = 1$ and $\phi_X$ is
-  continuous, so $\phi_Y = 0$ on a neighborhood of zero. 
+  continuous, so $\phi_Y = 0$ on a neighborhood of zero.
   Now show that this implies $Y = 0$ a.s.
 
-  Let $t$ be in this neighborhood, then $1 = E[\cos (t Y)]$. 
-  Note that $\cos (t Y) \leq 1$, so this implies 
-  $\cos (t Y) = 1$ a.s., and $t Y \in 2 \pi \Z$ a.s. Let 
-  $t_1, t_2$ be both in this neighborhood and $t_1 / t_2 \notin \Q$. 
-  Then $t_1 Y \in 2 \pi \Z$ and $t_2 Y \in 2 \pi \Z$ a.s. If 
-  $Y(\omega) \neq 0$, then 
+  Let $t$ be in this neighborhood, then $1 = E[\cos (t Y)]$.
+  Note that $\cos (t Y) \leq 1$, so this implies
+  $\cos (t Y) = 1$ a.s., and $t Y \in 2 \pi \Z$ a.s. Let
+  $t_1, t_2$ be both in this neighborhood and $t_1 / t_2 \notin \Q$.
+  Then $t_1 Y \in 2 \pi \Z$ and $t_2 Y \in 2 \pi \Z$ a.s. If
+  $Y(\omega) \neq 0$, then
   \[
-  \frac{t_1}{t_2} = \frac{t_1 Y(\omega)}{t_2 Y(\omega)} \in \Q,
+    \frac{t_1}{t_2} = \frac{t_1 Y(\omega)}{t_2 Y(\omega)} \in \Q,
   \]
   a contradiction. Therefore, $Y = 0$ a.s.
 
@@ -371,113 +371,113 @@ implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
 \subsection{Conditional expectation}
 
 \begin{ex}[Durrett 4.1.2]
-  Prove \textbf{Chebyshev's inequality}. If $a > 0$ then 
+  Prove \textbf{Chebyshev's inequality}. If $a > 0$ then
   \[
-  P \{ \abs{X} \geq a | \fcal \} \leq a^{-2} E[X^2 | \fcal].
+    P \{ \abs{X} \geq a | \fcal \} \leq a^{-2} E[X^2 | \fcal].
   \]
 \end{ex}
 
 \begin{proof}
-  Let $A \in \fcal$, we have 
+  Let $A \in \fcal$, we have
   \begin{align*}
-    \int_A E[ \ind_{\{\abs{X} \geq a\}} | \fcal] \d P 
-    &= \int_A \ind_{\{\abs{X} \geq a\}} \d P.
+    \int_A E[ \ind_{\{\abs{X} \geq a\}} | \fcal] \d P
+     & = \int_A \ind_{\{\abs{X} \geq a\}} \d P.
   \end{align*}
-  On the event $\{\abs{X} \geq a\}$, $a^{-2} X^2 \geq 1$, so 
+  On the event $\{\abs{X} \geq a\}$, $a^{-2} X^2 \geq 1$, so
   \begin{align*}
-    \int_A E[ \ind_{\{\abs{X} \geq a\}} | \fcal] \d P 
-    &\leq \int_A a^{-2} X^2 \d P \\
-    &= a^{-2} \int_A X^2 \d P \\
-    &= a^{-2} \int_A E [X^2 | \fcal] \d P.
+    \int_A E[ \ind_{\{\abs{X} \geq a\}} | \fcal] \d P
+     & \leq \int_A a^{-2} X^2 \d P           \\
+     & = a^{-2} \int_A X^2 \d P              \\
+     & = a^{-2} \int_A E [X^2 | \fcal] \d P.
   \end{align*}
   Since $A \in \fcal$ is arbitrary, this completes the proof.
 
 \end{proof}
 
 \begin{ex}[Durrett 4.1.5]
-  Give an example on $\Omega = \{a, b, c\}$ in which 
+  Give an example on $\Omega = \{a, b, c\}$ in which
   \[
-  E [E [X | \fcal_1] | \fcal_2] \neq E [E [X | \fcal_2] | \fcal_1].
+    E [E [X | \fcal_1] | \fcal_2] \neq E [E [X | \fcal_2] | \fcal_1].
   \]
 \end{ex}
 
 \begin{proof}
-  Let $P$ be the uniform distribution and $X = \ind_{\{a\}}$. 
-  Also let 
+  Let $P$ be the uniform distribution and $X = \ind_{\{a\}}$.
+  Also let
   \[
-  \fcal_1 = \{ \{a, b\}, \{c\}, \emptyset, \Omega\}, \quad 
-  \fcal_2 = \{ \{b, c\}, \{a\}, \emptyset, \Omega\}.
+    \fcal_1 = \{ \{a, b\}, \{c\}, \emptyset, \Omega\}, \quad
+    \fcal_2 = \{ \{b, c\}, \{a\}, \emptyset, \Omega\}.
   \]
   Then $E[X | \fcal_2] = X$. Meanwhile, $E[X | \fcal_1] (c) = 0$
-  and $E[X | \fcal_1] (a) = E[X | \fcal_1] (b) = \frac{1}{2}$. With this, 
+  and $E[X | \fcal_1] (a) = E[X | \fcal_1] (b) = \frac{1}{2}$. With this,
   we can also compute $E[E[X | \fcal_1] | \fcal_2] (a) = \frac{1}{2}$
   and $E[E[X | \fcal_1] | \fcal_2] (b) = E[E[X | \fcal_1] | \fcal_2] (c)
-  = \frac{1}{4}$. This shows that $E [E [X | \fcal_1] | \fcal_2] \neq 
-  E [E [X | \fcal_2] | \fcal_1]$, as desired.
+    = \frac{1}{4}$. This shows that $E [E [X | \fcal_1] | \fcal_2] \neq
+    E [E [X | \fcal_2] | \fcal_1]$, as desired.
 
 \end{proof}
 
 \begin{ex}[Durrett 4.1.6]
-  Show that if $\gcal \subset \fcal$ and $E X^2 < \infty$ then 
+  Show that if $\gcal \subset \fcal$ and $E X^2 < \infty$ then
   \[
-  E \left[ (X - E[X | \fcal])^2 \right]
-  + E \left[ (E [X | \fcal] - E[X | \gcal])^2 \right]
-  = E \left[ (X - E [X | \gcal])^2 \right].
+    E \left[ (X - E[X | \fcal])^2 \right]
+    + E \left[ (E [X | \fcal] - E[X | \gcal])^2 \right]
+    = E \left[ (X - E [X | \gcal])^2 \right].
   \]
 \end{ex}
 
 \begin{proof}
-  For LHS, we have 
+  For LHS, we have
   \begin{align*}
-    &(X - E[X | \fcal])^2 + (E[X | \fcal] - E [X | \gcal])^2 \\
-    &= X^2 + 2 E[X | \fcal]^2 - 2 X E[X | \fcal] - 2 E[X | \fcal]
+     & (X - E[X | \fcal])^2 + (E[X | \fcal] - E [X | \gcal])^2      \\
+     & = X^2 + 2 E[X | \fcal]^2 - 2 X E[X | \fcal] - 2 E[X | \fcal]
     E [X | \gcal] + E[X | \gcal]^2
   \end{align*}
-  For RHS, we have 
+  For RHS, we have
   \begin{align*}
     (X - E[X | \gcal])^2 = X^2 + E[X | \gcal]^2 - 2 X E[X | \gcal].
   \end{align*}
-  Hence, we just need to show 
+  Hence, we just need to show
   \[
-  E[E[X | \fcal]^2 - X E[X | \fcal] - E[X | \fcal]
-    E [X | \gcal]]
-  = E[- X E[X | \gcal]].
+    E[E[X | \fcal]^2 - X E[X | \fcal] - E[X | \fcal]
+        E [X | \gcal]]
+    = E[- X E[X | \gcal]].
   \]
-  Using the tower property and taking conditional expectation 
-  w.r.t.\ $\fcal$ first and then taking the unconditional 
-  expectation, we have 
+  Using the tower property and taking conditional expectation
+  w.r.t.\ $\fcal$ first and then taking the unconditional
+  expectation, we have
   \begin{align*}
-    & E[E[X | \fcal]^2 - X E[X | \fcal] - E[X | \fcal]
-    E [X | \gcal]] \\
-    &= E[E[X | \fcal]^2] - E[E[X | \fcal]^2]
-    - E[E[X | \fcal] E[X | \gcal]]  \\
-    &= - E[E[X | \fcal] E[X | \gcal]],
+     & E[E[X | \fcal]^2 - X E[X | \fcal] - E[X | \fcal]
+           E [X | \gcal]] \\
+     & = E[E[X | \fcal]^2] - E[E[X | \fcal]^2]
+    - E[E[X | \fcal] E[X | \gcal]]                     \\
+     & = - E[E[X | \fcal] E[X | \gcal]],
   \end{align*}
-  Similarly, we have 
+  Similarly, we have
   \begin{align*}
     E[- X E[X | \gcal]]
-    &= - E[E[X | \fcal] E[X | \gcal]],
+     & = - E[E[X | \fcal] E[X | \gcal]],
   \end{align*}
   where we used the fact that $E[X | \gcal]$ is $\gcal$-measurable
-  and thus $\fcal$-measurable. 
+  and thus $\fcal$-measurable.
 
 \end{proof}
 
 \begin{ex}[Durrett 4.1.8]
-  Let $Y_1, Y_2, \dots$ be i.i.d.\ with mean $\mu$ and variance 
+  Let $Y_1, Y_2, \dots$ be i.i.d.\ with mean $\mu$ and variance
   $\sigma^2$, $N$ an independent positive integer valued r.v.\
-  with $E N^2 < \infty$ and $X = Y_1 + \dots + Y_N$. Show that 
+  with $E N^2 < \infty$ and $X = Y_1 + \dots + Y_N$. Show that
   \[
-  \var (X) = \sigma^2 E N + \mu^2 \var (N).
+    \var (X) = \sigma^2 E N + \mu^2 \var (N).
   \]
-  To understand and 
-  help remember the formula, think about the two special cases 
+  To understand and
+  help remember the formula, think about the two special cases
   in which $N$ or $Y$ is constant.
 \end{ex}
 
 \begin{proof}
-  It is easy to see that $E[Y_1^2]= \sigma^2 + \mu^2$. Then, 
-  we have 
+  It is easy to see that $E[Y_1^2]= \sigma^2 + \mu^2$. Then,
+  we have
   \begin{align*}
     E[X] = E[E[X | N]] = E[\mu N] = \mu EN,
   \end{align*}
@@ -487,27 +487,27 @@ implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
     = E[N (\sigma^2 + \mu^2) + N (N - 1) \mu^2]
     = \mu^2 E[N^2] + \sigma^2 E N.
   \end{align*}
-  Subtrating these two expressions gives $\var X = \sigma^2 EN + \mu^2 
-  \var N$, as desired.
+  Subtrating these two expressions gives $\var X = \sigma^2 EN + \mu^2
+    \var N$, as desired.
 \end{proof}
 
 \begin{ex}[Durrett 4.1.9]
-  Show that if $X$ and $Y$ are random variables with $E[Y | \gcal] = X$ 
+  Show that if $X$ and $Y$ are random variables with $E[Y | \gcal] = X$
   and $E Y^2 = E X^2 < \infty$, then $X = Y$ a.s.
 \end{ex}
 
 \begin{proof}
-  Since $X = E[Y | \gcal]$, $X$ is $\gcal$-measurable. It follows that 
+  Since $X = E[Y | \gcal]$, $X$ is $\gcal$-measurable. It follows that
   \begin{align*}
-    E[(Y - X) X | \gcal] 
+    E[(Y - X) X | \gcal]
     = E[(Y - X) X | \gcal]
     = X (E[Y | \gcal] - E[X])
     = X (X - X) = 0,
   \end{align*}
   so $E[(Y - X) X] = 0$ i.e.\ $E[XY] = E[X^2]$. Now we have
   \[
-  E[(Y - X)^2] = E[Y^2] - 2 E[XY] + E[X^2]
-  = E[Y^2] - E[X^2] = 0.
+    E[(Y - X)^2] = E[Y^2] - 2 E[XY] + E[X^2]
+    = E[Y^2] - E[X^2] = 0.
   \]
   Therefore, $X = Y$ a.s.
 \end{proof}
@@ -515,18 +515,18 @@ implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
 \subsection{Martingales, almost sure convergence}
 
 \begin{ex}[Durret 4.2.1]
-  Suppose $X_n$ is a martingale w.r.t.\ $\gcal_n$ and let 
-  $\fcal_n = \sigma (X_1, \dots, X_n)$. Then $\gcal_n \supset 
-  \fcal_n$ and $X_n$ is a martingale w.r.t\ $\fcal_n$.
+  Suppose $X_n$ is a martingale w.r.t.\ $\gcal_n$ and let
+  $\fcal_n = \sigma (X_1, \dots, X_n)$. Then $\gcal_n \supset
+    \fcal_n$ and $X_n$ is a martingale w.r.t\ $\fcal_n$.
 \end{ex}
 
 \begin{proof}
   By assumption, $X_1, \dots, X_n$ are all $\gcal_n$ measurable.
-  Therefore it is clear that $\gcal_n \supset \fcal_n$. 
+  Therefore it is clear that $\gcal_n \supset \fcal_n$.
   Moreover,
   \[
-  E[X_{n + 1} | \fcal_n] = E[E[X_{n+1} | \gcal_n] | \fcal_n]
-  = E[X_n | \fcal_n] = X_n,
+    E[X_{n + 1} | \fcal_n] = E[E[X_{n+1} | \gcal_n] | \fcal_n]
+    = E[X_n | \fcal_n] = X_n,
   \]
   so $X_n$ is a martingale w.r.t.\ $\fcal_n$.
 
@@ -534,62 +534,62 @@ implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
 
 \begin{ex}[Durret 4.2.5]
   Give an example of a martingale $X_n$ with $X_n \to - \infty$ a.s.
-  Hint: Let $X_n = \xi_1 + \dots + \xi_n$ where the $\xi_i$ are 
+  Hint: Let $X_n = \xi_1 + \dots + \xi_n$ where the $\xi_i$ are
   independent (but not identically distributed) with $E \xi_i = 0$.
 \end{ex}
 
 \begin{proof}
   Define $\xi_n$ via $P \{\xi_n = - n^{-1}\} = 1 - n^{-2}$
-  and $P\{\xi_n = n - n^{-1}\} = n^{-2}$. Then 
+  and $P\{\xi_n = n - n^{-1}\} = n^{-2}$. Then
   \[
-  E \xi_n = - \left( 1 - \frac{1}{n^2} \right) \frac{1}{n}
-  + \frac{1}{n^2} \left( n - \frac{1}{n} \right) = 0.
+    E \xi_n = - \left( 1 - \frac{1}{n^2} \right) \frac{1}{n}
+    + \frac{1}{n^2} \left( n - \frac{1}{n} \right) = 0.
   \]
-  Therefore $X_n = \xi_1 + \dots + \xi_n$ is a martingale. To show 
-  $X_n \to -\infty$ a.s., note that 
+  Therefore $X_n = \xi_1 + \dots + \xi_n$ is a martingale. To show
+  $X_n \to -\infty$ a.s., note that
   \[
-  \suminfi P\{\xi_n = n - n^{-1}\} = \suminfi \frac{1}{n^2} < \infty.
+    \suminfi P\{\xi_n = n - n^{-1}\} = \suminfi \frac{1}{n^2} < \infty.
   \]
-  Borel-Cantelli lemma then implies that $P \{\xi_n = n - n^{-1} 
-  \text{ i.o.}\} = 0$. On the complementary event $\{\xi_n = -n^{-1} 
-  \text{ for all but finitely many $n$}\}$, it is clear that 
+  Borel-Cantelli lemma then implies that $P \{\xi_n = n - n^{-1}
+    \text{ i.o.}\} = 0$. On the complementary event $\{\xi_n = -n^{-1}
+    \text{ for all but finitely many $n$}\}$, it is clear that
   $X_n \to -\infty$.
 
 \end{proof}
 
 \begin{ex}[Durret 4.2.8]
   Let $X_n$ and $Y_n$ be positive integrable and adapted to $\fcal_n$.
-  Suppose 
+  Suppose
   \[
-  E[X_{n + 1} | \fcal_n] \leq (1 + Y_n) X_n
+    E[X_{n + 1} | \fcal_n] \leq (1 + Y_n) X_n
   \]
   with $\sum Y_n < \infty$ a.s. Prove that $X_n$ converges a.s. to a finite
-  limit by finding a closely related supermartingale to which 
+  limit by finding a closely related supermartingale to which
   Theorem 4.2.12 can be applied.
 \end{ex}
 
 \begin{proof}
   Define $A_n = \prod_{k=1}^{n-1} (1 + Y_k)$ and $Z_n = \frac{X_n}{A_n}$.
-  Since $Y_k$ is $\fcal_k$-measurable for each $k$, $A_n$ is 
-  $\fcal_n$-measurable. 
-  Also, since $A_n \geq 1$ a.s.\ and $X_n$ 
+  Since $Y_k$ is $\fcal_k$-measurable for each $k$, $A_n$ is
+  $\fcal_n$-measurable.
+  Also, since $A_n \geq 1$ a.s.\ and $X_n$
   is integrable, $Z_n$ is also integrable. Now we have
-  $A_{n + 1} = A_n (1 + Y_n)$, and thus 
+  $A_{n + 1} = A_n (1 + Y_n)$, and thus
   \begin{align*}
     E[Z_{n + 1} | \fcal_n]
     = E \left[ \frac{X_{n + 1}}{A_n (1 + Y_n)} \middle| \fcal_n \right]
-    = \frac{E[X_{n + 1} | \fcal_n]}{A_n (1 + Y_n)} 
+    = \frac{E[X_{n + 1} | \fcal_n]}{A_n (1 + Y_n)}
     \leq \frac{X_n}{A_n}
     = Z_n.
   \end{align*}
-  Therefore, $Z_n$ is a supermartingale and thus converges to some 
+  Therefore, $Z_n$ is a supermartingale and thus converges to some
   finite limit $Z$ a.s.
 
-  Now consider $A_n$. Using $\log (1 + x) \leq x$ for $x > 0$, we have 
+  Now consider $A_n$. Using $\log (1 + x) \leq x$ for $x > 0$, we have
   \[
-  \sumk^{n-1} \log (1 + Y_k)
-  \leq \sumk^{n - 1} Y_n
-  \leq \suminfn Y_n < \infty \text{ a.s.}
+    \sumk^{n-1} \log (1 + Y_k)
+    \leq \sumk^{n - 1} Y_n
+    \leq \suminfn Y_n < \infty \text{ a.s.}
   \]
   Therefore, the series $\sum \log(1 + Y_k)$ converges a.s.
   and thus $A_n = \exp (\sumk^{n-1} \log(1 + Y_k))$ converges
@@ -598,9 +598,9 @@ implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
 \end{proof}
 
 \begin{ex}[Durret 4.2.9]
-  \textbf{The switching principle}. Suppose $X_n^1$ and $X_n^2$ are 
-  supermartingales with respect to $\fcal_n$ and $N$ is stopping time 
-  so that $X_N^1 \geq X_N^2$. Then 
+  \textbf{The switching principle}. Suppose $X_n^1$ and $X_n^2$ are
+  supermartingales with respect to $\fcal_n$ and $N$ is stopping time
+  so that $X_N^1 \geq X_N^2$. Then
   \begin{align*}
     Y_n = X_n^1 \ind_{\{N > n\}} + X_n^2 \ind_{\{N \leq n\}}
     \text{ is a supermartingale.} \\
@@ -610,42 +610,42 @@ implies $\suminfn P(A_n) = \infty$ and hence $P(A_n \text{ i.o.}) = 1$.
 \end{ex}
 
 \begin{proof}
-  To show $Y_n$ is a supermartingale, note that 
+  To show $Y_n$ is a supermartingale, note that
   \[
-  Y_{n + 1} = X_{n + 1}^1 \ind_{\{N > n + 1\}} + X_{n + 1}^2 \ind_{\{N \leq n + 1\}}
+    Y_{n + 1} = X_{n + 1}^1 \ind_{\{N > n + 1\}} + X_{n + 1}^2 \ind_{\{N \leq n + 1\}}
   \]
   However, $\ind_{\{N > n + 1\}} + \ind_{\{N = n + 1\}} = \ind_{\{N > n\}}$
   and $\ind_{\{N \leq n + 1\}} = \ind_{\{N \leq n\}} + \ind_{\{N = n + 1\}}$.
-  It follows that 
+  It follows that
   \[
-  Y_{n + 1} = X_{n + 1}^1 \ind_{\{N > n\}}
-  + X_{n + 1}^2 \ind_{\{N \leq n\}}
-  + (X_{n+1}^2 - X_{n+1}^1) \ind_{\{N = n + 1\}}.
+    Y_{n + 1} = X_{n + 1}^1 \ind_{\{N > n\}}
+    + X_{n + 1}^2 \ind_{\{N \leq n\}}
+    + (X_{n+1}^2 - X_{n+1}^1) \ind_{\{N = n + 1\}}.
   \]
-  Note that $\ind_{\{N \leq n\}}$ and 
-  $\ind_{\{N > n\}}$ are both $\fcal_n$-measurable, and 
+  Note that $\ind_{\{N \leq n\}}$ and
+  $\ind_{\{N > n\}}$ are both $\fcal_n$-measurable, and
   $X_{n+1}^1 \geq X_{n+1}^2$ on the event $\{N = n + 1\}$.
   Taking the conditional expectation w.r.t.\ $\fcal_n$ gives
   \begin{align*}
-    E[Y_{n + 1}] 
-    &\leq \ind_{\{N > n\}} E[X_{n+1}^1 | \fcal_n]
-    + \ind_{\{N \leq n\}} E[X_{n+1}^2 | \fcal_n] \\
-    &\leq \ind_{\{N > n\}} X_n^1 + \ind_{\{N \leq n\}} X_{n+1}^2 \\
-    &= Y_n,
+    E[Y_{n + 1}]
+     & \leq \ind_{\{N > n\}} E[X_{n+1}^1 | \fcal_n]
+    + \ind_{\{N \leq n\}} E[X_{n+1}^2 | \fcal_n]                   \\
+     & \leq \ind_{\{N > n\}} X_n^1 + \ind_{\{N \leq n\}} X_{n+1}^2 \\
+     & = Y_n,
   \end{align*}
   showing $Y_n$ is a supermartingale.
 
-  To show $Z_n$ is a supermartingale, note that $\ind_{\{N \geq n + 1\}}$ 
+  To show $Z_n$ is a supermartingale, note that $\ind_{\{N \geq n + 1\}}$
   and $\ind_{\{N < n + 1\}}$ are $\fcal_n$-measurable. It follows that
   \begin{align*}
     E[Z_{n + 1} | \fcal_n]
-    &= E[X_{n + 1}^1 \ind_{\{N \geq n + 1\}} + X_{n + 1}^2 \ind_{\{N < n + 1\}} | \fcal_n] \\
-    &= E[X_{n + 1}^1 | \fcal_n] \ind_{\{N \geq n + 1\}} + E[X_{n + 1}^2  | \fcal_n] \ind_{\{N < n + 1\}} \\
-    &\geq X_n^1 \ind_{\{N \geq n + 1\}} + X_n^2 \ind_{\{N < n + 1\}}.
+     & = E[X_{n + 1}^1 \ind_{\{N \geq n + 1\}} + X_{n + 1}^2 \ind_{\{N < n + 1\}} | \fcal_n]               \\
+     & = E[X_{n + 1}^1 | \fcal_n] \ind_{\{N \geq n + 1\}} + E[X_{n + 1}^2  | \fcal_n] \ind_{\{N < n + 1\}} \\
+     & \geq X_n^1 \ind_{\{N \geq n + 1\}} + X_n^2 \ind_{\{N < n + 1\}}.
   \end{align*}
   Now we can use a similar decomposition to see
   $E[Z_{n + 1} | \fcal_n] \geq Z_n$.
-  
+
 \end{proof}
 
 

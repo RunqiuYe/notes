@@ -55,85 +55,85 @@
 
 \section*{Practice problems A}
 \subsubsection*{Problem 1}
-Suppose $\omega: [0, \infty) \to [0, \infty]$ any function 
-such that $\omega(x) = 0$ if and only if $x = 0$, 
-$\omega$ continuous at 
+Suppose $\omega: [0, \infty) \to [0, \infty]$ any function
+such that $\omega(x) = 0$ if and only if $x = 0$,
+$\omega$ continuous at
 $0$, and $\omega$ is nondecreasing. For $f: X \to Z$ define
 \[
-[f]_\omega = \sup\left\{ \frac{d(f(x),f(y))}{\omega(d(x,y))} :
-x, y \in X, x \neq y \right\}
+  [f]_\omega = \sup\left\{ \frac{d(f(x),f(y))}{\omega(d(x,y))} :
+  x, y \in X, x \neq y \right\}
 \]
-and the space 
+and the space
 \[
-C^{0, \omega} (X; Z) = \left\{ f: X \to Z \mid [f]_\omega < \infty \right\}.
+  C^{0, \omega} (X; Z) = \left\{ f: X \to Z \mid [f]_\omega < \infty \right\}.
 \]
 {
-\newcommand{\cw}{{C^{0, \omega}}}
-\newcommand{\cwb}{{C^{0, \omega}_b}}
-\begin{enumerate}
-  \item Prove that $\cw(X; Z) \subset C^0(X; Z)$.
+  \newcommand{\cw}{{C^{0, \omega}}}
+  \newcommand{\cwb}{{C^{0, \omega}_b}}
+  \begin{enumerate}
+    \item Prove that $\cw(X; Z) \subset C^0(X; Z)$.
 
-  \item Suppose $Z$ Banach. Show that $\norm{f}_{\cw} = \norm{f}_{C^0} + [f]_\omega$
-  is a norm on $\cwb(X; Z) = C^0_b(X; Z) \cap \cw(X; Z)$, and 
-  that $\cwb(X;Z)$ is complete with respect to this norm.
+    \item Suppose $Z$ Banach. Show that $\norm{f}_{\cw} = \norm{f}_{C^0} + [f]_\omega$
+          is a norm on $\cwb(X; Z) = C^0_b(X; Z) \cap \cw(X; Z)$, and
+          that $\cwb(X;Z)$ is complete with respect to this norm.
 
-  \item Suppose that $X$ is compact and $d \in \N$, show that 
-  $B_{C^{0, \omega}(X; \R^d)} [0, 1] \subset C^0(X; \R^d)$
-  is compact.
+    \item Suppose that $X$ is compact and $d \in \N$, show that
+          $B_{C^{0, \omega}(X; \R^d)} [0, 1] \subset C^0(X; \R^d)$
+          is compact.
 
-  \item Suppose $X$ compact and infinte, and $d \in \N$.
-  Show that $B_{\cw}[0,1] \subset \cw$ is not compact.
-  Conclude that $\id: (\cw, \norm{\cdot}_{C^0}) \to (\cw, \norm{\cdot}_{\cw})$
-  is not continuous. Also conclude that $(\cw, \norm{\cdot}_{C^0})$ 
-  is not complete.
+    \item Suppose $X$ compact and infinte, and $d \in \N$.
+          Show that $B_{\cw}[0,1] \subset \cw$ is not compact.
+          Conclude that $\id: (\cw, \norm{\cdot}_{C^0}) \to (\cw, \norm{\cdot}_{\cw})$
+          is not continuous. Also conclude that $(\cw, \norm{\cdot}_{C^0})$
+          is not complete.
 
-  \item Another way to see this last fact is to first prove 
-  $\cw(X; \R^d)$ is a strict subset of $C^0(X; \R^d)$. It is helpful 
-  to study the sets $E_n = \left\{ f \in C^0(X; \R^d) : [f]_\omega \leq n \right\}$.
-  Show that $\cw(X; \R)$ is dense in $C^0(X; \R)$. 
-  Use this to show that $\cw(X; \R^d)$ is dense in $C^0(X; \R)$,
-  and conclude $(\cw(X; \R^d), \norm{\cdot}_{C^0})$ 
-  is not complete.
-\end{enumerate}
-
-
-\begin{proof}
-\begin{enumerate}
-\item Let $x \in X$ and $\epsilon > 0$. It follws that for 
-any $x \neq y$ we have 
-\[
-d(f(x), f(y)) \leq [f]_\omega \omega(d(x, y)).
-\]
-Since $\omega(0) = 0$, $\omega$ continuous
-at $0$, and $\omega$ is nondecreasing, we can find 
-$\delta > 0$ such that $0 \leq t < \delta$ implies 
-$0 \leq \omega(t) < \epsilon$. 
-Therefore,
-$d(x, y) < \delta$ implies $d(f(x), f(y)) < \epsilon [f]_{\omega}$.
-Since $[f]_{\omega} < \infty$, $f$ is continuous and 
-$\cw (X; Z) \subset C^0(X; Z)$.
-
-\item It is easy to show that $\norm{\cdot}_{\cw}$ is indeed a
-norm on $\cwb(X; Z)$. Now we show that $\cwb(X; Z)$
-is complete with respect to this norm.
-Suppose $\left\{ f_n \right\} \subset \cwb$ Cauchy. Then 
-it is also Cauchy in $C^0_b$. Therefore there is $f \in C^0_b$
-such that $f_n \to f$ under $C^0$ norm. Remain to show 
-$[f - f_n]_\omega \to 0$. Let $x, y \in X$ and $x \neq y$
-and $m, n \geq N$ implies $[f_m - f_n]_\omega < \epsilon$.
-Then, 
-\[
-\begin{aligned}
-  \frac{\norm{f_m(x) - f_m(y) - f_n(x) + f_n(y)}_Z}{\omega(d(x, y))}
-  < \epsilon.
-\end{aligned}
-\]
-Take $m \to \infty$ and take supremum of all 
-$x, y \in X$ with $x \neq y$
-completes the proof.
+    \item Another way to see this last fact is to first prove
+          $\cw(X; \R^d)$ is a strict subset of $C^0(X; \R^d)$. It is helpful
+          to study the sets $E_n = \left\{ f \in C^0(X; \R^d) : [f]_\omega \leq n \right\}$.
+          Show that $\cw(X; \R)$ is dense in $C^0(X; \R)$.
+          Use this to show that $\cw(X; \R^d)$ is dense in $C^0(X; \R)$,
+          and conclude $(\cw(X; \R^d), \norm{\cdot}_{C^0})$
+          is not complete.
+  \end{enumerate}
 
 
-\end{enumerate}
-\end{proof}
+  \begin{proof}
+    \begin{enumerate}
+      \item Let $x \in X$ and $\epsilon > 0$. It follws that for
+            any $x \neq y$ we have
+            \[
+              d(f(x), f(y)) \leq [f]_\omega \omega(d(x, y)).
+            \]
+            Since $\omega(0) = 0$, $\omega$ continuous
+            at $0$, and $\omega$ is nondecreasing, we can find
+            $\delta > 0$ such that $0 \leq t < \delta$ implies
+            $0 \leq \omega(t) < \epsilon$.
+            Therefore,
+            $d(x, y) < \delta$ implies $d(f(x), f(y)) < \epsilon [f]_{\omega}$.
+            Since $[f]_{\omega} < \infty$, $f$ is continuous and
+            $\cw (X; Z) \subset C^0(X; Z)$.
+
+      \item It is easy to show that $\norm{\cdot}_{\cw}$ is indeed a
+            norm on $\cwb(X; Z)$. Now we show that $\cwb(X; Z)$
+            is complete with respect to this norm.
+            Suppose $\left\{ f_n \right\} \subset \cwb$ Cauchy. Then
+            it is also Cauchy in $C^0_b$. Therefore there is $f \in C^0_b$
+            such that $f_n \to f$ under $C^0$ norm. Remain to show
+            $[f - f_n]_\omega \to 0$. Let $x, y \in X$ and $x \neq y$
+            and $m, n \geq N$ implies $[f_m - f_n]_\omega < \epsilon$.
+            Then,
+            \[
+              \begin{aligned}
+                \frac{\norm{f_m(x) - f_m(y) - f_n(x) + f_n(y)}_Z}{\omega(d(x, y))}
+                < \epsilon.
+              \end{aligned}
+            \]
+            Take $m \to \infty$ and take supremum of all
+            $x, y \in X$ with $x \neq y$
+            completes the proof.
+
+
+    \end{enumerate}
+  \end{proof}
 }
 \end{document}
