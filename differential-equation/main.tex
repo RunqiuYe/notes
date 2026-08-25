@@ -1,0 +1,99 @@
+\documentclass[a4paper]{article}
+\usepackage{parskip}
+\usepackage{lipsum}
+
+\def\nterm {Spring}
+\def\nyear {2026}
+\def\ncourse {Introduction to Differential Equations}
+
+\input{../header}
+\author{Notes taken by \nauthor\vspace{5pt}\\
+  Lectures by Gautum Iyer\vspace{5pt}\\
+  Carnegie Mellon University}
+
+\newcommand{\TODO}{\textcolor{red}{\textbf{*** TO-DO ***}}}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+\subsection{Introduction to ODEs}
+
+An example of ODE is as follows:
+\[
+  \dot{x} = - \alpha x,
+\]
+where $\alpha > 0$. This represents exponential decay, whose solution is
+  $x(t) = e^{-\alpha t} x_0$.
+
+A more complicated example is the logistic equation where $P(t)$
+represents the population density of some species, and we have
+\[
+  \dot{P} = r P \left( 1 - \frac{P}{K} \right),
+\]
+where $r, K > 0$. The solution is
+\[
+  P(t) = \frac{P_0 K e^{rt}}{(K - P_0) + P_0 e^{rt}}.
+\]
+
+Another related example is Lotka-Volterra system. Let $x(t)$ be the
+population density of the rabbits and $y(t)$ is the population density of
+foxes. They can be described by the following model:
+\begin{align*}
+  \dot{x} & = \alpha x - \beta x y,    \\
+  \dot{y} & = - \gamma y + \delta x y,
+\end{align*}
+where the parameters $\alpha, \beta, \gamma, \delta > 0$.
+
+\subsection{Autonomous linesr systems}
+
+Let $x : [0, \infty) \to \R^d$ and $A \in \R^{d \times d}$. Consider the
+equation $\dot{x} = A x$. The solutionon to this equation is $x(t) =
+e^{tA} x_0$, where for any square matrix $B$ we defined
+\[
+  e^B = \sum_{n = 0}^\infty \frac{B^n}{n!}.
+\]
+It is easy to check that this converges nicely, and thus we can take the
+  derivative of $e^{tA}$ against $t$ term by term. We can then verify that
+  $x(t) = e^{tA} x_0$ indeed solves the equation.
+
+There are still something to say about this -- how do we compute $e^{tA}$?
+If $UAU^{-1} = D$ for some $D$ diagonal, we then have $e^{At} = U^{-1}
+e^{Dt} U$. Now if the diagonal matrix $D = \diag(\lambda_1, \dots,
+\lambda_d)$, we have $e^{Dt} = \diag(e^{\lambda_1 t, \dots, \lambda_d
+t})$.
+
+However, if $A$ is not diagonal, we can consider the Jordan normal form.
+Consider a basis change by setting $y = U x$. We have
+\[
+  \dot{y} = U \dot{x} = U A x = U A U^{-1} y.
+\]
+Therefore by choosing matrix $U$ appropriately, we can guarantee
+  $UAU^{-1}$ is in Jordan normal form. Hence now we assume $A$ is in
+  Jordan normal form. Now decompose $\R^d$ into invariant subspaces
+  $\{E_j\}$ with eigenvalues $\lambda_j = a_j + i b_j$. There are two
+  cases.
+\begin{itemize}
+  \item If $b_j = 0$, then on $E_j$, we have
+        \[
+          (A)_{B_j} = \begin{bmatrix}
+            a_j & 1   &        &     \\
+                & a_j & \ddots &     \\
+                &     & \ddots & 1   \\
+                &     &        & a_j \\
+          \end{bmatrix}
+        \]
+        Then,
+        \[
+          (e^{tA})_{B_j} = e^{t a_j} \sum_{k = 0}^{m_j - 1} \frac{t^k}{k!}
+          \left( (A)_{B_j} - a_j I \right)^k,
+        \]
+        where $m_j = \dim(E_j)$.
+
+  \item If $b_j \neq 0$, \TODO
+\end{itemize}
+
+\end{document}
