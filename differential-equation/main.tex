@@ -18,9 +18,9 @@
 
 \tableofcontents
 
-\section{Introduction}
+\section{Introduction to ODEs}
 
-\subsection{Introduction to ODEs}
+\subsection{Example of ODEs}
 
 An example of ODE is as follows:
 \[
@@ -66,25 +66,26 @@ e^{Dt} U$. Now if the diagonal matrix $D = \diag(\lambda_1, \dots,
 \lambda_d)$, we have $e^{Dt} = \diag(e^{\lambda_1 t, \dots, \lambda_d
 t})$.
 
-However, if $A$ is not diagonal, we can consider the Jordan normal form.
-Consider a basis change by setting $y = U x$. We have
+However, if $A$ is not diagonalizable, we have no option but to consider
+the Jordan normal form. Consider a basis change by setting $y = U x$. We
+have
 \[
   \dot{y} = U \dot{x} = U A x = U A U^{-1} y.
 \]
 Therefore by choosing matrix $U$ appropriately, we can guarantee
   $UAU^{-1}$ is in Jordan normal form. Hence now we assume $A$ is in
   Jordan normal form. Now decompose $\R^d$ into invariant subspaces
-  $\{E_j\}$ with eigenvalues $\lambda_j = a_j + i b_j$. There are two
-  cases.
+  $\{E_j\}$ such that $\R^d = \bigoplus_j E_j$ and each $E_j$ has
+  generalized eigenvalues $\lambda_j = a_j + i b_j$. There are two cases.
 \begin{itemize}
-  \item If $b_j = 0$, then on $E_j$, we have
+  \item If $b_j = 0$, there exists a basis $B_j$ of $E_j$ such that
         \[
           (A)_{B_j} = \begin{bmatrix}
             a_j & 1   &        &     \\
                 & a_j & \ddots &     \\
                 &     & \ddots & 1   \\
                 &     &        & a_j \\
-          \end{bmatrix}
+          \end{bmatrix}.
         \]
         Then,
         \[
@@ -93,7 +94,146 @@ Therefore by choosing matrix $U$ appropriately, we can guarantee
         \]
         where $m_j = \dim(E_j)$.
 
-  \item If $b_j \neq 0$, \TODO
+  \item If $b_j \neq 0$, there exists a basis $B_j$ of $E_j$ such that
+        \[
+          (A)_{B_j} = \begin{bmatrix}
+            C_j & I_2 &        &     \\
+                & C_j & \ddots &     \\
+                &     & \ddots & I_2 \\
+                &     &        & C_j \\
+          \end{bmatrix},
+        \]
+        where $I_2 = \begin{bmatrix}
+            1 & 0 \\
+            0 & 1
+          \end{bmatrix}$
+        and $C_j = \begin{bmatrix}
+            a_j & -b_j \\
+            b_j & a_j
+          \end{bmatrix}$.
+        Then,
+        \[
+          (e^{tA})_{B_j} = e^{a_j t} \begin{bmatrix}
+            D_j (t) &        &         \\
+                    & \ddots &         \\
+                    &        & D_j (t)
+          \end{bmatrix}  \sum_{k = 0}^{m_j - 1} \frac{t^k}{k!}
+          \left( (A)_{B_j} - \diag (C_j, \dots, C_j) \right)^k,
+        \]
+        where $D_j (t) = \begin{bmatrix}
+            \cos (b_j t) & - \sin(b_j t) \\
+            \sin (b_j t) & \cos (b_j t)
+          \end{bmatrix}$.
+
 \end{itemize}
+
+From the case above, we can see that the long term behvaior of the
+solution depends only on the real parts $a_j$. More concretely, let $E^\pm
+= \bigoplus_{j \in J^\pm} E_j$ where $J^\pm = \{ j : \sgn(a_j) = \pm 1
+\}$, and $E^0 \in \bigoplus_{j \in J^0} E_j$ where $J^0 = \{ j : a_j = 0
+\}$. If $x_0 \in E^-$, then $x(t) \to 0$ as $t \to \infty$, and
+$\abs{x(t)} \to \infty$ as $t \to -\infty$. This is the \textbf{stable
+subspace}. On the other hand, if $x_0 \in E^+$, then $\abs{x(t)} \to
+\infty$ as $t \to \infty$, and $x(t) \to 0$ as $t \to -\infty$. This is
+the \textbf{unstable subspace}.
+
+\subsection{Time inhomogenous linear equations}
+
+Consider $\dot{x} = A(t) x$ where $A : \R \to \R^{d \times d}$. In the 1
+dimensional case, we have $\dot{x} = a(t) x$. With $x(t_0) = x_0$, the
+solution to this equation is
+\[
+  x(t) = \exp \left( \int_{t_0}^t a(s) \d s \right) x_0.
+\]
+
+\begin{thm}
+  Fix $t_0, T$. If for each $t_1, t_2 \in [t_0, T]$ we have
+  $[A(t_1), A(t_2)] = 0$, then
+  \[
+    x(t) = \exp \left( \int_{t_0}^t A(s) \d s \right) x_0
+  \]
+  solves $\dot{x} = A(t) x$ with $x(t_0) = x_0$.
+\end{thm}
+
+\begin{proof}
+  Let $B(t) = \int_{t_0}^{t} A(s) \d s$. Compute the derivative with
+  the Wilcox Formula
+  \[
+    \dd_t e^{B(t)} = \int_0^1 e^{\alpha B(t)} A(t) e^{(1 - \alpha) B(t)}
+    \d \alpha. \tag{W}
+  \]
+  Note that (W) implies the theorem, because assumption implies that
+  $[A(t), B(t)] = 0$ for all $t$. It then follows that $[A(t), e^{\alpha
+  B(t)}] = 0$ and thus
+  \[
+    \dd_t e^{B(t)} = \int_0^1 e^{B(t)} A(t) \d \alpha = A(t) e^{B(t)}.
+  \]
+
+  As for the proof for (W), the trick is to define $g(\alpha, t) = e^{-
+  \alpha B(t)} \dd_t e^{\alpha B(t)}$. Then we compute
+  \begin{align*}
+    \dd_\alpha g
+     & = - B e^{-\alpha B} \dd_t e^{\alpha B}
+    + e^{-\alpha B} \dd_t (B e^{\alpha B})                                   \\
+     & = - B e^{-\alpha B} \dd_t e^{\alpha B} + e^{-\alpha B} A e^{\alpha B}
+    + e^{-\alpha B} B \dd_t e^{\alpha B}                                     \\
+     & = e^{-\alpha B} A e^{\alpha B}.
+  \end{align*}
+  Then, $g(1) - g(0) = \int_0^1 \dd_\alpha g \d \alpha$. Therefore,
+  $e^{-B} \dd_t e^{B} = \int_0^1 e^{-\alpha B} A e^{\alpha B} \d \alpha$,
+  and thus
+  \[
+    \dd_t e^B = \int_0^1 e^{(1 - \alpha) B} A e^{\alpha B},
+  \]
+  as desired.
+
+\end{proof}
+
+Note that the equation $\dot{x} = A(t) x$ is linear, so any linear
+combination of solutions is again a solution. Say $\phi_1, \dots, \phi_d$
+are $d$ solutions, and $\phi_i (t_0) = e_i$. Then, given $x \in \R^d$,
+$x(t) = \sumi^d x_i \phi_i (t)$, where $x_i = x_0 \cdot e_i$, solves the
+equation with initial condition $x_0$. Now define
+\[
+  \Pi (t_0, t) = \begin{bmatrix}
+    \phi_1 (t) & \cdots & \phi_d (t)
+  \end{bmatrix}
+\]
+as the principle matrix. Note that $\dd_t \Pi (t_0, t) = A(t) \Pi (t_0,
+  t)$, and $\Pi (t_0, t_0) = I$. Now the solution to $\dot{x} = A(t) x$
+  with $x(t_0) = x_0$ is given by $x(t) = \Pi(t, t_0) x_0$.
+
+\begin{prop}
+  $\Pi (s, t) \Pi (r, s) = \Pi (r, t)$.
+\end{prop}
+\begin{proof}
+  Fix $r, s$ and let $L(t) = \LHS$ and $R(t) = \RHS$. Note
+  that $\dd_t L = A(t) \Pi(s, t) \Pi(r, s) = A(t) L(t)$. Similarly, $\dd_t
+    R = A(t) R(t)$. For an initial data, note that $L(s) = R(s) = \Pi (r,
+    s)$.
+\end{proof}
+
+\begin{cor}
+  $\Pi(s, t) = \Pi(t, s)^{-1}$.
+\end{cor}
+
+\begin{prop}[Liouville formula]
+  $\dd_t (\det (\Pi (s, t))) = \tr(A) \det(\Pi (s, t))$.
+\end{prop}
+
+\begin{proof}
+  Exercise.
+\end{proof}
+
+\section{Existence and Uniqueness}
+
+Now we want to discuss existence and uniqueness of solution for $\dot{x} =
+f(t, x)$.
+\begin{thm}
+  Let $U \subset \R^{d + 1}$ open, $f \in C(U, \R^d)$. Assume $f$
+  locally Lipshitz. Then, given $(t_0, x_0) \in U$, there exists a locally
+  unique solution to $\dot{x} = f(t, x)$ with $x(t_0) = x_0$.
+\end{thm}
+By locally unique, we mean a solution in an interval around $t_0$.
 
 \end{document}

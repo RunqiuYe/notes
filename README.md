@@ -6,5 +6,6 @@ The list of notes currently includes:
 
 - Mathematical Studies Analysis
 - Introduction to Functional Analysis
+- Probability (Graduate)
 
 The notes are in their corresponding folders, together with practice problems.
