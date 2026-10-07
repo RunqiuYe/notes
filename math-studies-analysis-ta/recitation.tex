@@ -1,0 +1,184 @@
+\documentclass[a4paper]{article}
+\usepackage{parskip}
+\usepackage{lipsum}
+
+\def\nterm {Fall}
+\def\nyear {2026}
+\def\ncourse {Mathematical Studies Analysis}
+
+\input{../header}
+
+\author{\nauthor\\
+Carnegie Mellon University}
+
+\newcommand{\TODO}{\textcolor{red}{\textbf{*** TO-DO ***}}}
+
+\begin{document}
+
+\begin{ex}
+  Condier the function
+  \[
+    f(x) = \int_0^1 \frac{1 - e^{-x t^2}}{t} \d t.
+  \]
+
+  \begin{enumerate}
+    \item Find the set $D$ of $x$ for which $f(x)$ is well-defined and
+          real-valued.
+
+    \item Prove that $f \in C^1(D)$.
+    \item Compute $\lim_{x \to \infty} f(x)$ and $\lim_{x \to -\infty}
+          f(x)$.
+    \item Prove that the function
+          \[
+            F(x, y) = \int_0^1 \frac{1 - e^{-x y t^2}}{t} \d t
+          \]
+          is $C^1$ in an open set of $\R^2$.
+    \item Compute
+          \[
+            \lim_{(x, y) \to (0, 0)} \frac{F(x, y)}{\sqrt{x^2 + y^2}}.
+          \]
+  \end{enumerate}
+\end{ex}
+
+\begin{proof}
+  \begin{enumerate}
+    \item $D = \R$. To show this, fix $x$ and let
+          \[
+            g(t) = \frac{1 - e^{-x t^2}}{t}.
+          \]
+          First show that $g(t) \to 0$ as $t \to 0$. With Taylor's
+          theorem, we have
+          \[
+            e^{-x t^2} = 1 - x t^2 + o(t^3).
+          \]
+          Thus $1 - e^{-x t^2} = x t^2 + o(t^3)$. Note that the little $o$
+          here is considering the limit as $t \to 0$. Therefore, $g(t) \to
+          0$ as $t \to 0$.
+
+          Since $g$ is continuous on $(0, 1]$, it is measureable. Now if
+          $g(t) \to 0$ as $t \to 0$, we can show $f(x) < \infty$ for any
+          $x \in \R$. Indeed, by the limit above, there exists $0 < \delta
+          < 1$ such that $g(t) < 1$ on $(0, \delta]$. Since $g$ continuous
+          $g(t)$ is bounded on compact interval $[\delta, 1]$. Hence,
+          $g(t)$ is bounded on $(0, 1]$, and thus $f(x) < \infty$ for all
+          $x \in \R$.
+
+    \item First show that the derivative of $f$ is
+          \[
+            T(x) = \int_0^1 t e^{-x t^2} \d t.
+          \]
+          This is well defined, as for each fixed $x$, we have
+          \[
+            t e^{-x t^2} \leq \max \{e^{-x}, 1\}
+          \]
+          for $t \in [0, 1]$. Therefore, $T(x) < \infty$.
+
+          Fix $x \in \R$. We want to show
+          \[
+            \lim_{u \to 0} \frac{\abs{f(x + u) - f(x) - T(x) u}}{\abs{u}} = 0.
+          \]
+          Let $\seqinfn{u_n}$ be any sequence with $u_n \to 0$ and
+          $\abs{u_n} \leq 1$. We have
+          \begin{align*}
+            \frac{\abs{f(x + u_n) - f(x) - T(x) u_n}}{\abs{u_n}}
+             & = \frac{1}{\abs{u_n}} \int_0^1
+            \abs{\frac{e^{-x t^2} - e^{-(x + u_n) t^2}}{t}
+              - t e^{-x t^2} u_n} \d t.
+          \end{align*}
+          By mean value theorem we have
+          \[
+            \abs{\frac{e^{-x t^2} - e^{-(x + u_n) t^2}}{t}
+              - t e^{-x t^2} u_n} \leq \abs{u_n} \sup_{\xi \in [0, u_n]}
+            \abs{t e^{-(x + \xi) t^2} - t e^{-x t^2}}.
+          \]
+          Then,
+          \begin{align*}
+            \frac{\abs{f(x + u_n) - f(x) - T(x) u_n}}{\abs{u_n}}
+             & \leq \int_0^1 \sup_{\xi \in [0, u_n]}
+            \abs{t e^{-(x + \xi) t^2} - t e^{-x t^2}} \d t.
+          \end{align*}
+          Towards using DCT, note that
+          \[
+            \abs{t e^{-(x + \xi) t^2} - t e^{-x t^2}}
+            \leq 2 t \max \{e^{-x + 1}, 1\} \leq 2 \max \{e^{-x + 1}, 1\}
+          \]
+          for $t \in [0, 1]$. Note that the RHS is a constant w.r.t.\ $t$
+          and thus integrable on $[0, 1]$. By DCT, this implies
+          \begin{align*}
+            \lim_{n \to \infty}
+            \frac{\abs{f(x + u_n) - f(x) - T(x) u_n}}{\abs{u_n}}
+             & \leq \lim_{n \to \infty} \int_0^1 \sup_{\xi \in [0, u_n]}
+            \abs{t e^{-(x + \xi) t^2} - t e^{-x t^2}} \d t               \\
+             & = \int_0^1 \lim_{n \to \infty}  \sup_{\xi \in [0, u_n]}
+            \abs{t e^{-(x + \xi) t^2} - t e^{-x t^2}} \d t               \\
+             & = 0,
+          \end{align*}
+          since $u_n \to 0$ as $n \to \infty$, $\xi \in [0, u_n]$, and
+          $\xi \mapsto t e^{-(x + \xi) t^2}$ is continuous.
+
+          Since $\seqinfn{u_n}$ is arbitrary sequence converges to $0$,
+          this shows the desired limit and $Df = T$.
+
+          To show $f \in C^1(\R)$, it remains to show $T$ is continuous,
+          i.e.\ $T(x + u) - T(x) \to 0$ as $u \to 0$. For this again let
+          $\seqinfn{u_n}$ be any sequence with $u_n \to 0$ and $\abs{u_n}
+          \leq 1$. We have
+          \begin{align*}
+            T(x + u_n) - T(x)
+             & \leq \int_0^1 \abs{t e^{-(x + u_n) t^2} - t e^{-x t^2}} \d t.
+          \end{align*}
+          Again note
+          \[
+            \abs{t e^{-(x + u_n) t^2} - t e^{-x t^2}}
+            \leq 2 t \max \{e^{-x + 1}, 1\} \leq 2 \max \{e^{-x + 1}, 1\}
+          \]
+          for $t \in [0, 1]$, which is integrable on $[0,1]$. Therefore,
+          by DCT,
+          \begin{align*}
+            \lim_{n \to \infty} T(x + u_n) - T(x)
+             & \leq  \lim_{n \to \infty} \int_0^1 \abs{t e^{-(x + u_n) t^2} - t e^{-x t^2}} \d t \\
+             & = \int_0^1 \lim_{n \to \infty} \abs{t e^{-(x + u_n) t^2} - t e^{-x t^2}} \d t     \\
+             & = 0,
+          \end{align*}
+          since $u_n \to 0$ as $n \to 0$, and $u \mapsto t e^{-(x + u) t}$
+          is continuous.
+
+          Since $\seqinfn{u_n}$ is arbitrary sequence converges to $0$,
+          this shows the desired limit and completes the proof.
+
+  \end{enumerate}
+\end{proof}
+
+\begin{remark}
+
+  Some useful forms of mean value theorem: Let $X$ and $Y$ be normed
+  vector space and $U \subset X$ open. Suppose that $x, y \in U$ with $x
+  \neq y$ and that
+  \[
+    L(x, y) = \{\alpha y + (1 - \alpha x) : \alpha \in [0, 1]\} \subset U.
+  \]
+  Suppose that $f : U \to Y$ is continuous on $L(x, y)$ and differentiable
+  on $L(x, y) \setminus E$, where $E \subset L(x, y)$ is countable. Then
+  the following holds:
+  \begin{enumerate}
+    \item If
+          \[
+            \sup_{z \in L(x, y) \setminus E} \norm{Df(z)} = M < \infty,
+          \]
+          then
+          \[
+            \norm{f(y) - f(x)} \leq M \norm{x - y}.
+          \]
+
+    \item If $T \in \L(X; Y)$ and
+          \[
+            \sup_{z \in L(x, y) \setminus E} \norm{Df(z) - T} = K < \infty,
+          \]
+          then
+          \[
+            \norm{f(y) - f(x) - T(y - x)} \leq K \norm{x - y}.
+          \]
+  \end{enumerate}
+\end{remark}
+
+\end{document}
