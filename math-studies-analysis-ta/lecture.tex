@@ -28,4 +28,168 @@ Carnegie Mellon University}
   function. Then $f$ is differentiable a.e.\ on $I$.
 \end{thm}
 
+To show this, we need a few lemmas.
+
+\begin{lemma}
+  Let $I \subset \R$ be an interval, let $f : I \to \R$, and let
+  \[
+    E = \left\{ x \in I^\circ : \text{ there exist $f'_+ (x)$ and
+  $f'_- (x)$ and $f'_+(x) \neq f'_-(x)$} \right\}.
+  \]
+  Then $E$ is countable.
+\end{lemma}
+
+\begin{proof}
+  First observe that for any function $g: I \to \R$, the set of its strict
+  local minimum points in $I^\circ$ is countable. Set
+  \[
+    E_- = \left\{ x \in E : f'_-(x) < f'_+ (x) \right\}.
+  \]
+  For every $r \in \Q$, define
+  \[
+    E_r = \left\{ x \in E_- : f'_-(x) < r < f'_+ (x) \right\},
+  \]
+  and let $g_r(t) = f(t) - rt$ for $t \in I$. By density of rationals,
+  $E_- = \bigcup_{r \in \Q} E_r$. If $x \in E_r$, then
+  \[
+    (g_r)'_- (x) < 0 < (g_r)'_+ (x).
+  \]
+  It follows that $g_r(y) > g_r(x)$ for every $y \neq x$ sufficiently
+  close to $x$, i.e.\ $x$ is a strict local minimum point of $g_r$.
+  Therefore $E_r$ is countable and thus $E_-$ is countable. Applying the
+  same argument to $-f$ completes the proof for the lemma.
+\end{proof}
+
+\TODO: add stuff
+
+\begin{lemma}
+  Let $E \subset \R$ be bounded, $\fcal$ be family of open intervals such
+  that for all $x \in E$ and $\delta > 0$, there exists $(x, x + h_x) \in \fcal$
+  with $0 \leq h_x < \delta$. Then for all $\epsilon > 0$, there exists
+  disjoint intervals $I_1, \dots, I_m \in \fcal$ such that
+  \[
+    \L_o^1 \left( E \cap \cupi^m I_i \right) \geq \L_o^1(E) - \epsilon,
+    \quad
+    \sumi^m \L^1 (I_i) \leq \L_o^1 (E) + \epsilon.
+  \]
+\end{lemma}
+
+\begin{proof}
+  \TODO
+\end{proof}
+
+\begin{defi}
+  For $f : E \to \R$, define
+  \[
+    \liminf_{x \to x_0} f(x) = \sup_{r > 0} \inf_{0 < d(x, x_0) < r} f(x),
+    \quad
+    \limsup_{x \to x_0} f(x) = \inf_{r > 0} \sup_{0 < d(x, x_0) < r} f(x),
+  \]
+\end{defi}
+
+\begin{ex}
+  $\liminf_{x \to x_0} f(x) = l \in \R$ iff for every
+  $\epsilon > 0$:
+  \begin{enumerate}
+    \item there exists $\delta > 0$ such that $l - \epsilon < f(x)$ for
+          all $x \in E$ with $0 < d(x, x_0) < \delta$.
+    \item For every $\delta > 0$, there exists $x \in E$ with $0 < d(x,
+          x_0) < \delta$ such that $f(x) < l + \epsilon$.
+  \end{enumerate}
+
+  Also, $\liminf_{x \to x_0} f(x) = -\infty$ iff for every $M > 0$ and
+  $\delta > 0$, there exists $x \in E$ with $0 < d(x, x_0) < \delta$ such
+  that $f(x) < - M$.
+\end{ex}
+
+Now we are ready to show Lebesgue's differentiation theorem.
+
+\begin{thm}[Lebesgue's differentiation theorem]
+  Let $I \subset \R$ be an interval and let $f : I \to \R$ be a monotone
+  function. Then $f$ is differentiable a.e.\ on $I$.
+\end{thm}
+
+\begin{proof}
+  Define \textbf{Dini's derivatives} as follows:
+  \begin{align*}
+    \bar{D}_+ f(x_0)       & = \limsup_{x \to x_0^+} \frac{f(x) - f(x_0)}{x - x_0}, &
+    \underline{D}_+ f(x_0) & = \liminf_{x \to x_0^+} \frac{f(x) - f(x_0)}{x - x_0},   \\
+    \bar{D}_- f(x_0)       & = \limsup_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0}, &
+    \underline{D}_- f(x_0) & = \liminf_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0}.   \\
+  \end{align*}
+
+  WLOG assume $f$ is increasing and $I = [a, b]$. Let
+  \begin{align*}
+    E & = \left\{ x \in I^\circ : \underline{D}_+ f(x) < \bar{D}_+ f(x) \right\}   \\
+      & = \bigcup_{\substack{r, s \in \Q \\ 0 < r < s}}
+    \left\{ x \in I^\circ : \underline{D}_+ f(x) < r < s < \bar{D}_+ f(x) \right\} \\
+      & := E_{r, s}
+  \end{align*}
+  It suffices to show that $\L^1 (E_{r, s}) = 0$. Let $\epsilon > 0$ be given.
+
+  Let $x \in E_{r, s}$. We have
+  \[
+    \liminf_{h \to 0^+} \frac{f(x + h) - f(x)}{h} < r.
+  \]
+  Then for each $\delta > 0$, there exists $0 < h_x < \delta$ such that
+  $h_x^{-1} (f(x + h_x) - f(x)) < r$. Let $\fcal$ be the collection of
+  $(x, x + h_x)$, where $h_x$ is selected as aforementioned while $\delta$
+  ranges over all positive value, and $x$ ranges over $E_{r, s}$. It is
+  then clear that $\fcal$ satisfies the condition for the previous lemma.
+
+  Apply previous lemma, there exists $I_1, \dots, I_m \in \fcal$ disjoint
+  such that
+  \begin{align*}
+     & \L_o^1 \left( E_{r, s} \cap \cupi^m I_i \right) \geq \L_o^1 (E_{r, s}) - \epsilon, \tag{1} \\
+     & \sumi^m \L^1 (I_i) \leq \L_o^1 (E_{r,s}) + \epsilon. \tag{2}
+  \end{align*}
+  Write $I_i = (x_i, x_i + h_i)$, then
+  \begin{align*}
+    \sumi^n f(x_i + h_i) - f(x_i)
+    < r \sumi^n h_i
+    \leq r \L_o^1 (E_{r,s}) + r \epsilon. \tag{3}
+  \end{align*}
+
+  Now let $V = \cupi^m (x_i, x_i + h_i)$, which is open. If $x \in E_{r,
+  s} \cap V$, we have
+  \[
+    s < \limsup_{t \to 0} \frac{f(x + t) - f(x)}{t}.
+  \]
+  Then for every $\delta > 0$, there exists $f_x$ such that $0 < t_x <
+  \delta$ and $s < t_x^{-1} (f(x + t_x) - f(x))$. Define $\gcal$ to be the
+  collection of $(x, x + t_x)$ that is contained in $V$, where $t_x$ is
+  selected as aforementioned while $\delta > 0$ ranges over all positive
+  value, and $x$ ranges over $E_{r, s} \cap V$.
+
+  The previous lemma again gives $J_1, \dots, J_l \in \gcal$ disjoint such
+  that
+  \begin{align*}
+    \L_o^1 \left( E_{r, s} \cap V \cap \cupk^l J_k \right)
+    \geq \L_o^1 (E_{r,s} \cap V) - \epsilon.
+  \end{align*}
+  Write $J_k = (y_k, y_k + t_k)$, we have
+  \begin{align*}
+    \sumk^l f(y_k + t_k) - f(y_k)
+     & \geq s \sumk^l t_k                              \\
+     & \geq s \L_o^1 (E_{r,s} \cap V) - s \epsilon     \\
+     & \geq s \L_o^1 (E_{r,s}) - 2 s \epsilon. \tag{4}
+  \end{align*}
+
+  Now compare (3) and (4). Since $f$ is increasing, it is not hard to see
+  that
+  \[
+    \sumi^n f(x_i + h_i) \geq \sumk^l f(y_k + t_k) - f(y_k).
+  \]
+  It follows that
+  \[
+    \L_o^1 (E_{r, s}) \leq \frac{2s + r}{s - r} \epsilon.
+  \]
+  Letting $\epsilon \to 0$ completes the proof for $\L^1 (E_{r, s}) = 0$.
+  This implies that $f'_+ (x)$ exists for a.e.\ $x \in I$. Similarly,
+  $f'_-(x)$ exists for a.e.\ $x \in I$.
+
+  It remains to show the left and right derivatives are finite. \TODO
+
+\end{proof}
+
 \end{document}
