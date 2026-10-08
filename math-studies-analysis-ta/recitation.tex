@@ -15,7 +15,7 @@ Carnegie Mellon University}
 
 \begin{document}
 
-\begin{ex}
+\begin{ex}[Recitation Sep 24]
   Condier the function
   \[
     f(x) = \int_0^1 \frac{1 - e^{-x t^2}}{t} \d t.
@@ -180,5 +180,64 @@ Carnegie Mellon University}
           \]
   \end{enumerate}
 \end{remark}
+
+\begin{ex}[Midterm 1]
+  Let
+  \[
+    f_n(x) = n x^2 (1 - x)^n \cos (2 \pi x), \quad x \in [0, 1].
+  \]
+  \begin{enumerate}
+    \item Does the series of functions $\suminfn f_n$ converges pointwise
+          on $[0, 1]$.
+    \item Does the equality
+          \[
+            \suminfn \int_0^1 f_n \d x = \int_0^1 \suminfn f_n \d x
+          \]
+          hold?
+    \item Does the series of function $\suminfn f_n$ converges uniformly
+          on $[0, 1]$?
+  \end{enumerate}
+\end{ex}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Yes. The series clearly converges at $0$ and $1$. For $0 < x <
+          1$, we have
+          \[
+            \abs{f_n(x)}  \leq n x^2 (1 - x)^n.
+          \]
+          Notice that $0 < 1 - x < 1$, so the series converges by root
+          test.
+    \item Yes. Notice that
+          \[
+            \int_0^1 \abs{f_n} \leq \int_0^1 n x^2 (1 - x)^n
+            = \frac{2n}{(n + 1)(n + 2)(n + 3)}.
+          \]
+          Therefore,
+          \[
+            \int_0^1 \abs{\suminfn f_n} \leq \int_0^1 \suminfn \abs{f_n}
+            = \suminfn \int_0^1 \abs{f_n} < \infty
+          \]
+          The desired equality then follows from DCT.
+    \item No. For $N, M \in \N$, consider
+          \[
+            \sum_{n = N}^M f_n(x)
+            = \sum_{n = N}^M n x^2 (1 - x)^n \cos (2 \pi x).
+          \]
+          Note that $x \mapsto x^2 (1 - x)^n$ attains its maximum at
+          $\frac{2}{2 + n}$, so consider
+          \begin{align*}
+            \norm{\sum_{n = N}^M f_n}
+             & \geq \sum_{n = N}^M f_n \left( \frac{2}{2 + n} \right)                 \\
+             & = \sum_{n = N}^M \frac{4n}{(n + 2)^2} \left( \frac{n}{n + 2} \right)^n
+            \cos \left( \frac{4 \pi}{n + 2} \right)                                   \\
+             & \geq \sum_{n = N}^M \frac{n}{(n + 2)^2} \frac{1}{e^2}
+          \end{align*}
+          for $N$ large enough. However note that $\suminfn \frac{n}{(n +
+              2)^2}$ diverges, so the partial sums is not Cauchy. It follows
+          that $\suminfn f_n$ is not uniformly Cauchy either, so the
+          series of function does not converge uniformly on $[0, 1]$.
+  \end{enumerate}
+\end{proof}
 
 \end{document}
