@@ -61,6 +61,62 @@ To show this, we need a few lemmas.
 \end{proof}
 
 \begin{lemma}
+  Let $E \subset \R$ be bounded, and $\fcal$ be a family of open intervals
+  such that each $x \in E$ is the left endpoint of an interval $(x, x +
+    h_x) \in \fcal$. Then there for every $\epsilon > 0$, there exist
+  disjoint intervals $I_1, \dots, I_n \in \fcal$ such that
+  \[
+    \L_o^1 \left( E \cap \cupk^n I_k \right)  \geq \L_o^1 (E) - \epsilon.
+  \]
+\end{lemma}
+
+\begin{proof}
+  If $E = \emptyset$, take the empty collection. If $E \neq \emptyset$ and
+  $\L_o^1 (E) \leq \epsilon$, any one interval in $\fcal$ suffices. Thus
+  assume that $L_o^1 (E) > \epsilon$. For each $x \in E$, choose an
+  interval $(x, x + h_x) \in \fcal$ and define
+  \[
+    E_n = \left\{ x \in E : h_x > n^{-1} \right\}.
+  \]
+  Note that $E_n \subset E_{n + 1}$ and $E = \cupinfn E_n$. By coninuity
+  from below of Lebesgue outer measure (exercise), we have $\L_o^1 (E_n)
+  \to \L_o^1 (E)$. Hence we can find $m$ large enough such that $\L_o^1
+  (E_m) > \L_o^1 (E) - \frac{\epsilon}{2}$. For each $k \in \N$, let
+  $\eta_k = \epsilon 2^{- k - 1}$, then $\suminfk \eta_k =
+  \frac{\epsilon}{2}$.
+
+  Let $a_1 = \inf E_m$. By definition of infimum we can find $x_1 \in E_m$
+  with $a_1 \leq x_1 < a_1 + \eta_1$, and correspondingly $I_1 = (x_1 +
+  h_1) \in \fcal$ with $h_1 > m^{-1}$. Suppose $I_1, \dots, I_k$ has been
+  chosen. If $\left\{ x \in E_m : x \geq x_k + h_k \right\} = \emptyset$,
+  we stop. Otherwise let $a_{k + 1} = \inf \left\{ x \in E_m : x \geq x_k
+  + h_k \right\}$. Then there is $x_{k + 1} \in E_m$ such that $a_{k + 1}
+  \leq x_{k + 1} \leq a_{k + 1} + \eta_{k + 1}$ and correspondingly $I_{k
+  + 1} = (x_{k + 1}, x_{k + 1} + h_{k + 1}) \in \fcal$ with $h_{k + 1} >
+  m^{-1}$. Note that
+  \[
+    x_{k + 1} \geq x_k + h_k > x_k + m^{-1} ,
+  \]
+  and $E_m \subset E$ is bounded, the construction must stop after
+  finitely many steps. Moreover, $I_1, \dots, I_n$ are disjoint by
+  construction.
+
+  Now let
+  \[
+    S = \cupk^n I_n, \quad T = \cupk^n (x_k - \eta_k, x_k].
+  \]
+  The points of $E_m$ skipped at the $k$-th step belong to $[a_k, x_k]
+  \subset (x_k - \eta_k, x_k]$. Thus $E_m \subset S \cup T$, then
+  \begin{align*}
+    \L_o^1 (E) - \frac{\epsilon}{2}
+     & < \L_o^1 (E_m) \leq \L_o^1 (E_m \cap S) + \L_o^1 (E_m \cap T) \\
+     & \leq \L_o^1 (E_m \cap S) + \sumk^n \eta_k
+    \leq \L_o^1 (E_m \cap S) + \frac{\epsilon}{2}.
+  \end{align*}
+  This concludes the proof.
+\end{proof}
+
+\begin{lemma}
   Let $E \subset \R$ be bounded, $\fcal$ be family of open intervals such
   that for all $x \in E$ and $\delta > 0$, there exists $(x, x + h_x) \in \fcal$
   with $0 \leq h_x < \delta$. Then for all $\epsilon > 0$, there exists
@@ -73,7 +129,23 @@ To show this, we need a few lemmas.
 \end{lemma}
 
 \begin{proof}
-  \TODO
+  By the definiton of Lebesgue outer measure, find an bounded open set $U
+    \supset E$ such that $\L_o^1 (U) \leq \L_o^1 (E) + \epsilon$. Let
+  $\fcal'$ be the subfamily of intervals $(x, x + h_x) \in \fcal$
+  contained in $U$. Note that for each $x \in E \subset U$, there must
+  exists at least one such interval, since $U$ contains a ball centered at
+  $x$ and there are intervals of arbitrarily small length.
+
+  Apply the previous lemma to the family $\fcal'$ to find disjoint
+  intervals $I_1, \dots, I_n \subset \fcal'$ such that
+  \[
+    \L_o^1 \left( E \cap \cupk^n I_k \right)  \geq \L_o^1 (E) - \epsilon.
+  \]
+  Since the intervals are disjoint and contined in $U$, it follows that
+  \[
+    \sumk^n \L^1 (I_k)  \leq \L_o^1 (U) \leq \L_o^1 (E) + \epsilon.
+  \]
+  The proof is then complete.
 \end{proof}
 
 \begin{defi}
@@ -117,12 +189,12 @@ statement of the theorem below:
     \underline{D}_- f(x_0) & = \liminf_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0}.   \\
   \end{align*}
 
-  WLOG assume $f$ is increasing and $I = [a, b]$. Let
+  WLOG assume $f$ is increasing, and assume $I = [a, b]$. Let
   \begin{align*}
     E & = \left\{ x \in I^\circ : \underline{D}_+ f(x) < \bar{D}_+ f(x) \right\}   \\
       & = \bigcup_{\substack{r, s \in \Q \\ 0 < r < s}}
     \left\{ x \in I^\circ : \underline{D}_+ f(x) < r < s < \bar{D}_+ f(x) \right\} \\
-      & := E_{r, s}
+      & = \bigcup_{\substack{r, s \in \Q \\ 0 < r < s}} E_{r, s}
   \end{align*}
   It suffices to show that $\L^1 (E_{r, s}) = 0$. Let $\epsilon > 0$ be given.
 
@@ -174,8 +246,8 @@ statement of the theorem below:
      & \geq s \L_o^1 (E_{r,s}) - 2 s \epsilon. \tag{4}
   \end{align*}
 
-  Now compare (3) and (4). Since $f$ is increasing, it is not hard to see
-  that
+  Now compare (3) and (4). Since $f$ is increasing and each $J_k$ lies in
+  one of the interval $I_i$, it is not hard to see that
   \[
     \sumi^n f(x_i + h_i) \geq \sumk^l f(y_k + t_k) - f(y_k).
   \]
@@ -184,11 +256,58 @@ statement of the theorem below:
     \L_o^1 (E_{r, s}) \leq \frac{2s + r}{s - r} \epsilon.
   \]
   Letting $\epsilon \to 0$ completes the proof for $\L^1 (E_{r, s}) = 0$.
-  This implies that $f'_+ (x)$ exists for a.e.\ $x \in I$. Similarly,
-  $f'_-(x)$ exists for a.e.\ $x \in I$.
+  This implies that $f'_+ (x)$ exists for a.e.\ $x \in [a, b]$. Similarly,
+  $f'_-(x)$ exists for a.e.\ $x \in [a, b]$. A previous lemma shows that
+  the left and right derivatives are equal a.e. Therefore, $f'(x)$ exists
+  a.e.
 
-  It remains to show the left and right derivatives are finite. \TODO
+  It remains to show the left and right derivatives are a.e.\ finite.
+  Define
+  \begin{align*}
+    g(x) = \begin{cases}
+             f(x), & x \in [a, b] \\
+             f(b), & x \geq b.
+           \end{cases}
+  \end{align*}
+  Define also
+  \[
+    g_n(x) = \frac{g(x + n^{-1}) - g(x)}{n^{-1}}
+  \]
+  for $x \in [a, b]$ and $n \in \N$. Then, $g_m (x) \to f'(x)$ for a.e.\
+  $x \in [a, b]$. Since $f$ is monotone, it is measurable and thus $g_m$
+  is also measurable. By Fatou's lemma,
+  \begin{align*}
+    \int_a^b f'(x) \d x
+     & \leq \liminf_{n \to \infty}  \int_a^b g_n (x) \d x            \\
+     & = \liminf_{n \to \infty}
+    n \int_a^b g(x + n^{-1}) \d x - n \int_a^b g(x) \d x             \\
+     & = \liminf_{n \to \infty}
+    n \int_a^{b - n^{-1}} g(x + n^{-1}) \d x
+    + n \int_{b - n^{-1}}^b f(b) - n \int_a^b g(x) \d x              \\
+     & = \liminf_{n \to \infty}
+    n \int_{a + n^{-1}}^b g(t) \d t + f(b)
+    - n \int_a^b g(t) \d t                                           \\
+     & = \liminf_{n \to \infty} f(b) - \int_a^{a + n^{-1}} f(t) \d t \\
+     & \leq f(b) - f(a).
+  \end{align*}
+  Therefore, $f'$ is integrable, which implies $\{ f' = \infty \}$ has
+  measure zero.
 
+  For a general interval $I \subset \R$, $I$ can be written as a countable
+  union of bounded interval, the proof for the theorem is complete.
 \end{proof}
+
+\begin{remark}
+  The proof above shows that for monotone function $f$ on a bounded interval
+  $[a, b]$, we have
+  \[
+    \int_a^b f' \leq f(b) - f(a).
+  \]
+  There exists a function for which inequality is strict. For one example,
+  consider a Cantor function $f : [0, 1] \to [0, 1]$. Then, $f' = 0$ a.e.\
+  but $f(1) = 1$ and $f(0) = 0$.
+\end{remark}
+
+\subsection{Functions of bounded variation}
 
 \end{document}

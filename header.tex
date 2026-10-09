@@ -4,8 +4,8 @@
 \else
 \fi
 
-\author{Notes taken by \nauthor\vspace{5pt}\\ 
-Carnegie Mellon University}
+\author{Notes taken by \nauthor\vspace{5pt}\\
+  Carnegie Mellon University}
 \date{\nterm\ \nyear}
 
 \usepackage{alltt}
@@ -46,7 +46,7 @@ Carnegie Mellon University}
     pdfauthor={Dexter Chua},
     pdfsubject={\ncourse},
     pdftitle={\ncourse},
-  pdfkeywords={Cambridge Mathematics Maths Math \nterm\ \nyear\ \ncourse}]{hyperref}
+    pdfkeywords={Cambridge Mathematics Maths Math \nterm\ \nyear\ \ncourse}]{hyperref}
   \title{\ncourse}
 \else
   \usepackage[pdftex,
@@ -54,7 +54,7 @@ Carnegie Mellon University}
     pdfauthor={Dexter Chua},
     pdfsubject={Cambridge Maths Notes: \ncourse\ (\nextra)},
     pdftitle={\ncourse\ (\nextra)},
-  pdfkeywords={Cambridge Mathematics Maths Math \nterm\ \nyear\ \ncourse\ \nextra}]{hyperref}
+    pdfkeywords={Cambridge Mathematics Maths Math \nterm\ \nyear\ \ncourse\ \nextra}]{hyperref}
 
   \title{\ncourse \\ {\Large \nextra}}
   \renewcommand\printindex{}
@@ -64,7 +64,7 @@ Carnegie Mellon University}
 
 \pagestyle{fancyplain}
 \ifx \ncoursehead \undefined
-\def\ncoursehead{\ncourse}
+  \def\ncoursehead{\ncourse}
 \fi
 
 \lhead{\emph{\nouppercase{\leftmark}}}
@@ -114,7 +114,7 @@ Carnegie Mellon University}
 
   \newenvironment{stretchpage}%
   {\begin{preview}\begin{minipage}{\hsize}}%
-    {\end{minipage}\end{preview}}
+  {\end{minipage}\end{preview}}
   \AtBeginDocument{\begin{stretchpage}}
   \AtEndDocument{\end{stretchpage}}
 
@@ -139,8 +139,8 @@ Carnegie Mellon University}
 \fi
 
 \ifx \nisofficial \undefined
-\let\@real@maketitle\maketitle
-\renewcommand{\maketitle}{\@real@maketitle}
+  \let\@real@maketitle\maketitle
+  \renewcommand{\maketitle}{\@real@maketitle}
 \else
 \fi
 
@@ -165,7 +165,6 @@ Carnegie Mellon University}
 \newtheorem*{thm}{Theorem}
 \newtheorem*{assumption}{Assumption}
 
-
 \newtheorem*{remark}{Remark}
 \newtheorem*{warning}{Warning}
 \newtheorem*{exercise}{Exercise}
@@ -175,7 +174,6 @@ Carnegie Mellon University}
 \newtheorem{nprop}[nthm]{Proposition}
 \newtheorem{ncor}[nthm]{Corollary}
 
-
 \renewcommand{\labelitemi}{--}
 \renewcommand{\labelitemii}{$\circ$}
 
@@ -184,8 +182,6 @@ Carnegie Mellon University}
 
 % Strike through
 \def\st{\bgroup \ULdepth=-.55ex \ULset}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Maths Symbols %%%%%
@@ -251,6 +247,7 @@ Carnegie Mellon University}
 % mathcal 
 \newcommand{\acal}{\mathcal{A}}
 \newcommand{\bcal}{\mathcal{B}}
+\newcommand{\ccal}{\mathcal{C}}
 \newcommand{\ecal}{\mathcal{E}}
 \newcommand{\fcal}{\mathcal{F}}
 \newcommand{\gcal}{\mathcal{G}}
@@ -415,7 +412,6 @@ Carnegie Mellon University}
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\phi}{\varphi}
 
-
 \let\Im\relax
 \let\Re\relax
 
@@ -490,37 +486,37 @@ Carnegie Mellon University}
 
 \pgfarrowsdeclarecombine{twolatex'}{twolatex'}{latex'}{latex'}{latex'}{latex'}
 \tikzset{->/.style = {decoration={markings,
-                                  mark=at position 1 with {\arrow[scale=2]{latex'}}},
-                      postaction={decorate}}}
+          mark=at position 1 with {\arrow[scale=2]{latex'}}},
+      postaction={decorate}}}
 \tikzset{<-/.style = {decoration={markings,
-                                  mark=at position 0 with {\arrowreversed[scale=2]{latex'}}},
-                      postaction={decorate}}}
+          mark=at position 0 with {\arrowreversed[scale=2]{latex'}}},
+      postaction={decorate}}}
 \tikzset{<->/.style = {decoration={markings,
-                                   mark=at position 0 with {\arrowreversed[scale=2]{latex'}},
-                                   mark=at position 1 with {\arrow[scale=2]{latex'}}},
-                       postaction={decorate}}}
+          mark=at position 0 with {\arrowreversed[scale=2]{latex'}},
+          mark=at position 1 with {\arrow[scale=2]{latex'}}},
+      postaction={decorate}}}
 \tikzset{->-/.style = {decoration={markings,
-                                   mark=at position #1 with {\arrow[scale=2]{latex'}}},
-                       postaction={decorate}}}
+          mark=at position #1 with {\arrow[scale=2]{latex'}}},
+      postaction={decorate}}}
 \tikzset{-<-/.style = {decoration={markings,
-                                   mark=at position #1 with {\arrowreversed[scale=2]{latex'}}},
-                       postaction={decorate}}}
+          mark=at position #1 with {\arrowreversed[scale=2]{latex'}}},
+      postaction={decorate}}}
 \tikzset{->>/.style = {decoration={markings,
-                                  mark=at position 1 with {\arrow[scale=2]{latex'}}},
-                      postaction={decorate}}}
+          mark=at position 1 with {\arrow[scale=2]{latex'}}},
+      postaction={decorate}}}
 \tikzset{<<-/.style = {decoration={markings,
-                                  mark=at position 0 with {\arrowreversed[scale=2]{twolatex'}}},
-                      postaction={decorate}}}
+          mark=at position 0 with {\arrowreversed[scale=2]{twolatex'}}},
+      postaction={decorate}}}
 \tikzset{<<->>/.style = {decoration={markings,
-                                   mark=at position 0 with {\arrowreversed[scale=2]{twolatex'}},
-                                   mark=at position 1 with {\arrow[scale=2]{twolatex'}}},
-                       postaction={decorate}}}
+          mark=at position 0 with {\arrowreversed[scale=2]{twolatex'}},
+          mark=at position 1 with {\arrow[scale=2]{twolatex'}}},
+      postaction={decorate}}}
 \tikzset{->>-/.style = {decoration={markings,
-                                   mark=at position #1 with {\arrow[scale=2]{twolatex'}}},
-                       postaction={decorate}}}
+          mark=at position #1 with {\arrow[scale=2]{twolatex'}}},
+      postaction={decorate}}}
 \tikzset{-<<-/.style = {decoration={markings,
-                                   mark=at position #1 with {\arrowreversed[scale=2]{twolatex'}}},
-                       postaction={decorate}}}
+          mark=at position #1 with {\arrowreversed[scale=2]{twolatex'}}},
+      postaction={decorate}}}
 
 \tikzset{circ/.style = {fill, circle, inner sep = 0, minimum size = 3}}
 \tikzset{scirc/.style = {fill, circle, inner sep = 0, minimum size = 1.5}}
@@ -535,19 +531,19 @@ Carnegie Mellon University}
 \definecolor{mred}{rgb}{0.5, 0, 0}
 
 \def\drawcirculararc(#1,#2)(#3,#4)(#5,#6){%
-    \pgfmathsetmacro\cA{(#1*#1+#2*#2-#3*#3-#4*#4)/2}%
-    \pgfmathsetmacro\cB{(#1*#1+#2*#2-#5*#5-#6*#6)/2}%
-    \pgfmathsetmacro\cy{(\cB*(#1-#3)-\cA*(#1-#5))/%
-                        ((#2-#6)*(#1-#3)-(#2-#4)*(#1-#5))}%
-    \pgfmathsetmacro\cx{(\cA-\cy*(#2-#4))/(#1-#3)}%
-    \pgfmathsetmacro\cr{sqrt((#1-\cx)*(#1-\cx)+(#2-\cy)*(#2-\cy))}%
-    \pgfmathsetmacro\cA{atan2(#2-\cy,#1-\cx)}%
-    \pgfmathsetmacro\cB{atan2(#6-\cy,#5-\cx)}%
-    \pgfmathparse{\cB<\cA}%
-    \ifnum\pgfmathresult=1
-        \pgfmathsetmacro\cB{\cB+360}%
-    \fi
-    \draw (#1,#2) arc (\cA:\cB:\cr);%
+  \pgfmathsetmacro\cA{(#1*#1+#2*#2-#3*#3-#4*#4)/2}%
+  \pgfmathsetmacro\cB{(#1*#1+#2*#2-#5*#5-#6*#6)/2}%
+  \pgfmathsetmacro\cy{(\cB*(#1-#3)-\cA*(#1-#5))/%
+    ((#2-#6)*(#1-#3)-(#2-#4)*(#1-#5))}%
+  \pgfmathsetmacro\cx{(\cA-\cy*(#2-#4))/(#1-#3)}%
+  \pgfmathsetmacro\cr{sqrt((#1-\cx)*(#1-\cx)+(#2-\cy)*(#2-\cy))}%
+  \pgfmathsetmacro\cA{atan2(#2-\cy,#1-\cx)}%
+  \pgfmathsetmacro\cB{atan2(#6-\cy,#5-\cx)}%
+  \pgfmathparse{\cB<\cA}%
+  \ifnum\pgfmathresult=1
+    \pgfmathsetmacro\cB{\cB+360}%
+  \fi
+  \draw (#1,#2) arc (\cA:\cB:\cr);%
 }
 \newcommand\getCoord[3]{\newdimen{#1}\newdimen{#2}\pgfextractx{#1}{\pgfpointanchor{#3}{center}}\pgfextracty{#2}{\pgfpointanchor{#3}{center}}}
 
@@ -555,13 +551,13 @@ Carnegie Mellon University}
 \newcommand\fakeqed{\pushQED{\qed}\qedhere}
 
 \def\Xint#1{\mathchoice
-   {\XXint\displaystyle\textstyle{#1}}%
-   {\XXint\textstyle\scriptstyle{#1}}%
-   {\XXint\scriptstyle\scriptscriptstyle{#1}}%
-   {\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
-   \!\int}
+  {\XXint\displaystyle\textstyle{#1}}%
+  {\XXint\textstyle\scriptstyle{#1}}%
+  {\XXint\scriptstyle\scriptscriptstyle{#1}}%
+  {\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+  \!\int}
 \def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
-     \vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+    \vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
 \def\ddashint{\Xint=}
 \def\dashint{\Xint-}
 
