@@ -149,7 +149,7 @@ To show this, we need a few lemmas.
 \end{proof}
 
 \begin{defi}
-  For $f : E \to \R$, define
+  For a function $f : E \to \R$, define
   \[
     \liminf_{x \to x_0} f(x) = \sup_{r > 0} \inf_{0 < d(x, x_0) < r} f(x),
     \quad
@@ -298,16 +298,30 @@ statement of the theorem below:
 \end{proof}
 
 \begin{remark}
-  The proof above shows that for monotone function $f$ on a bounded interval
-  $[a, b]$, we have
+  From the proof above, we see that for monotone function $f : [a, b] \to
+    \R$, we have
   \[
     \int_a^b f' \leq f(b) - f(a).
   \]
-  There exists a function for which inequality is strict. For one example,
-  consider a Cantor function $f : [0, 1] \to [0, 1]$. Then, $f' = 0$ a.e.\
+  There exists a monotone function for which inequality is strict. Indeed,
+  let $f : [0, 1] \to [0, 1]$ be the Cantor function. Then, $f' = 0$ a.e.\
   but $f(1) = 1$ and $f(0) = 0$.
 \end{remark}
 
-\subsection{Functions of bounded variation}
+\subsection{Differentiation of BV functions}
+
+\begin{defi}
+  Let $I \subset \R$ be an interval and $f : I \to \R^N$. The
+  \textbf{pointwise variation} of $f$ on the interval $I$ is defined as
+  \[
+    \Var f = \sup \left\{  \sumi^n \norm{f(x_i) - f(x_{i - 1})} \right\},
+  \]
+  where the supremum is taken over all partition $P = \{ x_0, \dots, x_n
+  \}$ of $I$, $n \in \N$. A function has \textbf{bounded pointwise
+  variation} if $\Var f < \infty$.
+
+  The space of all functions $f : I \to \R^N$ with bounded pointwise
+  variation is denoted by $BV(I; \R^N)$.
+\end{defi}
 
 \end{document}
