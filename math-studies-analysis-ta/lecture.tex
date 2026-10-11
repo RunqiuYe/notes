@@ -278,16 +278,16 @@ statement of the theorem below:
   is also measurable. By Fatou's lemma,
   \begin{align*}
     \int_a^b f'(x) \d x
-     & \leq \liminf_{n \to \infty}  \int_a^b g_n (x) \d x            \\
+     & \leq \liminf_{n \to \infty}  \int_a^b g_n (x) \d x             \\
      & = \liminf_{n \to \infty}
-    n \int_a^b g(x + n^{-1}) \d x - n \int_a^b g(x) \d x             \\
+    n \left( \int_a^b g(x + n^{-1}) \d x - \int_a^b g(x) \d x \right) \\
      & = \liminf_{n \to \infty}
-    n \int_a^{b - n^{-1}} g(x + n^{-1}) \d x
-    + n \int_{b - n^{-1}}^b f(b) - n \int_a^b g(x) \d x              \\
+    n \left( \int_a^{b - n^{-1}} g(x + n^{-1}) \d x
+    + \int_{b - n^{-1}}^b f(b) - \int_a^b g(x) \d x \right)           \\
      & = \liminf_{n \to \infty}
-    n \int_{a + n^{-1}}^b g(t) \d t + f(b)
-    - n \int_a^b g(t) \d t                                           \\
-     & = \liminf_{n \to \infty} f(b) - \int_a^{a + n^{-1}} f(t) \d t \\
+    n \left( \int_{a + n^{-1}}^b g(t) \d t
+    - \int_a^b g(t) \d t  \right) + f(b)                              \\
+     & = \liminf_{n \to \infty} f(b) - \int_a^{a + n^{-1}} f(t) \d t  \\
      & \leq f(b) - f(a).
   \end{align*}
   Therefore, $f'$ is integrable, which implies $\{ f' = \infty \}$ has
