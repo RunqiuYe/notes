@@ -146,6 +146,61 @@ Carnegie Mellon University}
           Since $\seqinfn{u_n}$ is arbitrary sequence converges to $0$,
           this shows the desired limit and completes the proof.
 
+    \item Claim that $\lim_{x \to \infty} f(x) = \infty$. Let
+          $\seqinfn{x_n}$ be a sequence such that $x_n \geq 0$ and $x_n
+          \to \infty$. We then have
+          \[
+            \frac{1 - e^{-x t^2}}{t} \geq 0.
+          \]
+          It then follows from MCT that
+          \[
+            \lim_{n \to \infty} \int_0^1 \frac{1 - e^{- x_n t^2}}{t} \d t
+            = \int_0^1 \lim_{n \to \infty} \frac{1 - e^{- x_n t^2}}{t} \d t
+            = \int_0^1 \frac{1}{t} \d t
+            = \infty.
+          \]
+          Since $\seqinfn{x_n}$ is an arbitrary sequence, this shows that
+          $\lim_{x \to \infty} f(x) = \infty$.
+
+          Similarly, it easily follows from MCT that $\lim_{x \to -\infty}
+          f(x) = - \infty$.
+
+    \item Similar to part 1 and 2, we can show that $F \in C^1 (\R^2)$,
+          with
+          \[
+            Df(x, y) = \int_0^1 (x + y) t e^{-x y t^2} \d t.
+          \]
+
+    \item The limit is zero. By Taylor's theorem, there exists $\delta >
+          0$ such that when $x y t^2 < \delta$,
+          \[
+            \abs{1 - e^{- x y t^2} - x y t^2} \leq \abs{x y t^2}.
+          \]
+          It follows that
+          \[
+            \abs{\frac{1 - e^{- x y t^2}}{\sqrt{x^2 + y^2}}}
+            \leq \frac{2 \abs{x y} t^2}{\sqrt{x^2 + y^2}}
+            \leq 2 t^2
+          \]
+          for $0 \leq t \leq 1$ when $(x, y)$ are sufficiently close to
+          $(0, 0)$. Now let $\seqinfn{(x_n, y_n)}$ be a sequence such that
+          $(x_n, y_n) \to (0, 0)$. We then have
+          \[
+            \int_0^1 \abs{\frac{1 - e^{- x_n y_n t^2}}{t \sqrt{x_n^2 + y_n^2}}} \d t
+            \leq \int_0^1 2 t \d t < \infty.
+          \]
+          It then follows from DCT that
+          \[
+            \lim_{n \to \infty} \frac{F(x_n, y_n)}{\sqrt{x_n^2 + y_n^2}}
+            = \int_0^1 \lim_{n \to \infty} \frac{1 - e^{- x_n y_n t^2}}{t \sqrt{x_n^2 + y_n^2}} \d t
+            = 0.
+          \]
+          Since $\seqinfn{(x_n, y_n)}$ is an arbitrary sequence, this
+          implies that
+          \[
+            \lim_{(x, y) \to (0, 0)}  \frac{F(x, y)}{\sqrt{x^2 + y^2}} = 0.
+          \]
+
   \end{enumerate}
 \end{proof}
 
