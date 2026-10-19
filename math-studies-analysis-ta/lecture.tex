@@ -1,6 +1,7 @@
 \documentclass[a4paper]{article}
 \usepackage{parskip}
 \usepackage{lipsum}
+\usepackage{newtxtext}
 
 \def\nterm {Fall}
 \def\nyear {2026}
@@ -308,20 +309,113 @@ statement of the theorem below:
   but $f(1) = 1$ and $f(0) = 0$.
 \end{remark}
 
-\subsection{Differentiation of BV functions}
+We have seen that a monotone function on a interval is differentiable a.e.
+Now we show that a monotone function is continuous on all but countably
+many points.
 
 \begin{defi}
+  Let $X$ be a set and $g : X \to [0, \infty)$. Define infinite sum
+  \[
+    \sum_{x \in X} g(x) := \left\{ \sum_{x \in Y} g(x) :
+    Y \subset X \text{ finite} \right\}.
+  \]
+\end{defi}
+
+\begin{thm}
+  Let $X$ be a set and $g : X \to [0, \infty)$. If $\sum_{x \in X} g(x) <
+    \infty$, then $\{ x \in X : g(x) > 0\}$ is countable.
+\end{thm}
+
+\begin{proof}
+  Let $M = \sum_{x \in X} g(x)$ and $X_k = \{ x \in X : g(x) > k^{-1} \}$
+  for $k \in \N$. Let $Y \subset X_k$ finite, then
+  \[
+    M \geq \sum_{x \in Y} g(x) > k^{-1} \abs{Y}.
+  \]
+  Hence $\abs{Y} \leq k M$ and thus $\abs{X_k} \leq k M$. It follows that
+  $\{ x \in X : g(x) > 0 \} = \cupinfk X_k$ is countable.
+\end{proof}
+
+\begin{thm}
+  Let $I \subset \R$ be an interval and $f : I \to \R$ an increasing
+  function. Then, $f$ is continuous at all but countably many $x \in I$.
+\end{thm}
+
+\begin{proof}
+  First assume $I = [a, b]$. Then for $x \in (a, b)$, there exists
+  $\lim_{y \to x^-} f(y) = f(x-)$ and $\lim_{y \to x^+} f(y) = f(x+)$.
+  Since the function is increasing, $f(x+) \geq f(x-)$. Now we can define
+  $g (x) = f(x+) - f(x-)$. It is clear that $\sum_{x \in [a, b]} g(x) \leq
+    f(b) - f(a)$. By the previous theorem, $f(x+) = f(x-)$ for all but
+  countably many $x \in [a, b]$.
+
+  The interval $I \subset \R$ can be written as a countable union of
+  finite closed intervals. The proof is then complete.
+\end{proof}
+
+\subsection{Differentiation of BV functions}
+
+\begin{defi}[pointwise variation]
   Let $I \subset \R$ be an interval and $f : I \to \R^N$. The
   \textbf{pointwise variation} of $f$ on the interval $I$ is defined as
   \[
     \Var f = \sup \left\{  \sumi^n \norm{f(x_i) - f(x_{i - 1})} \right\},
   \]
-  where the supremum is taken over all partition $P = \{ x_0, \dots, x_n
-  \}$ of $I$, $n \in \N$. A function has \textbf{bounded pointwise
-  variation} if $\Var f < \infty$.
+  where the supremum is taken over all partition $x_0 < x_1 < \dots <
+  x_n$, where $n \in \N$ and $x_0, \dots, x_n \in I$. Say a function has
+  \textbf{bounded pointwise variation} if $\Var f < \infty$.
 
   The space of all functions $f : I \to \R^N$ with bounded pointwise
   variation is denoted by $BV(I; \R^N)$.
 \end{defi}
+
+\begin{prop}
+  The following properties holds:
+  \begin{enumerate}
+    \item Fix $c \in I$, then
+          \[
+            \norm{f}_{BV} = \Var f + \norm{f(c)}
+          \]
+          is a norm on $BV(I; \R^N)$. Moreover, $BV(I; \R^N)$ is complete
+          under this norm.
+
+    \item Let $c \in I$, then
+          \[
+            \Var_I f = \Var_{I \cap (-\infty, c]} f
+            + \Var_{I \cap [c, \infty)} f.
+          \]
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  Exercise.
+\end{proof}
+
+\begin{defi}
+  Let $f : I \to \R^N$. Say $f$ has \textbf{locally bounded variation} if
+  $\Var_{[a, b]} f < \infty$ for all $[a, b] \subset I$. Denote the space
+  of functions with bounded local variation as $BV_{\loc} (I ; \R^N)$.
+\end{defi}
+
+\begin{eg}
+  If $f : I \to \R^N$ is Lipshitz continuous with Lipshitz constant $L$,
+  $[a, b] \subset I$, and $a \leq x_0 < x_1 < \dots < x_n < b$, then
+  \[
+    \sumi^n \norm{f(x_i) - f(x_{i - 1})}
+    \leq L \sumi^n (x_i - x_{i - 1})
+    \leq L (b - a).
+  \]
+  Therefore, Lipshitz functions has locally bounded variation.
+\end{eg}
+
+\begin{ex}
+  Let $f, g \in BV ([a, b])$. Then,
+  \begin{enumerate}
+    \item $fg \in BV([a, b])$,
+    \item Suppose $g \neq 0$, then $f g^{-1}$ needs not be in $BV ([a,
+          b])$, but if $g(x) \geq c > 0$ for all $x \in I$, we have $f
+          g^{-1} \in BV ([a, b])$.
+  \end{enumerate}
+\end{ex}
 
 \end{document}
