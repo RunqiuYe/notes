@@ -1,7 +1,7 @@
 \documentclass[a4paper]{article}
 \usepackage{parskip}
 \usepackage{lipsum}
-\usepackage{newtxtext}
+% \usepackage{newtxtext}
 
 \def\nterm {Fall}
 \def\nyear {2026}
@@ -23,6 +23,50 @@ Carnegie Mellon University}
 \section{The fundamental theorem of calculus}
 
 \subsection{Differentiation of monotone functions}
+
+\subsubsection*{Continuity}
+
+\begin{defi}
+  Let $X$ be a set and $g : X \to [0, \infty)$. Define infinite sum
+  \[
+    \sum_{x \in X} g(x) := \left\{ \sum_{x \in Y} g(x) :
+    Y \subset X \text{ finite} \right\}.
+  \]
+\end{defi}
+
+\begin{thm}
+  Let $X$ be a set and $g : X \to [0, \infty)$. If $\sum_{x \in X} g(x) <
+    \infty$, then $\{ x \in X : g(x) > 0\}$ is countable.
+\end{thm}
+
+\begin{proof}
+  Let $M = \sum_{x \in X} g(x)$ and $X_k = \{ x \in X : g(x) > k^{-1} \}$
+  for $k \in \N$. Let $Y \subset X_k$ finite, then
+  \[
+    M \geq \sum_{x \in Y} g(x) > k^{-1} \abs{Y}.
+  \]
+  Hence $\abs{Y} \leq k M$ and thus $\abs{X_k} \leq k M$. It follows that
+  $\{ x \in X : g(x) > 0 \} = \cupinfk X_k$ is countable.
+\end{proof}
+
+\begin{thm}
+  Let $I \subset \R$ be an interval and $f : I \to \R$ an increasing
+  function. Then, $f$ is continuous at all but countably many $x \in I$.
+\end{thm}
+
+\begin{proof}
+  First assume $I = [a, b]$. Then for $x \in (a, b)$, there exists
+  $\lim_{y \to x^-} f(y) = f(x-)$ and $\lim_{y \to x^+} f(y) = f(x+)$.
+  Since the function is increasing, $f(x+) \geq f(x-)$. Now we can define
+  $g (x) = f(x+) - f(x-)$. It is clear that $\sum_{x \in [a, b]} g(x) \leq
+    f(b) - f(a)$. By the previous theorem, $f(x+) = f(x-)$ for all but
+  countably many $x \in [a, b]$.
+
+  The interval $I \subset \R$ can be written as a countable union of
+  finite closed intervals. The proof is then complete.
+\end{proof}
+
+\subsubsection*{Differentiation}
 
 \begin{thm}[Lebesgue's differentiation theorem]
   Let $I \subset \R$ be an interval and let $f : I \to \R$ be a monotone
@@ -309,50 +353,6 @@ statement of the theorem below:
   but $f(1) = 1$ and $f(0) = 0$.
 \end{remark}
 
-We have seen that a monotone function on a interval is differentiable a.e.
-Now we show that a monotone function is continuous on all but countably
-many points.
-
-\begin{defi}
-  Let $X$ be a set and $g : X \to [0, \infty)$. Define infinite sum
-  \[
-    \sum_{x \in X} g(x) := \left\{ \sum_{x \in Y} g(x) :
-    Y \subset X \text{ finite} \right\}.
-  \]
-\end{defi}
-
-\begin{thm}
-  Let $X$ be a set and $g : X \to [0, \infty)$. If $\sum_{x \in X} g(x) <
-    \infty$, then $\{ x \in X : g(x) > 0\}$ is countable.
-\end{thm}
-
-\begin{proof}
-  Let $M = \sum_{x \in X} g(x)$ and $X_k = \{ x \in X : g(x) > k^{-1} \}$
-  for $k \in \N$. Let $Y \subset X_k$ finite, then
-  \[
-    M \geq \sum_{x \in Y} g(x) > k^{-1} \abs{Y}.
-  \]
-  Hence $\abs{Y} \leq k M$ and thus $\abs{X_k} \leq k M$. It follows that
-  $\{ x \in X : g(x) > 0 \} = \cupinfk X_k$ is countable.
-\end{proof}
-
-\begin{thm}
-  Let $I \subset \R$ be an interval and $f : I \to \R$ an increasing
-  function. Then, $f$ is continuous at all but countably many $x \in I$.
-\end{thm}
-
-\begin{proof}
-  First assume $I = [a, b]$. Then for $x \in (a, b)$, there exists
-  $\lim_{y \to x^-} f(y) = f(x-)$ and $\lim_{y \to x^+} f(y) = f(x+)$.
-  Since the function is increasing, $f(x+) \geq f(x-)$. Now we can define
-  $g (x) = f(x+) - f(x-)$. It is clear that $\sum_{x \in [a, b]} g(x) \leq
-    f(b) - f(a)$. By the previous theorem, $f(x+) = f(x-)$ for all but
-  countably many $x \in [a, b]$.
-
-  The interval $I \subset \R$ can be written as a countable union of
-  finite closed intervals. The proof is then complete.
-\end{proof}
-
 \subsection{Differentiation of BV functions}
 
 \begin{defi}[pointwise variation]
@@ -409,12 +409,12 @@ many points.
 \end{eg}
 
 \begin{ex}
-  Let $f, g \in BV ([a, b])$. Then,
+  Let $f, g \in BV ([a, b])$, then the following holds:
   \begin{enumerate}
     \item $fg \in BV([a, b])$,
-    \item Suppose $g \neq 0$, then $f g^{-1}$ needs not be in $BV ([a,
-          b])$, but if $g(x) \geq c > 0$ for all $x \in I$, we have $f
-          g^{-1} \in BV ([a, b])$.
+    \item Further suppose $g \neq 0$, then $f g^{-1}$ needs not be in $BV
+          ([a, b])$. However, if there exists $c > 0$ such that $g(x) \geq
+          c$ for all $x \in I$, we have $f g^{-1} \in BV ([a, b])$.
   \end{enumerate}
 \end{ex}
 
