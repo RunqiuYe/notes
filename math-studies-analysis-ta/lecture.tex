@@ -418,4 +418,115 @@ statement of the theorem below:
   \end{enumerate}
 \end{ex}
 
+\begin{thm}
+  Let $I \subset \R$ be an interval and $f : I \to \R$ increasing. Then,
+  \[
+    \Var f = \sup f - \inf f.
+  \]
+  In particular, $f \in BV_{\loc}(I)$, and if $f$ is bounded, $f \in
+  BV(I)$.
+\end{thm}
+
+\begin{proof}
+  Let $x_0 < x_1 < \dots < x_n$ be a partition of $I$, then
+  \begin{align*}
+    \sumi^n \abs{f(x_i) - f(x_{i - 1})}
+    = f(x_n) - f(x_0)
+    \leq \sup f - \inf f.
+  \end{align*}
+  Hence, $\Var f \leq \sup f - \inf f$. Conversely, assume $\inf I < \sup
+    I$ and take $\inf I < a < b < \sup I$. Then, we have $f(b) - f(a) \leq
+    \Var f$. Letting $a \to \inf I$ and $b \to \sup I$ completes the proof.
+\end{proof}
+
+\begin{thm}
+  Let $I \subset \R$ be an interval and $f : I \to \R^N$. Fix $c \in I$
+  and define
+  \[
+    v(x) = \begin{cases}
+      \Var_{[c, x]} f   & (x \geq c), \\
+      - \Var_{[x, c]} f & (x < c).
+    \end{cases}
+  \]
+  Then, for every $x, y \in I$ with $x < y$, $\norm{f(x) - f(y)} \leq v(y)
+  - v(x)$.
+
+  Moreover, if $f \in BV_{\loc} (I ; \R^N)$, then the left and right limit
+  exists for all $x \in I^\circ$, and $f$ is continuous at all but
+  countably many points. Also, if $N = 1$, $v \pm f$ are increasing.
+\end{thm}
+
+\begin{proof}
+  Let $x < y$, then
+  \begin{align*}
+    \norm{f(y) - f(x)}
+    \leq \Var_{[x, y]} f
+    =
+    \begin{cases}
+      \Var_{[c, y]} f - \Var_{[c, x]} f & (c \leq x < y),    \\
+      \Var_{[x, c]} f - \Var_{[y, c]} f & (x < y \leq c),    \\
+      \Var_{[x, c]} f + \Var_{[c, y]} f & (x \leq c \leq y).
+    \end{cases}
+  \end{align*}
+  It directly follows that $\norm{f(x) - f(y)} \leq v(y) - v(x)$.
+
+  Now assume $f \in BV_{\loc} (I ; \R^N)$, then $v$ is real-valued. Now
+  that $v$ is increasing, so $v$ is continuous at all but countably many
+  points. It directly follows that $f$ is continuous at all but countably
+  many points.
+
+  For $N = 1$, we have $\abs{f(x) - f(y)} \leq v(y) - v(x)$, so $f(x) -
+  f(y) \leq v(y) - v(x)$ and $f(y) - f(x) \leq v(y) - v(x)$, showing that
+  $v \pm f$ are increasing.
+\end{proof}
+
+\begin{cor}
+  Let $I \subset \R$ be an interval, then
+  \begin{enumerate}
+    \item $BV_{\loc} (I)$ is the smallest vector space that contains all
+          monotone functions $f : I \to \R$.
+
+    \item $BV (I)$ is the smallest vector space that contains all $f : I
+            \to \R$ that is bounded and monotone.
+  \end{enumerate}
+\end{cor}
+
+\begin{proof}
+  \begin{enumerate}
+    \item By previous theorems, $BV_{\loc} (I)$ contains all monotone
+          functions. Conversely, for any $f \in BV_{\loc} (I)$, we have
+          \[
+            f = v + (f - v),
+          \]
+          where both functions are monotone.
+    \item Similar.
+  \end{enumerate}
+\end{proof}
+
+\begin{cor}
+  If $f \in BV_{\loc} (I)$, then $f$ is differentiable a.e.
+\end{cor}
+
+\subsection{Absolutely continuous functions}
+
+\begin{defi}[absolutely continuous]
+  Let $I \subset \R$ be an interval. Say $f : I \to \R^N$ is
+  \textbf{absolutely continuous} if for every $\epsilon > 0$, there exists
+  $\delta > 0$ such that for any finite collection of intervals
+  $\seqi{[a_i, b_i]}^n$ with $[a_i, b_i] \subset I$ and disjoint interior,
+  and $\sumi^n b_i - a_i \leq \delta$, we have $\sumi^n \norm{f(b_i) -
+      f(a_i)} \leq \epsilon$.
+\end{defi}
+
+\begin{remark}
+  Note that taking $n = 1$ in the previous definition gives uniform
+  continuity. Therefore absolute continuity implies uniform continuity.
+\end{remark}
+
+\begin{eg}
+  Let $f : I \to \R^N$ be Lipshitz continuous with constant $L$, then
+  $\sumi^n \norm{f(b_i) - f(a_i)} \leq L \sumi^n (b_i - a_i)$. Therefore,
+  Lipshitz continuity implies absolute continuity.
+\end{eg}
+
 \end{document}
