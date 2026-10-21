@@ -88,13 +88,13 @@ Carnegie Mellon University}
           By mean value theorem we have
           \[
             \abs{\frac{e^{-x t^2} - e^{-(x + u_n) t^2}}{t}
-              - t e^{-x t^2} u_n} \leq \abs{u_n} \sup_{\xi \in [0, u_n]}
+              - t e^{-x t^2} u_n} \leq \abs{u_n} \sup_{\xi \in L(0, u_n)}
             \abs{t e^{-(x + \xi) t^2} - t e^{-x t^2}}.
           \]
           Then,
           \begin{align*}
             \frac{\abs{f(x + u_n) - f(x) - T(x) u_n}}{\abs{u_n}}
-             & \leq \int_0^1 \sup_{\xi \in [0, u_n]}
+             & \leq \int_0^1 \sup_{\xi \in L(0, u_n)}
             \abs{t e^{-(x + \xi) t^2} - t e^{-x t^2}} \d t.
           \end{align*}
           Towards using DCT, note that
@@ -107,10 +107,10 @@ Carnegie Mellon University}
           \begin{align*}
             \lim_{n \to \infty}
             \frac{\abs{f(x + u_n) - f(x) - T(x) u_n}}{\abs{u_n}}
-             & \leq \lim_{n \to \infty} \int_0^1 \sup_{\xi \in [0, u_n]}
-            \abs{t e^{-(x + \xi) t^2} - t e^{-x t^2}} \d t               \\
-             & = \int_0^1 \lim_{n \to \infty}  \sup_{\xi \in [0, u_n]}
-            \abs{t e^{-(x + \xi) t^2} - t e^{-x t^2}} \d t               \\
+             & \leq \lim_{n \to \infty} \int_0^1 \sup_{\xi \in L(0, u_n)}
+            \abs{t e^{-(x + \xi) t^2} - t e^{-x t^2}} \d t                \\
+             & = \int_0^1 \lim_{n \to \infty}  \sup_{\xi \in L(0, u_n)}
+            \abs{t e^{-(x + \xi) t^2} - t e^{-x t^2}} \d t                \\
              & = 0,
           \end{align*}
           since $u_n \to 0$ as $n \to \infty$, $\xi \in [0, u_n]$, and
@@ -274,7 +274,7 @@ Carnegie Mellon University}
             = \suminfn \int_0^1 \abs{f_n} < \infty
           \]
           The desired equality then follows from DCT.
-    \item No. For $N, M \in \N$, consider
+    \item No. For $N, M \in \N$ and $M \geq N$, consider
           \[
             \sum_{n = N}^M f_n(x)
             = \sum_{n = N}^M n x^2 (1 - x)^n \cos (2 \pi x).
