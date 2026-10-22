@@ -81,7 +81,7 @@ Carnegie Mellon University}
           $\abs{u_n} \leq 1$. We have
           \begin{align*}
             \frac{\abs{f(x + u_n) - f(x) - T(x) u_n}}{\abs{u_n}}
-             & = \frac{1}{\abs{u_n}} \int_0^1
+             & \leq \frac{1}{\abs{u_n}} \int_0^1
             \abs{\frac{e^{-x t^2} - e^{-(x + u_n) t^2}}{t}
               - t e^{-x t^2} u_n} \d t.
           \end{align*}
@@ -165,11 +165,65 @@ Carnegie Mellon University}
           Similarly, it easily follows from MCT that $\lim_{x \to -\infty}
           f(x) = - \infty$.
 
-    \item Similar to part 1 and 2, we can show that $F \in C^1 (\R^2)$,
-          with
+    \item $F \in C^1 (\R^2)$. Similar to part 1, we have
           \[
-            DF(x, y) = \int_0^1 (x + y) t e^{-x y t^2} \d t.
+            g(x, y) = \frac{1 - e^{- x y t^2}}{t} \to 0
+            \text{ as $t \to 0$},
           \]
+          so $F(x, y) < \infty$ for all $(x, y) \in \R^2$. To show $F \in
+          C^1(\R^2)$, we first show
+          \[
+            DF(x, y)(h, k) = \int_0^1 D g (x, y) (h, k) \d t,
+          \]
+          where
+          \[
+            Dg(x, y) (h, k) = (yh + xk) e^{-xy t^2}.
+          \]
+
+          Fix $(x, y) \in \R^2$ and denote the linear map on RHS w.r.t.\
+          $(h, k)$ as $T$. Let $\seqinfn{(h_n, k_n)}$ be a sequence with
+          $(h_n, k_n) \to 0$, and consider
+          \begin{align*}
+             & \frac{\abs{f(x + h_n, y + k_n) - f(x) - T (h_n, k_n)}}
+               {\norm{(h_n, k_n)}} \\
+             & = \frac{1}{\norm{(h_n, k_n)}}
+            \abs{\int_0^1 g(x + h_n, y + k_n) - g(x, y)
+              - D g(x, y) (h_n, k_n) \d t}
+          \end{align*}
+          Towards using DCT, mean value theorem give
+          \begin{align*}
+            g(x + h_n, y + k_n) - g(x, y) - D g(x, y) (h_n, k_n)
+             & \leq \sup_{z \in L} \norm{Dg(z) - D g(x, y)}
+            \norm{(h_n, k_n)},
+          \end{align*}
+          where the supremum is taken over the line segment $L$ from $(x,
+            y)$ to $(x + h_n, y + k_n)$. Therefore
+          \begin{align*}
+            \frac{\abs{f(x + h_n, y + k_n) - f(x) - T (h_n, k_n)}}
+            {\norm{(h_n, k_n)}}
+             & \leq
+            \int_0^1 \sup_{z \in L} \norm{Dg(z) - D g(x, y)} \d t
+          \end{align*}
+          Now we have
+          \begin{align*}
+            (Dg (z) - D g(x, y)) (h, k)
+             & = (z_2 h + z_1 k) e^{- z_1 z_2 t^2} - (y h + x k) e^{-x y t^2}.
+          \end{align*}
+
+          To find $\norm{Dg(z) - Dg(x, y)}$, let $(h, k)$ be such that
+          $\norm{(h, k)} \leq 1$. When $n$ is large enough, we have
+          $\abs{(z_2 - y)h + (z_1 - x) k} \leq 1$, $\abs{z_2 h + z_1 k}
+          \leq \abs{x h + y k} + 1$, and $\abs{z_1 z_2} \leq \abs{x y} +
+          1$. It follows that for all $0 \leq t \leq 1$, we have
+          \[
+            (Dg (z) - D g(x, y)) (h, k)
+            \leq (\abs{x h + y k} + 1)
+            e^{\abs{x y} t^2 + 1}
+            \leq (\abs{x} + \abs{y} + 1) e^{\abs{x y} t^2 + 1},
+          \]
+          which is integrable w.r.t.\ $t$ on $[0, 1]$. Therefore, DCT
+          applies and gives $DF(x, y) (h, k) = \int_0^1 Dg(x, y) (h, k) \d
+          t$. The proof for $DF$ being continuous is similar.
 
     \item The limit is zero. By Taylor's theorem, there exists $\delta >
           0$ such that when $x y t^2 < \delta$,
