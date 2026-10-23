@@ -323,16 +323,16 @@ statement of the theorem below:
   is also measurable. By Fatou's lemma,
   \begin{align*}
     \int_a^b f'(x) \d x
-     & \leq \liminf_{n \to \infty}  \int_a^b g_n (x) \d x             \\
+     & \leq \liminf_{n \to \infty}  \int_a^b g_n (x) \d x              \\
      & = \liminf_{n \to \infty}
-    n \left( \int_a^b g(x + n^{-1}) \d x - \int_a^b g(x) \d x \right) \\
+    n \left( \int_a^b g(x + n^{-1}) \d x - \int_a^b g(x) \d x \right)  \\
      & = \liminf_{n \to \infty}
     n \left( \int_a^{b - n^{-1}} g(x + n^{-1}) \d x
-    + \int_{b - n^{-1}}^b f(b) - \int_a^b g(x) \d x \right)           \\
+    + \int_{b - n^{-1}}^b f(b) - \int_a^b g(x) \d x \right)            \\
      & = \liminf_{n \to \infty}
     n \left( \int_{a + n^{-1}}^b g(t) \d t
-    - \int_a^b g(t) \d t  \right) + f(b)                              \\
-     & = \liminf_{n \to \infty} f(b) - \int_a^{a + n^{-1}} f(t) \d t  \\
+    - \int_a^b g(t) \d t  \right) + f(b)                               \\
+     & = \liminf_{n \to \infty} f(b) - n \int_a^{a + n^{-1}} f(t) \d t \\
      & \leq f(b) - f(a).
   \end{align*}
   Therefore, $f'$ is integrable, which implies $\{ f' = \infty \}$ has
@@ -514,7 +514,7 @@ statement of the theorem below:
   \textbf{absolutely continuous} if for every $\epsilon > 0$, there exists
   $\delta > 0$ such that for any finite collection of intervals
   $\seqi{[a_i, b_i]}^n$ with $[a_i, b_i] \subset I$ and disjoint interior,
-  and $\sumi^n b_i - a_i \leq \delta$, we have $\sumi^n \norm{f(b_i) -
+  and $\sumi^n (b_i - a_i) \leq \delta$, we have $\sumi^n \norm{f(b_i) -
       f(a_i)} \leq \epsilon$.
 \end{defi}
 
@@ -528,5 +528,124 @@ statement of the theorem below:
   $\sumi^n \norm{f(b_i) - f(a_i)} \leq L \sumi^n (b_i - a_i)$. Therefore,
   Lipshitz continuity implies absolute continuity.
 \end{eg}
+
+\begin{thm}
+  Let $I \subset \R$ be an interval and $f : I \to \R^N$ absolutely
+  continuous. Suppose $f' = 0$ a.e. Then, $f$ is constant.
+\end{thm}
+
+\begin{eg}
+  The Cantor function has zero derivative a.e.\ but it is not constant, so
+  it is not absolutely continuous.
+\end{eg}
+
+\begin{proof}
+  Let $a < b \in I$. We want to show that $f(a) = f(b)$. Let
+  \[
+    G = \{ x \in (a, b) : f'(x) = 0 \}.
+  \]
+  It follows that $\L^1 (G) = b - a$. For any $x \in G$, we have $h^{-1}
+  (f(x + h) - f(x)) \to 0$ as $h \to 0$. Given $\epsilon > 0$, there
+  exists $h_x > 0$ such that $\norm{h^{-1} (f(x + h) - f(x))} \leq
+  \epsilon$ for all $0 < \abs{h} \leq h_x$. Now let
+  \[
+    \fcal = \{ (x, x + h) : x \in G, 0 < h < h_x \}.
+  \]
+  By a previous lemma, for any $\delta > 0$, there exists a finite and
+  disjoint collection of intervals $\seqi{(x_i, x_i + h_i)}^n \subset
+  \fcal$ with
+  \begin{align*}
+     & \L_o^1 \left( G \cap \cupi^n (x_i, x_i + h_i) \right)
+    \geq \L_o^1 (G) - \delta,                                    \\
+     & \sumi^n \L^1 ((x_i, x_i + h_i)) \leq \L_o^1 (G) + \delta.
+  \end{align*}
+  Let $x_1 < \dots < x_n$. It follows that
+  \begin{align*}
+    \sumi^n h_i
+     & \geq \L_o^1 \left( G \cap \cupi^n (x_i, x_i + h_i) \right) \\
+     & \geq b - a - \delta.
+  \end{align*}
+  Therefore, $(a, x_1) \cup (x_1 + h_1, x_2) \cup \dots \cup (x_n + h_n,
+    b)$ has measure at most $\delta$. By absolutely continuity, we have
+  \[
+    \norm{f(x_1) - f(a)} + \norm{f(x_1 + h_1) + f(x_2)}
+    + \dots + \norm{f(b) - f(x_n + h_n)} \leq \epsilon.
+  \]
+  Moreover, $\norm{f(x_i + h_i) - f(x_i)} \leq \epsilon h_i$. It follows
+  that
+  \begin{align*}
+    \norm{f(b) - f(a)}
+     & \leq \epsilon + \sumi^n \epsilon h_i       \\
+     & \leq \epsilon + \epsilon (b - a) + \delta.
+  \end{align*}
+  Letting $\delta \to 0$ and $\epsilon \to 0$ shows $f(b) = f(a)$.
+\end{proof}
+
+\begin{thm}
+  Let $I \subset \R$ be an interval and $f : I \to \R^N$ be absoultely
+  continuous. Then, $f \in BV_\loc (I ; \R^N)$. In particular, $f$ is
+  differentiable a.e.
+\end{thm}
+
+\begin{proof}
+
+  Let $[a, b] \in I$. Let $\delta$ be in the definition of absolute
+  continuity when applying it to $f$ with $\epsilon = 1$. Divide interval
+  $[a, b]$ into segments of length $\delta$. Call the segments
+  $\seqi{[x_{i - 1}, x_i]}^n$, where $n \leq \delta^{-1}(b - a) + 1 <
+  \infty$. It follows that
+  \begin{align*}
+    \Var_{[a, b]} f
+    = \sumi^n \Var_{[x_{i - 1}, x_i]} f
+    \leq n
+    < \infty,
+  \end{align*}
+  completing the proof.
+\end{proof}
+
+\begin{thm}[FTC for Lipshitz functions]
+  Let $I \subset \R$ be an interval and $f : I \to \R$ be Lipshitz. Then,
+  \[
+    f(b) - f(a) = \int_a^b f'(x) \d x.
+  \]
+\end{thm}
+
+\begin{proof}
+  Note that $f$ being Lipshitz implies $f \in BV_\loc (I)$, so $f$ is
+  differentiable a.e. Define
+  \[
+    g(x) = \begin{cases}
+      f(x) & (a \leq x \leq b), \\
+      f(b) & (x \geq b).
+    \end{cases}
+  \]
+  Note that $g$ is still Lipshitz and let $L$ be the Lipshitz constant. We
+  have
+  \begin{align*}
+    \lim_{n \to \infty} \frac{g(x + n^{-1}) - g(x)}{n^{-1}}
+    = g'(x) \text{ a.e.}
+  \end{align*}
+  Since $g$ is continuous, $g'$ is measurable. Moreover, $g$ being
+  Lipshitz implies $\abs{g'} \leq L$. It then follows from DCT that
+  \[
+    \lim_{n \to \infty} \int_a^b \frac{g(x + n^{-1}) - g(x)}{n^{-1}} \d x
+    = \int_a^b g'(x) \d x.
+  \]
+  Through similar computation as in the Lebesgue differentiation theorem,
+  for LHS we have
+  \begin{align*}
+    \lim_{n \to \infty} \int_a^b \frac{g(x + n^{-1}) - g(x)}{n^{-1}} \d x
+     & = \lim_{n \to \infty} f(b) - n \int_a^{a + n^{-1}} f(t) \d t \\
+     & = f(b) - f(a),
+  \end{align*}
+  where the last equality is by continuity of $f$.
+\end{proof}
+
+\begin{remark}
+  Comparing this with the proof of Lebesgue differentiation theorem for
+  monotone function, we know $f$ is continuous and Lipshitz. Lipshitz
+  continuity gives us bounded derivative and the ability to use DCT, and
+  continuity let us know the final term is $f(a)$.
+\end{remark}
 
 \end{document}
