@@ -603,6 +603,8 @@ statement of the theorem below:
   completing the proof.
 \end{proof}
 
+\subsection{The fundamental theorem of calculus}
+
 \begin{thm}[FTC for Lipshitz functions]
   Let $I \subset \R$ be an interval and $f : I \to \R$ be Lipshitz. Then,
   \[
@@ -647,5 +649,109 @@ statement of the theorem below:
   continuity gives us bounded derivative and the ability to use DCT, and
   continuity let us know the final term is $f(a)$.
 \end{remark}
+
+\begin{thm}[FTC 1]
+  Let $g : [a, b] \to \R$ integrable. Let $f(x) = \int_a^x g(t) \d t$.
+  Then $f$ is absolutely continuous, and $f'(x) = g(x)$ for a.e.\ $x \in
+    [a, b]$.
+\end{thm}
+
+To show this we need a few lemmas.
+
+\begin{lemma}
+  Let $E \subset \R^N$ be Lebesgue measurable, $g : E \to \R$ be
+  integrable. Then for all $\epsilon > 0$, there exists $\delta > 0$ such
+  that $F \subset E$ with $\L^N (F) \leq \delta$ implies $\int_F \abs{g}
+    \d x \leq \epsilon$.
+\end{lemma}
+
+\begin{lemma}
+  Let $g : [a, b] \to \R$ integrable such that $\int_a^x g(t) \d t = 0$
+  for all $x \in [a, b]$. Then, $g = 0$ a.e.
+\end{lemma}
+
+\begin{proof}
+  Exercise.
+\end{proof}
+
+Now we begin the proof for the first fundamental theorem of calculus.
+
+\begin{proof}
+  First we show $f \in AC$. Fix $\epsilon > 0$, and let $\delta$ be as in
+  the first lemma. Suppose $\seqi{(a_i, b_i)}^n$ are disjoint sub-interval
+  of $[a, b]$ with $\sumi^n (b_i - a_i) \leq \delta$. Let $U = \cupi^n
+    (a_i, b_i)$. It follows that
+  \begin{align*}
+    \sumi^n \abs{f(b_i) - f(a_i)}
+    = \sumi^n \abs{\int_{a_i}^{b_i} g(t) \d t}
+    \leq \sumi^n \int_{a_i}^{b_i} \abs{g(t)} \d t
+    = \int_U \abs{g(t)} \d t
+    \leq \epsilon,
+  \end{align*}
+  as desired. Since $f \in AC$, it is differentiation a.e.
+
+  It remains to show that $f'(x) = g(x)$ a.e. First assume $g$ is bounded
+  with $\abs{g} \leq M$. In this case, $f$ is Lipshitz. Then for any $c
+  \in [a, b]$, we have $f(c) - f(a) = \int_a^c f'(t) \d t$ by FTC for
+  Lipshitz functions. It follows that
+  \[
+    \int_a^c g(t) \d t = \int_a^c f'(t) \d t.
+  \]
+  By the second lemma above, we have $f' = g$ a.e.
+
+  For the next step assume $g$ is non-negative. Define
+  \[
+    g_n(t) = \begin{cases}
+      g(t) & (g(t) \leq n), \\
+      0    & (g(t) > n).
+    \end{cases}
+  \]
+  We then have $0 \leq g_n \leq n$. Moreover,
+  \begin{align*}
+    f(x)
+    = \int_a^x g(t) \d t
+    = \int_a^x g_n(t) \d t + \int_a^x (g(t) - g_n(t)) \d t.
+  \end{align*}
+
+  Write $G_n(x) = \int_a^x g_n(t) \d t$ and $H_n = \int_a^x (g(t) -
+  g_n(t)) \d t$. By the previous step, we know that $G_n' (x) = g_n(x)$
+  a.e. We also know that $g \geq g_n$, so $H_n$ is increasing. Then, $H_n$
+  is differentiable a.e.\ and $f' = g_n + H_n' \geq g_n$ a.e. Letting $n
+  \to \infty$ gives $f' \geq g$ a.e.
+
+  To get equality, we take integral and obtain $\int_a^b f'(x) \d x \geq
+  \int_a^b g(x) \d x$. Since $g \geq 0$, $f$ is also increasing. It
+  follows that $\int_a^b f'(x) \d x \leq f(b) - f(a)$. However $\int_a^b
+  g(x) \d x = f(b) - f(a)$. This shows that $\int_a^b (f' - g) = 0$. With
+  $f' \geq g$, this implies $f' = g$ a.e.
+
+  To complete the proof for general $g$, consider $g = g^+ - g^-$.
+\end{proof}
+
+\begin{thm}[FTC 2]
+  Let $f : [a, b] \to \R$, then $f \in AC$ iff the following holds:
+  \begin{enumerate}
+    \item $f$ is differentiable a.e.
+    \item $f'$ is Lebesgue integrable.
+    \item $f'(x) - f'(x_0) = \int_{x_0}^x f'(t) \d t$ for all
+          $x, x_0 \in [a, b]$.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  Suppose the three given conditions holds. Let $F(x) = \int_a^x f'(t) \d
+    t$. By the previous theorem (FTC 1), we know $F \in AC$. Meanwhile,
+  condition 3 implies $f(x) = f(a) + F(x)$. This shows that $f \in AC$.
+
+  Conversely, suppose now that $f \in AC$. We have shown before that $f$
+  is differentiable a.e. Moreover, $f$ is the difference of two increasing
+  functions, while the derivative of increasing functions is integrable.
+  This shows that $f'$ is integrable.
+
+  Again let $F(x) = \int_a^x f'(t) \d t$. By FTC 1, $F \in AC$ and $F' =
+  f'$ a.e. Moreover $f - F \in AC$ and $(f - F)' = 0$ a.e. By previous
+  theorem, this implies $f - F = c$ a.e. for some constant $c$. Therefore,
+  $f(x) = \int_a^x f'(x) \d t + c$ and the proof is complete.
+\end{proof}
 
 \end{document}
