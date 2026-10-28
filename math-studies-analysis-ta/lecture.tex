@@ -29,7 +29,7 @@ Carnegie Mellon University}
 \begin{defi}
   Let $X$ be a set and $g : X \to [0, \infty)$. Define infinite sum
   \[
-    \sum_{x \in X} g(x) := \left\{ \sum_{x \in Y} g(x) :
+    \sum_{x \in X} g(x) \defeq \left\{ \sum_{x \in Y} g(x) :
     Y \subset X \text{ finite} \right\}.
   \]
 \end{defi}
@@ -628,7 +628,8 @@ statement of the theorem below:
     = g'(x) \text{ a.e.}
   \end{align*}
   Since $g$ is continuous, $g'$ is measurable. Moreover, $g$ being
-  Lipshitz implies $\abs{g'} \leq L$. It then follows from DCT that
+  Lipshitz implies $\abs{g'} \leq L$. It then follows from Dominated
+  Convergence Theorem that
   \[
     \lim_{n \to \infty} \int_a^b \frac{g(x + n^{-1}) - g(x)}{n^{-1}} \d x
     = \int_a^b g'(x) \d x.
@@ -646,8 +647,9 @@ statement of the theorem below:
 \begin{remark}
   Comparing this with the proof of Lebesgue differentiation theorem for
   monotone function, we know $f$ is continuous and Lipshitz. Lipshitz
-  continuity gives us bounded derivative and the ability to use DCT, and
-  continuity let us know the final term is $f(a)$.
+  continuity gives us bounded derivative and the ability to use Dominated
+  Convergence Theorem, and continuity let us know the final term is
+  $f(a)$.
 \end{remark}
 
 \begin{thm}[FTC 1]
@@ -752,6 +754,129 @@ Now we begin the proof for the first fundamental theorem of calculus.
   f'$ a.e. Moreover $f - F \in AC$ and $(f - F)' = 0$ a.e. By previous
   theorem, this implies $f - F = c$ a.e. for some constant $c$. Therefore,
   $f(x) = \int_a^x f'(x) \d t + c$ and the proof is complete.
+\end{proof}
+
+\section{Change of variables}
+
+\subsection{Mollifiers}
+
+\begin{defi}[support]
+  Let $(X, d)$ a metric space, $E \subset X$, and $f : E \to \R$. The
+  \textbf{support} of $f$ is
+  \[
+    \supp f = \bar{\{ x \in E : f(x) \neq 0 \}}.
+  \]
+  Write the set of continuous function with compact support as $C_c (X)$.
+  Also for open set $U \subset X$, write $C_c^k (U) = C_c(U) \cap C^k
+  (U)$.
+\end{defi}
+
+\begin{ex}
+  Define
+  \[
+    \phi(x) = \begin{cases}
+      e^{(\norm{x}^2 - 1)^{-1}} & (\norm{x} < 1),    \\
+      0                         & (\norm{x} \geq 1).
+    \end{cases}
+  \]
+  Show that $\phi \in C_c^\infty(\R^N)$.
+\end{ex}
+
+\begin{defi}[mollifier]
+  Let $\phi \in C_c(\R^N)$ with $\supp \phi \subset B[0, 1]$ and $\int \phi
+    = 1$. For any $\epsilon > 0$, define
+  \[
+    \phi_\epsilon (x) = \epsilon^{-N} \phi(\epsilon^{-1} x).
+  \]
+  These functions are called \textbf{mollifiers}. Note that $\supp
+  \phi_\epsilon \subset B[0, \epsilon]$.
+\end{defi}
+
+\begin{ex}
+  Recall that for $\lambda > 0$, we have $\L^N (\lambda E)
+    = \lambda^N \L^N (E)$. Show that $\int \phi_\epsilon = 1$.
+\end{ex}
+
+\begin{defi}[mollification]
+  Let $E \subset \R^N$ be measurable, $f : E \to \R$ integrable. For $x \in
+    \R^N$, define
+  \[
+    f_\epsilon (x) = \int_E \phi_\epsilon \left( x - y \right)
+    f (y) \d y.
+  \]
+  The function $f_\epsilon$ is the \textbf{mollification} of $f$.
+\end{defi}
+
+\begin{thm}
+  Let $E \subset \R^N$ be measurable, $f : E \to \R$ integrable, then
+  $f_\epsilon \in C^\infty (\R^N)$, and
+  \[
+    \frac{\dd^\alpha f_\epsilon}{\dd x^\alpha} (x)
+    = \int_E \frac{\dd^\alpha \phi_\epsilon}{\dd x^\alpha} (x - y) f(y) \d y.
+  \]
+\end{thm}
+
+\begin{proof}
+  First show $f_\epsilon$ is continuous. Fix $x \in \R^N$ and let
+  $\seqinfn{x_n}$ be a sequence with $x_n \to x$. Note that
+  \[
+    \abs{\phi_\epsilon (x_n - y) f(y)}
+    \leq \sup \abs{\phi_\epsilon} \abs{f(y)},
+  \]
+  which is integrable. It then follows from Dominated Convergence Theorem
+  that $f_\epsilon (x_n) = f(x)$ as $n \to \infty$.
+
+  For the paritial derivative, fix $i \in [N]$. We have
+  \begin{align*}
+     & \frac{f_\epsilon(x + t e_i) - f_\epsilon (x)}{t}
+    - \int_E \frac{\dd \phi_\epsilon}{\dd x_i} (x - y) f(y) \d y                  \\
+     & = \int_E f(y) \left[
+                       \frac{\phi_\epsilon (x + t e_i) - \phi_\epsilon (x - y)}{t}
+                       - \frac{\dd \phi_\epsilon}{\dd x_i} (x - y) \right]
+    \d y.
+  \end{align*}
+  By mean value theorem, we have
+  \begin{align*}
+    \phi_\epsilon (x + t e_i - y)
+    - \phi_\epsilon (x - y)
+    = t \frac{\dd \phi_\epsilon}{\dd x_i} (x + \theta e_i - y),
+  \end{align*}
+  for some $\abs{\theta} \leq \abs{t}$. Hence the absolute value of the
+  integrand is at most $2 \abs{f(y)} \sup \abs{\dd_i \phi_\epsilon}$,
+  which is integrable. Then Dominated Convergence Theorem applies and
+  shows the formula for the paritial derivative.
+
+  By induction, we can show that $f_\epsilon \in C^\infty (\R^N)$ and
+  $\dd_\alpha f_\epsilon$ is as desired.
+\end{proof}
+
+Now we discuss some properties of the mollification.
+
+\begin{thm}
+  Let $E \subset \R^N$ be measurable and $f : E \to \R^N$ be integrable.
+  Assume $f$ is continuous at $x \in E^\circ$. Then, $f_\epsilon (x) \to
+    f(x)$ as $\epsilon \to 0^+$.
+\end{thm}
+
+\begin{proof}
+
+  Since $x \in E^\circ$, there exists $B(x_0, r) \subset E$. For $\epsilon
+  < r$, we have
+  \begin{align*}
+    f_\epsilon (x) - f(x)
+     & = \int_{E \cap B(x, \epsilon)} \phi_\epsilon (x - y) f(y) \d y - f(x) \\
+     & = \int_{\R^N} \phi_\epsilon (x - y) f(y) \d y - f (x)                 \\
+     & = \int_{\R^N} \phi_\epsilon(x - y) (f(y) - f(x)) \d y.
+  \end{align*}
+  Fix $\eta > 0$. There exists $\delta > 0$ such that $\norm{y - x} <
+    \delta$ implies $\abs{f(y) - f(x)} < \eta$. Then when $\epsilon <
+    \delta$, we have
+  \begin{align*}
+    \abs{f_\epsilon (x) - f(x)}
+    \leq \eta \int_{\R^N} \phi_\epsilon (x - y) \d y
+    = \eta.
+  \end{align*}
+  The proof is then complete.
 \end{proof}
 
 \end{document}
