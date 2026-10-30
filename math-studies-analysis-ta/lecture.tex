@@ -783,8 +783,8 @@ Now we begin the proof for the first fundamental theorem of calculus.
 \end{ex}
 
 \begin{defi}[mollifier]
-  Let $\phi \in C_c(\R^N)$ with $\supp \phi \subset B[0, 1]$ and $\int \phi
-    = 1$. For any $\epsilon > 0$, define
+  Let $\phi \in C_c^\infty (\R^N)$ with $\supp \phi \subset B[0, 1]$ and
+  $\int \phi = 1$. For any $\epsilon > 0$, define
   \[
     \phi_\epsilon (x) = \epsilon^{-N} \phi(\epsilon^{-1} x).
   \]
@@ -846,37 +846,117 @@ Now we begin the proof for the first fundamental theorem of calculus.
   which is integrable. Then Dominated Convergence Theorem applies and
   shows the formula for the paritial derivative.
 
-  By induction, we can show that $f_\epsilon \in C^\infty (\R^N)$ and
-  $\dd_\alpha f_\epsilon$ is as desired.
+  By induction, we can continue to show that $f_\epsilon \in C^\infty
+  (\R^N)$ and $\dd_\alpha f_\epsilon$ is as desired.
 \end{proof}
 
 Now we discuss some properties of the mollification.
 
 \begin{thm}
   Let $E \subset \R^N$ be measurable and $f : E \to \R^N$ be integrable.
-  Assume $f$ is continuous at $x \in E^\circ$. Then, $f_\epsilon (x) \to
-    f(x)$ as $\epsilon \to 0^+$.
+  Then the following holds:
+  \begin{enumerate}
+    \item Suppose $f$ is continuous at $x \in E^\circ$. Then, $f_\epsilon
+          (x) \to f(x)$ as $\epsilon \to 0^+$.
+    \item Suppose $f$ is continuous in $E$. Then for any compact $K
+          \subset E^\circ$, $f_\epsilon \to f$ uniformly in $K$.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Since $x \in E^\circ$, there exists $B(x_0, r) \subset E$. For
+          $\epsilon < r$, we have
+          \begin{align*}
+            f_\epsilon (x) - f(x)
+             & = \int_{E \cap B(x, \epsilon)} \phi_\epsilon (x - y) f(y) \d y - f(x) \\
+             & = \int_{B(x, \epsilon)} \phi_\epsilon (x - y) f(y) \d y - f (x)       \\
+             & = \int_{B(x, \epsilon)} \phi_\epsilon(x - y) (f(y) - f(x)) \d y.
+          \end{align*}
+          Fix $\eta > 0$. There exists $\delta > 0$ such that $\norm{y - x} <
+            \delta$ implies $\abs{f(y) - f(x)} < \eta$. Then when $\epsilon <
+            \delta$, we have
+          \begin{align*}
+            \abs{f_\epsilon (x) - f(x)}
+            \leq \eta \int_{B(x, \epsilon)} \phi_\epsilon (x - y) \d y
+            = \eta.
+          \end{align*}
+          The proof is then complete.
+    \item Let $K \subset E^\circ$ be compact. Let $\eta > 0$ be given.
+          Since $f$ is continuous, there exists $\delta > 0$ such that for
+          any $x \in K$ and $y \in E$ with $\norm{x - y} < \delta$,
+          $\abs{f(x) - f(y)} < \eta$. It follows that for $x \in K$ and
+          $\epsilon < \Delta$, we again have
+          \begin{align*}
+            f_\epsilon(x) - f(x)
+             & = \int_{E \cap B(x, \epsilon)} f(y) \phi_\epsilon (x - y) \d y - f(x) \\
+             & = \int_{B (x, \epsilon)} \phi_\epsilon(x - y) (f(y) - f(x)) \d y.
+          \end{align*}
+          Hence,
+          \[
+            \abs{f_\epsilon (x) - f(x)}
+            \leq \eta \int_{B(x, \epsilon)} \phi_\epsilon (x - y) \d y
+            = \eta.
+          \]
+          Note that $\delta$ is not dependent on $x$. This implies that
+          $f_\epsilon \to f$ uniformly as $\epsilon \to 0$.
+  \end{enumerate}
+\end{proof}
+
+\begin{thm}[density]
+
+  Let $E \subset \R^N$ be measurable and $f : E \to \R^N$ be integrable.
+  Then for every $\eta > 0$, there exists $g \in C_c^\infty (\R^N)$ such
+  that
+  \[
+    \int_E \abs{f - g} \d x < \eta.
+  \]
+  In other words, $C_c^\infty (\R^N)$ is dense in $L^1 (E)$.
 \end{thm}
 
 \begin{proof}
 
-  Since $x \in E^\circ$, there exists $B(x_0, r) \subset E$. For $\epsilon
-  < r$, we have
-  \begin{align*}
-    f_\epsilon (x) - f(x)
-     & = \int_{E \cap B(x, \epsilon)} \phi_\epsilon (x - y) f(y) \d y - f(x) \\
-     & = \int_{\R^N} \phi_\epsilon (x - y) f(y) \d y - f (x)                 \\
-     & = \int_{\R^N} \phi_\epsilon(x - y) (f(y) - f(x)) \d y.
-  \end{align*}
-  Fix $\eta > 0$. There exists $\delta > 0$ such that $\norm{y - x} <
-    \delta$ implies $\abs{f(y) - f(x)} < \eta$. Then when $\epsilon <
-    \delta$, we have
-  \begin{align*}
-    \abs{f_\epsilon (x) - f(x)}
-    \leq \eta \int_{\R^N} \phi_\epsilon (x - y) \d y
-    = \eta.
-  \end{align*}
-  The proof is then complete.
+  For step 1, first suppose $Q$ is a cube and $f = \chi_Q$. Then we have
+  $f_\epsilon \in C^\infty (\R^N)$. Also, $f_\epsilon = 1$ if $x \in Q$
+  with $\dist(x, \dd Q) > \epsilon$, and $f_\epsilon = 0$ if $x \in Q^c$
+  with $\dist(x, \dd Q) > \epsilon$. It follows that
+  \[
+    \int_E \abs{f_\epsilon - f} \d x
+    \leq 2 \L^N (\{x \in \R^N : \dist(x, \dd Q) \leq \epsilon\})
+    \to 0
+  \]
+  as $\epsilon \to 0$. Moreover, $f_\epsilon \in C_c^\infty (\R^N)$,
+  concluding the proof for this case.
+
+  For step 2, suppose $\seqi{Q_i}^n$ are cubes with disjoint interior, $Q
+  = \cupi^m Q_i$, and $f = \chi_{Q}$. We can correspondingly write $f =
+  \sumi^n \chi_{T_i}$ where $T_i$ are disjoint cubes. Applying step 1
+  gives the desired result, where $g = \sumi^n (\chi_{T_i})_\epsilon$.
+
+  For part 3, suppose $U$ is open and $f = \chi_U$. Then we can write $U =
+  \cupinfi{Q_i}$, where $\seqinfi{Q_i}$ are cubes with disjoint interior.
+  Write $F_n = \cupi^n Q_i$. Note that $f$ is integrable, so Dominated
+  Convergence Theorem implies
+  \[
+    \lim_{n \to \infty}
+    \int_E \abs{f - \chi_{F_n}} \d x = 0.
+  \]
+  Let $n$ be so large that $\int_E \abs{f - \chi_{F_n}} \d x < \eta$.
+  Applying step 2 to find $g \in C_c^\infty (\R^N)$ such that $\int_E
+  \abs{g - \chi_{F_n}} \d x < \eta$. This gives the desired result. Note
+  that now $g$ is not the mollification of $f$.
+
+  For step 4, suppose $G$ is measurable and $f = \chi_G$, then there
+  exists $U \supset G$ open with $\L^N (U \setminus G) < \eta$. Step 3
+  gives $g \in C_c^\infty (\R^N)$ such that $\int_E \abs{g - \chi_U} \d x
+  < \eta$. Moreover, $\int_E \abs{\chi_U - \chi_G} = \L^N (U \setminus G)
+  < \eta$, so this $g$ is as desired.
+
+  For step 5, we can show the result for simple functions. Then we can
+  prove the result for non-negative functions by approximating it with
+  simple functions and using Dominated Convergence Theorem. Finally, for
+  general function $f$, writing $f = f^+ - f^-$ and using previous steps
+  conclude the proof.
 \end{proof}
 
 \end{document}
