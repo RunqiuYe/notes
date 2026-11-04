@@ -917,7 +917,7 @@ Now we discuss some properties of the mollification.
 \begin{proof}
 
   For step 1, first suppose $Q$ is a cube and $f = \chi_Q$. Then we have
-  $f_\epsilon \in C^\infty (\R^N)$. Also, $f_\epsilon = 1$ if $x \in Q$
+  $f_\epsilon \in C_c^\infty (\R^N)$. Also, $f_\epsilon = 1$ if $x \in Q$
   with $\dist(x, \dd Q) > \epsilon$, and $f_\epsilon = 0$ if $x \in Q^c$
   with $\dist(x, \dd Q) > \epsilon$. It follows that
   \[
@@ -925,8 +925,7 @@ Now we discuss some properties of the mollification.
     \leq 2 \L^N (\{x \in \R^N : \dist(x, \dd Q) \leq \epsilon\})
     \to 0
   \]
-  as $\epsilon \to 0$. Moreover, $f_\epsilon \in C_c^\infty (\R^N)$,
-  concluding the proof for this case.
+  as $\epsilon \to 0$, completing this step.
 
   For step 2, suppose $\seqi{Q_i}^n$ are cubes with disjoint interior, $Q
   = \cupi^m Q_i$, and $f = \chi_{Q}$. We can correspondingly write $f =
@@ -956,7 +955,216 @@ Now we discuss some properties of the mollification.
   prove the result for non-negative functions by approximating it with
   simple functions and using Dominated Convergence Theorem. Finally, for
   general function $f$, writing $f = f^+ - f^-$ and using previous steps
-  conclude the proof.
+  complete the proof.
+\end{proof}
+
+\begin{thm}
+
+  Let $E \subset \R^N$ be measurable and $f : E \to \R$ integrable. Then
+  there exists a sequence of functions $\seqinfn{f_n} \subset
+  C_c^\infty(\R^N)$ such that $f_n \to f$ pointwise a.e.\ and in $L^1$.
+  That is,
+  \[
+    \lim_{n \to \infty}  \int_E \abs{f_n - f} \d x = 0.
+  \]
+\end{thm}
+
+\begin{lemma}
+  Let $E \subset \R^N$ be measurable and $f_n, f : E \to \R$ integrable
+  with
+  \[
+    \lim_{n \to \infty}  \int_E \abs{f_n - f} \d x = 0.
+  \]
+  Then there exists a subsequence $\seqinfk{f_{n_k}}$ such that $f_{n_k}
+  \to f$ pointwise a.e.
+\end{lemma}
+
+\begin{proof}
+
+  Given $k \in \N$, we can find $n_k \in \N$ such that
+  \[
+    \int_E \abs{f_n - f}  \d x \leq 2^{-k}
+  \]
+  for all $n \geq n_k$. WLOG assume $n_k < n_{k + 1}$. Define $g =
+  \suminfk \abs{f_{n_k} - f}$. It follows that
+  \[
+    \int_E g
+    = \suminfk \int_E \abs{f_{n_k} - f}
+    \leq \suminfk 2^{-k}
+    < \infty.
+  \]
+  Hence, $g < \infty$ a.e.\ and thus $\abs{f_{n_k} - f} \to 0$ a.e.
+\end{proof}
+
+\begin{proof}
+
+  Use the previous theorem to find a sequence that converges in $L^1$,
+  then apply the lemma to find a subsequence that converges pointwise a.e.
+\end{proof}
+
+\subsection{Change of variables}
+
+\begin{lemma}[CoV for linear transformation]
+
+  Let $L : \R^N \to \R^N$ be linear and invertible. Write $L(x) = Ax$
+  where $A$ is a matrix. Suppose $f : \R^N \to \R$ integrable. Then,
+  \[
+    \int f(y) \d y = \abs{\det A} \int f(L(x)) \d x.
+  \]
+\end{lemma}
+
+\begin{proof}
+
+  The linear map $L$ is given by the composition of a finite number of
+  transformation of the type $t_s(x) = (s x_1, x_2, \dots, x_N)$ where $s
+  \neq 0$, $a(x) = (x_1 + x_2, x_2, \dots, x_N)$, and $s_{ij} (x)$ which
+  swaps the $i$ and $j$ components of $x$. Hence, it suffices to show the
+  lemma where $L$ is each of these operation.
+
+  Assume first $f \geq 0$. For the first operation $t_s$, we can verify
+  that for integrable $g : \R \to \R$ and $s \neq 0$, we have $\int g(y)
+  \d y = \abs{s} \int g(s x) \d x$ (Exercise). It follows from Tonelli's
+  theorem that
+  \begin{align*}
+    \abs{\det t_s} \int_{\R^N} f(t_s(x)) \d x
+     & = \abs{s} \int_{\R^N} f(s x_1, x_2, \dots, x_n) \d x                                      \\
+     & = \abs{s} \int_{\R} \int_{\R^{N - 1}} f(s x_1, x_2, \dots, x_n) \d x_1 \d x_{\setminus 1} \\
+     & = \int_{\R} \int_{\R^{N - 1}}  f(y_1, x_2, \dots, x_n) \d y_1 \d x_{\setminus 1}          \\
+     & = \int_{\R^N} f(y) \d y.
+  \end{align*}
+
+  For the second operation $a$, we have $\int g(y) \d y = \int g(x + s) \d
+  x$ for $s \in \R$ and $g : \R \to \R$ integrable (Exercise). Then
+  Tonelli's theorem gives
+  \begin{align*}
+    \int_{\R^N} f(a(x)) \d x
+     & = \int_{\R^{N - 1}} \int_\R f(x_1 + x_2, x_2, \dots, x_N) \d x_1 \d x_{\setminus 1} \\
+     & = \int_{\R^{N - 1}} \int_\R f(x_1, x_2 \dots, x_N) \d x_1 \d x_{\setminus 1}        \\
+     & = \int_{\R^N} f(y) \d y.
+  \end{align*}
+
+  The claim for the third operation $s_{ij}$ follows directly from
+  Tonelli's theorem.
+\end{proof}
+
+\begin{thm}[CoV for continuous functions]
+
+  Let $U \subset \R^N$ be open and $g : U \to \R^N$ be injective and
+  $C^1$. Suppose that $\det Dg (x) \neq 0$. Let $f : g(U) \to \R$ be
+  continuous and with compact support. Then
+  \[
+    \int_{g(U)}  f(y) \d y = \int_U f(g(x)) \abs{\det Dg(x)} \d x.
+  \]
+\end{thm}
+
+\begin{remark}
+  Note that by inverse function theorem, $g(U)$ is open.
+\end{remark}
+
+\begin{lemma}
+
+  Let $U \subset \R^N$ be open, $g : U \to \R^N$ be injective and $C^1$.
+  Suppose that $\det Dg(x) \neq 0$ for all $x \in U$. For any $K \subset
+  g(U)$ compact, we have
+  \[
+    \lim_{\epsilon \to 0^+} \int_U \phi_\epsilon (g(x) - y) \d x
+    = \frac{1}{\abs{\det Dg (g^{-1} (y))}}
+  \]
+  for all $y \in K$.
+\end{lemma}
+
+\begin{proof}
+
+  For step 1, recall that $\supp \phi_\epsilon \subset B[0, \epsilon]$, so
+  $\phi_\epsilon (g(x) - y) = 0$ if $\norm{g(x) - y} > \epsilon$. Define
+  \[
+    K_\epsilon = \left\{ y \in \R^N : \dist(y, K) \leq \epsilon \right\},
+  \]
+  which is compact. Since $g(U)$ is open and compact $K \subset g(U)$, we
+  have $K_\epsilon \subset g(U)$ for $\epsilon$ small enough. By inverse
+  function theorem and the fact that $g$ is injective, there exists
+  $g^{-1} : g(U) \to \R^N$ that is $C^1$. Hence there exists some constant
+  $L \geq 1$ so that $\norm{D g^{-1} (y)} \leq L$ for all $y \in
+  K_\epsilon$. Now fix $z \in K$. For $y \in \R^N$ with $\norm{y - z} \leq
+  \epsilon$, we have $y \in K_\epsilon$ and by mean value theorem,
+  \[
+    \norm{g^{-1} (y) - g^{-1} (z)} \leq L \norm{y - z}.
+  \]
+
+  Now consider any $x \in U$. If $\norm{g(x) - z} \leq \epsilon$, $\norm{x
+  - g^{-1}(z)} \leq L \epsilon$. Otherwise, if $\norm{g(x) - z} >
+  \epsilon$, $\phi_\epsilon (g(x) - z) \d x = 0$. Write. Hence,
+  \begin{align*}
+    \int_U \phi_\epsilon (g(x) - z) \d x
+     & = \int_{B[g^{-1}(z), L \epsilon]} \phi_\epsilon (g(x) - z) \d x \\
+     & = \frac{1}{\epsilon^N} \int_{B[g^{-1}(z), L \epsilon]}
+    \phi \left(  \frac{g(x) - z}{\epsilon} \right) \d x.
+  \end{align*}
+  Use linear change of variables with $x = g^{-1}(z) + \epsilon u$ and
+  thus $dx = \epsilon^N du$. We obtain
+  \begin{align*}
+    \int_U \phi_\epsilon (g(x) - z) \d x
+     & = \int_{B[0, L]} \phi \left(
+    \frac{g (g^{-1} (z) + \epsilon u) - g(g^{-1} (z))} {\epsilon} \right)
+    \d u.
+  \end{align*}
+  Note that $\phi$ is bounded and $B[0, L]$ is also bounded, Dominated
+  Convergence Theorem applies and we can take $\epsilon \to 0^+$. Note
+  also $L \geq 1$ while $\supp \phi \subset B[0, 1]$, so
+  \begin{align*}
+    \int_U \phi_\epsilon (g(x) - z) \d x
+     & = \int_{B[0, L]} \phi \left( Dg (g^{-1}(z)) u \right) \d u \\
+     & = \int_{\R^N} \phi \left( Dg (g^{-1}(z)) u \right) \d u.
+  \end{align*}
+  Using linear change of variable again, we obtain
+  \[
+    \int_U \phi_\epsilon (g(x) - z) \d x
+    = \frac{1}{\abs{\det Dg (g^{-1} (z))}} \int_{\R^N} \phi(x) \d x
+    = \frac{1}{\abs{\det Dg (g^{-1} (z))}}.
+  \]
+\end{proof}
+
+\begin{thm}[CoV for continuous functions]
+
+  Let $U \subset \R^N$ be open and $g : U \to \R^N$ be injective and
+  $C^1$. Suppose that $\det Dg (x) \neq 0$. Let $f : g(U) \to \R$ be
+  continuous and with compact support. Then
+  \[
+    \int_{g(U)}  f(y) \d y = \int_U f(g(x)) \abs{\det Dg(x)} \d x.
+  \]
+\end{thm}
+
+\begin{proof}[Proof sketch]
+  Write $K = \supp f \subset g(U)$. Choose $\epsilon > 0$ small enough
+  so that $K_\epsilon \subset g(U)$, where as usual
+  $K_\epsilon = \left\{ y : \R^N : \dist (y, K) \leq \epsilon \right\}$.
+  For $y \in g(U)$, define
+  \[
+    p(y) = f(y) \abs{\det Dg (g^{-1} (y))}.
+  \]
+  We have $\supp p \subset K$, so $\supp p_\epsilon \subset K_\epsilon$.
+  Note that $p$ is continuous and thus $p_\epsilon \to p$ uniformly on
+  compact sets, i.e.\ $p_\epsilon \to p$ uniformly on $K_\epsilon$. It is
+  also easy to verify that $p_\epsilon \circ g \to p \circ g$ pointwise.
+  It then follows from Dominated Convergence Theorem that
+  \[
+    \int_U p_\epsilon (g(x)) \d x
+    = \int_{g^{-1}(K_\epsilon)} p_\epsilon (g(x)) \d x
+    \to \int_U f(g(x)) \abs{\det Dg(x)} \d x
+  \]
+  as $\epsilon \to 0^+$. On the other hand, Fubini's Theorem gives
+  \begin{align*}
+    \int_U p_\epsilon (g(x)) \d x
+     & = \int_U \int \phi_\epsilon (g(x) - y) p(y) \d y \d x \\
+     & = \int \int_U \phi_\epsilon (g(x) - y) p(y) \d x \d y \\
+  \end{align*}
+  Using the lemma, we have
+  \begin{align*}
+    \int_U p_\epsilon (g(x)) \d x
+    = \int \frac{1}{\abs{\det Dg(g^{-1}(y))}} f(y)
+    \abs{\det Dg(g^{-1}(y))} \d y
+    = \int_{g(U)} f(y) \d y.
+  \end{align*}
 \end{proof}
 
 \end{document}
