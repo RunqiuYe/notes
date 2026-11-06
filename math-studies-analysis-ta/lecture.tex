@@ -1002,6 +1002,22 @@ Now we discuss some properties of the mollification.
   then apply the lemma to find a subsequence that converges pointwise a.e.
 \end{proof}
 
+\begin{remark}
+
+  Suppose $f$ is bounded with $\abs{f(x)} \leq M$. Can we make $f_n$ also
+  bounded? First consider relaxing the smooth requirement to just
+  continuous. We can define $h_n = (f_n \wedge M) \vee (-M)$. Then $h_n$
+  are continuous, $h_n \to f$ pointwise, and $\abs{h_n(x)} \leq M$. Using
+  a similar idea, we can make $h_n$ smooth. Therefore, when $f$ is bounded
+  we can assume the converging sequence is also uniformly bounded with the
+  same constant.
+
+  Suppose $E = K$ is compact. Can we make the $\supp f_n \subset K_n$
+  where $K_n$ are compact and shrink to $E$? Consider the mollification
+  $\chi_{K_\delta} * \phi_\epsilon$, and multiply it with $f_n$. Verify
+  that $\epsilon = \delta = n^{-1}$ works as desired.
+\end{remark}
+
 \subsection{Change of variables}
 
 \begin{lemma}[CoV for linear transformation]
@@ -1165,6 +1181,54 @@ Now we discuss some properties of the mollification.
     \abs{\det Dg(g^{-1}(y))} \d y
     = \int_{g(U)} f(y) \d y.
   \end{align*}
+\end{proof}
+
+\begin{ex}
+  Fill in the details of the proof above.
+\end{ex}
+
+Next we want to prove a stronger version, whre we do not require $f$ to be
+continuous and with compact support, but only need $f$ to be integrable.
+
+\begin{thm}[CoV]
+
+  Let $U \subset \R^N$ be open and $g : U \to \R^N$ be injective and
+  $C^1$. Suppose that $\det Dg (x) \neq 0$. Suppose $g(U) \subset E$ where
+  $E$ Lebesgue measurable, $f : E \to \R$ integrable. Then
+  \[
+    \int_{g(U)}  f(y) \d y = \int_U f(g(x)) \abs{\det Dg(x)} \d x.
+  \]
+\end{thm}
+
+\begin{proof}
+
+  For step 1, assume $E = K$ compact and $\abs{f(x)} \leq M$. Find $f_n
+  \in C_c^\infty (\R^N)$ such that $f_n \to f$ pointwise a.e. Moreover,
+  referring to remark on a previous theorem, assume $\abs{f_n(x)} \leq 2M$
+  and $\supp f_n \subset K_{n^{-1}} \subset g(U)$. By change of variable,
+  \[
+    \int_{g(U)}  f_n (y) \d y = \int_U f_n (g(x)) \abs{\det Dg(x)} \d x.
+  \]
+  Note that $K_{n^{-1}} \subset K_\delta \subset g(U)$. Therefore
+  $\int_{K_\delta} f_n (y) \d y = \int_{g^{-1} (K_{\delta})} f_n(g(x))
+  \abs{\det Dg(x)} \d x$. Applying Dominated Convergence Theorem, we
+  obatin
+  \[
+    \int_K f(y) \d y = \int_{g^{-1} (K)} f_n (g(x)) \abs{\det Dg(x)} \d x.
+  \]
+
+  For step 2, still assume $f \geq 0$ bounded. We can write $E = \cupinfn
+  K_n \cup E_0$ where $K_n$ increasing and compact, and $\L^N (E_0) = 0$.
+  Then we have $\L^N (g^{-1} (E_0)) = 0$, and
+  \[
+    \int_{E_0}  f \d y = \int_{g^{-1} (E_0)} f(g(x)) \abs{\det D g(x)} \d x = 0.
+  \]
+  In $K_n$ we use step 1, and because $f \geq 0$, apply Monotone
+  Convergence Theorem.
+
+  Finally, to remove bounded requirement, consider $f_n = f \wedge n$ and
+  use Monotone Convergence Theorem. For general real-valued function,
+  write $f = f^+ + f^-$ and apply previous steps.
 \end{proof}
 
 \end{document}
