@@ -1231,4 +1231,115 @@ continuous and with compact support, but only need $f$ to be integrable.
   write $f = f^+ + f^-$ and apply previous steps.
 \end{proof}
 
+\begin{cor}
+
+  Let $U$ and $g$ be under the same condition before. Let $E \subset \R^N$
+  be Lebesgue measurable with $\L^N (E \setminus g(U)) = 0$. Suppose $f :
+  E \to \R$ integrable. Then we have the same conclusion:
+  \[
+    \int_{g(U)}  f(y) \d y = \int_U f(g(x)) \abs{\det Dg(x)} \d x.
+  \]
+\end{cor}
+
+\begin{proof}
+
+  Let $A = E \cap g(U)$, which is Lebesgue measurable. Applying theorem in
+  $A$ gives
+  \[
+    \int_A f(y) \d y = \int_{g^{-1}(A)}  f(g(x)) \abs{\det Dg(x)} \d x.
+  \]
+  Meanwhile, $\L^N (E \setminus A) = 0$ and $g^{-1} (A) = g^{-1} (E)$.
+\end{proof}
+
+\begin{eg}[spherical coordinates]
+  Let $U = (0, \infty) \times (0, \pi) \times (0, 2 \pi)$ and
+  \[
+    g(r, \theta, \phi) = (r \sin \theta \cos \phi, r \sin \theta \cos \phi,
+    r \cos \theta).
+  \]
+  We can verify that $g$ is injective and $\det Dg(r, \theta, \phi) = r^2
+  \sin \theta > 0$ on $U$. Also, $g(U) = \R^3 \setminus H$, where $H =
+  \left\{ (y_1, y_2, y_3) : y_2 = 0, y_3 \geq 0 \right\}$. We can apply
+  the corollary because $\L^3 (H) = 0$. Hence,
+  \[
+    \int_{\R^3}  f(y) \d y = \int_0^\infty \int_0^\pi \int_0^{2 \pi}
+    f(g(r, \theta, \phi)) r^2 \sin \theta \d \phi \d \theta \d r.
+  \]
+\end{eg}
+
+\subsection{Brouwer's fixed point theorem}
+
+\begin{thm}
+
+  Let $K \subset \R^N$ be compact and convex and $g : K \to K$ be
+  continuous. Then there is $x \in K$ such that $g(x) = x$, namely, $g$
+  has a fixed point.
+\end{thm}
+
+\begin{lemma}
+
+  There does not exist function $C^1$ function $g : B[0, 1] \to \dd B(0,
+  1)$ such that $g(x) = x$ for all $x \in \dd B(0, 1)$.
+\end{lemma}
+
+\begin{proof}
+  Suppose there exits such a function. For $t \in [0, 1]$, define
+  \[
+    g_t(x) = t g(x) + (1 - t) x.
+  \]
+  This is $C^1$ and we have
+  \[
+    \norm{g_t(x)}  \leq t \norm{g(x)} + (1 - t) \norm{x}
+    \leq t + (1 - t) = 1.
+  \]
+  Hence, $g_t : B[0, 1] \to B[0, 1]$. It is also easy to verify that
+  $g_t(x) = x$ for $x \in \dd B(0, 1)$. Define
+  \[
+    h(x) = g(x) - x.
+  \]
+  This is also $C^1$ on the compact set $B[0, 1]$, so $\norm{Dh(x)} \leq
+  M$ for some constant $M$. Therefore $h$ is Lipshitz with constant
+  $\sqrt{N} M$.
+
+  Claim $g_t$ is injective for small $t$. Note that $g_t = x + t h(x)$.
+  Assume $g_t(x_1) = g_t (x_2)$. It follows that $h(x_1) = h(x)$ and thus
+  \[
+    \norm{x_2 - x_1} = t \norm{h(x_2) - h(x_1)} \leq t \sqrt{N} M
+    \norm{x_2 - x_1}.
+  \]
+  We then obtain $\norm{x_2 - x_1} < \norm{x_2 - x_1}$ if $t \sqrt{N} M <
+  1$, a contradiction. Therefore, $g_t$ is injective for small $t$.
+
+  Claim $g_t$ is also surjective for small $t$. Write $U_t = g_t(B(0,
+  1))$. We hope to show $U_t = B(0, 1)$. If not, there exists $y_0 \in \dd
+  U_t$ with $y_0 \in B(0, 1)$. We can find $y_n \in U_t$ with $y_n \to
+  y_0$, so there exists $x_n \in B(0, 1)$ such that $y_n = g_t(x_n)$. Find
+  subsequence $x_{n_j} \to x_0 \in B[0, 1]$. Since $g_t$ continuous,
+  $g(x_{n_j}) \to g(x_0)$. Correspondingly $y_{n_j} \to g(x_0)$. This
+  implies $y_0 \in g_t(x_0)$. If $x_0 \in B(0, 1)$, then $y_0 \in U_t$,
+  but $y_0 \in \dd U_t$, contradiction. If $x_0 \in \dd B(0, 1)$, $y_0 =
+  g_t(x_0) = x_0$ so $y_0 \in \dd B(0, 1)$, contradicting $y_0 \in B(0,
+  1)$.
+
+  Finally, recall that $g_t(x) = x + t h(x)$, so $D g_t(x) = I_N + t
+  Dh(x)$. By contiuity, $\abs{D g_t(x)} \geq 1/2$ for small $t$. Define
+  \[
+    p(t) = \int_{B(0, 1)} \abs{\det Dg_t(x)} \d x.
+  \]
+  Using change of variable, we have
+  \[
+    p(t) = \int_{B(0, 1)}  1 \d y = \L^N(B(0, 1)).
+  \]
+  Meanwhile,
+  \[
+    p(t) = \int_{B(0, 1)} \det (I_N + t Dh(x)) \d x.
+  \]
+  This is a polynomial of degree at most $N$. However, $p$ is a constant
+  for $t$ small, so $p$ is a constant for all $t$. Recall that
+  $\norm{g(x)}^2 = 1$ for all $x \in B(0, 1)$, namely $g(x) \cdot g(x) =
+  1$. Taking the derivative gives $(Dg(x) v) \cdot g(x) = 0$ for all
+  $\norm{v} = 1$. This shows that $D g(x)$ cannot be invertible, so $p(1)
+  = 0$.
+\end{proof}
+
 \end{document}
