@@ -4132,7 +4132,7 @@ need a useful lemma.
 
 \begin{lemma}
   Let $(X, \mf, \mu)$ be a measure space, $V$ be a Banach space,
-  $f: X \to V$ $\mu$-strongly measurable. Suppose that for
+  $f: X \to V$ strongly $\mu$-measurable. Suppose that for
   $j \in \{0, 1\}$, we have $\seqinfk{\phi_k^j} \subset \Sfin(X; V)$
   such that
   \[
@@ -4762,60 +4762,58 @@ We first need to develop a few facts in linear algebra.
 \end{lemma}
 
 \begin{proof}
-  \begin{enumerate}
-    Define the following $M = Df(z)$, $L \in \L(\R^m, \R^n)$
-    such that $L M = I_n$, and $g = f \circ L$, so $f = g \circ M$.
+  Define the following $M = Df(z)$, $L \in \L(\R^m, \R^n)$
+  such that $L M = I_n$, and $g = f \circ L$, so $f = g \circ M$.
 
-    Let $0 < \epsilon < 1$ and pick $r > 0$ such that
-    \[
-      (1 - \epsilon) \norm{M (x - y)}
-      \leq \norm{f(x) - f(y)} \leq
-      (1 + \epsilon) \norm{M (y - x)}
-      \tag{A}
-    \]
-    for all $x, y \in B(z, r)$ and
-    \[
-      (1 + \epsilon)^{-1} J_f(z)
-      \leq J_f(x) \leq
-      (1 - \epsilon)^{-1} J_f(z)
-      \tag{B}
-    \]
-    for all $x \in B(z, r)$. Note that
-    \[
-      \hcal^n (ME) = J_f(z) \lambda(E).
-    \]
-    Since $ML$ is the identity on $\ran M$, equation (A) gives $[g] \leq 1
-    + \epsilon$ and $[M \circ f^{-1}] \leq (1 - \epsilon)^{-1}$. It
-    follows that
-    \[
-      \begin{aligned}
-        \hcal^n (f(E)) = \hcal^n(g(ME))
-        \leq (1 + \epsilon)^n \hcal^n (ME)
-        = (1 + \epsilon)^n J_f(z) \lambda(E).
-      \end{aligned}
-    \]
-    Also,
-    \[
-      J_f(z) \lambda (E) = \hcal^n (ME)
-      = \hcal^n (M \circ f^{-1} (f(E)))
-      \leq (1 - \epsilon)^{-n} \hcal^n (f(E)).
-    \]
+  Let $0 < \epsilon < 1$. By local injectivity theorem, pick $r > 0$ such
+  that
+  \[
+    (1 - \epsilon) \norm{M (x - y)}
+    \leq \norm{f(x) - f(y)} \leq
+    (1 + \epsilon) \norm{M (y - x)}
+    \tag{A}
+  \]
+  for all $x, y \in B(z, r)$ and
+  \[
+    (1 + \epsilon)^{-1} J_f(z)
+    \leq J_f(x) \leq
+    (1 - \epsilon)^{-1} J_f(z)
+    \tag{B}
+  \]
+  for all $x \in B(z, r)$. Note that
+  \[
+    \hcal^n (ME) = J_f(z) \lambda(E).
+  \]
+  Since $ML$ is the identity on $\ran M$, equation (A) gives $[g] \leq 1 +
+  \epsilon$ on $ME$ and $[M \circ f^{-1}] \leq (1 - \epsilon)^{-1}$ on
+  $f(E)$. It follows that
+  \[
+    \begin{aligned}
+      \hcal^n (f(E)) = \hcal^n(g(ME))
+      \leq (1 + \epsilon)^n \hcal^n (ME)
+      = (1 + \epsilon)^n J_f(z) \lambda(E).
+    \end{aligned}
+  \]
+  Also,
+  \[
+    J_f(z) \lambda (E) = \hcal^n (ME)
+    = \hcal^n (M \circ f^{-1} (f(E)))
+    \leq (1 - \epsilon)^{-n} \hcal^n (f(E)).
+  \]
 
-    Now, equation (B) gives
-    \[
-      J_f(z) \lambda(E)
-      = \int_E J_f(z) \d \lambda
-      \leq (1 + \epsilon) \int_E J_f \d \lambda
-    \]
-    and
-    \[
-      J_f(z) \lambda(E)
-      = \int_E J_f(z) \d \lambda
-      \geq (1 - \epsilon) \int_E J_f \d \lambda.
-    \]
-    This completes the proof.
-
-  \end{enumerate}
+  Now, equation (B) gives
+  \[
+    J_f(z) \lambda(E)
+    = \int_E J_f(z) \d \lambda
+    \leq (1 + \epsilon) \int_E J_f \d \lambda
+  \]
+  and
+  \[
+    J_f(z) \lambda(E)
+    = \int_E J_f(z) \d \lambda
+    \geq (1 - \epsilon) \int_E J_f \d \lambda.
+  \]
+  This completes the proof.
 \end{proof}
 
 \begin{defi}
@@ -4851,7 +4849,7 @@ given by
   Claim that for each $y \in \R^m$,
   \[
     \ncal_f (y, E) = \lim_{k \to \infty} N_k(y)
-    = \lim_{k \to \infty} \chi_{f(E \cap Q_{j, k}^\sharp)}(y).
+    = \lim_{k \to \infty} \sum_{j=0}^\infty \chi_{f(E \cap Q_{j, k}^\sharp)}(y).
   \]
   Indeed, if $\ncal_f(y, E) < \infty$, then there exists $K \in \N$ large
   enough such that the points are in different cubes for all $k \in K$. On
