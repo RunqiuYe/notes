@@ -1,0 +1,16 @@
+# Repository-wide latexindent settings.
+# Line wrapping is only applied when latexindent is invoked with -m.
+defaultIndent: "  "
+
+modifyLineBreaks:
+  textWrapOptions:
+    columns: 80
+    multipleSpacesToSingle: 1
+    removeBlockLineBreaks: 1
+    when: after
+    comments:
+      wrap: 1
+      inheritLeadingSpace: 0
+    blocksFollow:
+      other: '\\\]|\\item(?:\h|\[)|\\begin\{(?:thm|lemma|proof|defi|ex|eg|remark|corollary|prop)\}'
+

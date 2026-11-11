@@ -1,0 +1,19 @@
+{
+  "[latex]": {
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.rulers": [80],
+    "editor.tabSize": 2
+  },
+  "latex-workshop.formatting.latex": "latexindent",
+  "latex-workshop.formatting.latexindent.path": "/opt/homebrew/bin/latexindent",
+  "latex-workshop.formatting.latexindent.args": [
+    "-m",
+    "-l=%WORKSPACE_FOLDER%/.latexindent.yaml",
+    "-c",
+    "%DIR%/",
+    "%TMPFILE%",
+    "-y=defaultIndent: '%INDENT%'"
+  ]
+}
