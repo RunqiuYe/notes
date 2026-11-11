@@ -4,7 +4,7 @@ defaultIndent: "  "
 
 modifyLineBreaks:
   textWrapOptions:
-    columns: 80
+    columns: 75
     multipleSpacesToSingle: 1
     removeBlockLineBreaks: 1
     when: after

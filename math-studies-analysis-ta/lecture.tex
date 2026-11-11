@@ -40,29 +40,30 @@ Carnegie Mellon University}
 \end{thm}
 
 \begin{proof}
-  Let $M = \sum_{x \in X} g(x)$ and $X_k = \{ x \in X : g(x) > k^{-1} \}$ for
-  $k \in \N$. Let $Y \subset X_k$ finite, then
+  Let $M = \sum_{x \in X} g(x)$ and $X_k = \{ x \in X : g(x) > k^{-1} \}$
+  for $k \in \N$. Let $Y \subset X_k$ finite, then
   \[
     M \geq \sum_{x \in Y} g(x) > k^{-1} \abs{Y}.
   \]
-  Hence $\abs{Y} \leq k M$ and thus $\abs{X_k} \leq k M$. It follows that $\{ x
-  \in X : g(x) > 0 \} = \cupinfk X_k$ is countable.
+  Hence $\abs{Y} \leq k M$ and thus $\abs{X_k} \leq k M$. It follows that
+  $\{ x \in X : g(x) > 0 \} = \cupinfk X_k$ is countable.
 \end{proof}
 
 \begin{thm}
-  Let $I \subset \R$ be an interval and $f : I \to \R$ an increasing function.
-  Then, $f$ is continuous at all but countably many $x \in I$.
+  Let $I \subset \R$ be an interval and $f : I \to \R$ an increasing
+  function. Then, $f$ is continuous at all but countably many $x \in I$.
 \end{thm}
 
 \begin{proof}
-  First assume $I = [a, b]$. Then for $x \in (a, b)$, there exists $\lim_{y \to
-  x^-} f(y) = f(x-)$ and $\lim_{y \to x^+} f(y) = f(x+)$. Since the function is
-  increasing, $f(x+) \geq f(x-)$. Now we can define $g (x) = f(x+) - f(x-)$. It
-  is clear that $\sum_{x \in [a, b]} g(x) \leq f(b) - f(a)$. By the previous
-  theorem, $f(x+) = f(x-)$ for all but countably many $x \in [a, b]$.
+  First assume $I = [a, b]$. Then for $x \in (a, b)$, there exists
+  $\lim_{y \to x^-} f(y) = f(x-)$ and $\lim_{y \to x^+} f(y) = f(x+)$.
+  Since the function is increasing, $f(x+) \geq f(x-)$. Now we can define
+  $g (x) = f(x+) - f(x-)$. It is clear that $\sum_{x \in [a, b]} g(x) \leq
+  f(b) - f(a)$. By the previous theorem, $f(x+) = f(x-)$ for all but
+  countably many $x \in [a, b]$.
 
-  The interval $I \subset \R$ can be written as a countable union of finite
-  closed intervals. The proof is then complete.
+  The interval $I \subset \R$ can be written as a countable union of
+  finite closed intervals. The proof is then complete.
 \end{proof}
 
 \subsubsection*{Differentiation}
@@ -93,22 +94,22 @@ To show this, we need a few lemmas.
   \[
     E_r = \left\{ x \in E_- : f'_-(x) < r < f'_+ (x) \right\},
   \]
-  and let $g_r(t) = f(t) - rt$ for $t \in I$. By density of rationals, $E_- =
-  \bigcup_{r \in \Q} E_r$. If $x \in E_r$, then
+  and let $g_r(t) = f(t) - rt$ for $t \in I$. By density of rationals,
+  $E_- = \bigcup_{r \in \Q} E_r$. If $x \in E_r$, then
   \[
     (g_r)'_- (x) < 0 < (g_r)'_+ (x).
   \]
-  It follows that $g_r(y) > g_r(x)$ for every $y \neq x$ sufficiently close to
-  $x$, i.e.\ $x$ is a strict local minimum point of $g_r$. Therefore $E_r$ is
-  countable and thus $E_-$ is countable. Applying the same argument to $-f$
-  completes the proof for the lemma.
+  It follows that $g_r(y) > g_r(x)$ for every $y \neq x$ sufficiently
+  close to $x$, i.e.\ $x$ is a strict local minimum point of $g_r$.
+  Therefore $E_r$ is countable and thus $E_-$ is countable. Applying the
+  same argument to $-f$ completes the proof for the lemma.
 \end{proof}
 
 \begin{lemma}
-  Let $E \subset \R$ be bounded, and $\fcal$ be a family of open intervals such
-  that each $x \in E$ is the left endpoint of an interval $(x, x + h_x) \in
-  \fcal$. Then there for every $\epsilon > 0$, there exist disjoint intervals
-  $I_1, \dots, I_n \in \fcal$ such that
+  Let $E \subset \R$ be bounded, and $\fcal$ be a family of open intervals
+  such that each $x \in E$ is the left endpoint of an interval $(x, x +
+  h_x) \in \fcal$. Then there for every $\epsilon > 0$, there exist
+  disjoint intervals $I_1, \dots, I_n \in \fcal$ such that
   \[
     \L_o^1 \left( E \cap \cupk^n I_k \right)  \geq \L_o^1 (E) - \epsilon.
   \]
@@ -116,38 +117,41 @@ To show this, we need a few lemmas.
 
 \begin{proof}
   If $E = \emptyset$, take the empty collection. If $E \neq \emptyset$ and
-  $\L_o^1 (E) \leq \epsilon$, any one interval in $\fcal$ suffices. Thus assume
-  that $L_o^1 (E) > \epsilon$. For each $x \in E$, choose an interval $(x, x +
-  h_x) \in \fcal$ and define
+  $\L_o^1 (E) \leq \epsilon$, any one interval in $\fcal$ suffices. Thus
+  assume that $L_o^1 (E) > \epsilon$. For each $x \in E$, choose an
+  interval $(x, x + h_x) \in \fcal$ and define
   \[
     E_n = \left\{ x \in E : h_x > n^{-1} \right\}.
   \]
-  Note that $E_n \subset E_{n + 1}$ and $E = \cupinfn E_n$. By coninuity from
-  below of Lebesgue outer measure (exercise), we have $\L_o^1 (E_n) \to \L_o^1
-  (E)$. Hence we can find $m$ large enough such that $\L_o^1 (E_m) > \L_o^1 (E)
-  - \frac{\epsilon}{2}$. For each $k \in \N$, let $\eta_k = \epsilon 2^{- k -
-  1}$, then $\suminfk \eta_k = \frac{\epsilon}{2}$.
+  Note that $E_n \subset E_{n + 1}$ and $E = \cupinfn E_n$. By coninuity
+  from below of Lebesgue outer measure (exercise), we have $\L_o^1 (E_n)
+  \to \L_o^1 (E)$. Hence we can find $m$ large enough such that $\L_o^1
+  (E_m) > \L_o^1 (E) - \frac{\epsilon}{2}$. For each $k \in \N$, let
+  $\eta_k = \epsilon 2^{- k - 1}$, then $\suminfk \eta_k =
+  \frac{\epsilon}{2}$.
 
-  Let $a_1 = \inf E_m$. By definition of infimum we can find $x_1 \in E_m$ with
-  $a_1 \leq x_1 < a_1 + \eta_1$, and correspondingly $I_1 = (x_1 + h_1) \in
-  \fcal$ with $h_1 > m^{-1}$. Suppose $I_1, \dots, I_k$ has been chosen. If
-  $\left\{ x \in E_m : x \geq x_k + h_k \right\} = \emptyset$, we stop.
-  Otherwise let $a_{k + 1} = \inf \left\{ x \in E_m : x \geq x_k + h_k
-  \right\}$. Then there is $x_{k + 1} \in E_m$ such that $a_{k + 1} \leq x_{k +
-  1} \leq a_{k + 1} + \eta_{k + 1}$ and correspondingly $I_{k + 1} = (x_{k +
-  1}, x_{k + 1} + h_{k + 1}) \in \fcal$ with $h_{k + 1} > m^{-1}$. Note that
+  Let $a_1 = \inf E_m$. By definition of infimum we can find $x_1 \in E_m$
+  with $a_1 \leq x_1 < a_1 + \eta_1$, and correspondingly $I_1 = (x_1 +
+  h_1) \in \fcal$ with $h_1 > m^{-1}$. Suppose $I_1, \dots, I_k$ has been
+  chosen. If $\left\{ x \in E_m : x \geq x_k + h_k \right\} = \emptyset$,
+  we stop. Otherwise let $a_{k + 1} = \inf \left\{ x \in E_m : x \geq x_k
+  + h_k \right\}$. Then there is $x_{k + 1} \in E_m$ such that $a_{k + 1}
+  \leq x_{k + 1} \leq a_{k + 1} + \eta_{k + 1}$ and correspondingly $I_{k
+  + 1} = (x_{k + 1}, x_{k + 1} + h_{k + 1}) \in \fcal$ with $h_{k + 1} >
+  m^{-1}$. Note that
   \[
     x_{k + 1} \geq x_k + h_k > x_k + m^{-1} ,
   \]
-  and $E_m \subset E$ is bounded, the construction must stop after finitely
-  many steps. Moreover, $I_1, \dots, I_n$ are disjoint by construction.
+  and $E_m \subset E$ is bounded, the construction must stop after
+  finitely many steps. Moreover, $I_1, \dots, I_n$ are disjoint by
+  construction.
 
   Now let
   \[
     S = \cupk^n I_n, \quad T = \cupk^n (x_k - \eta_k, x_k].
   \]
-  The points of $E_m$ skipped at the $k$-th step belong to $[a_k, x_k] \subset
-  (x_k - \eta_k, x_k]$. Thus $E_m \subset S \cup T$, then
+  The points of $E_m$ skipped at the $k$-th step belong to $[a_k, x_k]
+  \subset (x_k - \eta_k, x_k]$. Thus $E_m \subset S \cup T$, then
   \begin{align*}
     \L_o^1 (E) - \frac{\epsilon}{2}
      & < \L_o^1 (E_m) \leq \L_o^1 (E_m \cap S) + \L_o^1 (E_m \cap T) \\
@@ -158,10 +162,10 @@ To show this, we need a few lemmas.
 \end{proof}
 
 \begin{lemma}
-  Let $E \subset \R$ be bounded, $\fcal$ be family of open intervals such that
-  for all $x \in E$ and $\delta > 0$, there exists $(x, x + h_x) \in \fcal$
-  with $0 \leq h_x < \delta$. Then for all $\epsilon > 0$, there exists
-  disjoint intervals $I_1, \dots, I_m \in \fcal$ such that
+  Let $E \subset \R$ be bounded, $\fcal$ be family of open intervals such
+  that for all $x \in E$ and $\delta > 0$, there exists $(x, x + h_x) \in
+  \fcal$ with $0 \leq h_x < \delta$. Then for all $\epsilon > 0$, there
+  exists disjoint intervals $I_1, \dots, I_m \in \fcal$ such that
   \[
     \L_o^1 \left( E \cap \cupi^m I_i \right) \geq \L_o^1(E) - \epsilon,
     \quad
@@ -171,14 +175,14 @@ To show this, we need a few lemmas.
 
 \begin{proof}
   By the definiton of Lebesgue outer measure, find an bounded open set $U
-  \supset E$ such that $\L_o^1 (U) \leq \L_o^1 (E) + \epsilon$. Let $\fcal'$ be
-  the subfamily of intervals $(x, x + h_x) \in \fcal$ contained in $U$. Note
-  that for each $x \in E \subset U$, there must exists at least one such
-  interval, since $U$ contains a ball centered at $x$ and there are intervals
-  of arbitrarily small length.
+  \supset E$ such that $\L_o^1 (U) \leq \L_o^1 (E) + \epsilon$. Let
+  $\fcal'$ be the subfamily of intervals $(x, x + h_x) \in \fcal$
+  contained in $U$. Note that for each $x \in E \subset U$, there must
+  exists at least one such interval, since $U$ contains a ball centered at
+  $x$ and there are intervals of arbitrarily small length.
 
-  Apply the previous lemma to the family $\fcal'$ to find disjoint intervals
-  $I_1, \dots, I_n \subset \fcal'$ such that
+  Apply the previous lemma to the family $\fcal'$ to find disjoint
+  intervals $I_1, \dots, I_n \subset \fcal'$ such that
   \[
     \L_o^1 \left( E \cap \cupk^n I_k \right)  \geq \L_o^1 (E) - \epsilon.
   \]
@@ -202,15 +206,15 @@ To show this, we need a few lemmas.
   $\liminf_{x \to x_0} f(x) = l \in \R$ iff for every
   $\epsilon > 0$:
   \begin{enumerate}
-    \item there exists $\delta > 0$ such that $l - \epsilon < f(x)$ for all $x
-          \in E$ with $0 < d(x, x_0) < \delta$.
-    \item For every $\delta > 0$, there exists $x \in E$ with $0 < d(x, x_0) <
-          \delta$ such that $f(x) < l + \epsilon$.
+    \item there exists $\delta > 0$ such that $l - \epsilon < f(x)$ for
+          all $x \in E$ with $0 < d(x, x_0) < \delta$.
+    \item For every $\delta > 0$, there exists $x \in E$ with $0 < d(x,
+          x_0) < \delta$ such that $f(x) < l + \epsilon$.
   \end{enumerate}
 
-  Also, $\liminf_{x \to x_0} f(x) = -\infty$ iff for every $M > 0$ and $\delta
-  > 0$, there exists $x \in E$ with $0 < d(x, x_0) < \delta$ such that $f(x) <
-  - M$.
+  Also, $\liminf_{x \to x_0} f(x) = -\infty$ iff for every $M > 0$ and
+  $\delta > 0$, there exists $x \in E$ with $0 < d(x, x_0) < \delta$ such
+  that $f(x) < - M$.
 \end{ex}
 
 Now we are ready to show Lebesgue's differentiation theorem. Recall the
@@ -244,13 +248,13 @@ statement of the theorem below:
     \liminf_{h \to 0^+} \frac{f(x + h) - f(x)}{h} < r.
   \]
   Then for each $\delta > 0$, there exists $0 < h_x < \delta$ such that
-  $h_x^{-1} (f(x + h_x) - f(x)) < r$. Let $\fcal$ be the collection of $(x, x +
-  h_x)$, where $h_x$ is selected as aforementioned while $\delta$ ranges over
-  all positive value, and $x$ ranges over $E_{r, s}$. It is then clear that
-  $\fcal$ satisfies the condition for the previous lemma.
+  $h_x^{-1} (f(x + h_x) - f(x)) < r$. Let $\fcal$ be the collection of
+  $(x, x + h_x)$, where $h_x$ is selected as aforementioned while $\delta$
+  ranges over all positive value, and $x$ ranges over $E_{r, s}$. It is
+  then clear that $\fcal$ satisfies the condition for the previous lemma.
 
-  Apply previous lemma, there exists $I_1, \dots, I_m \in \fcal$ disjoint such
-  that
+  Apply previous lemma, there exists $I_1, \dots, I_m \in \fcal$ disjoint
+  such that
   \begin{align*}
      & \L_o^1 \left( E_{r, s} \cap \cupi^m I_i \right) \geq \L_o^1 (E_{r, s}) - \epsilon, \tag{1} \\
      & \sumi^m \L^1 (I_i) \leq \L_o^1 (E_{r,s}) + \epsilon. \tag{2}
@@ -262,18 +266,19 @@ statement of the theorem below:
     \leq r \L_o^1 (E_{r,s}) + r \epsilon. \tag{3}
   \end{align*}
 
-  Now let $V = \cupi^m (x_i, x_i + h_i)$, which is open. If $x \in E_{r, s}
-  \cap V$, we have
+  Now let $V = \cupi^m (x_i, x_i + h_i)$, which is open. If $x \in E_{r,
+  s} \cap V$, we have
   \[
     s < \limsup_{t \to 0} \frac{f(x + t) - f(x)}{t}.
   \]
-  Then for every $\delta > 0$, there exists $f_x$ such that $0 < t_x < \delta$
-  and $s < t_x^{-1} (f(x + t_x) - f(x))$. Define $\gcal$ to be the collection
-  of $(x, x + t_x)$ that is contained in $V$, where $t_x$ is selected as
-  aforementioned while $\delta > 0$ ranges over all positive value, and $x$
-  ranges over $E_{r, s} \cap V$.
+  Then for every $\delta > 0$, there exists $f_x$ such that $0 < t_x <
+  \delta$ and $s < t_x^{-1} (f(x + t_x) - f(x))$. Define $\gcal$ to be the
+  collection of $(x, x + t_x)$ that is contained in $V$, where $t_x$ is
+  selected as aforementioned while $\delta > 0$ ranges over all positive
+  value, and $x$ ranges over $E_{r, s} \cap V$.
 
-  The previous lemma again gives $J_1, \dots, J_l \in \gcal$ disjoint such that
+  The previous lemma again gives $J_1, \dots, J_l \in \gcal$ disjoint such
+  that
   \begin{align*}
     \L_o^1 \left( E_{r, s} \cap V \cap \cupk^l J_k \right)
     \geq \L_o^1 (E_{r,s} \cap V) - \epsilon.
@@ -286,8 +291,8 @@ statement of the theorem below:
      & \geq s \L_o^1 (E_{r,s}) - 2 s \epsilon. \tag{4}
   \end{align*}
 
-  Now compare (3) and (4). Since $f$ is increasing and each $J_k$ lies in one
-  of the interval $I_i$, it is not hard to see that
+  Now compare (3) and (4). Since $f$ is increasing and each $J_k$ lies in
+  one of the interval $I_i$, it is not hard to see that
   \[
     \sumi^n f(x_i + h_i) \geq \sumk^l f(y_k + t_k) - f(y_k).
   \]
@@ -295,12 +300,14 @@ statement of the theorem below:
   \[
     \L_o^1 (E_{r, s}) \leq \frac{2s + r}{s - r} \epsilon.
   \]
-  Letting $\epsilon \to 0$ completes the proof for $\L^1 (E_{r, s}) = 0$. This
-  implies that $f'_+ (x)$ exists for a.e.\ $x \in [a, b]$. Similarly, $f'_-(x)$
-  exists for a.e.\ $x \in [a, b]$. A previous lemma shows that the left and
-  right derivatives are equal a.e. Therefore, $f'(x)$ exists a.e.
+  Letting $\epsilon \to 0$ completes the proof for $\L^1 (E_{r, s}) = 0$.
+  This implies that $f'_+ (x)$ exists for a.e.\ $x \in [a, b]$. Similarly,
+  $f'_-(x)$ exists for a.e.\ $x \in [a, b]$. A previous lemma shows that
+  the left and right derivatives are equal a.e. Therefore, $f'(x)$ exists
+  a.e.
 
-  It remains to show the left and right derivatives are a.e.\ finite. Define
+  It remains to show the left and right derivatives are a.e.\ finite.
+  Define
   \begin{align*}
     g(x) = \begin{cases}
              f(x), & x \in [a, b] \\
@@ -311,9 +318,9 @@ statement of the theorem below:
   \[
     g_n(x) = \frac{g(x + n^{-1}) - g(x)}{n^{-1}}
   \]
-  for $x \in [a, b]$ and $n \in \N$. Then, $g_m (x) \to f'(x)$ for a.e.\ $x \in
-  [a, b]$. Since $f$ is monotone, it is measurable and thus $g_m$ is also
-  measurable. By Fatou's lemma,
+  for $x \in [a, b]$ and $n \in \N$. Then, $g_m (x) \to f'(x)$ for a.e.\
+  $x \in [a, b]$. Since $f$ is monotone, it is measurable and thus $g_m$
+  is also measurable. By Fatou's lemma,
   \begin{align*}
     \int_a^b f'(x) \d x
      & \leq \liminf_{n \to \infty}  \int_a^b g_n (x) \d x              \\
@@ -336,14 +343,14 @@ statement of the theorem below:
 \end{proof}
 
 \begin{remark}
-  From the proof above, we see that for monotone function $f : [a, b] \to \R$,
-  we have
+  From the proof above, we see that for monotone function $f : [a, b] \to
+  \R$, we have
   \[
     \int_a^b f' \leq f(b) - f(a).
   \]
-  There exists a monotone function for which inequality is strict. Indeed, let
-  $f : [0, 1] \to [0, 1]$ be the Cantor function. Then, $f' = 0$ a.e.\ but
-  $f(1) = 1$ and $f(0) = 0$.
+  There exists a monotone function for which inequality is strict. Indeed,
+  let $f : [0, 1] \to [0, 1]$ be the Cantor function. Then, $f' = 0$ a.e.\
+  but $f(1) = 1$ and $f(0) = 0$.
 \end{remark}
 
 \subsection{Differentiation of BV functions}
@@ -354,12 +361,12 @@ statement of the theorem below:
   \[
     \Var f = \sup \left\{  \sumi^n \norm{f(x_i) - f(x_{i - 1})} \right\},
   \]
-  where the supremum is taken over all partition $x_0 < x_1 < \dots < x_n$,
-  where $n \in \N$ and $x_0, \dots, x_n \in I$. Say a function has
+  where the supremum is taken over all partition $x_0 < x_1 < \dots <
+  x_n$, where $n \in \N$ and $x_0, \dots, x_n \in I$. Say a function has
   \textbf{bounded pointwise variation} if $\Var f < \infty$.
 
-  The space of all functions $f : I \to \R^N$ with bounded pointwise variation
-  is denoted by $BV(I; \R^N)$.
+  The space of all functions $f : I \to \R^N$ with bounded pointwise
+  variation is denoted by $BV(I; \R^N)$.
 \end{defi}
 
 \begin{prop}
@@ -369,8 +376,8 @@ statement of the theorem below:
           \[
             \norm{f}_{BV} = \Var f + \norm{f(c)}
           \]
-          is a norm on $BV(I; \R^N)$. Moreover, $BV(I; \R^N)$ is complete under
-          this norm.
+          is a norm on $BV(I; \R^N)$. Moreover, $BV(I; \R^N)$ is complete
+          under this norm.
 
     \item Let $c \in I$, then
           \[
@@ -386,13 +393,13 @@ statement of the theorem below:
 
 \begin{defi}
   Let $f : I \to \R^N$. Say $f$ has \textbf{locally bounded variation} if
-  $\Var_{[a, b]} f < \infty$ for all $[a, b] \subset I$. Denote the space of
-  functions with bounded local variation as $BV_{\loc} (I ; \R^N)$.
+  $\Var_{[a, b]} f < \infty$ for all $[a, b] \subset I$. Denote the space
+  of functions with bounded local variation as $BV_{\loc} (I ; \R^N)$.
 \end{defi}
 
 \begin{eg}
-  Let $f : I \to \R^N$ is Lipshitz continuous with Lipshitz constant $L$, $[a,
-  b] \subset I$, and $a \leq x_0 < x_1 < \dots < x_n < b$. Then,
+  Let $f : I \to \R^N$ is Lipshitz continuous with Lipshitz constant $L$,
+  $[a, b] \subset I$, and $a \leq x_0 < x_1 < \dots < x_n < b$. Then,
   \[
     \sumi^n \norm{f(x_i) - f(x_{i - 1})}
     \leq L \sumi^n (x_i - x_{i - 1})
@@ -405,9 +412,9 @@ statement of the theorem below:
   Let $f, g \in BV ([a, b])$, then the following holds:
   \begin{enumerate}
     \item $fg \in BV([a, b])$,
-    \item Further suppose $g \neq 0$, then $f g^{-1}$ needs not be in $BV ([a,
-          b])$. However, if there exists $c > 0$ such that $g(x) \geq c$ for
-          all $x \in I$, we have $f g^{-1} \in BV ([a, b])$.
+    \item Further suppose $g \neq 0$, then $f g^{-1}$ needs not be in $BV
+          ([a, b])$. However, if there exists $c > 0$ such that $g(x) \geq
+          c$ for all $x \in I$, we have $f g^{-1} \in BV ([a, b])$.
   \end{enumerate}
 \end{ex}
 
@@ -416,7 +423,8 @@ statement of the theorem below:
   \[
     \Var f = \sup f - \inf f.
   \]
-  In particular, $f \in BV_{\loc}(I)$, and if $f$ is bounded, $f \in BV(I)$.
+  In particular, $f \in BV_{\loc}(I)$, and if $f$ is bounded, $f \in
+  BV(I)$.
 \end{thm}
 
 \begin{proof}
@@ -432,20 +440,20 @@ statement of the theorem below:
 \end{proof}
 
 \begin{thm}
-  Let $I \subset \R$ be an interval and $f : I \to \R^N$. Fix $c \in I$ and
-  define
+  Let $I \subset \R$ be an interval and $f : I \to \R^N$. Fix $c \in I$
+  and define
   \[
     v(x) = \begin{cases}
       \Var_{[c, x]} f   & (x \geq c), \\
       - \Var_{[x, c]} f & (x < c).
     \end{cases}
   \]
-  Then, for every $x, y \in I$ with $x < y$, $\norm{f(x) - f(y)} \leq v(y) -
-  v(x)$.
+  Then, for every $x, y \in I$ with $x < y$, $\norm{f(x) - f(y)} \leq v(y)
+  - v(x)$.
 
   Moreover, if $f \in BV_{\loc} (I ; \R^N)$, then the left and right limit
-  exists for all $x \in I^\circ$, and $f$ is continuous at all but countably
-  many points. Also, if $N = 1$, $v \pm f$ are increasing.
+  exists for all $x \in I^\circ$, and $f$ is continuous at all but
+  countably many points. Also, if $N = 1$, $v \pm f$ are increasing.
 \end{thm}
 
 \begin{proof}
@@ -462,13 +470,14 @@ statement of the theorem below:
   \end{align*}
   It directly follows that $\norm{f(x) - f(y)} \leq v(y) - v(x)$.
 
-  Now assume $f \in BV_{\loc} (I ; \R^N)$, then $v$ is real-valued. Now that
-  $v$ is increasing, so $v$ is continuous at all but countably many points. It
-  directly follows that $f$ is continuous at all but countably many points.
+  Now assume $f \in BV_{\loc} (I ; \R^N)$, then $v$ is real-valued. Now
+  that $v$ is increasing, so $v$ is continuous at all but countably many
+  points. It directly follows that $f$ is continuous at all but countably
+  many points.
 
-  For $N = 1$, we have $\abs{f(x) - f(y)} \leq v(y) - v(x)$, so $f(x) - f(y)
-  \leq v(y) - v(x)$ and $f(y) - f(x) \leq v(y) - v(x)$, showing that $v \pm f$
-  are increasing.
+  For $N = 1$, we have $\abs{f(x) - f(y)} \leq v(y) - v(x)$, so $f(x) -
+  f(y) \leq v(y) - v(x)$ and $f(y) - f(x) \leq v(y) - v(x)$, showing that
+  $v \pm f$ are increasing.
 \end{proof}
 
 \begin{cor}
@@ -510,24 +519,24 @@ statement of the theorem below:
 \end{defi}
 
 \begin{remark}
-  Note that taking $n = 1$ in the previous definition gives uniform continuity.
-  Therefore absolute continuity implies uniform continuity.
+  Note that taking $n = 1$ in the previous definition gives uniform
+  continuity. Therefore absolute continuity implies uniform continuity.
 \end{remark}
 
 \begin{eg}
-  Let $f : I \to \R^N$ be Lipshitz continuous with constant $L$, then $\sumi^n
-  \norm{f(b_i) - f(a_i)} \leq L \sumi^n (b_i - a_i)$. Therefore, Lipshitz
-  continuity implies absolute continuity.
+  Let $f : I \to \R^N$ be Lipshitz continuous with constant $L$, then
+  $\sumi^n \norm{f(b_i) - f(a_i)} \leq L \sumi^n (b_i - a_i)$. Therefore,
+  Lipshitz continuity implies absolute continuity.
 \end{eg}
 
 \begin{thm}
-  Let $I \subset \R$ be an interval and $f : I \to \R^N$ absolutely continuous.
-  Suppose $f' = 0$ a.e. Then, $f$ is constant.
+  Let $I \subset \R$ be an interval and $f : I \to \R^N$ absolutely
+  continuous. Suppose $f' = 0$ a.e. Then, $f$ is constant.
 \end{thm}
 
 \begin{eg}
-  The Cantor function has zero derivative a.e.\ but it is not constant, so it
-  is not absolutely continuous.
+  The Cantor function has zero derivative a.e.\ but it is not constant, so
+  it is not absolutely continuous.
 \end{eg}
 
 \begin{proof}
@@ -535,15 +544,16 @@ statement of the theorem below:
   \[
     G = \{ x \in (a, b) : f'(x) = 0 \}.
   \]
-  It follows that $\L^1 (G) = b - a$. For any $x \in G$, we have $h^{-1} (f(x +
-  h) - f(x)) \to 0$ as $h \to 0$. Given $\epsilon > 0$, there exists $h_x > 0$
-  such that $\norm{h^{-1} (f(x + h) - f(x))} \leq \epsilon$ for all $0 <
-  \abs{h} \leq h_x$. Now let
+  It follows that $\L^1 (G) = b - a$. For any $x \in G$, we have $h^{-1}
+  (f(x + h) - f(x)) \to 0$ as $h \to 0$. Given $\epsilon > 0$, there
+  exists $h_x > 0$ such that $\norm{h^{-1} (f(x + h) - f(x))} \leq
+  \epsilon$ for all $0 < \abs{h} \leq h_x$. Now let
   \[
     \fcal = \{ (x, x + h) : x \in G, 0 < h < h_x \}.
   \]
-  By a previous lemma, for any $\delta > 0$, there exists a finite and disjoint
-  collection of intervals $\seqi{(x_i, x_i + h_i)}^n \subset \fcal$ with
+  By a previous lemma, for any $\delta > 0$, there exists a finite and
+  disjoint collection of intervals $\seqi{(x_i, x_i + h_i)}^n \subset
+  \fcal$ with
   \begin{align*}
      & \L_o^1 \left( G \cap \cupi^n (x_i, x_i + h_i) \right)
     \geq \L_o^1 (G) - \delta,                                    \\
@@ -561,7 +571,8 @@ statement of the theorem below:
     \norm{f(x_1) - f(a)} + \norm{f(x_1 + h_1) + f(x_2)}
     + \dots + \norm{f(b) - f(x_n + h_n)} \leq \epsilon.
   \]
-  Moreover, $\norm{f(x_i + h_i) - f(x_i)} \leq \epsilon h_i$. It follows that
+  Moreover, $\norm{f(x_i + h_i) - f(x_i)} \leq \epsilon h_i$. It follows
+  that
   \begin{align*}
     \norm{f(b) - f(a)}
      & \leq \epsilon + \sumi^n \epsilon h_i       \\
@@ -578,10 +589,11 @@ statement of the theorem below:
 
 \begin{proof}
 
-  Let $[a, b] \in I$. Let $\delta$ be in the definition of absolute continuity
-  when applying it to $f$ with $\epsilon = 1$. Divide interval $[a, b]$ into
-  segments of length $\delta$. Call the segments $\seqi{[x_{i - 1}, x_i]}^n$,
-  where $n \leq \delta^{-1}(b - a) + 1 < \infty$. It follows that
+  Let $[a, b] \in I$. Let $\delta$ be in the definition of absolute
+  continuity when applying it to $f$ with $\epsilon = 1$. Divide interval
+  $[a, b]$ into segments of length $\delta$. Call the segments
+  $\seqi{[x_{i - 1}, x_i]}^n$, where $n \leq \delta^{-1}(b - a) + 1 <
+  \infty$. It follows that
   \begin{align*}
     \Var_{[a, b]} f
     = \sumi^n \Var_{[x_{i - 1}, x_i]} f
@@ -609,7 +621,8 @@ statement of the theorem below:
       f(b) & (x \geq b).
     \end{cases}
   \]
-  Note that $g$ is still Lipshitz and let $L$ be the Lipshitz constant. We have
+  Note that $g$ is still Lipshitz and let $L$ be the Lipshitz constant. We
+  have
   \begin{align*}
     \lim_{n \to \infty} \frac{g(x + n^{-1}) - g(x)}{n^{-1}}
     = g'(x) \text{ a.e.}
@@ -621,8 +634,8 @@ statement of the theorem below:
     \lim_{n \to \infty} \int_a^b \frac{g(x + n^{-1}) - g(x)}{n^{-1}} \d x
     = \int_a^b g'(x) \d x.
   \]
-  Through similar computation as in the Lebesgue differentiation theorem, for
-  LHS we have
+  Through similar computation as in the Lebesgue differentiation theorem,
+  for LHS we have
   \begin{align*}
     \lim_{n \to \infty} \int_a^b \frac{g(x + n^{-1}) - g(x)}{n^{-1}} \d x
      & = \lim_{n \to \infty} f(b) - n \int_a^{a + n^{-1}} f(t) \d t \\
@@ -635,7 +648,8 @@ statement of the theorem below:
   Comparing this with the proof of Lebesgue differentiation theorem for
   monotone function, we know $f$ is continuous and Lipshitz. Lipshitz
   continuity gives us bounded derivative and the ability to use Dominated
-  Convergence Theorem, and continuity let us know the final term is $f(a)$.
+  Convergence Theorem, and continuity let us know the final term is
+  $f(a)$.
 \end{remark}
 
 \begin{thm}[FTC 1]
@@ -647,14 +661,15 @@ statement of the theorem below:
 To show this we need a few lemmas.
 
 \begin{lemma}
-  Let $E \subset \R^N$ be Lebesgue measurable, $g : E \to \R$ be integrable.
-  Then for all $\epsilon > 0$, there exists $\delta > 0$ such that $F \subset
-  E$ with $\L^N (F) \leq \delta$ implies $\int_F \abs{g} \d x \leq \epsilon$.
+  Let $E \subset \R^N$ be Lebesgue measurable, $g : E \to \R$ be
+  integrable. Then for all $\epsilon > 0$, there exists $\delta > 0$ such
+  that $F \subset E$ with $\L^N (F) \leq \delta$ implies $\int_F \abs{g}
+  \d x \leq \epsilon$.
 \end{lemma}
 
 \begin{lemma}
-  Let $g : [a, b] \to \R$ integrable such that $\int_a^x g(t) \d t = 0$ for all
-  $x \in [a, b]$. Then, $g = 0$ a.e.
+  Let $g : [a, b] \to \R$ integrable such that $\int_a^x g(t) \d t = 0$
+  for all $x \in [a, b]$. Then, $g = 0$ a.e.
 \end{lemma}
 
 \begin{proof}
@@ -664,10 +679,10 @@ To show this we need a few lemmas.
 Now we begin the proof for the first fundamental theorem of calculus.
 
 \begin{proof}
-  First we show $f \in AC$. Fix $\epsilon > 0$, and let $\delta$ be as in the
-  first lemma. Suppose $\seqi{(a_i, b_i)}^n$ are disjoint sub-interval of $[a,
-  b]$ with $\sumi^n (b_i - a_i) \leq \delta$. Let $U = \cupi^n (a_i, b_i)$. It
-  follows that
+  First we show $f \in AC$. Fix $\epsilon > 0$, and let $\delta$ be as in
+  the first lemma. Suppose $\seqi{(a_i, b_i)}^n$ are disjoint sub-interval
+  of $[a, b]$ with $\sumi^n (b_i - a_i) \leq \delta$. Let $U = \cupi^n
+  (a_i, b_i)$. It follows that
   \begin{align*}
     \sumi^n \abs{f(b_i) - f(a_i)}
     = \sumi^n \abs{\int_{a_i}^{b_i} g(t) \d t}
@@ -677,10 +692,10 @@ Now we begin the proof for the first fundamental theorem of calculus.
   \end{align*}
   as desired. Since $f \in AC$, it is differentiation a.e.
 
-  It remains to show that $f'(x) = g(x)$ a.e. First assume $g$ is bounded with
-  $\abs{g} \leq M$. In this case, $f$ is Lipshitz. Then for any $c \in [a, b]$,
-  we have $f(c) - f(a) = \int_a^c f'(t) \d t$ by FTC for Lipshitz functions. It
-  follows that
+  It remains to show that $f'(x) = g(x)$ a.e. First assume $g$ is bounded
+  with $\abs{g} \leq M$. In this case, $f$ is Lipshitz. Then for any $c
+  \in [a, b]$, we have $f(c) - f(a) = \int_a^c f'(t) \d t$ by FTC for
+  Lipshitz functions. It follows that
   \[
     \int_a^c g(t) \d t = \int_a^c f'(t) \d t.
   \]
@@ -700,17 +715,17 @@ Now we begin the proof for the first fundamental theorem of calculus.
     = \int_a^x g_n(t) \d t + \int_a^x (g(t) - g_n(t)) \d t.
   \end{align*}
 
-  Write $G_n(x) = \int_a^x g_n(t) \d t$ and $H_n = \int_a^x (g(t) - g_n(t)) \d
-  t$. By the previous step, we know that $G_n' (x) = g_n(x)$ a.e. We also know
-  that $g \geq g_n$, so $H_n$ is increasing. Then, $H_n$ is differentiable
-  a.e.\ and $f' = g_n + H_n' \geq g_n$ a.e. Letting $n \to \infty$ gives $f'
-  \geq g$ a.e.
+  Write $G_n(x) = \int_a^x g_n(t) \d t$ and $H_n = \int_a^x (g(t) -
+  g_n(t)) \d t$. By the previous step, we know that $G_n' (x) = g_n(x)$
+  a.e. We also know that $g \geq g_n$, so $H_n$ is increasing. Then, $H_n$
+  is differentiable a.e.\ and $f' = g_n + H_n' \geq g_n$ a.e. Letting $n
+  \to \infty$ gives $f' \geq g$ a.e.
 
   To get equality, we take integral and obtain $\int_a^b f'(x) \d x \geq
-  \int_a^b g(x) \d x$. Since $g \geq 0$, $f$ is also increasing. It follows
-  that $\int_a^b f'(x) \d x \leq f(b) - f(a)$. However $\int_a^b g(x) \d x =
-  f(b) - f(a)$. This shows that $\int_a^b (f' - g) = 0$. With $f' \geq g$, this
-  implies $f' = g$ a.e.
+  \int_a^b g(x) \d x$. Since $g \geq 0$, $f$ is also increasing. It
+  follows that $\int_a^b f'(x) \d x \leq f(b) - f(a)$. However $\int_a^b
+  g(x) \d x = f(b) - f(a)$. This shows that $\int_a^b (f' - g) = 0$. With
+  $f' \geq g$, this implies $f' = g$ a.e.
 
   To complete the proof for general $g$, consider $g = g^+ - g^-$.
 \end{proof}
@@ -726,19 +741,19 @@ Now we begin the proof for the first fundamental theorem of calculus.
 \end{thm}
 
 \begin{proof}
-  Suppose the three given conditions holds. Let $F(x) = \int_a^x f'(t) \d t$.
-  By the previous theorem (FTC 1), we know $F \in AC$. Meanwhile, condition 3
-  implies $f(x) = f(a) + F(x)$. This shows that $f \in AC$.
+  Suppose the three given conditions holds. Let $F(x) = \int_a^x f'(t) \d
+  t$. By the previous theorem (FTC 1), we know $F \in AC$. Meanwhile,
+  condition 3 implies $f(x) = f(a) + F(x)$. This shows that $f \in AC$.
 
-  Conversely, suppose now that $f \in AC$. We have shown before that $f$ is
-  differentiable a.e. Moreover, $f$ is the difference of two increasing
-  functions, while the derivative of increasing functions is integrable. This
-  shows that $f'$ is integrable.
+  Conversely, suppose now that $f \in AC$. We have shown before that $f$
+  is differentiable a.e. Moreover, $f$ is the difference of two increasing
+  functions, while the derivative of increasing functions is integrable.
+  This shows that $f'$ is integrable.
 
-  Again let $F(x) = \int_a^x f'(t) \d t$. By FTC 1, $F \in AC$ and $F' = f'$
-  a.e. Moreover $f - F \in AC$ and $(f - F)' = 0$ a.e. By previous theorem,
-  this implies $f - F = c$ a.e. for some constant $c$. Therefore, $f(x) =
-  \int_a^x f'(x) \d t + c$ and the proof is complete.
+  Again let $F(x) = \int_a^x f'(t) \d t$. By FTC 1, $F \in AC$ and $F' =
+  f'$ a.e. Moreover $f - F \in AC$ and $(f - F)' = 0$ a.e. By previous
+  theorem, this implies $f - F = c$ a.e. for some constant $c$. Therefore,
+  $f(x) = \int_a^x f'(x) \d t + c$ and the proof is complete.
 \end{proof}
 
 \section{Change of variables}
@@ -751,8 +766,9 @@ Now we begin the proof for the first fundamental theorem of calculus.
   \[
     \supp f = \bar{\{ x \in E : f(x) \neq 0 \}}.
   \]
-  Write the set of continuous function with compact support as $C_c (X)$. Also
-  for open set $U \subset X$, write $C_c^k (U) = C_c(U) \cap C^k (U)$.
+  Write the set of continuous function with compact support as $C_c (X)$.
+  Also for open set $U \subset X$, write $C_c^k (U) = C_c(U) \cap C^k
+  (U)$.
 \end{defi}
 
 \begin{ex}
@@ -777,8 +793,8 @@ Now we begin the proof for the first fundamental theorem of calculus.
 \end{defi}
 
 \begin{ex}
-  Recall that for $\lambda > 0$, we have $\L^N (\lambda E) = \lambda^N \L^N
-  (E)$. Show that $\int \phi_\epsilon = 1$.
+  Recall that for $\lambda > 0$, we have $\L^N (\lambda E) = \lambda^N
+  \L^N (E)$. Show that $\int \phi_\epsilon = 1$.
 \end{ex}
 
 \begin{defi}[mollification]
@@ -807,8 +823,8 @@ Now we begin the proof for the first fundamental theorem of calculus.
     \abs{\phi_\epsilon (x_n - y) f(y)}
     \leq \sup \abs{\phi_\epsilon} \abs{f(y)},
   \]
-  which is integrable. It then follows from Dominated Convergence Theorem that
-  $f_\epsilon (x_n) = f(x)$ as $n \to \infty$.
+  which is integrable. It then follows from Dominated Convergence Theorem
+  that $f_\epsilon (x_n) = f(x)$ as $n \to \infty$.
 
   For the paritial derivative, fix $i \in [N]$. We have
   \begin{align*}
@@ -830,20 +846,20 @@ Now we begin the proof for the first fundamental theorem of calculus.
   which is integrable. Then Dominated Convergence Theorem applies and
   shows the formula for the paritial derivative.
 
-  By induction, we can continue to show that $f_\epsilon \in C^\infty (\R^N)$
-  and $\dd_\alpha f_\epsilon$ is as desired.
+  By induction, we can continue to show that $f_\epsilon \in C^\infty
+  (\R^N)$ and $\dd_\alpha f_\epsilon$ is as desired.
 \end{proof}
 
 Now we discuss some properties of the mollification.
 
 \begin{thm}
-  Let $E \subset \R^N$ be measurable and $f : E \to \R^N$ be integrable. Then
-  the following holds:
+  Let $E \subset \R^N$ be measurable and $f : E \to \R^N$ be integrable.
+  Then the following holds:
   \begin{enumerate}
-    \item Suppose $f$ is continuous at $x \in E^\circ$. Then, $f_\epsilon (x)
-          \to f(x)$ as $\epsilon \to 0^+$.
-    \item Suppose $f$ is continuous in $E$. Then for any compact $K \subset
-          E^\circ$, $f_\epsilon \to f$ uniformly in $K$.
+    \item Suppose $f$ is continuous at $x \in E^\circ$. Then, $f_\epsilon
+          (x) \to f(x)$ as $\epsilon \to 0^+$.
+    \item Suppose $f$ is continuous in $E$. Then for any compact $K
+          \subset E^\circ$, $f_\epsilon \to f$ uniformly in $K$.
   \end{enumerate}
 \end{thm}
 
@@ -866,11 +882,11 @@ Now we discuss some properties of the mollification.
             = \eta.
           \end{align*}
           The proof is then complete.
-    \item Let $K \subset E^\circ$ be compact. Let $\eta > 0$ be given. Since
-          $f$ is continuous, there exists $\delta > 0$ such that for any $x \in
-          K$ and $y \in E$ with $\norm{x - y} < \delta$, $\abs{f(x) - f(y)} <
-          \eta$. It follows that for $x \in K$ and $\epsilon < \Delta$, we
-          again have
+    \item Let $K \subset E^\circ$ be compact. Let $\eta > 0$ be given.
+          Since $f$ is continuous, there exists $\delta > 0$ such that for
+          any $x \in K$ and $y \in E$ with $\norm{x - y} < \delta$,
+          $\abs{f(x) - f(y)} < \eta$. It follows that for $x \in K$ and
+          $\epsilon < \Delta$, we again have
           \begin{align*}
             f_\epsilon(x) - f(x)
              & = \int_{E \cap B(x, \epsilon)} f(y) \phi_\epsilon (x - y) \d y - f(x) \\
@@ -889,8 +905,9 @@ Now we discuss some properties of the mollification.
 
 \begin{thm}[density]
 
-  Let $E \subset \R^N$ be measurable and $f : E \to \R^N$ be integrable. Then
-  for every $\eta > 0$, there exists $g \in C_c^\infty (\R^N)$ such that
+  Let $E \subset \R^N$ be measurable and $f : E \to \R^N$ be integrable.
+  Then for every $\eta > 0$, there exists $g \in C_c^\infty (\R^N)$ such
+  that
   \[
     \int_E \abs{f - g} \d x < \eta.
   \]
@@ -900,9 +917,9 @@ Now we discuss some properties of the mollification.
 \begin{proof}
 
   For step 1, first suppose $Q$ is a cube and $f = \chi_Q$. Then we have
-  $f_\epsilon \in C_c^\infty (\R^N)$. Also, $f_\epsilon = 1$ if $x \in Q$ with
-  $\dist(x, \dd Q) > \epsilon$, and $f_\epsilon = 0$ if $x \in Q^c$ with
-  $\dist(x, \dd Q) > \epsilon$. It follows that
+  $f_\epsilon \in C_c^\infty (\R^N)$. Also, $f_\epsilon = 1$ if $x \in Q$
+  with $\dist(x, \dd Q) > \epsilon$, and $f_\epsilon = 0$ if $x \in Q^c$
+  with $\dist(x, \dd Q) > \epsilon$. It follows that
   \[
     \int_E \abs{f_\epsilon - f} \d x
     \leq 2 \L^N (\{x \in \R^N : \dist(x, \dd Q) \leq \epsilon\})
@@ -910,54 +927,56 @@ Now we discuss some properties of the mollification.
   \]
   as $\epsilon \to 0$, completing this step.
 
-  For step 2, suppose $\seqi{Q_i}^n$ are cubes with disjoint interior, $Q =
-  \cupi^m Q_i$, and $f = \chi_{Q}$. We can correspondingly write $f = \sumi^n
-  \chi_{T_i}$ where $T_i$ are disjoint cubes. Applying step 1 gives the desired
-  result, where $g = \sumi^n (\chi_{T_i})_\epsilon$.
+  For step 2, suppose $\seqi{Q_i}^n$ are cubes with disjoint interior, $Q
+  = \cupi^m Q_i$, and $f = \chi_{Q}$. We can correspondingly write $f =
+  \sumi^n \chi_{T_i}$ where $T_i$ are disjoint cubes. Applying step 1
+  gives the desired result, where $g = \sumi^n (\chi_{T_i})_\epsilon$.
 
   For part 3, suppose $U$ is open and $f = \chi_U$. Then we can write $U =
-  \cupinfi{Q_i}$, where $\seqinfi{Q_i}$ are cubes with disjoint interior. Write
-  $F_n = \cupi^n Q_i$. Note that $f$ is integrable, so Dominated Convergence
-  Theorem implies
+  \cupinfi{Q_i}$, where $\seqinfi{Q_i}$ are cubes with disjoint interior.
+  Write $F_n = \cupi^n Q_i$. Note that $f$ is integrable, so Dominated
+  Convergence Theorem implies
   \[
     \lim_{n \to \infty}
     \int_E \abs{f - \chi_{F_n}} \d x = 0.
   \]
-  Let $n$ be so large that $\int_E \abs{f - \chi_{F_n}} \d x < \eta$. Applying
-  step 2 to find $g \in C_c^\infty (\R^N)$ such that $\int_E \abs{g -
-  \chi_{F_n}} \d x < \eta$. This gives the desired result. Note that now $g$ is
-  not the mollification of $f$.
+  Let $n$ be so large that $\int_E \abs{f - \chi_{F_n}} \d x < \eta$.
+  Applying step 2 to find $g \in C_c^\infty (\R^N)$ such that $\int_E
+  \abs{g - \chi_{F_n}} \d x < \eta$. This gives the desired result. Note
+  that now $g$ is not the mollification of $f$.
 
-  For step 4, suppose $G$ is measurable and $f = \chi_G$, then there exists $U
-  \supset G$ open with $\L^N (U \setminus G) < \eta$. Step 3 gives $g \in
-  C_c^\infty (\R^N)$ such that $\int_E \abs{g - \chi_U} \d x < \eta$. Moreover,
-  $\int_E \abs{\chi_U - \chi_G} = \L^N (U \setminus G) < \eta$, so this $g$ is
-  as desired.
+  For step 4, suppose $G$ is measurable and $f = \chi_G$, then there
+  exists $U \supset G$ open with $\L^N (U \setminus G) < \eta$. Step 3
+  gives $g \in C_c^\infty (\R^N)$ such that $\int_E \abs{g - \chi_U} \d x
+  < \eta$. Moreover, $\int_E \abs{\chi_U - \chi_G} = \L^N (U \setminus G)
+  < \eta$, so this $g$ is as desired.
 
-  For step 5, we can show the result for simple functions. Then we can prove
-  the result for non-negative functions by approximating it with simple
-  functions and using Dominated Convergence Theorem. Finally, for general
-  function $f$, writing $f = f^+ - f^-$ and using previous steps complete the
-  proof.
+  For step 5, we can show the result for simple functions. Then we can
+  prove the result for non-negative functions by approximating it with
+  simple functions and using Dominated Convergence Theorem. Finally, for
+  general function $f$, writing $f = f^+ - f^-$ and using previous steps
+  complete the proof.
 \end{proof}
 
 \begin{thm}
 
-  Let $E \subset \R^N$ be measurable and $f : E \to \R$ integrable. Then there
-  exists a sequence of functions $\seqinfn{f_n} \subset C_c^\infty(\R^N)$ such
-  that $f_n \to f$ pointwise a.e.\ and in $L^1$. That is,
+  Let $E \subset \R^N$ be measurable and $f : E \to \R$ integrable. Then
+  there exists a sequence of functions $\seqinfn{f_n} \subset
+  C_c^\infty(\R^N)$ such that $f_n \to f$ pointwise a.e.\ and in $L^1$.
+  That is,
   \[
     \lim_{n \to \infty}  \int_E \abs{f_n - f} \d x = 0.
   \]
 \end{thm}
 
 \begin{lemma}
-  Let $E \subset \R^N$ be measurable and $f_n, f : E \to \R$ integrable with
+  Let $E \subset \R^N$ be measurable and $f_n, f : E \to \R$ integrable
+  with
   \[
     \lim_{n \to \infty}  \int_E \abs{f_n - f} \d x = 0.
   \]
-  Then there exists a subsequence $\seqinfk{f_{n_k}}$ such that $f_{n_k} \to f$
-  pointwise a.e.
+  Then there exists a subsequence $\seqinfk{f_{n_k}}$ such that $f_{n_k}
+  \to f$ pointwise a.e.
 \end{lemma}
 
 \begin{proof}
@@ -966,8 +985,8 @@ Now we discuss some properties of the mollification.
   \[
     \int_E \abs{f_n - f}  \d x \leq 2^{-k}
   \]
-  for all $n \geq n_k$. WLOG assume $n_k < n_{k + 1}$. Define $g = \suminfk
-  \abs{f_{n_k} - f}$. It follows that
+  for all $n \geq n_k$. WLOG assume $n_k < n_{k + 1}$. Define $g =
+  \suminfk \abs{f_{n_k} - f}$. It follows that
   \[
     \int_E g
     = \suminfk \int_E \abs{f_{n_k} - f}
@@ -979,31 +998,32 @@ Now we discuss some properties of the mollification.
 
 \begin{proof}
 
-  Use the previous theorem to find a sequence that converges in $L^1$, then
-  apply the lemma to find a subsequence that converges pointwise a.e.
+  Use the previous theorem to find a sequence that converges in $L^1$,
+  then apply the lemma to find a subsequence that converges pointwise a.e.
 \end{proof}
 
 \begin{remark}
 
   Suppose $f$ is bounded with $\abs{f(x)} \leq M$. Can we make $f_n$ also
-  bounded? First consider relaxing the smooth requirement to just continuous.
-  We can define $h_n = (f_n \wedge M) \vee (-M)$. Then $h_n$ are continuous,
-  $h_n \to f$ pointwise, and $\abs{h_n(x)} \leq M$. Using a similar idea, we
-  can make $h_n$ smooth. Therefore, when $f$ is bounded we can assume the
-  converging sequence is also uniformly bounded with the same constant.
+  bounded? First consider relaxing the smooth requirement to just
+  continuous. We can define $h_n = (f_n \wedge M) \vee (-M)$. Then $h_n$
+  are continuous, $h_n \to f$ pointwise, and $\abs{h_n(x)} \leq M$. Using
+  a similar idea, we can make $h_n$ smooth. Therefore, when $f$ is bounded
+  we can assume the converging sequence is also uniformly bounded with the
+  same constant.
 
-  Suppose $E = K$ is compact. Can we make the $\supp f_n \subset K_n$ where
-  $K_n$ are compact and shrink to $E$? Consider the mollification
-  $\chi_{K_\delta} * \phi_\epsilon$, and multiply it with $f_n$. Verify that
-  $\epsilon = \delta = n^{-1}$ works as desired.
+  Suppose $E = K$ is compact. Can we make the $\supp f_n \subset K_n$
+  where $K_n$ are compact and shrink to $E$? Consider the mollification
+  $\chi_{K_\delta} * \phi_\epsilon$, and multiply it with $f_n$. Verify
+  that $\epsilon = \delta = n^{-1}$ works as desired.
 \end{remark}
 
 \subsection{Change of variables}
 
 \begin{lemma}[CoV for linear transformation]
 
-  Let $L : \R^N \to \R^N$ be linear and invertible. Write $L(x) = Ax$ where $A$
-  is a matrix. Suppose $f : \R^N \to \R$ integrable. Then,
+  Let $L : \R^N \to \R^N$ be linear and invertible. Write $L(x) = Ax$
+  where $A$ is a matrix. Suppose $f : \R^N \to \R$ integrable. Then,
   \[
     \int f(y) \d y = \abs{\det A} \int f(L(x)) \d x.
   \]
@@ -1012,14 +1032,15 @@ Now we discuss some properties of the mollification.
 \begin{proof}
 
   The linear map $L$ is given by the composition of a finite number of
-  transformation of the type $t_s(x) = (s x_1, x_2, \dots, x_N)$ where $s \neq
-  0$, $a(x) = (x_1 + x_2, x_2, \dots, x_N)$, and $s_{ij} (x)$ which swaps the
-  $i$ and $j$ components of $x$. Hence, it suffices to show the lemma where $L$
-  is each of these operation.
+  transformation of the type $t_s(x) = (s x_1, x_2, \dots, x_N)$ where $s
+  \neq 0$, $a(x) = (x_1 + x_2, x_2, \dots, x_N)$, and $s_{ij} (x)$ which
+  swaps the $i$ and $j$ components of $x$. Hence, it suffices to show the
+  lemma where $L$ is each of these operation.
 
-  Assume first $f \geq 0$. For the first operation $t_s$, we can verify that
-  for integrable $g : \R \to \R$ and $s \neq 0$, we have $\int g(y) \d y =
-  \abs{s} \int g(s x) \d x$ (Exercise). It follows from Tonelli's theorem that
+  Assume first $f \geq 0$. For the first operation $t_s$, we can verify
+  that for integrable $g : \R \to \R$ and $s \neq 0$, we have $\int g(y)
+  \d y = \abs{s} \int g(s x) \d x$ (Exercise). It follows from Tonelli's
+  theorem that
   \begin{align*}
     \abs{\det t_s} \int_{\R^N} f(t_s(x)) \d x
      & = \abs{s} \int_{\R^N} f(s x_1, x_2, \dots, x_n) \d x                                      \\
@@ -1028,9 +1049,9 @@ Now we discuss some properties of the mollification.
      & = \int_{\R^N} f(y) \d y.
   \end{align*}
 
-  For the second operation $a$, we have $\int g(y) \d y = \int g(x + s) \d x$
-  for $s \in \R$ and $g : \R \to \R$ integrable (Exercise). Then Tonelli's
-  theorem gives
+  For the second operation $a$, we have $\int g(y) \d y = \int g(x + s) \d
+  x$ for $s \in \R$ and $g : \R \to \R$ integrable (Exercise). Then
+  Tonelli's theorem gives
   \begin{align*}
     \int_{\R^N} f(a(x)) \d x
      & = \int_{\R^{N - 1}} \int_\R f(x_1 + x_2, x_2, \dots, x_N) \d x_1 \d x_{\setminus 1} \\
@@ -1038,15 +1059,15 @@ Now we discuss some properties of the mollification.
      & = \int_{\R^N} f(y) \d y.
   \end{align*}
 
-  The claim for the third operation $s_{ij}$ follows directly from Tonelli's
-  theorem.
+  The claim for the third operation $s_{ij}$ follows directly from
+  Tonelli's theorem.
 \end{proof}
 
 \begin{thm}[CoV for continuous functions]
 
-  Let $U \subset \R^N$ be open and $g : U \to \R^N$ be injective and $C^1$.
-  Suppose that $\det Dg (x) \neq 0$. Let $f : g(U) \to \R$ be continuous and
-  with compact support. Then
+  Let $U \subset \R^N$ be open and $g : U \to \R^N$ be injective and
+  $C^1$. Suppose that $\det Dg (x) \neq 0$. Let $f : g(U) \to \R$ be
+  continuous and with compact support. Then
   \[
     \int_{g(U)}  f(y) \d y = \int_U f(g(x)) \abs{\det Dg(x)} \d x.
   \]
@@ -1059,8 +1080,8 @@ Now we discuss some properties of the mollification.
 \begin{lemma}
 
   Let $U \subset \R^N$ be open, $g : U \to \R^N$ be injective and $C^1$.
-  Suppose that $\det Dg(x) \neq 0$ for all $x \in U$. For any $K \subset g(U)$
-  compact, we have
+  Suppose that $\det Dg(x) \neq 0$ for all $x \in U$. For any $K \subset
+  g(U)$ compact, we have
   \[
     \lim_{\epsilon \to 0^+} \int_U \phi_\epsilon (g(x) - y) \d x
     = \frac{1}{\abs{\det Dg (g^{-1} (y))}}
@@ -1075,20 +1096,20 @@ Now we discuss some properties of the mollification.
   \[
     K_\epsilon = \left\{ y \in \R^N : \dist(y, K) \leq \epsilon \right\},
   \]
-  which is compact. Since $g(U)$ is open and compact $K \subset g(U)$, we have
-  $K_\epsilon \subset g(U)$ for $\epsilon$ small enough. By inverse function
-  theorem and the fact that $g$ is injective, there exists $g^{-1} : g(U) \to
-  \R^N$ that is $C^1$. Hence there exists some constant $L \geq 1$ so that
-  $\norm{D g^{-1} (y)} \leq L$ for all $y \in K_\epsilon$. Now fix $z \in K$.
-  For $y \in \R^N$ with $\norm{y - z} \leq \epsilon$, we have $y \in
-  K_\epsilon$ and by mean value theorem,
+  which is compact. Since $g(U)$ is open and compact $K \subset g(U)$, we
+  have $K_\epsilon \subset g(U)$ for $\epsilon$ small enough. By inverse
+  function theorem and the fact that $g$ is injective, there exists
+  $g^{-1} : g(U) \to \R^N$ that is $C^1$. Hence there exists some constant
+  $L \geq 1$ so that $\norm{D g^{-1} (y)} \leq L$ for all $y \in
+  K_\epsilon$. Now fix $z \in K$. For $y \in \R^N$ with $\norm{y - z} \leq
+  \epsilon$, we have $y \in K_\epsilon$ and by mean value theorem,
   \[
     \norm{g^{-1} (y) - g^{-1} (z)} \leq L \norm{y - z}.
   \]
 
-  Now consider any $x \in U$. If $\norm{g(x) - z} \leq \epsilon$, $\norm{x -
-  g^{-1}(z)} \leq L \epsilon$. Otherwise, if $\norm{g(x) - z} > \epsilon$,
-  $\phi_\epsilon (g(x) - z) \d x = 0$. Write. Hence,
+  Now consider any $x \in U$. If $\norm{g(x) - z} \leq \epsilon$, $\norm{x
+  - g^{-1}(z)} \leq L \epsilon$. Otherwise, if $\norm{g(x) - z} >
+  \epsilon$, $\phi_\epsilon (g(x) - z) \d x = 0$. Write. Hence,
   \begin{align*}
     \int_U \phi_\epsilon (g(x) - z) \d x
      & = \int_{B[g^{-1}(z), L \epsilon]} \phi_\epsilon (g(x) - z) \d x \\
@@ -1121,9 +1142,9 @@ Now we discuss some properties of the mollification.
 
 \begin{thm}[CoV for continuous functions]
 
-  Let $U \subset \R^N$ be open and $g : U \to \R^N$ be injective and $C^1$.
-  Suppose that $\det Dg (x) \neq 0$. Let $f : g(U) \to \R$ be continuous and
-  with compact support. Then
+  Let $U \subset \R^N$ be open and $g : U \to \R^N$ be injective and
+  $C^1$. Suppose that $\det Dg (x) \neq 0$. Let $f : g(U) \to \R$ be
+  continuous and with compact support. Then
   \[
     \int_{g(U)}  f(y) \d y = \int_U f(g(x)) \abs{\det Dg(x)} \d x.
   \]
@@ -1137,11 +1158,11 @@ Now we discuss some properties of the mollification.
   \[
     p(y) = f(y) \abs{\det Dg (g^{-1} (y))}.
   \]
-  We have $\supp p \subset K$, so $\supp p_\epsilon \subset K_\epsilon$. Note
-  that $p$ is continuous and thus $p_\epsilon \to p$ uniformly on compact sets,
-  i.e.\ $p_\epsilon \to p$ uniformly on $K_\epsilon$. It is also easy to verify
-  that $p_\epsilon \circ g \to p \circ g$ pointwise. It then follows from
-  Dominated Convergence Theorem that
+  We have $\supp p \subset K$, so $\supp p_\epsilon \subset K_\epsilon$.
+  Note that $p$ is continuous and thus $p_\epsilon \to p$ uniformly on
+  compact sets, i.e.\ $p_\epsilon \to p$ uniformly on $K_\epsilon$. It is
+  also easy to verify that $p_\epsilon \circ g \to p \circ g$ pointwise.
+  It then follows from Dominated Convergence Theorem that
   \[
     \int_U p_\epsilon (g(x)) \d x
     = \int_{g^{-1}(K_\epsilon)} p_\epsilon (g(x)) \d x
@@ -1171,9 +1192,9 @@ continuous and with compact support, but only need $f$ to be integrable.
 
 \begin{thm}[CoV]
 
-  Let $U \subset \R^N$ be open and $g : U \to \R^N$ be injective and $C^1$.
-  Suppose that $\det Dg (x) \neq 0$. Suppose $g(U) \subset E$ where $E$
-  Lebesgue measurable, $f : E \to \R$ integrable. Then
+  Let $U \subset \R^N$ be open and $g : U \to \R^N$ be injective and
+  $C^1$. Suppose that $\det Dg (x) \neq 0$. Suppose $g(U) \subset E$ where
+  $E$ Lebesgue measurable, $f : E \to \R$ integrable. Then
   \[
     \int_{g(U)}  f(y) \d y = \int_U f(g(x)) \abs{\det Dg(x)} \d x.
   \]
@@ -1181,39 +1202,40 @@ continuous and with compact support, but only need $f$ to be integrable.
 
 \begin{proof}
 
-  For step 1, assume $E = K$ compact and $\abs{f(x)} \leq M$. Find $f_n \in
-  C_c^\infty (\R^N)$ such that $f_n \to f$ pointwise a.e. Moreover, referring
-  to remark on a previous theorem, assume $\abs{f_n(x)} \leq 2M$ and $\supp f_n
-  \subset K_{n^{-1}} \subset g(U)$. By change of variable,
+  For step 1, assume $E = K$ compact and $\abs{f(x)} \leq M$. Find $f_n
+  \in C_c^\infty (\R^N)$ such that $f_n \to f$ pointwise a.e. Moreover,
+  referring to remark on a previous theorem, assume $\abs{f_n(x)} \leq 2M$
+  and $\supp f_n \subset K_{n^{-1}} \subset g(U)$. By change of variable,
   \[
     \int_{g(U)}  f_n (y) \d y = \int_U f_n (g(x)) \abs{\det Dg(x)} \d x.
   \]
   Note that $K_{n^{-1}} \subset K_\delta \subset g(U)$. Therefore
   $\int_{K_\delta} f_n (y) \d y = \int_{g^{-1} (K_{\delta})} f_n(g(x))
-  \abs{\det Dg(x)} \d x$. Applying Dominated Convergence Theorem, we obatin
+  \abs{\det Dg(x)} \d x$. Applying Dominated Convergence Theorem, we
+  obatin
   \[
     \int_K f(y) \d y = \int_{g^{-1} (K)} f_n (g(x)) \abs{\det Dg(x)} \d x.
   \]
 
-  For step 2, still assume $f \geq 0$ bounded. We can write $E = \cupinfn K_n
-  \cup E_0$ where $K_n$ increasing and compact, and $\L^N (E_0) = 0$. Then we
-  have $\L^N (g^{-1} (E_0)) = 0$, and
+  For step 2, still assume $f \geq 0$ bounded. We can write $E = \cupinfn
+  K_n \cup E_0$ where $K_n$ increasing and compact, and $\L^N (E_0) = 0$.
+  Then we have $\L^N (g^{-1} (E_0)) = 0$, and
   \[
     \int_{E_0}  f \d y = \int_{g^{-1} (E_0)} f(g(x)) \abs{\det D g(x)} \d x = 0.
   \]
-  In $K_n$ we use step 1, and because $f \geq 0$, apply Monotone Convergence
-  Theorem.
+  In $K_n$ we use step 1, and because $f \geq 0$, apply Monotone
+  Convergence Theorem.
 
-  Finally, to remove bounded requirement, consider $f_n = f \wedge n$ and use
-  Monotone Convergence Theorem. For general real-valued function, write $f =
-  f^+ + f^-$ and apply previous steps.
+  Finally, to remove bounded requirement, consider $f_n = f \wedge n$ and
+  use Monotone Convergence Theorem. For general real-valued function,
+  write $f = f^+ + f^-$ and apply previous steps.
 \end{proof}
 
 \begin{cor}
 
-  Let $U$ and $g$ be under the same condition before. Let $E \subset \R^N$ be
-  Lebesgue measurable with $\L^N (E \setminus g(U)) = 0$. Suppose $f : E \to
-  \R$ integrable. Then we have the same conclusion:
+  Let $U$ and $g$ be under the same condition before. Let $E \subset \R^N$
+  be Lebesgue measurable with $\L^N (E \setminus g(U)) = 0$. Suppose $f :
+  E \to \R$ integrable. Then we have the same conclusion:
   \[
     \int_{g(U)}  f(y) \d y = \int_U f(g(x)) \abs{\det Dg(x)} \d x.
   \]
@@ -1221,8 +1243,8 @@ continuous and with compact support, but only need $f$ to be integrable.
 
 \begin{proof}
 
-  Let $A = E \cap g(U)$, which is Lebesgue measurable. Applying theorem in $A$
-  gives
+  Let $A = E \cap g(U)$, which is Lebesgue measurable. Applying theorem in
+  $A$ gives
   \[
     \int_A f(y) \d y = \int_{g^{-1}(A)}  f(g(x)) \abs{\det Dg(x)} \d x.
   \]
@@ -1235,10 +1257,10 @@ continuous and with compact support, but only need $f$ to be integrable.
     g(r, \theta, \phi) = (r \sin \theta \cos \phi, r \sin \theta \cos \phi,
     r \cos \theta).
   \]
-  We can verify that $g$ is injective and $\det Dg(r, \theta, \phi) = r^2 \sin
-  \theta > 0$ on $U$. Also, $g(U) = \R^3 \setminus H$, where $H = \left\{ (y_1,
-  y_2, y_3) : y_2 = 0, y_3 \geq 0 \right\}$. We can apply the corollary because
-  $\L^3 (H) = 0$. Hence,
+  We can verify that $g$ is injective and $\det Dg(r, \theta, \phi) = r^2
+  \sin \theta > 0$ on $U$. Also, $g(U) = \R^3 \setminus H$, where $H =
+  \left\{ (y_1, y_2, y_3) : y_2 = 0, y_3 \geq 0 \right\}$. We can apply
+  the corollary because $\L^3 (H) = 0$. Hence,
   \[
     \int_{\R^3}  f(y) \d y = \int_0^\infty \int_0^\pi \int_0^{2 \pi}
     f(g(r, \theta, \phi)) r^2 \sin \theta \d \phi \d \theta \d r.
@@ -1248,13 +1270,14 @@ continuous and with compact support, but only need $f$ to be integrable.
 \subsection{Brouwer's fixed point theorem}
 
 \begin{thm}
-  Let $K \subset \R^N$ be compact and convex and $g : K \to K$ be continuous.
-  Then there is $x \in K$ such that $g(x) = x$, namely, $g$ has a fixed point.
+  Let $K \subset \R^N$ be compact and convex and $g : K \to K$ be
+  continuous. Then there is $x \in K$ such that $g(x) = x$, namely, $g$
+  has a fixed point.
 \end{thm}
 
 \begin{lemma}
-  There does not exist function $C^1$ function $g : B[0, 1] \to \dd B(0, 1)$
-  such that $g(x) = x$ for all $x \in \dd B(0, 1)$.
+  There does not exist function $C^1$ function $g : B[0, 1] \to \dd B[0,
+  1]$ such that $g(x) = x$ for all $x \in \dd B[0, 1]$.
 \end{lemma}
 
 \begin{proof}
@@ -1267,35 +1290,37 @@ continuous and with compact support, but only need $f$ to be integrable.
     \norm{g_t(x)}  \leq t \norm{g(x)} + (1 - t) \norm{x}
     \leq t + (1 - t) = 1.
   \]
-  Hence, $g_t : B[0, 1] \to B[0, 1]$. It is also easy to verify that $g_t(x) =
-  x$ for $x \in \dd B(0, 1)$. Define
+  Hence, $g_t : B[0, 1] \to B[0, 1]$. It is also easy to verify that
+  $g_t(x) = x$ for $x \in \dd B[0, 1]$. Define
   \[
     h(x) = g(x) - x.
   \]
-  This is also $C^1$ on the compact set $B[0, 1]$, so $\norm{Dh(x)} \leq M$ for
-  some constant $M$. Therefore $h$ is Lipshitz with constant $\sqrt{N} M$.
+  This is also $C^1$ on the compact set $B[0, 1]$, so $\norm{Dh(x)} \leq
+  M$ for some constant $M$. Therefore $h$ is Lipshitz with constant
+  $\sqrt{N} M$.
 
-  Claim $g_t$ is injective for small $t$. Note that $g_t = x + t h(x)$. Assume
-  $g_t(x_1) = g_t (x_2)$. It follows that $h(x_1) = h(x)$ and thus
+  Claim $g_t$ is injective for small $t$. Note that $g_t = x + t h(x)$.
+  Assume $g_t(x_1) = g_t (x_2)$. It follows that $h(x_1) = h(x)$ and thus
   \[
     \norm{x_2 - x_1} = t \norm{h(x_2) - h(x_1)} \leq t \sqrt{N} M
     \norm{x_2 - x_1}.
   \]
-  We then obtain $\norm{x_2 - x_1} < \norm{x_2 - x_1}$ if $t \sqrt{N} M < 1$, a
-  contradiction. Therefore, $g_t$ is injective for small $t$.
+  We then obtain $\norm{x_2 - x_1} < \norm{x_2 - x_1}$ if $t \sqrt{N} M <
+  1$, a contradiction. Therefore, $g_t$ is injective for small $t$.
 
-  Claim $g_t$ is also surjective for small $t$. Write $U_t = g_t(B(0, 1))$. We
-  hope to show $U_t = B(0, 1)$. If not, there exists $y_0 \in \dd U_t$ with
-  $y_0 \in B(0, 1)$. We can find $y_n \in U_t$ with $y_n \to y_0$, so there
-  exists $x_n \in B(0, 1)$ such that $y_n = g_t(x_n)$. Find subsequence
-  $x_{n_j} \to x_0 \in B[0, 1]$. Since $g_t$ continuous, $g(x_{n_j}) \to
-  g(x_0)$. Correspondingly $y_{n_j} \to g(x_0)$. This implies $y_0 \in
-  g_t(x_0)$. If $x_0 \in B(0, 1)$, then $y_0 \in U_t$, but $y_0 \in \dd U_t$,
-  contradiction. If $x_0 \in \dd B(0, 1)$, $y_0 = g_t(x_0) = x_0$ so $y_0 \in
-  \dd B(0, 1)$, contradicting $y_0 \in B(0, 1)$.
+  Claim $g_t$ is also surjective for small $t$. Write $U_t = g_t(B(0,
+  1))$. We hope to show $U_t = B(0, 1)$. If not, there exists $y_0 \in \dd
+  U_t$ with $y_0 \in B(0, 1)$. We can find $y_n \in U_t$ with $y_n \to
+  y_0$, so there exists $x_n \in B(0, 1)$ such that $y_n = g_t(x_n)$. Find
+  subsequence $x_{n_j} \to x_0 \in B[0, 1]$. Since $g_t$ continuous,
+  $g(x_{n_j}) \to g(x_0)$. Correspondingly $y_{n_j} \to g(x_0)$. This
+  implies $y_0 \in g_t(x_0)$. If $x_0 \in B(0, 1)$, then $y_0 \in U_t$,
+  but $y_0 \in \dd U_t$, contradiction. If $x_0 \in \dd B[0, 1]$, $y_0 =
+  g_t(x_0) = x_0$ so $y_0 \in \dd B[0, 1]$, contradicting $y_0 \in B(0,
+  1)$.
 
-  Finally, recall that $g_t(x) = x + t h(x)$, so $D g_t(x) = I_N + t Dh(x)$. By
-  contiuity, $\abs{D g_t(x)} \geq 1/2$ for small $t$. Define
+  Finally, recall that $g_t(x) = x + t h(x)$, so $D g_t(x) = I_N + t
+  Dh(x)$. By contiuity, $\abs{D g_t(x)} \geq 1/2$ for small $t$. Define
   \[
     p(t) = \int_{B(0, 1)} \abs{\det Dg_t(x)} \d x.
   \]
@@ -1307,11 +1332,24 @@ continuous and with compact support, but only need $f$ to be integrable.
   \[
     p(t) = \int_{B(0, 1)} \det (I_N + t Dh(x)) \d x.
   \]
-  This is a polynomial of degree at most $N$. However, $p$ is a constant for
-  $t$ small, so $p$ is a constant for all $t$. Recall that $\norm{g(x)}^2 = 1$
-  for all $x \in B(0, 1)$, namely $g(x) \cdot g(x) = 1$. Taking the derivative
-  gives $(Dg(x) v) \cdot g(x) = 0$ for all $\norm{v} = 1$. This shows that $D
-  g(x)$ cannot be invertible, so $p(1) = 0$.
+  This is a polynomial of degree at most $N$. However, $p$ is a constant
+  for $t$ small, so $p$ is a constant for all $t$. Recall that
+  $\norm{g(x)}^2 = 1$ for all $x \in B(0, 1)$, namely $g(x) \cdot g(x) =
+  1$. Taking the derivative gives $(Dg(x) v) \cdot g(x) = 0$ for all
+  $\norm{v} = 1$. This shows that $D g(x)$ cannot be invertible, so $p(1)
+  = 0$, a contradiction.
 \end{proof}
+
+\begin{ex}
+  Suppose $g : B[0, 1] \to B[0, 1]$ is $C^1$ such that $g(x) = x$ for all
+  $x \in \dd B[0, 1]$. Then, $g$ is surjective. [Hint: first consider the
+  case where $0 \notin g(B[0, 1])$ and derive a contradiction.]
+\end{ex}
+
+\begin{thm}
+  Let $X$ be a Hilbert space, $C \subset X$ closed and convex. Then for
+  every $x \in X$, there exists a unique $y \in C$ such that $\norm{x - y}
+  = \min_{z \in C} \norm{x - z}$.
+\end{thm}
 
 \end{document}
