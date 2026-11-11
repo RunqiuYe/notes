@@ -1269,7 +1269,7 @@ continuous and with compact support, but only need $f$ to be integrable.
 
 \subsection{Brouwer's fixed point theorem}
 
-\begin{thm}
+\begin{thm}[Brouwer's fixed point theorem]
   Let $K \subset \R^N$ be compact and convex and $g : K \to K$ be
   continuous. Then there is $x \in K$ such that $g(x) = x$, namely, $g$
   has a fixed point.
@@ -1352,5 +1352,91 @@ continuous and with compact support, but only need $f$ to be integrable.
   = \min_{z \in C} \norm{x - z}$. We can then define a function $\Pi : X
   \to C$ by $x \mapsto y$. Moreover, $\Pi$ is Lipshitz.
 \end{thm}
+
+\begin{proof}
+  First recall the parallelogram law: for all $x, y \in X$, we have
+  \[
+    \norm{x + y}^2 + \norm{x - y}^2 = 2 \norm{x}^2 + 2 \norm{y}^2.
+  \]
+  Let $d = \inf_{z \in C} \norm{x - z}$. By definition of infimum, find
+  sequence $z_n \in C$ such that $d \leq \norm{x - z_n} \leq d + n^{-1}$.
+  Claim $\seqinfn{z_n}$ is a Cauchy sequence. Parallelogram law with
+  $\frac{1}{2}(x - z_n)$ and $\frac{1}{2}(x - z_k)$ gives
+  \begin{align*}
+    \norm{\frac{x - z_n}{2} + \frac{x - z_k}{2}}^2
+    + \norm{\frac{x - z_n}{2} - \frac{x - z_k}{2}}^2
+     & = 2 \norm{\frac{x - z_n}{2}}^2 + 2 \norm{\frac{x - z_k}{2}}^2 \\
+     & = \frac{1}{2} \norm{x - z_n}^2
+    + \frac{1}{2} \norm{x - z_k}^2                                   \\
+     & \leq \frac{1}{2} (d + n^{-1})^2 + \frac{1}{2} (d + k^{-1})^2.
+  \end{align*}
+  On the other hand, $C$ is convex so $\frac{1}{2}(z_n + z_k) \in C$. It
+  follows that
+  \begin{align*}
+    \norm{\frac{x - z_n}{2} + \frac{x - z_k}{2}}^2
+    + \norm{\frac{x - z_n}{2} - \frac{x - z_k}{2}}^2
+     & = \norm{x - \frac{z_n + z_k}{2}}^2 + \frac{1}{4}
+    \norm{z_n - z_k}^2                                  \\
+     & \geq d^2 + \frac{1}{4} \norm{z_n - z_k}^2
+  \end{align*}
+  We then have
+  \[
+    d^2 + \frac{1}{4} \norm{z_n - z_k}^2
+    \leq \frac{1}{2} (d + n^{-1})^2 + \frac{1}{2} (d + k^{-1})^2.
+  \]
+  When $n, k \to \infty$, RHS approaches $d^2$, so $\norm{z_n - z_k} \to
+  0$. This shows that $\seqinfn{z_n}$ is Cauchy. Since $X$ is complete and
+  $C$ is closed, $z_n \to y$ for some $y \in C$, and $\norm{x - y} = d$.
+
+  For uniqueness, let $y, y_1 \in C$ such that $\dist(x, C) = \norm{x - y}
+  = \norm{x - y_1}$. Define sequence $z_n$ via $z_n = y$ if $n$ even and
+  $y_1$ otherwise. Notice we still have $d \leq \norm{x - z_n} \leq d +
+  n^{-1}$, so $\seqinfn{z_n}$ is Cauchy. Therefore, $y = y_1$.
+
+  Finally, we hope to show $\Pi$ is Lipshitz. Let $x \in X$, $z \in C$,
+  and $t \in (0, 1)$. Since $C$ is convex, $tz + (1 - t) \Pi(x) \in C$.
+  Moreover,
+  \begin{align*}
+    \norm{x - \Pi(x)}^2
+     & = \min_{w \in C} \norm{x - w}^2                 \\
+     & \leq \norm{x - (t z + (1 - t) \Pi(x))}^2        \\
+     & = \norm{x - \Pi(x) + t (\Pi(x) - z)}^2          \\
+     & = \norm{x - \Pi(x)}^2 + t^2 \norm{z - \Pi(x)}^2
+    + 2t \bra x - \Pi(x), \Pi(x) - z \ket.
+  \end{align*}
+  Hence,
+  \[
+    0 \leq t \norm{z - \Pi(x)}^2+ 2 \bra x - \Pi(x), \Pi(x) - z \ket.
+  \]
+  Letting $t \to 0^+$ gives $\bra x - \Pi(x), \Pi(x) - z \ket \geq 0$ for
+  all $z \in C$. Now let $x_1, x_2 \in X$, we have $\bra x_1 - \Pi(x_1),
+  \Pi(x_1) - z \ket \geq 0$ and $\bra x_2 - \Pi(x_2), \Pi(x_2) - z \ket
+  \geq 0$. Taking $z = \Pi(x_2)$ and $z = \Pi(x_1)$ respectively and
+  adding the two inequalities, we obtain
+  \begin{align*}
+    0
+     & \leq \bra x_1 - x_2 + \Pi(x_2) - \Pi(x_1), \Pi(x_2) - \Pi(x_1) \ket        \\
+     & = \bra x_1 - x_2, \Pi(x_1) - \Pi(x_2) \ket - \norm{\Pi(x_1) - \Pi(x_2)}^2.
+  \end{align*}
+  It follows that
+  \begin{align*}
+    \norm{\Pi(x_1) - \Pi(x_2)}^2
+    \leq \bra x_1 - x_2, \Pi(x_1) - \Pi(x_2) \ket
+    \leq \norm{x_1 - x_2} \norm{\Pi(x_1) - \Pi(x_2)}.
+  \end{align*}
+  Now it is clear that $\Pi$ is $1$-Lipschitz.
+\end{proof}
+
+Now we are ready to proof Brouwer's fixed point theorem.
+
+\begin{thm}[Brouwer's fixed point theorem]
+  Let $K \subset \R^N$ be compact and convex and $g : K \to K$ be
+  continuous. Then there is $x \in K$ such that $g(x) = x$, namely, $g$
+  has a fixed point.
+\end{thm}
+
+\begin{proof}
+  For step 1, suppose $K = B[0, 1]$.
+\end{proof}
 
 \end{document}
