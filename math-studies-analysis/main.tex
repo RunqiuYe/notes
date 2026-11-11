@@ -82,8 +82,7 @@ Carnegie Mellon University}
 \end{defi}
 
 \begin{thm}
-  Prove that the following are equivalent for
-  $E \subset X$:
+  Prove that the following are equivalent for $E \subset X$:
   \begin{enumerate}
     \item $E$ is nowhere dense
     \item $\bar{E}$ is nowhere dense
@@ -122,14 +121,12 @@ Carnegie Mellon University}
 \end{thm}
 
 \begin{proof}
-  Consider any $x \in X$ and arbitrary $\epsilon > 0$, it
-  suffices to show that $U_n \cap B(x, \epsilon)
-    \neq \emptyset$ for each $n \in \N$.
-  Now inductively choosing a sequence
-  $x_i \in X$ and $\epsilon_i > 0$ such that
-  for each $i \in \N$, $B[x_i, \epsilon_i] \subset U_i$,
-  $B[x_{i+1}, \epsilon_i] \subset B[x_i, \epsilon_i]
-    \subset B(x, \epsilon)$, and $\epsilon_i < 2^{-i} \epsilon$.
+  Consider any $x \in X$ and arbitrary $\epsilon > 0$, it suffices to show
+  that $U_n \cap B(x, \epsilon) \neq \emptyset$ for each $n \in \N$. Now
+  inductively choosing a sequence $x_i \in X$ and $\epsilon_i > 0$ such
+  that for each $i \in \N$, $B[x_i, \epsilon_i] \subset U_i$, $B[x_{i+1},
+  \epsilon_i] \subset B[x_i, \epsilon_i] \subset B(x, \epsilon)$, and
+  $\epsilon_i < 2^{-i} \epsilon$.
 
   Since $U_0$ is dense in $X$, $B(x, \epsilon) \cap U_0 \neq \emptyset$.
   Note that both $U_0$ and $B(x, \epsilon)$ are open, so we can choose
@@ -159,11 +156,10 @@ Carnegie Mellon University}
 \end{proof}
 
 \begin{remark}
-  An equivalent statement of the theorem is the following: \\
-  Let $X$ be a complete metric space and $\{C_n\}$ a countable
-  collection of closed subsets of $X$ such that $X =
-    \bigcup_{n \in \N} C_n $. Then at least one of the $C_n$
-  contains an open ball.
+  An equivalent statement of the theorem is the following: \\ Let $X$ be a
+  complete metric space and $\{C_n\}$ a countable collection of closed
+  subsets of $X$ such that $X = \bigcup_{n \in \N} C_n $. Then at least
+  one of the $C_n$ contains an open ball.
 \end{remark}
 
 \subsection{Open mapping theorem}
@@ -328,35 +324,31 @@ Carnegie Mellon University}
 \subsubsection*{Linear homeomorphisms, norm equivalence,
   and closed graphs}
 \begin{thm}
-  Let $X$ and $Y$ be Banach spaces and suppose that
-  $T \in \L(X,Y)$ is a bijection.  Prove that $T^{-1}
-    \in \L(Y,X)$, and in particular $T$ is a linear
-  (and thus bi-Lipschitz) homeomorphism.
+  Let $X$ and $Y$ be Banach spaces and suppose that $T \in \L(X,Y)$ is a
+  bijection. Prove that $T^{-1} \in \L(Y,X)$, and in particular $T$ is a
+  linear (and thus bi-Lipschitz) homeomorphism.
 \end{thm}
 
 \begin{proof}
-  Since $T \in \L(X, Y)$ is a bijection, $T$ is a surjection.
-  It follows that $T$ is an open map. In particular, for any
-  $U \subset X$ open, $T(U) = (T^{-1})^{-1}(U)$ is open. Therfore,
-  $T^{-1}$ is continuous and thus $T$ is a linear homeomorphism.
+  Since $T \in \L(X, Y)$ is a bijection, $T$ is a surjection. It follows
+  that $T$ is an open map. In particular, for any $U \subset X$ open,
+  $T(U) = (T^{-1})^{-1}(U)$ is open. Therfore, $T^{-1}$ is continuous and
+  thus $T$ is a linear homeomorphism.
 
 \end{proof}
 
 \begin{thm}
-  Let $X$ be a vector space that is complete when equipped
-  with both of the norms $\norm{\cdot}_1$ and
-  $\norm{\cdot}_2$.  Prove that if there exists a constant
-  $C_1>0$ such that $\norm{x}_2 \leq C_1 \norm{x}_1$ for all
-  $x \in X$, then there exists a constant $C_0 >0$ such that
-  $C_0 \norm{x}_1 \leq \norm{x}_2 \leq C_1 \norm{x}_1$ for all
-  $x \in X$.
+  Let $X$ be a vector space that is complete when equipped with both of
+  the norms $\norm{\cdot}_1$ and $\norm{\cdot}_2$. Prove that if there
+  exists a constant $C_1>0$ such that $\norm{x}_2 \leq C_1 \norm{x}_1$ for
+  all $x \in X$, then there exists a constant $C_0 >0$ such that $C_0
+  \norm{x}_1 \leq \norm{x}_2 \leq C_1 \norm{x}_1$ for all $x \in X$.
 \end{thm}
 
 \begin{proof}
-  Let $T: X_1 \to X_2$, where $X_1$ and $X_2$
-  are $X$ equipped with norms $\norm{\cdot}_1$ and $\norm{\cdot}_2$,
-  respectively, be the identity map. Then for any $x \in X$
-  with $\norm{x}_1 = 1$, we have
+  Let $T: X_1 \to X_2$, where $X_1$ and $X_2$ are $X$ equipped with norms
+  $\norm{\cdot}_1$ and $\norm{\cdot}_2$, respectively, be the identity
+  map. Then for any $x \in X$ with $\norm{x}_1 = 1$, we have
   \[
     \norm{T x}_2 = \norm{x}_2 \leq C_1 \norm{x}_1 = C_1.
   \]
@@ -371,9 +363,8 @@ Carnegie Mellon University}
 \end{proof}
 
 \begin{thm}
-  Let $X$ and $Y$ be Banach spaces and let $T : X \to Y$
-  be linear (just the algebraic condition).
-  Prove that the following are equivalent
+  Let $X$ and $Y$ be Banach spaces and let $T : X \to Y$ be linear (just
+  the algebraic condition). Prove that the following are equivalent
 \end{thm}
 \begin{enumerate}
   \item $T$ is continuous, i.e.\ $T \in \L(X;Y)$.
@@ -405,8 +396,8 @@ Carnegie Mellon University}
 
 \subsubsection*{Linear injections with closed range}
 \begin{thm}
-  Let $X$ and $Y$ be Banach spaces and $T \in \L(X,Y)$.
-  Prove the following are equivalent.
+  Let $X$ and $Y$ be Banach spaces and $T \in \L(X,Y)$. Prove the
+  following are equivalent.
   \begin{enumerate}
     \item $T$ is injective and $\ran(T)$ is closed.
     \item $T : X \to \ran(T)$ is a linear homeomorphism.
@@ -451,8 +442,8 @@ Carnegie Mellon University}
 \end{proof}
 
 \begin{thm}
-  Let $X$ and $Y$ be Banach spaces over a common field.
-  Then, the following subsets of $\L(X; Y)$ are open:
+  Let $X$ and $Y$ be Banach spaces over a common field. Then, the
+  following subsets of $\L(X; Y)$ are open:
   \begin{enumerate}
     \item $\left\{ T \in \L(X; Y) : \text{$T$ is surjective} \right\}$,
     \item $\left\{ T \in \L(X; Y) : \text{$T$ is injective with closed range} \right\}$,
@@ -524,7 +515,8 @@ Carnegie Mellon University}
 \end{proof}
 
 \begin{thm}
-  Let $X$ and $Y$ be Banach spaces over a common field. Then the following holds.
+  Let $X$ and $Y$ be Banach spaces over a common field. Then the following
+  holds.
   \begin{enumerate}
     \item The sets
           \[
@@ -736,8 +728,8 @@ Carnegie Mellon University}
 Next we show some useful implications of Hahn-Banach theorem.
 
 \begin{thm}
-  Let $X$ be a normed vector space and fix $x \in X$. Then
-  the following holds:
+  Let $X$ be a normed vector space and fix $x \in X$. Then the following
+  holds:
   \begin{enumerate}
     \item There exists $\lambda \in X^*$ such that $\norm{\lambda} =
           \norm{x}$ and
@@ -768,19 +760,15 @@ Next we show some useful implications of Hahn-Banach theorem.
 \end{proof}
 
 \begin{prop}
-  Let $X$ be normed vector space. Then the mapping
-  $\bra \cdot, \cdot \ket : X^* \times X \to \F$ by
-  $(w, x) \mapsto w(x)$ is a bilinear map. That is,
-  $\bra \cdot , \cdot \ket \in \L(X^*, X ; \F)$.
-  Moreover,
-  if $X \neq \left\{ 0 \right\}$,
-  then $\norm{\bra \cdot, \cdot \ket}
-    = 1$.
+  Let $X$ be normed vector space. Then the mapping $\bra \cdot, \cdot \ket
+  : X^* \times X \to \F$ by $(w, x) \mapsto w(x)$ is a bilinear map. That
+  is, $\bra \cdot , \cdot \ket \in \L(X^*, X ; \F)$. Moreover, if $X \neq
+  \left\{ 0 \right\}$, then $\norm{\bra \cdot, \cdot \ket} = 1$.
 \end{prop}
 
 \begin{proof}
-  It is easy to see that $\bra \cdot, \cdot \ket$ is
-  bilinear.  For boundedness,
+  It is easy to see that $\bra \cdot, \cdot \ket$ is bilinear. For
+  boundedness,
   \[
     \abs{\bra w, x \ket} = \abs{w(x)} \leq \norm{w} \norm{x}.
   \]
@@ -842,9 +830,8 @@ Next we show some useful implications of Hahn-Banach theorem.
 \end{proof}
 
 \begin{thm}
-  Let $X$ be normed vector space and define $J: X \to X^{**}$
-  by $\braket{Jx, w} = \braket{w, x} = w(x)$. Then the following
-  holds:
+  Let $X$ be normed vector space and define $J: X \to X^{**}$ by
+  $\braket{Jx, w} = \braket{w, x} = w(x)$. Then the following holds:
   \begin{enumerate}
     \item $J \in \L(X, X^{**})$.
     \item $J$ is an isometric embedding. In particular, it is
@@ -1090,12 +1077,10 @@ It follows that $y = f(x)$. Since $y \in B_Y [0, \gamma r]$ is
   all $0 \leq r \leq r_0$, completing the proof for the theorem.
 
 \begin{remark}
-  The argument in step 3 is in fact \textbf{Newton's method}.
-  The idea is as follows: Suppose $f : X \to Y$ is $C^1$
-  and $Df(x)$ is an isomophism for all $x$. Say we want to
-  solve the equation $y = f(x)$ for $x$ and we know $y_0
-    = f(x_0)$ and $y \approx y_0$.
-  Now we have
+  The argument in step 3 is in fact \textbf{Newton's method}. The idea is
+  as follows: Suppose $f : X \to Y$ is $C^1$ and $Df(x)$ is an isomophism
+  for all $x$. Say we want to solve the equation $y = f(x)$ for $x$ and we
+  know $y_0 = f(x_0)$ and $y \approx y_0$. Now we have
   \[
     \begin{aligned}
       y = f(x_0) + Df(x_0) (x - x_0)
@@ -1132,10 +1117,9 @@ It follows that $y = f(x)$. Since $y \in B_Y [0, \gamma r]$ is
 \end{defi}
 
 \begin{thm}
-  Let $X$ and $Y$ be Banach spaces and $\emptyset \neq U \subset X$
-  open.  Suppose $f \in C^k(U; Y)$ for some $k \geq 1$ and
-  $f$ is a homeomorphism from $U$ to $f(U)$. Then the following
-  are equivalent:
+  Let $X$ and $Y$ be Banach spaces and $\emptyset \neq U \subset X$ open.
+  Suppose $f \in C^k(U; Y)$ for some $k \geq 1$ and $f$ is a homeomorphism
+  from $U$ to $f(U)$. Then the following are equivalent:
   \begin{enumerate}
     \item $f$ is a $C^k$ diffeomorphism.
     \item $Df(x) \in \L(X; Y)$ is an isomorphism for all $x \in U$.
@@ -1898,14 +1882,12 @@ $W$ you're after; you may need to shrink it.
 Below is a naming sanity check for the constant rank theorem.
 
 \begin{thm}
-  Let $X = \F^{n+r}$ and $Y = \F^{m+r}$ for $1\le m,n,r$.
-  Suppose that $U \subset X$ is open with $x_0 \in U$,
-  and $f \in C^k(U;Y)$ for $1 \le k \le \infty$.
-  Write  $\ker Df(x_0) = X_0$ and $\ran Df(x_0) = Y_0$.
-  In finite dimensions all subspaces are closed and
-  complemented, so we write $X = X_0 \oplus X_1$ and
-  $Y = Y_0 \oplus Y_1$.  Prove that the following are
-  equivalent.
+  Let $X = \F^{n+r}$ and $Y = \F^{m+r}$ for $1\le m,n,r$. Suppose that $U
+  \subset X$ is open with $x_0 \in U$, and $f \in C^k(U;Y)$ for $1 \le k
+  \le \infty$. Write $\ker Df(x_0) = X_0$ and $\ran Df(x_0) = Y_0$. In
+  finite dimensions all subspaces are closed and complemented, so we write
+  $X = X_0 \oplus X_1$ and $Y = Y_0 \oplus Y_1$. Prove that the following
+  are equivalent.
   \begin{enumerate}
     \item There exists an open set $x_0 \in \tilde{U} \subset U$ such that
           $\operatorname{rank} Df(x) = r$ for all $x \in \tilde{U}$.
@@ -1976,14 +1958,11 @@ Below is a naming sanity check for the constant rank theorem.
 
 We define now a nonlinear version of linear dependence.
 \begin{defi}
-  Assume that $m,n \in \N^+$.  Let
-  $\emptyset \neq U \subset \R^n$, and suppose that
-  $f_i: U \to \R$ for $i=1,\dots,m$.  Write
-  $f: U \to \R^m$ via $f = (f_1,\dots,f_m)$.
-  We say that $\{f_1,\dots,f_m\}$ are functionally
-  dependent in $U$ if there exists an open set
-  $V \subset \R^m$ with $f(U) \subset V$ and
-  a function $g \in C^1(V;\R)$ such that
+  Assume that $m,n \in \N^+$. Let $\emptyset \neq U \subset \R^n$, and
+  suppose that $f_i: U \to \R$ for $i=1,\dots,m$. Write $f: U \to \R^m$
+  via $f = (f_1,\dots,f_m)$. We say that $\{f_1,\dots,f_m\}$ are
+  functionally dependent in $U$ if there exists an open set $V \subset
+  \R^m$ with $f(U) \subset V$ and a function $g \in C^1(V;\R)$ such that
   \[
     g(f_1(x),\dots,f_m(x)) =0 \text{ for all } x\in U
   \]
@@ -1991,8 +1970,7 @@ We define now a nonlinear version of linear dependence.
 \end{defi}
 
 \begin{thm}
-  Let $\emptyset \neq U \subset \R^n$ and $f \in
-    C^1(U;\R^m)$.
+  Let $\emptyset \neq U \subset \R^n$ and $f \in C^1(U;\R^m)$.
 
   \begin{enumerate}
 
@@ -2216,20 +2194,17 @@ We define now a nonlinear version of linear dependence.
 \end{defi}
 
 \begin{defi}
-  Let $A \neq \emptyset$ be a set and $X_\alpha$ be sets
-  with $\sigma$-algebra $\mf_\alpha$ for all
-  $\alpha \in A$. Then on the set $X = \prod_\alpha X_\alpha$
-  we define the \textbf{product $\sigma$-algbera}
-  $\bigotimes_\alpha \mf_\alpha$ to be the
-  pull-back of projection maps
+  Let $A \neq \emptyset$ be a set and $X_\alpha$ be sets with
+  $\sigma$-algebra $\mf_\alpha$ for all $\alpha \in A$. Then on the set $X
+  = \prod_\alpha X_\alpha$ we define the \textbf{product $\sigma$-algbera}
+  $\bigotimes_\alpha \mf_\alpha$ to be the pull-back of projection maps
   $\pi_\alpha : X \to X_\alpha$.
 \end{defi}
 {
   \begin{thm}
-    Let $A \neq \emptyset$ be a set and $X_\alpha$
-    with $\sigma$-algebra $\mf_\alpha$ for all $\alpha
-      \in A$. Let $X = \prod_\alpha X_\alpha$ and
-    define
+    Let $A \neq \emptyset$ be a set and $X_\alpha$ with $\sigma$-algebra
+    $\mf_\alpha$ for all $\alpha \in A$. Let $X = \prod_\alpha X_\alpha$
+    and define
     \[
       \mathcal{R} = \left\{ \prod_\alpha M_\alpha:
       M_\alpha \in \mf_\alpha \right\}.
@@ -2337,19 +2312,17 @@ We define now a nonlinear version of linear dependence.
 \end{cor}
 
 \begin{thm}
-  Let $X_1, \dots, X_n$ be metric spaces and
-  $X = \prod_{i=1}^n X_i$ be equipped with the ususal
-  metric. Then, $\bigotimes_{i=1}^n \bfk_{X_i} \subset
-    \bfk_X$. However, if each $X_i$ is separable,
-  then $\bfk_X = \bigotimes_{i=1}^n \bfk_{X_i}$.
+  Let $X_1, \dots, X_n$ be metric spaces and $X = \prod_{i=1}^n X_i$ be
+  equipped with the ususal metric. Then, $\bigotimes_{i=1}^n \bfk_{X_i}
+  \subset \bfk_X$. However, if each $X_i$ is separable, then $\bfk_X =
+  \bigotimes_{i=1}^n \bfk_{X_i}$.
 \end{thm}
 
 \begin{proof}
-  We know by the previous theorem that
-  $\bigotimes_{i=1}^n \bfk_{X_i}$ is generated
-  by $\left\{ \prod_i U_i : U_i \subset X_i \text{ open}
-    \right\}$. However, $\prod_i U_i$ is open in $X$.
-  Therefore, $\bigotimes_{i=1}^n \bfk_{X_i} \subset \bfk_X$.
+  We know by the previous theorem that $\bigotimes_{i=1}^n \bfk_{X_i}$ is
+  generated by $\left\{ \prod_i U_i : U_i \subset X_i \text{ open}
+  \right\}$. However, $\prod_i U_i$ is open in $X$. Therefore,
+  $\bigotimes_{i=1}^n \bfk_{X_i} \subset \bfk_X$.
 
   Suppose now each $X_i$ is separable and let $D_i \subset X_i$ be
   countable and dense. Consider
@@ -2367,8 +2340,8 @@ We define now a nonlinear version of linear dependence.
 \end{proof}
 
 \begin{remark}
-  The above theorem is not true in general
-  if $X_i$ is not separable for some $i$.
+  The above theorem is not true in general if $X_i$ is not separable for
+  some $i$.
 \end{remark}
 
 \begin{defi}
@@ -2399,8 +2372,8 @@ We define now a nonlinear version of linear dependence.
 \end{thm}
 
 \begin{thm}
-  Let $X$ and $Y$ be metric spaces and $f: X \to Y$ be
-  continuous. Then the following holds:
+  Let $X$ and $Y$ be metric spaces and $f: X \to Y$ be continuous. Then
+  the following holds:
   \begin{enumerate}
     \item $E \in \fs(Y)$ implies that $f^{-1}(E) \in \fs(X)$,
           and $E \in \gd(Y)$ implies that $f^{-1}(E) \in \gd(X)$.
@@ -2410,8 +2383,7 @@ We define now a nonlinear version of linear dependence.
 \end{thm}
 
 \begin{thm}
-  Let $X$ and $Y$ be metric spaces with $X$ $\sigma$-compact.
-  Then,
+  Let $X$ and $Y$ be metric spaces with $X$ $\sigma$-compact. Then,
   \begin{enumerate}
     \item If $E \in \fs(X)$ and $f : E \to Y$ is continuous, then $f(E)
           \in \fs(Y)$ and $\sigma$-compact.
@@ -2428,9 +2400,8 @@ We define now a nonlinear version of linear dependence.
 \end{cor}
 
 \begin{proof}
-  We know $V \subset X$ open if and only if $V = X \cap U$
-  for some $U$ open in $Y$.
-  Therefore,
+  We know $V \subset X$ open if and only if $V = X \cap U$ for some $U$
+  open in $Y$. Therefore,
   \[
     \left\{ V \subset X: \text{$V$ open in $X$}
     \right\} \subset \bfk(Y)_X.
@@ -2459,15 +2430,13 @@ We define now a nonlinear version of linear dependence.
 \end{defi}
 
 \begin{defi}
-  We say $(X, \mf, \mu)$ is \textbf{finite} if
-  $\mu(X) < \infty$. We say $(X, \mf, \mu)$ is
-  \textbf{$\sigma$-finite} if $X = \cupinfn X_n$ for
+  We say $(X, \mf, \mu)$ is \textbf{finite} if $\mu(X) < \infty$. We say
+  $(X, \mf, \mu)$ is \textbf{$\sigma$-finite} if $X = \cupinfn X_n$ for
   $X_n \in \mf$ and $\mu(X_n) < \infty$.
 \end{defi}
 
 \begin{thm}
-  Let $(X, \mf, \mu)$ be a measure space. Then the
-  following holds:
+  Let $(X, \mf, \mu)$ be a measure space. Then the following holds:
   \begin{enumerate}
     \item If $E$ and $F$ is measurable and $E \subset F$, then $\mu(E)
           \leq \mu(F)$.
@@ -2491,11 +2460,10 @@ We define now a nonlinear version of linear dependence.
 \end{defi}
 
 \begin{prop}
-  Let $\om_\alpha: \P(X) \to [0, \infty]$ be an outer
-  measure for all $\alpha \in A \neq \emptyset$.
-  Then $\lambda: \P(X) \to [0, \infty]$ defined by
-  $\lambda(E) = \sup_{\alpha \in A} \om_\alpha(E)$
-  is an outer measure.
+  Let $\om_\alpha: \P(X) \to [0, \infty]$ be an outer measure for all
+  $\alpha \in A \neq \emptyset$. Then $\lambda: \P(X) \to [0, \infty]$
+  defined by $\lambda(E) = \sup_{\alpha \in A} \om_\alpha(E)$ is an outer
+  measure.
 \end{prop}
 
 \begin{proof}
@@ -2519,9 +2487,8 @@ We define now a nonlinear version of linear dependence.
 \end{proof}
 
 \begin{defi}
-  Let $X$ be a set with outer measure $\om$. Say
-  a set $E \subset X$ is measurable with respect to
-  $\om$ if
+  Let $X$ be a set with outer measure $\om$. Say a set $E \subset X$ is
+  measurable with respect to $\om$ if
   \[
     \om(A) = \om(A \cap E) + \om(A \cap E^c)
   \]
@@ -2548,16 +2515,14 @@ We define now a nonlinear version of linear dependence.
 \end{defi}
 
 \begin{prop}
-  Let $\om$ be an outer measure on $X$. Then $\om$
-  is outer-regular if and only if for any $A \subset X$,
-  $\om(A) = \inf \left\{ \mu(E) : A \subset E \in
-    \mf \right\}$. In either case, the inf is a min.
+  Let $\om$ be an outer measure on $X$. Then $\om$ is outer-regular if and
+  only if for any $A \subset X$, $\om(A) = \inf \left\{ \mu(E) : A \subset
+  E \in \mf \right\}$. In either case, the inf is a min.
 \end{prop}
 
 \begin{prop}
-  Let $X$ be a set with cover-regular outer measure
-  $\om$. Suppose for $n \in \N$, we have $A_n \subset
-    A_{n+1}$. Then,
+  Let $X$ be a set with cover-regular outer measure $\om$. Suppose for $n
+  \in \N$, we have $A_n \subset A_{n+1}$. Then,
   \[
     \om \left( \cupinfn A_n \right)
     = \lim_{n \to \infty} \om(A_n).
@@ -2565,9 +2530,8 @@ We define now a nonlinear version of linear dependence.
 \end{prop}
 
 \begin{proof}
-  First note that $\om(A_n) \leq \om(A_{n+1})
-    \leq \om(A)$, where $A = \cupinfn A_n$.
-  Therefore,
+  First note that $\om(A_n) \leq \om(A_{n+1}) \leq \om(A)$, where $A =
+  \cupinfn A_n$. Therefore,
   \[
     \lim_{n \to \infty} \om(A_n) \leq \om(A).
   \]
@@ -2601,15 +2565,14 @@ We define now a nonlinear version of linear dependence.
 \subsubsection{Constructing outer measures}
 
 \begin{defi}
-  Let $X$ be a set. A gauge on $X$ is a pair $(\ecal, \gamma)$
-  where $\ecal \subset \P(X)$ is such that $\emptyset
-    \in \ecal$ and $\gamma : \ecal \to [0, \infty]$
-  is such that $\gamma(\emptyset) = 0$.
+  Let $X$ be a set. A gauge on $X$ is a pair $(\ecal, \gamma)$ where
+  $\ecal \subset \P(X)$ is such that $\emptyset \in \ecal$ and $\gamma :
+  \ecal \to [0, \infty]$ is such that $\gamma(\emptyset) = 0$.
 \end{defi}
 
 \begin{thm}
-  Let $X$ be a set and $(\ecal, \gamma)$ be a gauge on $X$.
-  Define $\om: \P(X) \to [0, \infty]$ via
+  Let $X$ be a set and $(\ecal, \gamma)$ be a gauge on $X$. Define $\om:
+  \P(X) \to [0, \infty]$ via
   \[
     \om(E) = \inf \left\{ \suminfn \gamma(E_n):
     E \subset \cupinfn E_n \text{ and }
@@ -2624,11 +2587,10 @@ We define now a nonlinear version of linear dependence.
 \end{proof}
 
 \begin{thm}
-  Let $(X,d)$ be a metric space and $\mu^*$ be an outer
-  measure on $X$. Write $\mf$ for the $\sigma$-algebra of
-  sets that are measurable with respect to $\mu^*$. Then
-  $\bfk(X) \subset \mf$ if and only if $\om$ is a metric
-  outer measure.
+  Let $(X,d)$ be a metric space and $\mu^*$ be an outer measure on $X$.
+  Write $\mf$ for the $\sigma$-algebra of sets that are measurable with
+  respect to $\mu^*$. Then $\bfk(X) \subset \mf$ if and only if $\om$ is a
+  metric outer measure.
 \end{thm}
 
 \begin{proof}
@@ -2698,10 +2660,10 @@ We define now a nonlinear version of linear dependence.
 \end{proof}
 
 \begin{thm}
-  Let $(X, d)$ be a metric space with gauge $(\ecal, \gamma)$
-  and outer measures $\om_\delta: \P(X) \to [0, \infty]$
-  produced by $(\ecal_\delta, \gamma_\delta)$ for $\delta > 0$.
-  Define $\om_d : \P(X) \to [0, \infty]$ by
+  Let $(X, d)$ be a metric space with gauge $(\ecal, \gamma)$ and outer
+  measures $\om_\delta: \P(X) \to [0, \infty]$ produced by $(\ecal_\delta,
+  \gamma_\delta)$ for $\delta > 0$. Define $\om_d : \P(X) \to [0, \infty]$
+  by
   \[
     \om_d(A) = \sup_{\delta > 0} \om_d (A).
   \]
@@ -2714,13 +2676,12 @@ We define now a nonlinear version of linear dependence.
 \end{proof}
 
 \begin{defi}
-  We call $\om_d$ the metric outer measure generated
-  by $(\ecal, \gamma)$.
+  We call $\om_d$ the metric outer measure generated by $(\ecal, \gamma)$.
 \end{defi}
 
 \begin{lemma}
-  Let $X$ be a set with gauge $(\ecal, \gamma)$ that covers
-  $X$. Let $A \subset X$, then the following holds:
+  Let $X$ be a set with gauge $(\ecal, \gamma)$ that covers $X$. Let $A
+  \subset X$, then the following holds:
   \begin{enumerate}
     \item Let $\om$ be the outer measure generated by $(\ecal, \gamma)$.
           Then there exists collection $\left\{ E_{m,n} \right\}_{m, n=
@@ -2736,15 +2697,13 @@ We define now a nonlinear version of linear dependence.
 \end{lemma}
 
 \begin{proof}
-  The proof for (1) is very similar to the proof for (2),
-  so we only show (2) as follows.
-  Since the gauge is fine, $(\ecal_\delta, \gamma_\delta)$
-  covers $X$ for all $\delta > 0$. Then, for any $m \in \N$,
-  there exists $\left\{ E_{m, n} \right\}_{n} \subset
-    \ecal_{2^{-m}}$ such that $A \subset \cupinfn E_{m, n}$
-  and $\suminfn \gamma(E_{m, n}) \leq \om_{2^{-m}}(A) + 2^{-m}$.
-  Now let $E = \capinfm \cupinfn E_{m, n}$. Note that
-  $A \subset E$ and for any $m \in \N$, we have
+  The proof for (1) is very similar to the proof for (2), so we only show
+  (2) as follows. Since the gauge is fine, $(\ecal_\delta, \gamma_\delta)$
+  covers $X$ for all $\delta > 0$. Then, for any $m \in \N$, there exists
+  $\left\{ E_{m, n} \right\}_{n} \subset \ecal_{2^{-m}}$ such that $A
+  \subset \cupinfn E_{m, n}$ and $\suminfn \gamma(E_{m, n}) \leq
+  \om_{2^{-m}}(A) + 2^{-m}$. Now let $E = \capinfm \cupinfn E_{m, n}$.
+  Note that $A \subset E$ and for any $m \in \N$, we have
   \[
     \om_{2^{-m}} (E) \leq \om_{2^{-m}} \left( \cupinfn E_{m, n} \right)
     \leq \suminfn \gamma(E_{m, n}) \leq \om_{2^{-m}} (A) + 2^{-m}.
@@ -2758,9 +2717,9 @@ We define now a nonlinear version of linear dependence.
 \end{proof}
 
 \begin{thm}
-  Let $(X, d)$ be metric space with $(\ecal, \gamma)$ such that
-  all sets in $\ecal$ are open. Assume that $\mu^*$ is a metric
-  outer measure on $X$ such that either
+  Let $(X, d)$ be metric space with $(\ecal, \gamma)$ such that all sets
+  in $\ecal$ are open. Assume that $\mu^*$ is a metric outer measure on
+  $X$ such that either
 
   \begin{enumerate}
     \item $\mu^*$ is generated by $(\ecal, \gamma)$, or
@@ -2902,12 +2861,11 @@ We define now a nonlinear version of linear dependence.
 \end{proof}
 
 \begin{lemma}
-  Suppose $(X, d)$ metric space with metric outer measure
-  $\om$. Suppose $X = \cupinfn V_n$ for $V_n \subset X$ open and
-  $\om(V_n) < \infty$. Suppose $E \subset G \in \gd(X)$ such that
-  $\om(G \setminus E) = 0$. Then for each $\epsilon > 0$,
-  there exists open $U \subset X$ such that $E \subset U$
-  and $\om(U \setminus E) < \epsilon$.
+  Suppose $(X, d)$ metric space with metric outer measure $\om$. Suppose
+  $X = \cupinfn V_n$ for $V_n \subset X$ open and $\om(V_n) < \infty$.
+  Suppose $E \subset G \in \gd(X)$ such that $\om(G \setminus E) = 0$.
+  Then for each $\epsilon > 0$, there exists open $U \subset X$ such that
+  $E \subset U$ and $\om(U \setminus E) < \epsilon$.
 
 \end{lemma}
 
@@ -3025,9 +2983,8 @@ We define now a nonlinear version of linear dependence.
 \end{defi}
 
 \begin{thm}
-  Let $(X, \mf)$ be measure space and $Y$ be metric space,
-  $f : X \to Y$. The following are equivalent for
-  $f: X \to Y$:
+  Let $(X, \mf)$ be measure space and $Y$ be metric space, $f : X \to Y$.
+  The following are equivalent for $f: X \to Y$:
   \begin{enumerate}
     \item $f$ is $(\mf, \bfk(Y))$ measurable and
           separably valued.
@@ -3080,8 +3037,8 @@ We define now a nonlinear version of linear dependence.
 \end{defi}
 
 \begin{thm}
-  Let $(X, \mf, \mu)$ be a measure space. Let $Y$ be a
-  metric space, $f: X \to Y$. The following are equivalent:
+  Let $(X, \mf, \mu)$ be a measure space. Let $Y$ be a metric space, $f: X
+  \to Y$. The following are equivalent:
   \begin{enumerate}
     \item There exists $\seqinfn{\psi_n} \subset S(X; Y)$ such that
           $\psi_n \to f$ pointwise a.e.\ in $X$.
@@ -3149,8 +3106,7 @@ We define now a nonlinear version of linear dependence.
 \end{defi}
 
 \begin{defi}
-  Let $(X, \mf, \mu)$ be a measure space and $Y$ be a metric
-  space.
+  Let $(X, \mf, \mu)$ be a measure space and $Y$ be a metric space.
   \begin{enumerate}
     \item We say $f : X \to Y$ is \textbf{almost measurable} if $f = F$
           a.e.\ with $F: X \to Y$ is measurable.
@@ -3171,12 +3127,11 @@ We define now a nonlinear version of linear dependence.
 \end{defi}
 
 \begin{eg}
-  Let $X = \left\{ 1,2,3 \right\}$ and $\mf =
-    \left\{ \emptyset, \left\{ 1, 2 \right\},
-    \left\{ 3 \right\}, \left\{ 1, 2, 3 \right\} \right\}$.
-  Let $f, g: X \to \R$ via $f(x) = x$ and $g(x) = 3$.
-  Then $f$ is not measure since $f^{-1} (\left\{ 1 \right\})
-    = \left\{ 1 \right\} \notin \mf$ but $g$ is measurable.
+  Let $X = \left\{ 1,2,3 \right\}$ and $\mf = \left\{ \emptyset, \left\{
+  1, 2 \right\}, \left\{ 3 \right\}, \left\{ 1, 2, 3 \right\} \right\}$.
+  Let $f, g: X \to \R$ via $f(x) = x$ and $g(x) = 3$. Then $f$ is not
+  measure since $f^{-1} (\left\{ 1 \right\}) = \left\{ 1 \right\} \notin
+  \mf$ but $g$ is measurable.
 
   Now equip $(X, \mf)$ with the measure $\delta_3$. Then, $f = g$ a.e.\
   This shows that equality almost everywhere does not preserve
@@ -3187,8 +3142,8 @@ We define now a nonlinear version of linear dependence.
 This brings us to the next theorem.
 
 \begin{thm}
-  Let $(X, \mf, \mu)$ be a measure space. Then the following
-  are equivalent:
+  Let $(X, \mf, \mu)$ be a measure space. Then the following are
+  equivalent:
   \begin{enumerate}
     \item $(X, \mf, \mu)$ is complete.
     \item If $(Y, \nf)$ is a measure space, $f, g : X \to Y$, $f$ is
@@ -3241,8 +3196,8 @@ This brings us to the next theorem.
 \end{cor}
 
 \begin{prop}
-  Let $(X, \mf, \mu)$ be a measure space and $Y$ be a metric
-  space. The following holds:
+  Let $(X, \mf, \mu)$ be a measure space and $Y$ be a metric space. The
+  following holds:
   \begin{enumerate}
     \item Let $f, g: X \to Y$. If $f$ is $\mu$-measurable and $f = g$
           a.e.\, then $g$ is $\mu$-measurable.
@@ -3268,9 +3223,8 @@ This brings us to the next theorem.
 \end{proof}
 
 \begin{thm}
-  Let $(X,\mf, \mu)$ be a measure space and
-  $Y$ be a normed vector space with $V \neq \left\{ 0
-    \right\}$. Then the following are equivalent:
+  Let $(X,\mf, \mu)$ be a measure space and $Y$ be a normed vector space
+  with $V \neq \left\{ 0 \right\}$. Then the following are equivalent:
   \begin{enumerate}
     \item $(X, \mf, \mu)$ is $\sigma$-finite.
     \item If $f: X \to Y$ is $\mu$-measurable, then $f$ is strongly
@@ -3443,9 +3397,8 @@ Banach-valued maps.
 \subsection{Lebesgue-Bochner Integral}
 
 \begin{lemma}
-  Let $(X, \mf, \mu)$ be a measure space and
-  $Y \in \left\{ V, [0, \infty] \right\}$.
-  Let $\psi: X \to Y$ be simple such that
+  Let $(X, \mf, \mu)$ be a measure space and $Y \in \left\{ V, [0, \infty]
+  \right\}$. Let $\psi: X \to Y$ be simple such that
   \[
     \psi = \sum_{i=1}^I \alpha_i \chi_{E_i}
     = \sum_{j=1}^J \beta_j \chi_{F_j}.
@@ -3465,9 +3418,8 @@ Banach-valued maps.
 \end{lemma}
 
 \begin{prop}
-  Let $(X, \mf, \mu)$ be a measure space and
-  $Y \in \left\{ V, [0, \infty] \right\}$.
-  Then the following holds:
+  Let $(X, \mf, \mu)$ be a measure space and $Y \in \left\{ V, [0, \infty]
+  \right\}$. Then the following holds:
   \begin{enumerate}
     \item If $Y = V$, then
           \[
@@ -3546,9 +3498,8 @@ Note that if $(X, \mf, \mu)$ is a measure space and $\phi \in S(X; [0,
 \]
 
 \begin{defi}
-  Let $(X, \mf, \mu)$ be a measure space. Let
-  $f : X \to [0, \infty]$ be $\mu$-measurable. We
-  define
+  Let $(X, \mf, \mu)$ be a measure space. Let $f : X \to [0, \infty]$ be
+  $\mu$-measurable. We define
   \[
     \int_X f \d\mu =
     \sup \left\{ \int_X \psi \d\mu:
@@ -3561,8 +3512,7 @@ Note that if $(X, \mf, \mu)$ is a measure space and $\phi \in S(X; [0,
 \end{defi}
 
 \begin{remark}
-  There are two remarks with regard to the definition
-  above.
+  There are two remarks with regard to the definition above.
   \begin{enumerate}
     \item In principle we do not need $f$ to be $\mu$-measurable here. We
           build this into the definition because the resulting integral is
@@ -3575,8 +3525,8 @@ Note that if $(X, \mf, \mu)$ is a measure space and $\phi \in S(X; [0,
 \end{remark}
 
 \begin{thm}
-  Let $(X, \mf, \mu)$ be a measure space, $f, g : X \to [0, \infty]$
-  be $\mu$-measurable functions. The following holds:
+  Let $(X, \mf, \mu)$ be a measure space, $f, g : X \to [0, \infty]$ be
+  $\mu$-measurable functions. The following holds:
   \begin{enumerate}
     \item For $\alpha \in [0, \infty)$, we have
           \[
@@ -3602,8 +3552,8 @@ Note that if $(X, \mf, \mu)$ is a measure space and $\phi \in S(X; [0,
 \end{thm}
 
 \begin{proof}
-  Follow directly from corresponding results in $S(X; [0, \infty])$
-  and the definition of $\int_X f \d \mu$.
+  Follow directly from corresponding results in $S(X; [0, \infty])$ and
+  the definition of $\int_X f \d \mu$.
 \end{proof}
 
 \begin{thm}[Monotone convergence theorem, basic version]
@@ -3620,8 +3570,8 @@ Note that if $(X, \mf, \mu)$ is a measure space and $\phi \in S(X; [0,
 \end{thm}
 
 \begin{proof}
-  We already know $f$ is measurable. Also, $f_n \leq f_{n+1}
-    \leq f$ on $X$, so
+  We already know $f$ is measurable. Also, $f_n \leq f_{n+1} \leq f$ on
+  $X$, so
   \[
     \int_X f_n \d \mu \leq \int_X f_{n+1} \d \mu \leq
     \int_X f \d \mu.
@@ -3668,24 +3618,20 @@ Note that if $(X, \mf, \mu)$ is a measure space and $\phi \in S(X; [0,
 \end{proof}
 
 \begin{thm}
-  Let $(X, \mf, \mu)$ be measure space, $f, g : X \to [0, \infty]$
-  be $\mu$-measurable. Then
+  Let $(X, \mf, \mu)$ be measure space, $f, g : X \to [0, \infty]$ be
+  $\mu$-measurable. Then
   \[
     \int_X (f + g) \d \mu = \int_X f \d \mu + \int_X g \d \mu.
   \]
 \end{thm}
 
 \begin{proof}
-  Recall that $\mu$-measurable functions are almost
-  measurable. Choose measurable functions
-  $F, G : X \to [0, \infty]$ such that $f = F$
-  and $g = G$ a.e.\ We may then choose
-  $\seqinfn{\phi_n}, \seqinfn{\psi_n} \subset S(X; [0, \infty])$
-  such that $\lim_{n \to \infty} \phi_n = F$
-  and $\lim_{n \to \infty} \psi_n = G$,
-  $0 \leq \phi_n \leq \phi_{n+1} \leq F$
-  and $0 \leq \psi_n \leq \psi_{n+1} \leq G$.
-  Then
+  Recall that $\mu$-measurable functions are almost measurable. Choose
+  measurable functions $F, G : X \to [0, \infty]$ such that $f = F$ and $g
+  = G$ a.e.\ We may then choose $\seqinfn{\phi_n}, \seqinfn{\psi_n}
+  \subset S(X; [0, \infty])$ such that $\lim_{n \to \infty} \phi_n = F$
+  and $\lim_{n \to \infty} \psi_n = G$, $0 \leq \phi_n \leq \phi_{n+1}
+  \leq F$ and $0 \leq \psi_n \leq \psi_{n+1} \leq G$. Then
   \[
     0 \leq \phi_n + \psi_n \leq \phi_{n+1} + \psi_{n+1}
     \leq F + G = \lim_{n \to \infty} (\phi_n + \psi_n).
@@ -3719,11 +3665,9 @@ Then we have $f = f^+ - f^-$ and $\abs{f} = f^+ + f^-$. Also, if $f$ is
   function.
 
 \begin{defi}
-  Let $(X, \mf, \mu)$ be measure space and
-  $f : X \to \bar{\R}$ be $\mu$-measurable.
-  If either $f^+$ or $f^-$ is \textbf{integrable},
-  we say $f$ is \textbf{extended integrable} and
-  set
+  Let $(X, \mf, \mu)$ be measure space and $f : X \to \bar{\R}$ be
+  $\mu$-measurable. If either $f^+$ or $f^-$ is \textbf{integrable}, we
+  say $f$ is \textbf{extended integrable} and set
   \[
     \int_X f \d \mu = \int_X f^+ \d \mu - \int_X f^- \d \mu
     \in \bar{\R}.
@@ -3738,18 +3682,15 @@ Then we have $f = f^+ - f^-$ and $\abs{f} = f^+ + f^-$. Also, if $f$ is
 \end{prop}
 
 \begin{proof}
-  We know $f$ is integrable if and only if $f^\pm$
-  are both integrable, but $\abs{f} = f^+ + f^-$.
-  Therefore, $f$ integrable implies $\abs{f}$ is integrable.
-  Conversely, if $\abs{f}$ is integrable, then
-  $0 \leq f^\pm \leq \abs{f}$, so $f^\pm$ are both
-  integrable.
+  We know $f$ is integrable if and only if $f^\pm$ are both integrable,
+  but $\abs{f} = f^+ + f^-$. Therefore, $f$ integrable implies $\abs{f}$
+  is integrable. Conversely, if $\abs{f}$ is integrable, then $0 \leq
+  f^\pm \leq \abs{f}$, so $f^\pm$ are both integrable.
 \end{proof}
 
 \begin{thm}
-  Let $(X, \mf, \mu)$ be a measure space,
-  $f, g : X \to \bar{\R}$ are extended integrable.
-  The following holds:
+  Let $(X, \mf, \mu)$ be a measure space, $f, g : X \to \bar{\R}$ are
+  extended integrable. The following holds:
   \begin{enumerate}
     \item For all $E \in \mf$, we have $\int_E f \d \mu = \int_X f \chi_E
           \d \mu$.
@@ -3844,21 +3785,20 @@ To prove the more general form of monotone convergence theorem, we first
 need a useful lemma.
 
 \begin{lemma}
-  Let $(X, \mf, \mu)$ be a measure space and suppose that
-  $f : X \to \bar{\R}$ is $\mu$-measurable and $g : X \to \R$
-  is integrable. Further suppose $g \leq f$ a.e.\ Then, $f$
-  and $f - g$ are extended integrable, and
+  Let $(X, \mf, \mu)$ be a measure space and suppose that $f : X \to
+  \bar{\R}$ is $\mu$-measurable and $g : X \to \R$ is integrable. Further
+  suppose $g \leq f$ a.e.\ Then, $f$ and $f - g$ are extended integrable,
+  and
   \[
     \int_X (f - g) \d \mu = \int_X f \d \mu - \int_X g \d \mu.
   \]
 \end{lemma}
 
 \begin{proof}
-  Since $g \leq f$ a.e.\, we have $f^- \leq g^-$ a.e.\ Since
-  $g$ is integrable, $f^-$ is integrable and thus $f$ is
-  extended-integrable. We also have $f - g$ well defined
-  on all of $X$ and $f - g \geq 0$ a.e.\ Therefore,
-  $f - g$ is extended-integrable.
+  Since $g \leq f$ a.e.\, we have $f^- \leq g^-$ a.e.\ Since $g$ is
+  integrable, $f^-$ is integrable and thus $f$ is extended-integrable. We
+  also have $f - g$ well defined on all of $X$ and $f - g \geq 0$ a.e.\
+  Therefore, $f - g$ is extended-integrable.
 
   If $f$ is integrable, then we immediately have the desired equality.
   Suppose not $f$ is not integrable but only extended-integrable. This
@@ -3897,10 +3837,9 @@ need a useful lemma.
 
 \begin{proof}
   Since $g$ is integrable, there exists a null set $\tilde{N} \in \mf$
-  such that $\left\{ \abs{g} = \infty \right\} \subset \tilde{N}$.
-  Now $g$ is $\R$-valued in $N^c$.
-  We can also select a null set $N \supset \tilde{N}$
-  such that the following holds:
+  such that $\left\{ \abs{g} = \infty \right\} \subset \tilde{N}$. Now $g$
+  is $\R$-valued in $N^c$. We can also select a null set $N \supset
+  \tilde{N}$ such that the following holds:
   \begin{itemize}
     \item $g$ is measurable on $N^c$.
     \item $f_k \to f$ as $k \to \infty$ on $N^c$.
@@ -3998,8 +3937,8 @@ need a useful lemma.
 \end{thm}
 
 \begin{proof}
-  Note that $\int_X g \d \mu > - \infty$ implies $g^-$ is
-  integrable. Write
+  Note that $\int_X g \d \mu > - \infty$ implies $g^-$ is integrable.
+  Write
   \[
     f = \liminf_{k \to \infty} f_k,
   \]
@@ -4046,13 +3985,11 @@ need a useful lemma.
 \end{thm}
 
 \begin{proof}
-  We know $\abs{f_k} \leq g_k$ a.e.\, $g_k \to g$ a.e.\,
-  and $f_k \to f$ a.e.\ Then, $\abs{f} \leq g$ a.e.\,
-  so $f_k$ and $f$ are integrable.
-  In turn, we can use a previous corollary to pick $N \in \mf$
-  null such that $f_k, f, g_k, g$ are all $\R$-valued
-  and all assumed inequalities hold on $N^c$.
-  Then, $\abs{f - f_k} \leq g + g_k$ on $N^c$, and so
+  We know $\abs{f_k} \leq g_k$ a.e.\, $g_k \to g$ a.e.\, and $f_k \to f$
+  a.e.\ Then, $\abs{f} \leq g$ a.e.\, so $f_k$ and $f$ are integrable. In
+  turn, we can use a previous corollary to pick $N \in \mf$ null such that
+  $f_k, f, g_k, g$ are all $\R$-valued and all assumed inequalities hold
+  on $N^c$. Then, $\abs{f - f_k} \leq g + g_k$ on $N^c$, and so
   \[
     0 \leq g + g_k - \abs{f - f_k}.
   \]
@@ -4095,19 +4032,17 @@ need a useful lemma.
 \end{proof}
 
 \begin{remark}
-  Usually, dominated convergence theorem is applied with
-  $g_k = g$, in which case the assumption
-  $\int_X g_k \d \mu \to \int_X g \d \mu$ becomes trivial.
+  Usually, dominated convergence theorem is applied with $g_k = g$, in
+  which case the assumption $\int_X g_k \d \mu \to \int_X g \d \mu$
+  becomes trivial.
 \end{remark}
 
 \subsubsection{Bochner integration}
 \begin{lemma}
-  Suppose $(X, \mf, \mu)$ is a measure space and $V$ a normed
-  vector space, and $\phi: X \to V$ simple.
-  Note then $\norm{\phi} : X \to [0, \infty)$
-  is a simple function now.
-  Then, $\phi$ is a \textbf{finite} simple function
-  if and only if $\norm{\phi}$ is integrable.
+  Suppose $(X, \mf, \mu)$ is a measure space and $V$ a normed vector
+  space, and $\phi: X \to V$ simple. Note then $\norm{\phi} : X \to [0,
+  \infty)$ is a simple function now. Then, $\phi$ is a \textbf{finite}
+  simple function if and only if $\norm{\phi}$ is integrable.
 \end{lemma}
 
 \begin{proof}
@@ -4131,10 +4066,9 @@ need a useful lemma.
 \end{proof}
 
 \begin{lemma}
-  Let $(X, \mf, \mu)$ be a measure space, $V$ be a Banach space,
-  $f: X \to V$ strongly $\mu$-measurable. Suppose that for
-  $j \in \{0, 1\}$, we have $\seqinfk{\phi_k^j} \subset \Sfin(X; V)$
-  such that
+  Let $(X, \mf, \mu)$ be a measure space, $V$ be a Banach space, $f: X \to
+  V$ strongly $\mu$-measurable. Suppose that for $j \in \{0, 1\}$, we have
+  $\seqinfk{\phi_k^j} \subset \Sfin(X; V)$ such that
   \[
     \lim_{k \to \infty} \int_X \norm{f - \phi_k^j} \d \mu = 0.
   \]
@@ -4176,11 +4110,10 @@ need a useful lemma.
 This leads to the following definition for Bochner integration.
 
 \begin{defi}
-  Let $(X, \mf, \mu)$ be a measure space and $V$ a Banach space.
-  A map $f : X \to V$ is (Bochner) integrable if
-  it is strongly $\mu$-measurable and there exists a sequence
-  $\seqinfn{\phi_n} \subset \Sfin(X; V)$ such that $\phi_n \to f$
-  a.e.\ and
+  Let $(X, \mf, \mu)$ be a measure space and $V$ a Banach space. A map $f
+  : X \to V$ is (Bochner) integrable if it is strongly $\mu$-measurable
+  and there exists a sequence $\seqinfn{\phi_n} \subset \Sfin(X; V)$ such
+  that $\phi_n \to f$ a.e.\ and
   \[
     \lim_{n \to \infty} \int_X \norm{f - \phi_n} \d \mu = 0,
   \]
@@ -4272,9 +4205,8 @@ This leads to the following definition for Bochner integration.
 \end{thm}
 
 \begin{proof}
-  Since $\norm{f_n} \leq g_n$ and $\norm{f} \leq g$,
-  we have $f_n$ and $f$ integrable. Note that
-  $\norm{f - f_n} \leq g + g_n$ and $g + g_n \to 2g$
+  Since $\norm{f_n} \leq g_n$ and $\norm{f} \leq g$, we have $f_n$ and $f$
+  integrable. Note that $\norm{f - f_n} \leq g + g_n$ and $g + g_n \to 2g$
   as $n \to \infty$. Dominated convergence theorem then implies
   \[
     \lim_{n \to \infty} \int_X \norm{f - f_n} \d \mu = 0,
@@ -4283,8 +4215,7 @@ This leads to the following definition for Bochner integration.
 \end{proof}
 
 \begin{prop}
-  Let $(X, \mf, \mu)$ be a measure space and $V$ a Banach
-  space over $\F$.
+  Let $(X, \mf, \mu)$ be a measure space and $V$ a Banach space over $\F$.
   Let $f : X \to V$ integrable. The following holds:
   \begin{enumerate}
     \item If $W$ is a Banach space over $F$ and $T \in \L(V, W)$, then $T
@@ -4368,8 +4299,8 @@ This leads to the following definition for Bochner integration.
 \end{thm}
 
 \begin{proof}
-  First show $\mu = \gamma$ on $\afk$.
-  It suffices to show that $\om = \gamma$ on $\afk$.
+  First show $\mu = \gamma$ on $\afk$. It suffices to show that $\om =
+  \gamma$ on $\afk$.
 
   For any $E \in \afk$, we know $E$ is covered by $E$, so $\om \leq
   \gamma$. On the other hand, let $E \subset \afk$ and $\seqinfk{A_k}
@@ -4573,9 +4504,9 @@ This leads to the following definition for Bochner integration.
 We first need to develop a few facts in linear algebra.
 
 \begin{prop}
-  Let $V_1, \dots, V_n, W$ be vector space over $\F$
-  and $T \in L(V_1, \dots, V_n ; W)$. Suppose $x_i^j \in V_i$
-  for $j = 0, 1$ and $1 \leq i \leq n$. Then,
+  Let $V_1, \dots, V_n, W$ be vector space over $\F$ and $T \in L(V_1,
+  \dots, V_n ; W)$. Suppose $x_i^j \in V_i$ for $j = 0, 1$ and $1 \leq i
+  \leq n$. Then,
   \[
     \begin{aligned}
       T(x^0_1 + x^1_1, \dots, x^0_n + x^1_n)
@@ -4631,9 +4562,9 @@ We first need to develop a few facts in linear algebra.
 \end{thm}
 
 \begin{proof}
-  Fix $z \in \F$. Let $x_i^0 = z e_i \in \F^n$ and
-  $x_i^1 = M_i \in \F^n$ be the $i$-th column of $M$.
-  Recall that $\det \in L^n (\F^n ; \F)$. Therefore,
+  Fix $z \in \F$. Let $x_i^0 = z e_i \in \F^n$ and $x_i^1 = M_i \in \F^n$
+  be the $i$-th column of $M$. Recall that $\det \in L^n (\F^n ; \F)$.
+  Therefore,
   \[
     \begin{aligned}
       \det (z I + M)
@@ -4657,8 +4588,8 @@ We first need to develop a few facts in linear algebra.
 \end{proof}
 
 \begin{thm}
-  Let $1 \leq n \leq m$, $A \in \F^{m \times n}$,
-  $B \in \F^{n \times m}$. The following holds:
+  Let $1 \leq n \leq m$, $A \in \F^{m \times n}$, $B \in \F^{n \times m}$.
+  The following holds:
   \begin{enumerate}
     \item (Sylvester's formula) $\det(I_m + A B)
             = \det(I_n + BA)$.
@@ -4744,10 +4675,9 @@ We first need to develop a few facts in linear algebra.
 \end{defi}
 
 \begin{lemma}
-  Let $\emptyset \neq U \subset \R^n$ be open, $f \in C^1 (U ; \R^m)$
-  for some $n \leq m$. Suppose $z \in U$ is such that
-  $Df(z)$ is injective. Then for $0 < \epsilon < 1$, there
-  exists $B(z, r) \subset U$ such that
+  Let $\emptyset \neq U \subset \R^n$ be open, $f \in C^1 (U ; \R^m)$ for
+  some $n \leq m$. Suppose $z \in U$ is such that $Df(z)$ is injective.
+  Then for $0 < \epsilon < 1$, there exists $B(z, r) \subset U$ such that
   \begin{enumerate}
     \item $f \vert_{B(z, r)}$ is a Lipschitz injection.
     \item If $E \subset B(z, r)$ is Lebesgue measurable, then $f(E) \in
@@ -4762,8 +4692,8 @@ We first need to develop a few facts in linear algebra.
 \end{lemma}
 
 \begin{proof}
-  Define the following $M = Df(z)$, $L \in \L(\R^m, \R^n)$
-  such that $L M = I_n$, and $g = f \circ L$, so $f = g \circ M$.
+  Define the following $M = Df(z)$, $L \in \L(\R^m, \R^n)$ such that $L M
+  = I_n$, and $g = f \circ L$, so $f = g \circ M$.
 
   Let $0 < \epsilon < 1$. By local injectivity theorem, pick $r > 0$ such
   that
@@ -4817,10 +4747,9 @@ We first need to develop a few facts in linear algebra.
 \end{proof}
 
 \begin{defi}
-  Let $X$ be a set equipped with counting measure
-  $\hcal^0 : \P(X) \to [0, \infty]$. Let $Y$ be a set
-  and $f: X \to Y$. For any $E \subset X$, define
-  $\ncal_f (\cdot, E) : Y \to [0, \infty]$ by
+  Let $X$ be a set equipped with counting measure $\hcal^0 : \P(X) \to [0,
+  \infty]$. Let $Y$ be a set and $f: X \to Y$. For any $E \subset X$,
+  define $\ncal_f (\cdot, E) : Y \to [0, \infty]$ by
   \[
     \ncal_f(y, E) = \hcal^0 \left( E \cap f^{-1} (\{y\}) \right)
     = \hcal^0 \left( \left\{ x \in E: f(x) = y \right\} \right).
@@ -4828,10 +4757,9 @@ We first need to develop a few facts in linear algebra.
 \end{defi}
 
 \begin{thm}
-  Let $F \in \fs(\R^n)$ and $f: F \to \R^m$ be locally
-  Lipschitz with $n \leq m$. If $E \subset F$ is Lebesgue
-  measurable, then $\ncal_f(\cdot, E) : \R^m \to [0, \infty]$
-  is $\hfk^n(\R^m)$ measurable.
+  Let $F \in \fs(\R^n)$ and $f: F \to \R^m$ be locally Lipschitz with $n
+  \leq m$. If $E \subset F$ is Lebesgue measurable, then $\ncal_f(\cdot,
+  E) : \R^m \to [0, \infty]$ is $\hfk^n(\R^m)$ measurable.
 \end{thm}
 
 HINT: Write $\R^n = \bigcup_{j=0}^\infty Q_{j,k}^\sharp$ as a disjoint
@@ -4843,9 +4771,8 @@ given by
 \]
 
 \begin{proof}
-  Following the hint, for each $k \in \N$, write
-  $\R^n = \cupinfj Q_{j, k}^\sharp$
-  as a disjoint union of dyadic cubes of sidelength $2^{-k}$.
+  Following the hint, for each $k \in \N$, write $\R^n = \cupinfj Q_{j,
+  k}^\sharp$ as a disjoint union of dyadic cubes of sidelength $2^{-k}$.
   Claim that for each $y \in \R^m$,
   \[
     \ncal_f (y, E) = \lim_{k \to \infty} N_k(y)
@@ -4872,20 +4799,19 @@ given by
 \end{proof}
 
 \begin{lemma}
-  Let $\emptyset \neq U \subset \R^n$ be open, $f \in C^1
-    (U ; \R^m)$ for $n \leq m$. Suppose $Df(x)$ is injective
-  for all $x \in V$. Then for all $E \subset U$ Lebesgue
-  measurable, and
+  Let $\emptyset \neq U \subset \R^n$ be open, $f \in C^1 (U ; \R^m)$ for
+  $n \leq m$. Suppose $Df(x)$ is injective for all $x \in V$. Then for all
+  $E \subset U$ Lebesgue measurable, and
   \[
     \int_E J_f \d \lambda = \int_{\R^m} \ncal_f (\cdot, E) \d \hcal^n.
   \]
 \end{lemma}
 
 \begin{proof}
-  Let $E \subset U$ be Lebesgue measurable and $0 < \epsilon < 1$.
-  Using the previous lemma, we can pick $\seqinfk{B(x_k, r_k)}$
-  such that $B(x_k, r_k) \subset U$, $f : B(x_k, r_k) \to \R^n$
-  is Lipschitz injection, $E \subset \cupinfk B(x_k, r_k)$, and
+  Let $E \subset U$ be Lebesgue measurable and $0 < \epsilon < 1$. Using
+  the previous lemma, we can pick $\seqinfk{B(x_k, r_k)}$ such that
+  $B(x_k, r_k) \subset U$, $f : B(x_k, r_k) \to \R^n$ is Lipschitz
+  injection, $E \subset \cupinfk B(x_k, r_k)$, and
   \[
     (1 - \epsilon)^{n+1} \int_F J_f \d \lambda
     \leq \hcal^n (f(F))
@@ -4932,9 +4858,8 @@ given by
 \end{thm}
 
 \begin{proof}
-  Note that $Z$ is relatively closed, so it is Lebesgue
-  measurable. It then suffices to show that the outer
-  measure $\hcal^n (f(Z)) = 0$.
+  Note that $Z$ is relatively closed, so it is Lebesgue measurable. It
+  then suffices to show that the outer measure $\hcal^n (f(Z)) = 0$.
 
   Write $U = \cupinfk Q_k$ where $\seqinfk{Q_k}$ is a sequence of almost
   disjoint cubes. It suffices to show $\hcal^n (f(Z_k)) = 0$, where $Z_k =
@@ -5011,10 +4936,9 @@ given by
 \end{thm}
 
 \begin{proof}
-  Let $Z = \left\{ J_f = 0 \right\}$, which is closed in $U$.
-  Therefore, $V = U \setminus Z$ is open.
-  Note that $J_f(x) \neq 0$ implies $Df(x)$ injective.
-  Then, previous lemma implies
+  Let $Z = \left\{ J_f = 0 \right\}$, which is closed in $U$. Therefore,
+  $V = U \setminus Z$ is open. Note that $J_f(x) \neq 0$ implies $Df(x)$
+  injective. Then, previous lemma implies
   \[
     \int_{V \cap E} J_f \d \lambda
     = \int_{\R^m} \ncal_f(\cdot, E \cap V) \d \hcal^n.
@@ -5067,9 +4991,8 @@ given by
 \end{thm}
 
 \begin{eg}
-  As an example, say $V \subset \R^n$ and
-  $f : V \to f(V) \in \R^n$ is a diffeomorphism.
-  Then
+  As an example, say $V \subset \R^n$ and $f : V \to f(V) \in \R^n$ is a
+  diffeomorphism. Then
   \[
     J_f = \sqrt{\det (Df)^T Df} = \abs{\det Df}
   \]
@@ -5213,8 +5136,8 @@ given by
 \end{proof}
 
 \begin{eg}
-  Let $E = [0, \infty) \times [0, 2 \pi] \subset \R^2$.
-  Let $\rho: \R^2 \to \R^2$ via
+  Let $E = [0, \infty) \times [0, 2 \pi] \subset \R^2$. Let $\rho: \R^2
+  \to \R^2$ via
   \[
     \rho(r, \theta) = (r \cos \theta, r \sin \theta).
   \]
@@ -5248,8 +5171,8 @@ given by
 \end{eg}
 
 \begin{eg}
-  Let $E = [0, \infty) \times [0, 2 \pi] \times [0, \pi] \subset
-    \R^3$ and $\zeta : \R^3 \to \R^3$ via
+  Let $E = [0, \infty) \times [0, 2 \pi] \times [0, \pi] \subset \R^3$ and
+  $\zeta : \R^3 \to \R^3$ via
   \[
     \zeta(r, \theta, \phi) = (r \cos \theta \sin \phi,
     r \sin \theta \sin \phi, r \cos \phi).
@@ -5375,9 +5298,9 @@ will denote a Banach space.
 \end{cor}
 
 \begin{thm}
-  Let $f \in \leb_\mu^p (X; V)$. For any $\epsilon > 0$,
-  there exists $\phi \in \Sfin(X; V) \subset \leb_\mu^p (X; V)$
-  such that $\norm{\phi - f}_p < \epsilon$.
+  Let $f \in \leb_\mu^p (X; V)$. For any $\epsilon > 0$, there exists
+  $\phi \in \Sfin(X; V) \subset \leb_\mu^p (X; V)$ such that $\norm{\phi -
+  f}_p < \epsilon$.
 \end{thm}
 
 \begin{proof}[Proof sketch]
@@ -5416,8 +5339,8 @@ we will know the completion of $\Sfin(X; V)$ is $L^p(X; V)$.
 \end{thm}
 
 \begin{proof}
-  Let $\seqinfk{f_k} \in L^p$ such that $\suminfk \norm{f_k}_p
-    < \infty$. We want to show $\suminfk f_k$ converges in $L^p$.
+  Let $\seqinfk{f_k} \in L^p$ such that $\suminfk \norm{f_k}_p < \infty$.
+  We want to show $\suminfk f_k$ converges in $L^p$.
 
   First suppose $p < \infty$. Let
   \[
@@ -5490,8 +5413,8 @@ There are a few caveats:
 \subsubsection{Definitions and basics}
 
 \begin{defi}
-  Let $m, n \in \N$ and $1 \leq m \leq n$ and let
-  $1 \leq k \leq \infty$. Let $M \subset \R^n$.
+  Let $m, n \in \N$ and $1 \leq m \leq n$ and let $1 \leq k \leq \infty$.
+  Let $M \subset \R^n$.
   \begin{enumerate}
     \item We say $M$ admits $C^k$ local $m$-coordinates at $z \in M$ if
           the following holds:
@@ -5584,14 +5507,12 @@ There are a few caveats:
 \end{thm}
 
 \begin{proof}
-  Let $z \in M$. Then, $Df(z)$ is surjective, so we can apply
-  the \textbf{right inverse function theorem}.  This provides
-  open sets $W \subset \R^r$ and $V \subset \R^{n-r}$, and
-  a $C^k$ diffeomorphism
-  $F : W \times V \to F(W \times V) \subset U$, such that
-  $w_0 \in W$ and $f(F(w, v)) = w$
-  for all $(w, v) \in W \times V$. Let $\phi: V \to U$ via
-  $\phi(v) = F(w_0, v)$. Then
+  Let $z \in M$. Then, $Df(z)$ is surjective, so we can apply the
+  \textbf{right inverse function theorem}. This provides open sets $W
+  \subset \R^r$ and $V \subset \R^{n-r}$, and a $C^k$ diffeomorphism $F :
+  W \times V \to F(W \times V) \subset U$, such that $w_0 \in W$ and
+  $f(F(w, v)) = w$ for all $(w, v) \in W \times V$. Let $\phi: V \to U$
+  via $\phi(v) = F(w_0, v)$. Then
   \[
     f(\phi(v)) = f(F(w_0, v)) = w_0.
   \]
@@ -5682,8 +5603,8 @@ There are a few caveats:
 \end{eg}
 
 \begin{thm}
-  Let $m, n \in \N$ with $1 \leq m \leq n$, $1 \leq k \leq \infty$.
-  Let $M \in \R^n$, $z \in M$, then the following are equivalent:
+  Let $m, n \in \N$ with $1 \leq m \leq n$, $1 \leq k \leq \infty$. Let $M
+  \in \R^n$, $z \in M$, then the following are equivalent:
   \begin{enumerate}
     \item $M$ admits $C^k$ local $m$-coordinates at $z$,
           say $(U, V, \phi)$.
@@ -5706,9 +5627,8 @@ immediately.
 Aside from flattening maps, we have another formulation for manifolds and
 local coordinates.
 \begin{thm}
-  Let $1 \leq m \leq n-1$ and $1 \leq k \leq \infty$.
-  Suppose that $M \subset \R^n$ and $z \in M$. Then
-  the following are equivalent.
+  Let $1 \leq m \leq n-1$ and $1 \leq k \leq \infty$. Suppose that $M
+  \subset \R^n$ and $z \in M$. Then the following are equivalent.
   \begin{enumerate}
     \item $M$ admits local $C^k$ $m$-coordinates at $z$.
     \item $M$ is the (permuted) graph of a $C^k$ function near
@@ -5817,38 +5737,31 @@ Why are these formulations important? There are two reasons.
 \end{enumerate}
 
 \begin{thm}
-  Suppose $(U_0, V_0, \phi_0)$ and $(U_1, V_1, \phi_1)$
-  are $C^k$ local $m$-coordinates at $z \in M$. Suppose
-  also $U_0 \cap U_1 \neq \emptyset$ and $z \in U_0 \cap
-    U_1 \cap M$. Then the transition map
-  $\zeta : \phi_0^{-1}(U_0 \cap U_1 \cap M)
-    \to \phi_1^{-1} (U_0 \cap U_1 \cap M)$ is a $C^k$
-  diffeomorphism.
+  Suppose $(U_0, V_0, \phi_0)$ and $(U_1, V_1, \phi_1)$ are $C^k$ local
+  $m$-coordinates at $z \in M$. Suppose also $U_0 \cap U_1 \neq \emptyset$
+  and $z \in U_0 \cap U_1 \cap M$. Then the transition map $\zeta :
+  \phi_0^{-1}(U_0 \cap U_1 \cap M) \to \phi_1^{-1} (U_0 \cap U_1 \cap M)$
+  is a $C^k$ diffeomorphism.
 \end{thm}
 
 \begin{proof}
-  Both sets are open because $\phi_i : V_i \to \phi_i(V_i)
-    = M \cap U_i$ is homeomorphism for each $i \in \{0, 1\}$.
-  Let $\tilde{V_i} = \phi_i^{-1} (U_0 \cap U_1 \cap M)$
-  for each $i \in \{0, 1\}$
-  and fix $x \in \tilde{V_0}$. By the previous theorem, we
-  can find a flattening map $F : W \to F(W)$ such that
-  $F$ is a $C^k$ diffeomorphism and $\phi_1^{-1} = (F_1,
-    \dots, F_m) = \tilde{F}$.
-  Therefore, $\zeta = \phi_1^{-1} \circ \phi_0
-    = \tilde{F} \circ \phi_0$
-  near $x$. However $x \in \tilde{V_0}$ is arbitrary,
-  so $\zeta$ is a $C^k$ diffeomorphism.
+  Both sets are open because $\phi_i : V_i \to \phi_i(V_i) = M \cap U_i$
+  is homeomorphism for each $i \in \{0, 1\}$. Let $\tilde{V_i} =
+  \phi_i^{-1} (U_0 \cap U_1 \cap M)$ for each $i \in \{0, 1\}$ and fix $x
+  \in \tilde{V_0}$. By the previous theorem, we can find a flattening map
+  $F : W \to F(W)$ such that $F$ is a $C^k$ diffeomorphism and
+  $\phi_1^{-1} = (F_1, \dots, F_m) = \tilde{F}$. Therefore, $\zeta =
+  \phi_1^{-1} \circ \phi_0 = \tilde{F} \circ \phi_0$ near $x$. However $x
+  \in \tilde{V_0}$ is arbitrary, so $\zeta$ is a $C^k$ diffeomorphism.
 \end{proof}
 
 \subsubsection{Hausdorff measure and integration on
   manifolds}
 
 \begin{thm}
-  Let $M \subset \R^n$ be a $C^k$ $m$-manifold.
-  Prove that $M$ admits an atlas $\{(U_\alpha,B_\alpha,
-    \phi_\alpha)\}_{\alpha \in A}$ satisfying the
-  following properties.
+  Let $M \subset \R^n$ be a $C^k$ $m$-manifold. Prove that $M$ admits an
+  atlas $\{(U_\alpha,B_\alpha, \phi_\alpha)\}_{\alpha \in A}$ satisfying
+  the following properties.
   \begin{enumerate}
     \item $A$ is countable, and if $M$ is compact then $A$
           is finite.
@@ -5872,15 +5785,14 @@ Why are these formulations important? There are two reasons.
 \end{thm}
 
 \begin{proof}
-  For each $z \in M$, there exists $C^k$ local coordinates
-  $(W_z, V_z, \phi_z)$. Let $x \in \phi_z^{-1}(z) \in V_z$
-  and pick a ball $B_z$ such that $x \in B_z \subset \bar{B_z}
-    \subset V_z$. Let $\phi_z$ be the restriction on $B_z$.
-  Note that $\phi_z(B_z)$ is relatively open, so we can select
-  open set $U_z \subset \R^n$ such that $U_z \cap M = \phi_z
-    (B_z)$. It is easy to check that $(U_z, B_z, \phi_z)$
-  is $C^k$ local coordinates at $z \in M$, and thus
-  $\{(U_z, B_z, \phi_z)\}_{z \in M}$ is an atlas of $M$.
+  For each $z \in M$, there exists $C^k$ local coordinates $(W_z, V_z,
+  \phi_z)$. Let $x \in \phi_z^{-1}(z) \in V_z$ and pick a ball $B_z$ such
+  that $x \in B_z \subset \bar{B_z} \subset V_z$. Let $\phi_z$ be the
+  restriction on $B_z$. Note that $\phi_z(B_z)$ is relatively open, so we
+  can select open set $U_z \subset \R^n$ such that $U_z \cap M = \phi_z
+  (B_z)$. It is easy to check that $(U_z, B_z, \phi_z)$ is $C^k$ local
+  coordinates at $z \in M$, and thus $\{(U_z, B_z, \phi_z)\}_{z \in M}$ is
+  an atlas of $M$.
 
   Now $\{U_z\}_{z \in M}$ is a open cover for $M$. If $M$ is compact,
   select a finite subcover. Otherwise, select a countable subcover by
@@ -5948,8 +5860,8 @@ Why are these formulations important? There are two reasons.
 \end{proof}
 
 \begin{thm}
-  Let $M\subset \R^n$ be a $C^1$ $m$-manifold. Prove that
-  the following hold.
+  Let $M\subset \R^n$ be a $C^1$ $m$-manifold. Prove that the following
+  hold.
   \begin{enumerate}
     \item $M = \bigcup_{k=0}^\infty K_k$, where $K_k \subset
             \R^n$ is compact and $\hcal^m(K_k) < \infty$.
@@ -5994,9 +5906,8 @@ Why are these formulations important? There are two reasons.
 \end{thm}
 
 \begin{proof}
-  Let $\{(U_\alpha, B_\alpha, \phi_\alpha)\}_{\alpha \in A}$
-  be an atlas for $M$ that satisfies the properties listed
-  in the previous theorem.
+  Let $\{(U_\alpha, B_\alpha, \phi_\alpha)\}_{\alpha \in A}$ be an atlas
+  for $M$ that satisfies the properties listed in the previous theorem.
   \begin{enumerate}
     \item Note that $M = \bigcup_{\alpha \in A} \phi_\alpha
           (\bar{B_\alpha})$. Moreover, we know $\bar{B_\alpha}$ is compact
@@ -6051,11 +5962,9 @@ Why are these formulations important? There are two reasons.
 \subsubsection{Tangent spaces}
 
 \begin{lemma}
-  Suppose $(U_0, V_0, \phi_0)$ and $(U_1, V_1, \phi_1)$
-  are $C^k$ local $m$-coordinates at $z \in M$. Suppose
-  also $U_0 \cap U_1 \neq \emptyset$ and $z \in U_0 \cap
-    U_1 \cap M$. Then
-  the following holds:
+  Suppose $(U_0, V_0, \phi_0)$ and $(U_1, V_1, \phi_1)$ are $C^k$ local
+  $m$-coordinates at $z \in M$. Suppose also $U_0 \cap U_1 \neq \emptyset$
+  and $z \in U_0 \cap U_1 \cap M$. Then the following holds:
   \begin{enumerate}
     \item $D \phi_0 (\phi_0^{-1}(z)) = D\phi_1 (\phi_1^{-1}(z))
             D[\phi_1^{-1} \circ \phi_0] (\phi_0^{-1}(z))$.
@@ -6090,8 +5999,8 @@ Why are these formulations important? There are two reasons.
 \end{defi}
 
 \begin{eg}
-  Let $(U, V, \phi)$ be $m$-coordinates at $z \in M$ and
-  let $x = \phi^{-1}(z)$. Then,
+  Let $(U, V, \phi)$ be $m$-coordinates at $z \in M$ and let $x =
+  \phi^{-1}(z)$. Then,
   \[
     T_z M = \ran D\phi(x) = \spn \{D \phi(x) e_1, \dots,
     D \phi(x) e_m\} =
@@ -6100,9 +6009,8 @@ Why are these formulations important? There are two reasons.
 \end{eg}
 
 \begin{thm}
-  Let $\emptyset \neq U \subset \R^n$ be open, $f : U \to \R^r$
-  be $C^k$ for $1 \leq r < n$. We saw before that if $z_0 \in U$,
-  and
+  Let $\emptyset \neq U \subset \R^n$ be open, $f : U \to \R^r$ be $C^k$
+  for $1 \leq r < n$. We saw before that if $z_0 \in U$, and
   \[
     M = \{z \in U : \text{$f(z) = f(z_0)$ and $Df(z)$
     has rank $r$}\} \neq \emptyset,
@@ -6112,8 +6020,8 @@ Why are these formulations important? There are two reasons.
 \end{thm}
 
 \begin{proof}
-  Let $(\tilde{U}, V, \phi)$ be local coordinate at $z \in M$.
-  Then $f(\phi(x)) = f(z_0)$ for all $x \in C$. Then,
+  Let $(\tilde{U}, V, \phi)$ be local coordinate at $z \in M$. Then
+  $f(\phi(x)) = f(z_0)$ for all $x \in C$. Then,
   \[
     0 = Df(\phi(x)) D\phi(x).
   \]
@@ -6164,12 +6072,11 @@ Why are these formulations important? There are two reasons.
 \subsubsection{Mappings between manifolds}
 
 \begin{lemma}
-  Suppose $M \subset \R^{n_1}$ and $N \subset \R^{n_2}$ are
-  $C^k$ $m_1$-manifold and $m_2$-manifold respectively.
-  Suppose also that $f : M \to N$.
-  Let $x$ be such that $\phi_1(x) = z \in U_0 \cap U_1 \cap M$
-  and $f(z) \in \tilde{U_0} \cap \tilde{U_1} \cap N$.
-  Then the following holds:
+  Suppose $M \subset \R^{n_1}$ and $N \subset \R^{n_2}$ are $C^k$
+  $m_1$-manifold and $m_2$-manifold respectively. Suppose also that $f : M
+  \to N$. Let $x$ be such that $\phi_1(x) = z \in U_0 \cap U_1 \cap M$ and
+  $f(z) \in \tilde{U_0} \cap \tilde{U_1} \cap N$. Then the following
+  holds:
   \begin{enumerate}
     \item $\psi_0^{-1} \circ f \circ \phi_0$ is differentiable
           at $x$ if and only if $\psi_1^{-1} \circ f \circ \phi_1$
@@ -6196,9 +6103,9 @@ Why are these formulations important? There are two reasons.
 \end{proof}
 
 \begin{defi}
-  Suppose $M_1 \subset \R^{n_1}$ and $M_2 \subset \R^{n_2}$ are
-  $C^k$ $m_1$-manifold and $m_2$-manifold respectively.
-  Suppose also that $f : M_1 \to M_2$.
+  Suppose $M_1 \subset \R^{n_1}$ and $M_2 \subset \R^{n_2}$ are $C^k$
+  $m_1$-manifold and $m_2$-manifold respectively. Suppose also that $f :
+  M_1 \to M_2$.
 
   \begin{enumerate}
     \item We say $f$ is differentiable at $z \in M$ if $\psi^{-1} \circ f
@@ -6228,8 +6135,7 @@ The previous lemma ensures that these concepts are well-defined.
 \end{proof}
 
 \begin{defi}
-  Let $M_1$ and $M_2$ be $C^1$ manifolds and $f: M_1 \to M_2$
-  be $C^1$.
+  Let $M_1$ and $M_2$ be $C^1$ manifolds and $f: M_1 \to M_2$ be $C^1$.
   \begin{enumerate}
     \item We say $f$ is a \textbf{submersion} at $z \in M$ if $Df(z) \in
           \L(T_z M_1 ; T_{f(z)} M_2)$ is surjective. We say $f$ is a
@@ -6259,9 +6165,9 @@ The previous lemma ensures that these concepts are well-defined.
 \end{prop}
 
 \begin{proof}
-  From the chain rule, we know $Df^{-1}(f(z)) = [Df(z)]^{-1}$.
-  Therefore, $T_z M_1$ and $T_{f(z)} M_2$ are isomophic for each
-  $z \in M$. This also shows that $f$, $f^{-1}$ are immersions.
+  From the chain rule, we know $Df^{-1}(f(z)) = [Df(z)]^{-1}$. Therefore,
+  $T_z M_1$ and $T_{f(z)} M_2$ are isomophic for each $z \in M$. This also
+  shows that $f$, $f^{-1}$ are immersions.
 \end{proof}
 
 \subsubsection{Orientation on manifolds}
@@ -6277,7 +6183,7 @@ The previous lemma ensures that these concepts are well-defined.
 
 \begin{defi}
   Let $z \in M \subset \R^n$. WE say $z$ admits $C^k$ \textbf{local
-    boundary coordinates} if
+  boundary coordinates} if
   \begin{enumerate}
     \item there exists open set $U \subset \R^n$ and $W \subset \R^m$ such
           that $z \in U$ and $W \cap \{x \in \R^m : x_m = 0\} \neq
@@ -6292,8 +6198,8 @@ The previous lemma ensures that these concepts are well-defined.
 \end{defi}
 
 \begin{prop}
-  Given a point $z \in M \subset \R^n$, \textbf{at most one}
-  of the following can be true:
+  Given a point $z \in M \subset \R^n$, \textbf{at most one} of the
+  following can be true:
   \begin{enumerate}
     \item $z$ admits $C^k$ local $m$-coordinates.
     \item $z$ admits $C^k$ local boundary coordinates.
@@ -6305,9 +6211,9 @@ The previous lemma ensures that these concepts are well-defined.
 \end{proof}
 
 \begin{defi}
-  A $C^k$ $m$-manifold with boundary is a set $\emptyset \neq
-    M \subset \R^n$ such that $M = M^\circ \cup \dd M$,
-  where $M^\circ \neq \emptyset$, $\dd M \neq \emptyset$, and
+  A $C^k$ $m$-manifold with boundary is a set $\emptyset \neq M \subset
+  \R^n$ such that $M = M^\circ \cup \dd M$, where $M^\circ \neq
+  \emptyset$, $\dd M \neq \emptyset$, and
   \[
     \begin{aligned}
     M^\circ &= \{z \in M : \text{$z$ admits local
@@ -6435,8 +6341,8 @@ Recall the definition and properties of antisymmetric multilinear maps:
 \end{defi}
 
 \begin{thm}
-  Let $k \in \N^+$ and $V$, $W$ be vector spaces over $\F$.
-  Suppose $T \in L^k(V, W)$. Then following are equivalent:
+  Let $k \in \N^+$ and $V$, $W$ be vector spaces over $\F$. Suppose $T \in
+  L^k(V, W)$. Then following are equivalent:
   \begin{enumerate}
     \item $T$ is antisymmetric.
     \item For every $v_1, \dots, v_k \in V$ and transposition $P \in S_k$,
@@ -6504,8 +6410,7 @@ Some algebra facts follows from the definition.
 \end{enumerate}
 
 \begin{prop}
-  Suppose $\omega_1, \dots, \omega_k \in \Lambda^1
-    (\R^n)$, then
+  Suppose $\omega_1, \dots, \omega_k \in \Lambda^1 (\R^n)$, then
   \[
     (\omega_1 \wedge \dots \wedge \omega_k)
     (v_1, \dots, v_k) = \det V,
@@ -6572,8 +6477,8 @@ Some algebra facts follows from the definition.
 \end{defi}
 
 \begin{thm}
-  Let $\emptyset \neq U \subset \R^n$ be open and $r \geq 1$.
-  Then the following holds:
+  Let $\emptyset \neq U \subset \R^n$ be open and $r \geq 1$. Then the
+  following holds:
   \begin{enumerate}
     \item $d : \Omega^{k, r}(U) \to \Omega^{k+1, r-1} (U)$
           is linear.
@@ -6606,10 +6511,8 @@ Some algebra facts follows from the definition.
 \end{defi}
 
 \begin{thm}
-  Suppose $\emptyset \neq U \subset \R^n$ and
-  $\emptyset \neq V \subset \R^m$ open, and
-  $\phi : V \to U$ be differentiable.
-  The following holds:
+  Suppose $\emptyset \neq U \subset \R^n$ and $\emptyset \neq V \subset
+  \R^m$ open, and $\phi : V \to U$ be differentiable. The following holds:
   \begin{enumerate}
     \item If $\phi \in C^r$ with $r \geq 1$, then the map $\phi^* :
           \Omega^{k, r-1}(U) \to \Omega^{k, r-1}(V)$ is linear and
@@ -6658,15 +6561,13 @@ Some algebra facts follows from the definition.
   orientated manifolds}
 
 \begin{lemma}
-  Suppose that $V \subset \R^n$ is a subspace of dimension
-  $1\leq m \leq n$. Given $v_1,\dots,v_m \in V$ write
-  $\braket{v_1,\dots,v_m} \in \R^{n \times m}$ for the matrix
-  with $j$-th column given by $v_j$ for $1 \leq j \leq m$.
-  Suppose that $(v_1,\dots,v_m)$ and $(w_1,\dots,w_m)$ are
-  ordered bases of $V$, and let $B \in \R^{m \times m}$ denote
-  the change of basis matrix from $(v_1,\dots,v_m)$ to
-  $(w_1,\dots,w_m)$, i.e.\ $v_i = \sum_{j=1}^m B_{ij} w_j$
-  for each $1 \leq i \leq m$.
+  Suppose that $V \subset \R^n$ is a subspace of dimension $1\leq m \leq
+  n$. Given $v_1,\dots,v_m \in V$ write $\braket{v_1,\dots,v_m} \in \R^{n
+  \times m}$ for the matrix with $j$-th column given by $v_j$ for $1 \leq
+  j \leq m$. Suppose that $(v_1,\dots,v_m)$ and $(w_1,\dots,w_m)$ are
+  ordered bases of $V$, and let $B \in \R^{m \times m}$ denote the change
+  of basis matrix from $(v_1,\dots,v_m)$ to $(w_1,\dots,w_m)$, i.e.\ $v_i
+  = \sum_{j=1}^m B_{ij} w_j$ for each $1 \leq i \leq m$.
 
   \begin{enumerate}
     \item Let $\alpha \in \acal(n,m)$. We then have
@@ -6781,9 +6682,9 @@ Some algebra facts follows from the definition.
 \end{proof}
 
 \begin{lemma}
-  Let $\omega \in \Lambda^m(\R^n)$ and consider $V \subset \R^n$
-  a subspace of dimension $m \leq n$. Then for linearly
-  independent $v_1, \dots, v_m \in V$, we have
+  Let $\omega \in \Lambda^m(\R^n)$ and consider $V \subset \R^n$ a
+  subspace of dimension $m \leq n$. Then for linearly independent $v_1,
+  \dots, v_m \in V$, we have
   \[
     \frac{\omega(v_1, \dots, v_m)}{\bbracket{\braket{v_1, \dots, v_m}}}
     = \sum_{\alpha \in \acal(n, m)} \omega_\alpha
@@ -6798,8 +6699,8 @@ Some algebra facts follows from the definition.
 \end{lemma}
 
 \begin{defi}
-  Let $M \subset \R^n$ be a $C^1$ manifold of dimension
-  $1 \leq m \leq n$ with orientation $\ocal$.
+  Let $M \subset \R^n$ be a $C^1$ manifold of dimension $1 \leq m \leq n$
+  with orientation $\ocal$.
   \begin{enumerate}
     \item The \textbf{volume form} on $M$ is the map $\tau_M : M \to
           \Lambda^m(\R^n)$ given by
@@ -6824,8 +6725,8 @@ Some algebra facts follows from the definition.
 \end{defi}
 
 \begin{prop}
-  Let $M \subset \R^n$ be a $C^k$ $m$-manifold with orientation
-  $\ocal$. The following holds:
+  Let $M \subset \R^n$ be a $C^k$ $m$-manifold with orientation $\ocal$.
+  The following holds:
   \begin{enumerate}
     \item Let $\tau_M : M \to \Lambda^m(\R^n)$ be the volume form on $M$.
           Then, $\norm{\tau_M(z)}_{\Lambda^m} = 1$ for all $z \in M$ and
@@ -6849,24 +6750,22 @@ Some algebra facts follows from the definition.
 \end{prop}
 
 \begin{defi}
-  Let $M \subset \R^n$ be an orientated $C^1$ manifold
-  of dimension $1 \leq m \leq n$. We say that $\omega$
-  is \textbf{$M$-integrable} if $f_\omega : M \to \R$ is
-  $\hcal^m$-integrable on $M$, in which case we define
+  Let $M \subset \R^n$ be an orientated $C^1$ manifold of dimension $1
+  \leq m \leq n$. We say that $\omega$ is \textbf{$M$-integrable} if
+  $f_\omega : M \to \R$ is $\hcal^m$-integrable on $M$, in which case we
+  define
   \[
     \int_M \omega = \int_M f_\omega \d \hcal^m.
   \]
 \end{defi}
 
 \begin{prop}
-  Let $M \subset \R^n$ be a $C^k$ $m$-manifold with orientation
-  $\ocal$. Let $\omega \in C^0(M ; \Lambda^m(\R^n))$ and
-  suppose $\supp(\omega) \cap M \subset U \cap M$
-  for some $(U, V, \phi) \in \ocal$, where
-  $\supp(\omega) = \bar{\spt(\omega)}$ is the support of
-  $\omega$. Then $\omega$ is
-  $M$-integrable if and only if $\phi^* \omega$ is $V$-integrable,
-  and
+  Let $M \subset \R^n$ be a $C^k$ $m$-manifold with orientation $\ocal$.
+  Let $\omega \in C^0(M ; \Lambda^m(\R^n))$ and suppose $\supp(\omega)
+  \cap M \subset U \cap M$ for some $(U, V, \phi) \in \ocal$, where
+  $\supp(\omega) = \bar{\spt(\omega)}$ is the support of $\omega$. Then
+  $\omega$ is $M$-integrable if and only if $\phi^* \omega$ is
+  $V$-integrable, and
   \[
     \int_M \omega = \int_V \phi^* \omega =
     \int_V \omega \circ \phi (\dd_1 \phi, \dots, \dd_m \phi)
@@ -6905,8 +6804,7 @@ Some algebra facts follows from the definition.
 \subsubsection{Parition of unity}
 
 \begin{defi}
-  Suppose $U$ is an open set in a normed vector
-  space $V$, we write
+  Suppose $U$ is an open set in a normed vector space $V$, we write
   \[
     C_c^\infty (U; V) = \{f \in C^\infty (U; V):
     \text{$\supp(f)$ is compact}\},
@@ -6964,9 +6862,9 @@ Some algebra facts follows from the definition.
 \end{thm}
 
 \begin{remark}
-  Our proof will use crucially the fact that $M$ is a $C^2$
-  manifold. In fact the theorem is true for $M$ being
-  $C^1$. However, the proof needs more analytic tools.
+  Our proof will use crucially the fact that $M$ is a $C^2$ manifold. In
+  fact the theorem is true for $M$ being $C^1$. However, the proof needs
+  more analytic tools.
 \end{remark}
 
 \begin{proof}
@@ -7180,9 +7078,9 @@ establishes a connection between the integral of the tangential component
 of a vector field and the integral of an associated one-form.
 
 \begin{prop}
-  Let $M \subset \R^n$ be a $C^k$ $1$-manifold equipped with
-  orientation $\ocal = \{(U_\alpha, V_\alpha, \phi_\alpha)\}_\alpha$.
-  Let $\tau$ be the associated unit tangent vector field given by
+  Let $M \subset \R^n$ be a $C^k$ $1$-manifold equipped with orientation
+  $\ocal = \{(U_\alpha, V_\alpha, \phi_\alpha)\}_\alpha$. Let $\tau$ be
+  the associated unit tangent vector field given by
   \[
     \tau(z) = \frac{\phi_\alpha'(\phi_\alpha^{-1}(z))}
     {\abs{\phi_\alpha'(\phi_\alpha^{-1}(z))}}.
@@ -7234,10 +7132,10 @@ of a vector field and the integral of an associated one-form.
 Next we discuss the divergence theorem.
 
 \begin{prop}
-  Suppose that $M \subset \R^n$ is an orientated $C^k$
-  $(n-1)$-manifold. Let $\nu$ be the $C^{k-1}$ unit normal
-  vector field on $M$. Suppose that $v \in C^0(M ; \R^n)$ and
-  $\omega \in C^0(M; \Lambda^{n-1}(\R^n))$ are related via
+  Suppose that $M \subset \R^n$ is an orientated $C^k$ $(n-1)$-manifold.
+  Let $\nu$ be the $C^{k-1}$ unit normal vector field on $M$. Suppose that
+  $v \in C^0(M ; \R^n)$ and $\omega \in C^0(M; \Lambda^{n-1}(\R^n))$ are
+  related via
   \[
     \omega(z) = \sum_{i=1}^n (-1)^{i-1} v_i(z) \hat{e}^i.
   \]
@@ -7269,8 +7167,8 @@ Next we discuss the divergence theorem.
 
 \begin{proof}
   Equip $M$ with the natural orientation and note that a previous
-  proposition tells us that $\nu = n^{\text{out}}$. Define
-  $\omega \in C^1 (M ; \Lambda^{n-1} (\R^n))$ by
+  proposition tells us that $\nu = n^{\text{out}}$. Define $\omega \in C^1
+  (M ; \Lambda^{n-1} (\R^n))$ by
   \[
     \omega(z) = \sum_{i=1}^n (-1)^{i-1} v_i(z) \hat{e}^i.
   \]
@@ -7313,8 +7211,8 @@ with Stokes' theorem.
 \end{thm}
 
 \begin{proof}
-  Let $\omega \in C^1(M; \Lambda^1(\R^n))$ be defined by
-  $\omega(z) = \sum_{i=1}^3 v_i e^i$. Then,
+  Let $\omega \in C^1(M; \Lambda^1(\R^n))$ be defined by $\omega(z) =
+  \sum_{i=1}^3 v_i e^i$. Then,
   \[
     d \omega = (\curl v)_1 \; e^2 \wedge e^3
     - (\curl v)_2 \; e^1 \wedge e^3
