@@ -36,7 +36,7 @@ Carnegie Mellon University}
 
 \begin{thm}
   Let $X$ be a set and $g : X \to [0, \infty)$. If $\sum_{x \in X} g(x) <
-  \infty$, then $\{ x \in X : g(x) > 0\}$ is countable.
+    \infty$, then $\{ x \in X : g(x) > 0\}$ is countable.
 \end{thm}
 
 \begin{proof}
@@ -59,7 +59,7 @@ Carnegie Mellon University}
   $\lim_{y \to x^-} f(y) = f(x-)$ and $\lim_{y \to x^+} f(y) = f(x+)$.
   Since the function is increasing, $f(x+) \geq f(x-)$. Now we can define
   $g (x) = f(x+) - f(x-)$. It is clear that $\sum_{x \in [a, b]} g(x) \leq
-  f(b) - f(a)$. By the previous theorem, $f(x+) = f(x-)$ for all but
+    f(b) - f(a)$. By the previous theorem, $f(x+) = f(x-)$ for all but
   countably many $x \in [a, b]$.
 
   The interval $I \subset \R$ can be written as a countable union of
@@ -108,7 +108,7 @@ To show this, we need a few lemmas.
 \begin{lemma}
   Let $E \subset \R$ be bounded, and $\fcal$ be a family of open intervals
   such that each $x \in E$ is the left endpoint of an interval $(x, x +
-  h_x) \in \fcal$. Then there for every $\epsilon > 0$, there exist
+    h_x) \in \fcal$. Then there for every $\epsilon > 0$, there exist
   disjoint intervals $I_1, \dots, I_n \in \fcal$ such that
   \[
     \L_o^1 \left( E \cap \cupk^n I_k \right)  \geq \L_o^1 (E) - \epsilon.
@@ -164,7 +164,7 @@ To show this, we need a few lemmas.
 \begin{lemma}
   Let $E \subset \R$ be bounded, $\fcal$ be family of open intervals such
   that for all $x \in E$ and $\delta > 0$, there exists $(x, x + h_x) \in
-  \fcal$ with $0 \leq h_x < \delta$. Then for all $\epsilon > 0$, there
+    \fcal$ with $0 \leq h_x < \delta$. Then for all $\epsilon > 0$, there
   exists disjoint intervals $I_1, \dots, I_m \in \fcal$ such that
   \[
     \L_o^1 \left( E \cap \cupi^m I_i \right) \geq \L_o^1(E) - \epsilon,
@@ -175,7 +175,7 @@ To show this, we need a few lemmas.
 
 \begin{proof}
   By the definiton of Lebesgue outer measure, find an bounded open set $U
-  \supset E$ such that $\L_o^1 (U) \leq \L_o^1 (E) + \epsilon$. Let
+    \supset E$ such that $\L_o^1 (U) \leq \L_o^1 (E) + \epsilon$. Let
   $\fcal'$ be the subfamily of intervals $(x, x + h_x) \in \fcal$
   contained in $U$. Note that for each $x \in E \subset U$, there must
   exists at least one such interval, since $U$ contains a ball centered at
@@ -344,7 +344,7 @@ statement of the theorem below:
 
 \begin{remark}
   From the proof above, we see that for monotone function $f : [a, b] \to
-  \R$, we have
+    \R$, we have
   \[
     \int_a^b f' \leq f(b) - f(a).
   \]
@@ -664,7 +664,7 @@ To show this we need a few lemmas.
   Let $E \subset \R^N$ be Lebesgue measurable, $g : E \to \R$ be
   integrable. Then for all $\epsilon > 0$, there exists $\delta > 0$ such
   that $F \subset E$ with $\L^N (F) \leq \delta$ implies $\int_F \abs{g}
-  \d x \leq \epsilon$.
+    \d x \leq \epsilon$.
 \end{lemma}
 
 \begin{lemma}
@@ -682,7 +682,7 @@ Now we begin the proof for the first fundamental theorem of calculus.
   First we show $f \in AC$. Fix $\epsilon > 0$, and let $\delta$ be as in
   the first lemma. Suppose $\seqi{(a_i, b_i)}^n$ are disjoint sub-interval
   of $[a, b]$ with $\sumi^n (b_i - a_i) \leq \delta$. Let $U = \cupi^n
-  (a_i, b_i)$. It follows that
+    (a_i, b_i)$. It follows that
   \begin{align*}
     \sumi^n \abs{f(b_i) - f(a_i)}
     = \sumi^n \abs{\int_{a_i}^{b_i} g(t) \d t}
@@ -742,7 +742,7 @@ Now we begin the proof for the first fundamental theorem of calculus.
 
 \begin{proof}
   Suppose the three given conditions holds. Let $F(x) = \int_a^x f'(t) \d
-  t$. By the previous theorem (FTC 1), we know $F \in AC$. Meanwhile,
+    t$. By the previous theorem (FTC 1), we know $F \in AC$. Meanwhile,
   condition 3 implies $f(x) = f(a) + F(x)$. This shows that $f \in AC$.
 
   Conversely, suppose now that $f \in AC$. We have shown before that $f$
@@ -794,7 +794,7 @@ Now we begin the proof for the first fundamental theorem of calculus.
 
 \begin{ex}
   Recall that for $\lambda > 0$, we have $\L^N (\lambda E) = \lambda^N
-  \L^N (E)$. Show that $\int \phi_\epsilon = 1$.
+    \L^N (E)$. Show that $\int \phi_\epsilon = 1$.
 \end{ex}
 
 \begin{defi}[mollification]
@@ -1277,7 +1277,7 @@ continuous and with compact support, but only need $f$ to be integrable.
 
 \begin{lemma}
   There does not exist function $C^1$ function $g : B[0, 1] \to \dd B[0,
-  1]$ such that $g(x) = x$ for all $x \in \dd B[0, 1]$.
+        1]$ such that $g(x) = x$ for all $x \in \dd B[0, 1]$.
 \end{lemma}
 
 \begin{proof}
@@ -1343,14 +1343,14 @@ continuous and with compact support, but only need $f$ to be integrable.
 \begin{ex}
   Suppose $g : B[0, 1] \to B[0, 1]$ is $C^1$ such that $g(x) = x$ for all
   $x \in \dd B[0, 1]$. Then, $g$ is surjective. [Hint: first consider the
-  case where $0 \notin g(B[0, 1])$ and derive a contradiction.]
+      case where $0 \notin g(B[0, 1])$ and derive a contradiction.]
 \end{ex}
 
 \begin{thm}
   Let $X$ be a Hilbert space, $C \subset X$ closed and convex. Then for
   every $x \in X$, there exists a unique $y \in C$ such that $\norm{x - y}
-  = \min_{z \in C} \norm{x - z}$. We can then define a function $\Pi : X
-  \to C$ by $x \mapsto y$. Moreover, $\Pi$ is Lipshitz.
+    = \min_{z \in C} \norm{x - z}$. We can then define a function $\Pi : X
+    \to C$ by $x \mapsto y$. Moreover, $\Pi$ is Lipshitz.
 \end{thm}
 
 \begin{proof}
