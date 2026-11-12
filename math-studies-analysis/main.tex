@@ -5419,11 +5419,102 @@ We start with some lemmas.
 \end{lemma}
 
 \begin{proof}
-
+  The second item follows directly from the fact that
+  \[
+    \det (Dg)  = \sum_k g_{ik} \cof (Dg)_{ik}.
+  \]
+  For the first item, by properties of determinant, we have
+  \[
+    \delta_{kj}  \det (Dg) = \sum_i g_{ik} \cof (Dg)_{ij}.
+  \]
+  Differentiating w.r.t.\ $x_j$, we have
+  \[
+    \sum_j \sum_{r, s} \delta_{kj}
+    \frac{\dd \det (Dg)}{\dd g_{rs}} \frac{\dd g_{rs}}{\dd x_j}
+    = \sum_j \sum_i \frac{\dd g_{ik}}{\dd x_j} \cof (Dg)_{ij}
+    + \sum_j \sum_i g_{ik} \frac{\dd \cof (Dg)_{ij}}{\dd x_j}.
+  \]
+  Denote the two terms on RHS as $R_1 = \sum_j \sum_i \frac{\dd
+  g_{ik}}{\dd x_j} \cof (Dg)_{ij}$ and $R_2 = \sum_j \sum_i g_{ik}
+  \frac{\dd \cof (Dg)_{ij}}{\dd x_j}$, respectively. For LHS, note that
+  $\delta_{kj} = 0$ iff $k \neq j$, so
+  \[
+    \LHS
+    = \sum_{r, s} \frac{\dd \det (Dg)}{\dd g_{rs}} \frac{\dd g_{rs}}{\dd x_k}
+    = \sum_{r, s} \cof (Dg)_{rs} \frac{\dd g_{rs}}{\dd x_k}.
+  \]
+  It follows that
+  \[
+    \LHS - R_1
+    = \sum_{r, s} \cof (Dg)_{rs} \left( \frac{\dd g_{rs}}{\dd x_k}
+    -  \frac{\dd g_{rk}}{\dd x_s} \right)
+    = \sum_{r, s} \cof (Dg)_{rs} \left( \frac{\dd g_r}{\dd x_k \dd x_s}
+    -  \frac{\dd g_r}{\dd x_k \dd x_s} \right)
+    = 0.
+  \]
+  This implies that
+  \[
+    R_2
+    = \sum_{i, j} g_{ik} \frac{\dd \cof (Dg)_{ij}}{\dd x_j}
+    = \sum_i g_{ik} \left( \sum_j \frac{\dd \cof (Dg)_{ij}}{\dd x_j} \right)
+    = 0.
+  \]
+  Now consider two cases. If $Dg$ is invertible, then $\sum_j \frac{\dd
+  \cof (Dg)_{ij}}{\dd x_j} = 0$. On the other hand, if $\det (Dg) = 0$,
+  consider a sequence $g_l(x) = g(x) + \epsilon_l x$ where $\epsilon_l \to
+  0$. We then have
+  \[
+    \det (Dg + \epsilon_l I) = \det (D g_l) \neq 0.
+  \]
+  It follows that
+  \[
+    \sum_j \frac{\dd \cof (Dg)_{ij}}{\dd x_j}
+    = \lim_{l \to \infty} \sum_j \frac{\dd \cof (D g_l)_{ij}}{\dd x_j}
+    = 0.
+  \]
 \end{proof}
 
-\section{Manifolds in $\R^n$, differential forms,
-  Stokes-Cartan}
+\begin{lemma}[no retractions]
+  There does not exist function $h \in C^2 (B[0, R], \dd B[0, R])$
+  such that $h(x) = x$ for all $x \in \dd B[0, R]$.
+\end{lemma}
+
+\begin{proof}
+  Suppose for contradiction that there exists such a function $h$. For
+  $\lambda \in [0, 1]$, define
+  \[
+    P_\lambda (x) = x + \lambda (h(x) - x) .
+  \]
+  Define also
+  \[
+    I(\lambda)  = \int_{B(0, R)} \det (D P_\lambda (x)) \d x.
+  \]
+  Using DCT, we have
+  \begin{align*}
+    I'(\lambda)
+     & = \int_{B(0, R)} \sum_{i, j} \frac{\dd \det(D P_\lambda(x))}{\dd (P_\lambda)_{ij}}
+    \frac{\dd (P_\lambda)_{ij} (x)}{\dd \lambda} \d x                                     \\
+     & = \int_{B(0, R)} \sum_{i, j} \cof (D P_\lambda(x))_{ij}
+    \frac{\dd (h_i(x) - x_i)}{\dd x_j} \d x.
+  \end{align*}
+  Recall integration by parts, $\int_{\dd \Omega} f g = \int_\Omega
+    f' g + \int_\Omega f g'$, we obtain
+  \[
+    I'(\lambda) = - \sum_i \int_{B(0, R)}
+    \sum_j \frac{\dd \cof (D P_\lambda(x))_{ij}}{\dd x_j} (h_i(x) - x_i)
+    \d x = 0.
+  \]
+  Note that $I(0) = \lambda(B(0, R))$, but using the area formula,
+  \[
+    \abs{I(1)}
+    \leq \int_{B(0, R)} \abs{\det (Dh(x))} \d x
+    = \int_{\dd B[0, R]} \ncal(\cdot, B(0, R)) \d \hcal^n
+    = 0
+  \]
+  as $\dd B[0, R]$ has measure zero, thus a contradiction.
+\end{proof}
+
+\section{Manifolds in $\R^n$, differential forms, Stokes-Cartan}
 
 We know from the area formula that we can integrate on certain
 $m$-dimensional subsets of $\R^n$ ($m \leq n$). We also know through the
