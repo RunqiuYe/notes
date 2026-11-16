@@ -1436,7 +1436,92 @@ Now we are ready to proof Brouwer's fixed point theorem.
 \end{thm}
 
 \begin{proof}
-  For step 1, suppose $K = B[0, 1]$.
+
+  For step 1, suppose $K = B[0, 1]$. Define $G = g (x / \norm{x})$ if
+  $\norm{x} = 1$, as an extension of $g$. Then $G$ is a continuous
+  function from $\R^N$ to $B[0, 1]$. Mollify $G$ and find $g_n \in
+  C^\infty (\R^N)$ such that $g_n \to g$ uniformly in $B[0, 1]$. We can
+  assume $\norm{g_n - g} \leq n^{-1}$ (Exercise). Then, we have
+  \[
+    \norm{g_n (x)} \leq \norm{g(x)} + \norm{g_n(x) - g(x)} \leq 1 + n^{-1}.
+  \]
+  Therefore, $g_n : B[0, 1] \to B[0, 1 + n^{-1}]$. Define
+  \[
+    h_n = \frac{g_n}{1 + n^{-1}}.
+  \]
+  Now $h_n \in C^\infty(B[0, 1], B[0, 1])$. (In fact, $g_n$ is already
+  mapping $B[0, 1]$ to itself, because mollification does not increase the
+  norm)
+
+  Claim that $h_n$ has a fixed point. Suppose for contradiction that it
+  does not, namely $h_n(x) = x$ for all $x \in B[0, 1]$. Define $P_n :
+  B[0, 1] \to \dd B[0, 1]$ by mapping $x$ to the intersection of $\dd B[0,
+  1]$ and the line joining $x$ and $h_n(x)$. Take the point closer to $x$.
+  Claim that $P_n \in C^1$. Indeed, $s h_n(x) + (1 - s) x$, $s \in \R$
+  represents the line joining $x$ and $h_n(x)$. To obtain the intersection
+  of this line with $\dd B[0, 1]$, consider
+  \begin{align*}
+    1 & = \norm{s h_n(x) + (1 - s) x}^2                                   \\
+      & = \norm{s (h_n(x) - x) + x}^2                                     \\
+      & = s^2 \norm{h_n(x) - x}^2 + 2s x \cdot (h_n(x) - x) + \norm{x}^2.
+  \end{align*}
+  Solving for $s$, we have
+  \[
+    s = \frac{x \cdot h_n(x) - \norm{x}^2 - \sqrt{(x \cdot h_n(x) - \norm{x}^2)^2
+        + \norm{x - h_n(x)}^2 (1 - \norm{x}^2)}}{\norm{x - h_n(x)}^2}
+  \]
+  This is still $C^1$, and $P_n(x) = x$ if $x \in \dd B[0, 1]$. This
+  contradicts the previous lemma, so $h_n$ has a fixed point.
+
+  Now for each $n \in \N$, there exists $x_n \in B[0, 1]$ such that
+  $h_n(x_n) = x_n$. Since $B[0, 1]$ is compact, there is a subsequence
+  $x_{n_k}$ that converges to some point $x_0 \in B[0, 1]$. Meanwhile,
+  recall that $h_n \to g$ uniformly, so $h_{n_k} (x_{n_k}) \to g(x_0)$ and
+  $x_{n_k} \to x_0$. Hence, $g(x_0) = x_0$ and $g$ has a fixed point.
+
+  For step 2, suppose $K = B[0, R]$ for some $R > 0$. Define $g_R (x) =
+  R^{-1} g(R x)$. Previous step implies $g_R$ has a fixed point, and it is
+  easily seen that this implies $g$ has a fixed point.
+
+  For step 3, consider $K$ a general convex, compact set. Let $R > 0$ be
+  such that $B[0, R] \supset K$. Define $h(x) = g (\Pi (x))$ so that $h :
+  B[0, R] \to K \subset B[0, R]$. Now that $h$ is continuous, so previous
+  step implies $h$ admits a fixed point. That is, there exists $x \in B[0,
+  R]$ such that $h(x) = x$. However the codamin of $h$ is $K$ so $x \in
+  K$, $\Pi (x) = x$. This is thus also a fixed point for $g$.
+\end{proof}
+
+This concludes the proof for Brouwer's fixed theorem. Next we would like
+to develop theories of conected set and then Jordan curve theorem. For a
+rough idea, consider a closed simple curve with range $\Gamma$. Then, the
+theorem states that $\R^2 \setminus \Gamma$ has two connected components.
+This is a surprisingly difficult theorem to prove.
+
+\section{Curves}
+
+\subsection{Connectedness and pathwise connectedness}
+
+\begin{defi}
+
+  Let $(X, d)$ be a metric space. Say $E \subset X$ is
+  \textbf{disconnected} if there exists $U, V$ open such that $E \cap U
+  \neq \emptyset$, $E \cap V \neq \emptyset$, $(E \cap U) \cap (E \cap V)
+  = \emptyset$, and $(E \cap U) \cup (E \cap V) = E$.
+
+  Say $E \subset X$ is \textbf{connected} if $E$ is not disconnected.
+\end{defi}
+
+\begin{prop}
+
+  Let $X$ and $Y$ be metric spaces, $E \subset X$ and $f : E \to Y$
+  continuous. If $E$ is connected, then $f(E)$ is connected.
+\end{prop}
+
+\begin{proof}
+
+  Suppose not, and let $U, V$ be the open sets that makes $f(E)$
+  disconnected. Then, $f^{-1}(U)$ and $f^{-1} (V)$ is relatively open in
+  $E$. It is easy to verify that these sets makes $E$ disconnected.
 \end{proof}
 
 \end{document}
